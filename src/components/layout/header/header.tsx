@@ -1,252 +1,204 @@
-import React, { useState, FunctionComponent } from "react";
+import React from "react";
+import { AppBar, Toolbar, Button, IconButton, useMediaQuery, MenuItem, Link } from '@material-ui/core';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import clsx from 'clsx';
+import { Logo1SvgComponent } from '../../common/icons'
+import MenuIcon from '@material-ui/icons/Menu';
 
-export interface DropdownItem {
-  label: string;
-  description: string;
-  icon: JSX.Element;
-  href: string;
+
+import { deskTopNavItems } from '../../../lib/constants';
+import { useState } from 'react';
+
+
+
+import { ThreeDots } from '../../common/css-loaders/three-dots/three-dots';
+
+interface NavbarProps {
+  handleDrawerOpen?: () => void
+  classNames?: any,
+  open?: boolean,
 }
 
-export interface MenuItemWithDropdown {
-  label: string;
-  dropdownItems: DropdownItem[];
-}
+const drawerWidth = 180;
 
-export interface MenuItemWithoutDropdown {
-  label: string;
-  href: string;
-}
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    navbarContainer: {
+      width: '100vw',
+      overflowX: 'hidden',
+      background: theme.colors.white,
+      marginBottom: 100,
+      [theme.breakpoints.only('xs')]: {
+        marginBottom: 70
+      }
+    },
+    appBar: {
+      transition: theme.transitions.create(['margin', 'width'], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
+      background: 'inherit',
+      color: theme.colors.black,
+      boxShadow: '0 2px 16px 0 rgb(0 0 0 / 8%)'
+    },
+    appBarShift: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      transition: theme.transitions.create(['margin', 'width'], {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+      marginRight: drawerWidth,
+    },
+    toolBar: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignContent: 'center',
+      width: '80vw',
+      margin: 'auto',
+      height: 70,
+    },
+    logo: {
+      flexGrow: 1,
+      textDecoration: 'none',
+      display: 'flex',
+      width: 100
 
-export type MenuItem = MenuItemWithDropdown | MenuItemWithoutDropdown;
+    },
+    links: {
+      color: theme.palette.secondary.main,
+      display: 'flex',
+      fontWeight: 400,
+      fontSize: '0.85rem',
+      marginRight: 15,
+      justifyContent: 'space-around',
+    },
+    active: {
+      display: 'inline-block',
+      borderBottom: '2px solid #4990A4',
+      color: theme.colors.mainGreen,
+      paddingRight: 0,
+    },
+    title: {
+      flexGrow: 1,
+      fontWeight: 900,
+      opacity: 0.7,
+      color: theme.colors.black
+    },
+    hide: {
+      display: 'none',
+    },
+    menuIcon: {
+      color: theme.colors.pink,
+      position: 'absolute',
+      right: 0,
+      justifySelf: 'flex-end'
+    },
+    downloadLink: {
+      flexGrow: 1,
+      marginLeft: 70,
+      fontWeight: 500,
+      justifyContent: 'flex-end',
+      display: 'flex'
+    },
+    register: {
+      background: theme.palette.primary.main,
+      textTransform: 'capitalize',
+      color: 'white',
+      fontWeight: 500,
+      paddingRight: 25,
+      paddingLeft: 25,
+      transition: 'background .25s ease-in -out, transform .15s ease,- webkit - transform .15s ease',
+      '&:hover': {
+        opacity: 0.9,
+        background: theme.palette.primary.main,
+        transform: 'scale(1.01)',
+        borderRadius: 6
+      },
 
-export interface Header {
-  menuItems: MenuItem[];
-  logo: JSX.Element;
-}
+    },
+    signin: {
+      textTransform: 'capitalize',
+      marginRight: '2vw',
+      fontWeight: 500,
+      color: theme.palette.secondary.main
+    },
+    underline: {
+      border: '3px solid #4990A4'
+    }
+  }),
+);
 
-export const FlyoutMenu: FunctionComponent<MenuItemWithDropdown> = ({
-  label,
-  dropdownItems,
-}) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleIsOpen = () => setIsOpen(!isOpen);
+export const Header = ({ handleDrawerOpen, open, classNames }: NavbarProps) => {
+  const classes = useStyles()
+  const [currentLink, setCurrentLink] = useState('')
 
-  /* Item active: "text-gray-900", Item inactive: "text-gray-500" */
-  return (
-    <div className="relative">
-      <button
-        onClick={toggleIsOpen}
-        type="button"
-        className="text-gray-500 group inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150"
-      >
-        <span>{label}</span>
-        {/* Item active: "text-gray-600", Item inactive: "text-gray-400" */}
-        <svg
-          className="text-gray-400 h-5 w-5 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </button>
-      <div
-        className={`${
-          isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"
-        } transition ease-in duration-150 absolute -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2`}
-      >
-        <div className="rounded-lg shadow-lg">
-          <div className="rounded-lg shadow-xs overflow-hidden">
-            <div className="z-20 relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-              {dropdownItems.map(
-                ({ label: text, description, href, icon }, index) => (
-                  <a
-                    key={index}
-                    href={href}
-                    className="-m-3 p-3 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150"
-                  >
-                    {icon}
-                    <div className="space-y-1">
-                      <p className="text-base leading-6 font-medium text-gray-900">
-                        {text}
-                      </p>
-                      <p className="text-sm leading-5 text-gray-500">
-                        {description}
-                      </p>
-                    </div>
-                  </a>
-                )
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
-export const MobileFlyoutMenu: FunctionComponent<MenuItemWithDropdown> = ({
-  label,
-  dropdownItems,
-}) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleIsOpen = () => setIsOpen(!isOpen);
+  const isSmallScreen = useMediaQuery('(max-width:950px)');
 
-  return (
-    <>
-      <div
-        onClick={toggleIsOpen}
-        className={`${
-          isOpen ? "bg-gray-50" : ""
-        } -m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150 text-base leading-6 font-medium text-gray-900 justify-between cursor-pointer`}
-      >
-        <div>{label}</div>
-        <div>
-          <svg
-            className="text-gray-400 h-5 w-5 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </div>
-      </div>
-      {isOpen &&
-        dropdownItems.map(({ label: text, href }, index) => (
-          <a
-            key={index}
-            href={href}
-            className="-m-3 pl-6 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
-          >
-            <div className="text-base leading-6 font-medium text-gray-900">
-              {text}
-            </div>
-          </a>
-        ))}
-    </>
-  );
-};
-
-const isMenuItemWithDropdown = (
-  menuItem: MenuItem
-): menuItem is MenuItemWithDropdown => {
-  return (menuItem as MenuItemWithDropdown).dropdownItems !== undefined;
-};
-
-export const Header: FunctionComponent<Header> = ({ menuItems, logo }) => {
-  const [mobileDrawerOn, setMobileDrawerOn] = useState(false);
-  const toggleMobileDrawer = () => {
-    setMobileDrawerOn(!mobileDrawerOn);
+  const handleClickListItem = (name: string) => {
+    setCurrentLink(name);
   };
+  const setActive = (route: string) => route === window.location.pathname
+
   return (
-    <div className="relative bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-          <div className="lg:w-0 lg:flex-1">
-            <a href="/" className="flex">
-              {logo}
-            </a>
-          </div>
-          <div className="-mr-2 -my-2 md:hidden">
-            <button
-              onClick={toggleMobileDrawer}
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
-          <nav className="hidden md:flex space-x-10">
-            {menuItems.map((menuItem, index) =>
-              isMenuItemWithDropdown(menuItem) ? (
-                <FlyoutMenu {...menuItem} key={index} />
-              ) : (
-                <a
-                  key={index}
-                  href={menuItem.href}
-                  className="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150"
-                >
-                  {menuItem.label}
-                </a>
-              )
-            )}
-          </nav>
-        </div>
-      </div>
-      {mobileDrawerOn && (
-        <div
-          className={`duration-100 ease-in absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50`}
+    <div className={`${classes.navbarContainer} classNames`}>
+      { isSmallScreen ?
+        <AppBar
+          elevation={0}
+          position="fixed"
+          className={clsx(classes.appBar, {
+            [classes.appBarShift]: open,
+          })}
         >
-          <div className="rounded-lg shadow-lg">
-            <div className="rounded-lg shadow-xs bg-white divide-y-2 divide-gray-50">
-              <div className="pt-5 pb-6 px-5 space-y-6">
-                <div className="flex items-center justify-between">
-                  <div>{logo}</div>
-                  <div className="-mr-2">
-                    <button
-                      onClick={toggleMobileDrawer}
-                      type="button"
-                      className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
-                    >
-                      <svg
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  <nav className="grid row-gap-8">
-                    {menuItems.map((menuItem, index) =>
-                      isMenuItemWithDropdown(menuItem) ? (
-                        <MobileFlyoutMenu {...menuItem} key={index} />
-                      ) : (
-                        <a
-                          key={index}
-                          href={menuItem.href}
-                          className="-m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
-                        >
-                          <div className="text-base leading-6 font-medium text-gray-900">
-                            {menuItem.label}
-                          </div>
-                        </a>
-                      )
-                    )}
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+          <Toolbar>
+            {/* <Typography to="/" component={Link} variant="h6" noWrap className={`${classes.logo}`}> */}
+            <Link className={`${classes.logo}`}><Logo1SvgComponent /> </Link>
+            {/* </Typography> */}
+            <IconButton
+              color="secondary"
+              aria-label="open drawer"
+              edge="end"
+              onClick={handleDrawerOpen}
+              className={clsx(open && classes.hide)}
+            >
+              <MenuIcon className={classes.menuIcon} />
+            </IconButton>
+          </Toolbar>
+        </AppBar> :
+        <AppBar
+          className={classes.appBar}
+          elevation={0}
+        >
+          <Toolbar className={classes.toolBar}>
+            <Link className={`${classes.logo}`}><Logo1SvgComponent /> </Link>
+            <section className={classes.links}>
+              {deskTopNavItems.map(({ name, route }) => {
+                return <Link href={route} className={clsx({
+                  [classes.underline]: currentLink === name,
+                  [classes.active]: setActive(route)
+                })} onClick={() => handleClickListItem(name)} key={name} style={{ textDecoration: 'none' }}> <MenuItem className={classes.links}>
+                    {name}
+                  </MenuItem></Link>
+              })}
+            </section>
+            {false ? <ThreeDots /> :
+              <section className={classes.downloadLink}>
+
+                {false ?
+                  <Button className={classes.register}
+                    component={Link}
+
+                  >Go to Dashboard </Button>
+                  :
+                  <>
+                    <Button component={Link} className={classes.signin} >Sign in</Button>
+                    <Button component={Link} className={classes.register} >Register</Button>
+                  </>
+                }
+              </section>
+            }
+          </Toolbar>
+        </AppBar>}
+    </div >
   );
-};
+}

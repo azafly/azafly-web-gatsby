@@ -19,6 +19,21 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-robots-txt",
     {
+      resolve: `gatsby-theme-material-ui`,
+      options: {
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: `Nunito`,
+                variants: [`300`, `400`, `500`, '700', `900`],
+              },
+            ],
+          },
+        },
+      },
+    },
+    {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
       options: {

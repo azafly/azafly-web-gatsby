@@ -2,21 +2,9 @@ import React, { FunctionComponent } from "react";
 import Helmet from "react-helmet";
 import { withPrefix } from "gatsby";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
-import { Header, MenuItem } from "./header";
+import { Header } from "./header";
 import { Footer } from "./footer";
-import icon from "../../../static/logo.png";
 
-const logo = <img className="w-auto h-15" src={icon} alt="Workflow" />;
-const menuItems: MenuItem[] = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-];
 
 const footer = {
   copyrightOwner: "GEEK SG",
@@ -27,6 +15,15 @@ const footer = {
 
 export const Layout: FunctionComponent = ({ children }) => {
   const { title } = useSiteMetadata();
+  const [open, setOpen] = React.useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
   return (
     <>
       <Helmet>
@@ -57,7 +54,7 @@ export const Layout: FunctionComponent = ({ children }) => {
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <meta name="theme-color" content="#fff" />
       </Helmet>
-      <Header menuItems={menuItems} logo={logo} />
+      <Header handleDrawerOpen={handleDrawerOpen} open={open} />
       <div className="min-h-screen">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
       </div>
