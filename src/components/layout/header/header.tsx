@@ -138,7 +138,7 @@ export const Header = ({ handleDrawerOpen, open, classNames }: NavbarProps) => {
   const handleClickListItem = (name: string) => {
     setCurrentLink(name);
   };
-  const setActive = (route: string) => route === window.location.pathname
+  const setActive = (route: string) => route === false
 
   return (
     <div className={`${classes.navbarContainer} classNames`}>
