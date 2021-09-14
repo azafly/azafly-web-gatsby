@@ -10,7 +10,7 @@ export const CardsContainer = () => {
     return (
 
         <Grid container className={classes.cards} spacing={5} alignContent="center">
-            {[1, 2, 3].map(card => <Cards />)}
+            {[1, 2, 3, 4].map(card => <Cards />)}
         </Grid>
     )
 }

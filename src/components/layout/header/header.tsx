@@ -17,6 +17,7 @@ interface NavbarProps {
   handleDrawerOpen?: () => void
   classNames?: any,
   open?: boolean,
+  location?: string
 }
 
 const drawerWidth = 180;
@@ -128,7 +129,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const Header = ({ handleDrawerOpen, open, classNames }: NavbarProps) => {
+export const Header = ({ handleDrawerOpen, open, classNames, location }: NavbarProps) => {
   const classes = useStyles()
   const [currentLink, setCurrentLink] = useState('')
 
@@ -138,7 +139,7 @@ export const Header = ({ handleDrawerOpen, open, classNames }: NavbarProps) => {
   const handleClickListItem = (name: string) => {
     setCurrentLink(name);
   };
-  const setActive = (route: string) => route === window.location.pathname
+  const setActive = (route: string) => route === location
 
   return (
     <div className={`${classes.navbarContainer} classNames`}>

@@ -1,7 +1,9 @@
 import React, { FunctionComponent } from "react";
+import { createStyles, makeStyles, Theme } from '@material-ui/core'
 import { format } from "date-fns";
 import Image, { FluidObject } from "gatsby-image";
 import { Layout } from "../../components/layout";
+
 
 interface BlogPost {
   title: string;
@@ -11,6 +13,15 @@ interface BlogPost {
   publishedDate: Date;
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    tag: {
+      color: theme.colors.mainGreen
+    }
+  }),
+);
+
+
 export const BlogPost: FunctionComponent<BlogPost> = ({
   title,
   tags,
@@ -19,10 +30,11 @@ export const BlogPost: FunctionComponent<BlogPost> = ({
   publishedDate,
   children,
 }) => {
+  const classes = useStyles()
   return (
     <Layout>
       <div className="">
-        <h1 className="text-3xl sm:text-5xl text-center font-semibold mt-8 mb-2">
+        <h1 className="text-3xl sm:text-5xl text-center font-bold mt-8 mb-2">
           {title}
         </h1>
         <div className="text-center mb-3 text-gray-500">
@@ -32,9 +44,9 @@ export const BlogPost: FunctionComponent<BlogPost> = ({
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="text-sm leading-5 font-medium text-indigo-600 mx-2"
+              className={`${classes.tag}text-sm leading-5 font-medium text-indigo-600 mx-2`}
             >
-              <a href={`/tags/${tag}`}>#{tag}</a>
+              <a className={classes.tag} href={`/tags/${tag}`}>#{tag}</a>
             </span>
           ))}
         </div>

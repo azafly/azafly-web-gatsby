@@ -1,10 +1,20 @@
 import React, { FunctionComponent } from "react";
+import { createStyles, makeStyles, Theme } from '@material-ui/core'
 import Image from "gatsby-image";
 import { PostSnippet } from "../../types";
 
 export interface FeaturePosts {
   featurePosts: PostSnippet[];
 }
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    tag: {
+      color: theme.colors.mainGreen
+    }
+  }),
+);
+
 
 export const FeaturePost: FunctionComponent<PostSnippet> = ({
   title,
@@ -14,6 +24,7 @@ export const FeaturePost: FunctionComponent<PostSnippet> = ({
   imgAlt,
   tags,
 }) => {
+  const classes = useStyles()
   return (
     <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
       <div className="flex-shrink-0">
@@ -30,7 +41,7 @@ export const FeaturePost: FunctionComponent<PostSnippet> = ({
           <p className="text-sm leading-5 font-medium text-indigo-600">
             {tags.map((tag, index) => (
               <span key={index}>
-                <a href={`/tags/${tag}`} className="hover:underline">
+                <a href={`/tags/${tag}`} className={`${classes.tag} hover:underline`}>
                   #{tag}
                 </a>{" "}
               </span>

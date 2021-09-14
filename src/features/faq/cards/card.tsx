@@ -13,7 +13,7 @@ export function Cards() {
     const classes = useCardStyles();
 
     return (
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} sm={6} md={3}>
             <Card className={classes.root}>
                 <CardActionArea className={classes.action} >
                     <CardMedia

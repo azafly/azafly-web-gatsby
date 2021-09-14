@@ -14,3 +14,4 @@ coverage
 
 # Images in data file
 data/**/images
+.env

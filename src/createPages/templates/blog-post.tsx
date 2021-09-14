@@ -3,6 +3,8 @@ import { graphql } from "gatsby";
 import { FluidObject } from "gatsby-image";
 import { BlogPost } from "../../components/blogPost";
 import { SEO } from "../../components/seo";
+import { DiscussionEmbed } from "disqus-react"
+
 interface QueryData {
   markdownRemark: {
     html: string;
@@ -18,6 +20,8 @@ interface QueryData {
     };
   };
 }
+
+
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!, $tag: [String!]) {
@@ -92,6 +96,15 @@ export const Page: FunctionComponent<Page> = ({ data }) => {
     },
   } = data;
 
+
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME as string,
+    config: {
+      identifier: `${imgAlt}+${description}`, title
+    },
+  }
+
+
   return (
     <>
       <SEO title={title} image={img.src} description={description} />
@@ -103,6 +116,7 @@ export const Page: FunctionComponent<Page> = ({ data }) => {
         publishedDate={new Date(publishedDate)}
       >
         <div dangerouslySetInnerHTML={{ __html: html }} />
+        <DiscussionEmbed {...disqusConfig} />
       </BlogPost>
     </>
   );

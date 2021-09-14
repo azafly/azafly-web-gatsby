@@ -28,9 +28,6 @@ export const useHeroStyle = makeStyles((theme: Theme) =>
             background: theme.palette.background.default,
             [theme.breakpoints.up('md')]: {
                 height: 600,
-
-
-
             }
         },
         searchRoot: {

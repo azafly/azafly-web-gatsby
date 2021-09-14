@@ -7,10 +7,10 @@ import { Footer } from "./footer";
 
 
 const footer = {
-  copyrightOwner: "GEEK SG",
-  linkedin: "https://www.linkedin.com/in/raymondyeh/",
-  github: "https://github.com/yehjxraymond",
-  instagram: "https://www.instagram.com/geek.sg/",
+  copyrightOwner: "Azafly",
+  linkedin: "https://www.linkedin.com/azafly",
+  instagram: "https://www.instagram.com/azafly",
+  facebook: "https://www.facebook.com/azafly"
 };
 
 export const Layout: FunctionComponent = ({ children }) => {

@@ -1,10 +1,19 @@
 import React, { FunctionComponent } from "react";
+import { createStyles, makeStyles, Theme } from '@material-ui/core'
 import Image from "gatsby-image";
 import { PostSnippet } from "../../types";
 
 export interface PostList {
   posts: PostSnippet[];
 }
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    tag: {
+      color: theme.colors.mainGreen
+    }
+  }),
+);
 
 export const PostListItem: FunctionComponent<PostSnippet> = ({
   href,
@@ -14,6 +23,7 @@ export const PostListItem: FunctionComponent<PostSnippet> = ({
   tags,
   summary,
 }) => {
+  const classes = useStyles()
   return (
     <div className="flex mb-16 sm:mb-28 flex-col sm:flex-row">
       <div className="flex-shrink-0 mr-0 sm:mr-8 mb-6 sm:mb-0">
@@ -35,7 +45,7 @@ export const PostListItem: FunctionComponent<PostSnippet> = ({
           <div className="text-sm leading-5 font-medium text-indigo-600">
             {tags.map((tag, index) => (
               <span key={index} className="mr-4">
-                <a href={`/tags/${tag}`} className="hover:underline">
+                <a href={`/tags/${tag}`} className={`${classes.tag} hover:underline`}>
                   #{tag}
                 </a>
               </span>
