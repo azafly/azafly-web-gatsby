@@ -7,7 +7,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   lectus quam. Enim neque volutpat ac tincidunt vitae semper quis lectus. At
   erat pellentesque adipiscing commodo elit at.
 featured: true
-img: ../../static/images/tables.jpeg
+img: ../../static/images/tenor.gif
 imgAlt: Get a table?
 tags:
   - opinion
