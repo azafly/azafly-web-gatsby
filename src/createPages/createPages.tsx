@@ -59,6 +59,7 @@ export const createPages = async ({
     component: path.resolve(`src/createPages/templates/home.tsx`),
     context: {},
   });
+
   const posts = result.data?.allMarkdownRemark.edges;
   const tagsCollection = new Set<string>();
 

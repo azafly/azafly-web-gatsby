@@ -110,12 +110,12 @@ const Home: FunctionComponent<Home> = ({ data }) => {
     const featuredPostData: PostSnippet[] = data.featuredPosts.edges.map(
         mapPostData
     );
-    const recentPostData: PostSnippet[] = data.recentPosts.edges.map(mapPostData);
+    console.log(featuredPostData)
     return (
         <>
             <SEO title="Home" image="/logo.png" />
             <Layout>
-                <FeaturePosts featurePosts={featuredPostData} />>
+                <FeaturePosts featurePosts={featuredPostData} />
             </Layout>
         </>
     );
