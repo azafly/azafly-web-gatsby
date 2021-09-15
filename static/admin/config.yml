@@ -39,7 +39,7 @@ collections:
           - {label: Image, name: image, widget: image}
       - label: "About Page"        
         name: "About"        
-        file: "content/home.md"        
+        file: "content/about.md"        
         fields:       
           - {label: Title, name: title, widget: string}          
           - {label: Intro text, name: intro, widget: text}          

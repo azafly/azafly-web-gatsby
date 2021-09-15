@@ -5,8 +5,6 @@ import { FluidObject } from "gatsby-image";
 import { Layout } from "../../components/layout";
 import { PostSnippet } from "../../types";
 import { FeaturePosts } from "../../components/featurePosts";
-import { RecentPosts } from "../../components/recentPosts";
-import { Pagination } from "../../components/pagination";
 import { SEO } from "../../components/seo";
 
 export const pageQuery = graphql`
@@ -70,59 +68,57 @@ export const pageQuery = graphql`
 `;
 
 interface Post {
-  node: {
-    id: string;
-    fields: {
-      slug: string;
+    node: {
+        id: string;
+        fields: {
+            slug: string;
+        };
+        frontmatter: {
+            tags: string[];
+            title: string;
+            imgAlt: string;
+            description: string;
+            publishedDate: string;
+            img: { childImageSharp: { fluid: FluidObject } };
+        };
     };
-    frontmatter: {
-      tags: string[];
-      title: string;
-      imgAlt: string;
-      description: string;
-      publishedDate: string;
-      img: { childImageSharp: { fluid: FluidObject } };
-    };
-  };
 }
 
 interface QueryData {
-  featuredPosts: {
-    edges: Post[];
-  };
-  recentPosts: {
-    edges: Post[];
-  };
+    featuredPosts: {
+        edges: Post[];
+    };
+    recentPosts: {
+        edges: Post[];
+    };
 }
 
-interface Blog {
-  data: QueryData;
+interface About {
+    data: QueryData;
 }
 
-const Blog: FunctionComponent<Blog> = ({ data }) => {
-  const mapPostData = ({ node }: { node: Post["node"] }) => ({
-    title: node.frontmatter.title,
-    summary: node.frontmatter.description,
-    href: node.fields.slug,
-    img: node.frontmatter.img.childImageSharp.fluid,
-    imgAlt: node.frontmatter.imgAlt,
-    tags: node.frontmatter.tags,
-    publishedDate: new Date(node.frontmatter.publishedDate),
-  });
-  const featuredPostData: PostSnippet[] = data.featuredPosts.edges.map(
-    mapPostData
-  );
-  const recentPostData: PostSnippet[] = data.recentPosts.edges.map(mapPostData);
-  return (
-    <>
-      <SEO title="Blog" image="/logo.png" />
-      <Layout>
-        <FeaturePosts featurePosts={featuredPostData} />
-        <RecentPosts recentPosts={recentPostData} />
-        <Pagination next="/page/2" />
-      </Layout>
-    </>
-  );
+const About: FunctionComponent<About> = ({ data }) => {
+    const mapPostData = ({ node }: { node: Post["node"] }) => ({
+        title: node.frontmatter.title,
+        summary: node.frontmatter.description,
+        href: node.fields.slug,
+        img: node.frontmatter.img.childImageSharp.fluid,
+        imgAlt: node.frontmatter.imgAlt,
+        tags: node.frontmatter.tags,
+        publishedDate: new Date(node.frontmatter.publishedDate),
+    });
+    const featuredPostData: PostSnippet[] = data.featuredPosts.edges.map(
+        mapPostData
+    );
+    console.log(featuredPostData)
+    return (
+        <>
+            <SEO title="About" image="/logo.png" />
+            <Layout>
+                <FeaturePosts featurePosts={featuredPostData} />
+            </Layout>
+        </>
+    );
 };
 
-export default Blog;
+export default About;
