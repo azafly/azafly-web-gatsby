@@ -3,58 +3,8 @@ import { graphql } from "gatsby";
 import { FluidObject } from "gatsby-image";
 
 import { Layout } from "../../components/layout";
-import { PostSnippet } from "../../types";
-import { FeaturePosts } from "../../components/featurePosts";
 import { SEO } from "../../components/seo";
 
-export const pageQuery = graphql`
-  {
-    featuredPosts: allMarkdownRemark(
-      limit: 4
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            img {
-              childImageSharp {
-                fluid(maxWidth: 2400, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    recentPosts: allMarkdownRemark(
-      limit: 10
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            img {
-              childImageSharp {
-                fluid(maxWidth: 2400, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 interface Post {
     node: {

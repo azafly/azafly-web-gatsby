@@ -71,7 +71,7 @@ export const Page: FunctionComponent<QueryData> = ({ data, pageContext }) => {
     title: node.frontmatter.title,
     summary: node.frontmatter.description,
     href: node.fields.slug,
-    img: node.frontmatter.img.childImageSharp.fluid,
+    img: node.frontmatter.img?.childImageSharp?.fluid,
     imgAlt: node.frontmatter.imgAlt,
     tags: node.frontmatter.tags,
     publishedDate: new Date(node.frontmatter.publishedDate),
@@ -80,7 +80,7 @@ export const Page: FunctionComponent<QueryData> = ({ data, pageContext }) => {
     <>
       <SEO
         title={`Page ${pageContext.currentPage}`}
-        image={posts[0].img.src}
+        image={posts[0].img?.src}
         description={`Page ${pageContext.currentPage}`}
       />
       <Layout>

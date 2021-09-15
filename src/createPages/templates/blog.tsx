@@ -14,8 +14,8 @@ export const pageQuery = graphql`
     featuredPosts: allMarkdownRemark(
       limit: 4
       sort: { fields: [frontmatter___publishedDate], order: DESC }
-      filter: { frontmatter: { featured: { eq: true } } }
-    ) {
+      filter: {fields: {slug: {regex: "/blog/"}}, frontmatter: {featured: {eq: true}}}) 
+     {
       edges {
         node {
           id
@@ -104,7 +104,7 @@ const Blog: FunctionComponent<Blog> = ({ data }) => {
     title: node.frontmatter.title,
     summary: node.frontmatter.description,
     href: node.fields.slug,
-    img: node.frontmatter.img.childImageSharp.fluid,
+    img: node.frontmatter.img?.childImageSharp?.fluid,
     imgAlt: node.frontmatter.imgAlt,
     tags: node.frontmatter.tags,
     publishedDate: new Date(node.frontmatter.publishedDate),

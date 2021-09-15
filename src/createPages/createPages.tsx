@@ -2,7 +2,25 @@ import { CreatePagesArgs } from "gatsby";
 import * as path from "path";
 
 
-const pages = ['about', 'blog', 'services',]
+const pages = [
+  {
+    path: 'about',
+    page: 'about'
+  },
+  {
+    path: 'blog',
+    page: 'blog'
+  },
+  {
+    path: 'services',
+    page: 'services'
+  },
+  {
+    path: '/',
+    page: 'home'
+  },
+]
+
 
 interface PostQuery {
   allMarkdownRemark: {
@@ -30,7 +48,7 @@ export const createPages = async ({
   const { createPage } = actions;
   const result = await graphql<PostQuery>(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark (filter: {fields: {slug: {regex: "/blog/"}}}) {
         edges {
           node {
             id
@@ -51,9 +69,9 @@ export const createPages = async ({
     throw new Error("Unexpected error from graphql query during create pages");
   }
 
-  pages.forEach(page => {
+  pages.forEach(({ path: href, page }) => {
     createPage({
-      path: `/${page}`,
+      path: href,
       component: path.resolve(`src/createPages/templates/${page}.tsx`),
       context: {},
     });
@@ -61,7 +79,8 @@ export const createPages = async ({
   })
 
 
-  const posts = result.data?.allMarkdownRemark.edges;
+  const posts = result.data?.allMarkdownRemark.edges
+
   const tagsCollection = new Set<string>();
 
   if (!posts) throw new Error("No blog posts found");
@@ -71,6 +90,7 @@ export const createPages = async ({
       id,
       frontmatter: { tags },
     } = edge.node;
+
     tags.forEach((tag) => tagsCollection.add(tag));
     createPage({
       path: edge.node.fields.slug,

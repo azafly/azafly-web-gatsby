@@ -27,12 +27,12 @@ collections:
       - {label: "Image Caption", name: "imgAlt", widget: string}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - label: "Pages"   
-    name: "pages"   
-    files:      
+  - name: "Pages"   
+    label: "pages"   
+    files:  
+      - file: "content/home.md"    
       - label: "Home Page"        
-        name: "home"        
-        file: "content/home.md"        
+        name: "home"           
         fields:       
           - {label: Title, name: title, widget: string}          
           - {label: Intro text, name: intro, widget: text}          

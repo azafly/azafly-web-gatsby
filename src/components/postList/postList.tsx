@@ -47,7 +47,7 @@ export const PostListItem: FunctionComponent<PostSnippet> = ({
             </h3>
           </Link>
           <div className="text-sm leading-5 font-medium text-indigo-600">
-            {tags.map((tag, index) => (
+            {tags?.map((tag, index) => (
               <span key={index} className="mr-4">
                 <Link to={`/tags/${tag}`} className={`${classes.tag} hover:no-underline`}>
                   #{tag}

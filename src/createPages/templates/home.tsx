@@ -9,37 +9,8 @@ import { SEO } from "../../components/seo";
 
 export const pageQuery = graphql`
   {
-    featuredPosts: allMarkdownRemark(
+    homeData: allMarkdownRemark(
       limit: 4
-      sort: { fields: [frontmatter___publishedDate], order: DESC }
-      filter: { frontmatter: { featured: { eq: true } } }
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            tags
-            title
-            imgAlt
-            description
-            publishedDate
-            img {
-              childImageSharp {
-                fluid(maxWidth: 2400, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    recentPosts: allMarkdownRemark(
-      limit: 10
-      sort: { fields: [frontmatter___publishedDate], order: DESC }
     ) {
       edges {
         node {
@@ -98,24 +69,13 @@ interface Home {
 }
 
 const Home: FunctionComponent<Home> = ({ data }) => {
-    const mapPostData = ({ node }: { node: Post["node"] }) => ({
-        title: node.frontmatter.title,
-        summary: node.frontmatter.description,
-        href: node.fields.slug,
-        img: node.frontmatter.img.childImageSharp.fluid,
-        imgAlt: node.frontmatter.imgAlt,
-        tags: node.frontmatter.tags,
-        publishedDate: new Date(node.frontmatter.publishedDate),
-    });
-    const featuredPostData: PostSnippet[] = data.featuredPosts.edges.map(
-        mapPostData
-    );
-    console.log(featuredPostData)
+
+
     return (
         <>
             <SEO title="Home" image="/logo.png" />
             <Layout>
-                <FeaturePosts featurePosts={featuredPostData} />
+
             </Layout>
         </>
     );
