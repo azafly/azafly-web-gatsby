@@ -10,6 +10,9 @@ export interface PostList {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    root: {
+
+    },
     tag: {
       color: theme.colors.mainGreen
     }
@@ -26,7 +29,7 @@ export const PostListItem: FunctionComponent<PostSnippet> = ({
 }) => {
   const classes = useStyles()
   return (
-    <div className="flex mb-16 sm:mb-28 flex-col sm:flex-row">
+    <div className={`${classes.root} flex mb-16 sm:mb-28 flex-col sm:flex-row`}>
       <div className="flex-shrink-0 mr-0 sm:mr-8 mb-6 sm:mb-0">
         <Link to={href} className={`hover:no-underline`}>
           <Image

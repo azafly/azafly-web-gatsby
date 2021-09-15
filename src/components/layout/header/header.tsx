@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme: Theme) =>
       right: 0,
       justifySelf: 'flex-end'
     },
-    downloadLink: {
+    authLink: {
       flexGrow: 1,
       marginLeft: 70,
       fontWeight: 500,
@@ -105,6 +105,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontWeight: 500,
       paddingRight: 25,
       paddingLeft: 25,
+      textDecoration: 'none',
       transition: 'background .25s ease-in -out, transform .15s ease,- webkit - transform .15s ease',
       '&:hover': {
         opacity: 0.9,
@@ -118,7 +119,8 @@ const useStyles = makeStyles((theme: Theme) =>
       textTransform: 'capitalize',
       marginRight: '2vw',
       fontWeight: 500,
-      color: theme.palette.secondary.main
+      color: theme.palette.secondary.main,
+      textDecoration: 'none'
     },
     underline: {
       border: '3px solid #4990A4'
@@ -177,11 +179,9 @@ export const Header = ({ handleDrawerOpen, open, location }: NavbarProps) => {
                   </MenuItem></Link>
               })}
             </section>
-            <section className={classes.downloadLink}>
-              <>
-                <Button component={Link} className={classes.signin} >Sign in</Button>
-                <Button component={Link} className={classes.register} >Register</Button>
-              </>
+            <section className={classes.authLink}>
+              <Button component={Link} className={classes.signin} >Sign in</Button>
+              <Button component={Link} className={classes.register} >Register</Button>
             </section>
           </Toolbar>
         </AppBar>}

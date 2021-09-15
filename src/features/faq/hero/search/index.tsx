@@ -36,7 +36,7 @@ export const SearchContainer = () => {
     return (
         <div className={classes.searchRoot}>
             <div className="s">
-                <Typography color="textSecondary" className={classes.heading} variant="h4" gutterBottom align="center"> How can we help you?</Typography>
+                <Typography color="textSecondary" className={`${classes.heading} font-bolder`} variant="h4" gutterBottom align="center"> How can we help you?</Typography>
                 <div className={classes.search}>
                     <Paper elevation={0} component="form" className={classes.search}>
                         <InputBase

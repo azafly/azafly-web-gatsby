@@ -61,7 +61,7 @@ export const useSearchContainerStyle = makeStyles((theme: Theme) =>
             height: '100%',
             marginTop: '20vh',
             [theme.breakpoints.down('sm')]: {
-                marginTop: '10vh'
+                marginTop: '5vh'
             },
         },
         search: {
@@ -105,7 +105,7 @@ export const useSearchContainerStyle = makeStyles((theme: Theme) =>
 export const useCardStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            boxShadow: ' 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+            boxShadow: '0 1px 2px rgba(0,0,0,0.24)',
             maxWidth: 345,
             zIndex: 99,
             [theme.breakpoints.up('md')]: {
