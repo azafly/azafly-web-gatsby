@@ -9,9 +9,7 @@ import { SEO } from "../../components/seo";
 
 export const pageQuery = graphql`
   {
-    homeData: allMarkdownRemark(
-      limit: 4
-    ) {
+    homeData: allMarkdownRemark(filter: {frontmatter: {title: {regex: "/Home/"}}})  {
       edges {
         node {
           id
@@ -38,7 +36,7 @@ export const pageQuery = graphql`
   }
 `;
 
-interface Post {
+interface Home {
     node: {
         id: string;
         fields: {
@@ -57,10 +55,10 @@ interface Post {
 
 interface QueryData {
     featuredPosts: {
-        edges: Post[];
+        edges: Home[];
     };
     recentPosts: {
-        edges: Post[];
+        edges: Home[];
     };
 }
 
