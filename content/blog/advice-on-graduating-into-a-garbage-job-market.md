@@ -13,6 +13,7 @@ tags:
   - opinion
   - finance
   - economy
+  - hc-general
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl vel pretium lectus quam. Enim neque volutpat ac tincidunt vitae semper quis lectus. At erat pellentesque adipiscing commodo elit at. Hendrerit dolor magna eget est lorem ipsum. Congue nisi vitae suscipit tellus mauris a. In cursus turpis massa tincidunt. Massa tempor nec feugiat nisl pretium fusce. Vitae auctor eu augue ut lectus arcu bibendum at. Nulla aliquet porttitor lacus luctus accumsan tortor. Blandit cursus risus at ultrices mi tempus imperdiet nulla. Feugiat in fermentum posuere urna nec. Neque egestas congue quisque egestas diam. Et egestas quis ipsum suspendisse.
 
