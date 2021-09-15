@@ -82,15 +82,15 @@ interface QueryData {
     };
 }
 
-interface About {
+interface Services {
     data: QueryData;
 }
 
-const About: FunctionComponent<About> = ({ data }) => {
+const Services: FunctionComponent<Services> = ({ data }) => {
     console.log(data)
     return (
         <>
-            <SEO title="About" image="/logo.png" />
+            <SEO title="Services" image="/logo.png" />
             <Layout>
                 <div></div>
             </Layout>
@@ -98,4 +98,4 @@ const About: FunctionComponent<About> = ({ data }) => {
     );
 };
 
-export default About;
+export default Services;

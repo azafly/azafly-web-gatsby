@@ -1,6 +1,9 @@
 import { CreatePagesArgs } from "gatsby";
 import * as path from "path";
 
+
+const pages = ['about', 'blog', 'services',]
+
 interface PostQuery {
   allMarkdownRemark: {
     edges: {
@@ -48,23 +51,15 @@ export const createPages = async ({
     throw new Error("Unexpected error from graphql query during create pages");
   }
 
-  createPage({
-    path: "/blog",
-    component: path.resolve(`src/createPages/templates/blog.tsx`),
-    context: {},
-  });
+  pages.forEach(page => {
+    createPage({
+      path: `/${page}`,
+      component: path.resolve(`src/createPages/templates/${page}.tsx`),
+      context: {},
+    });
 
-  createPage({
-    path: "/",
-    component: path.resolve(`src/createPages/templates/home.tsx`),
-    context: {},
-  });
+  })
 
-  createPage({
-    path: "/about",
-    component: path.resolve(`src/createPages/templates/about.tsx`),
-    context: {},
-  });
 
   const posts = result.data?.allMarkdownRemark.edges;
   const tagsCollection = new Set<string>();
