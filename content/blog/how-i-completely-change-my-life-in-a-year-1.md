@@ -1,7 +1,7 @@
 ---
 template: blog-post
 title: How I completely change my life in a year
-publishedDate: 2020-06-10T16:02:46.329Z
+publishedDate: 2021-09-15T17:12:11.485Z
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua.
 featured: true
