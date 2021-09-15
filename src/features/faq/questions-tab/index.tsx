@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useTabStyles } from '../classes';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import { Box, Tab, Tabs, Typography } from '@material-ui/core';
 
 
 
-import { getFakeArticles, categories } from '../../../mocks/faq'
+import { getFakeArticles } from '../../../mocks/faq'
 import { CollapsibleList } from './collapsible-list'
-
+import { useTabStyles } from '../classes';
 
 type TabValue = 'general' | 'payments' | 'visa and immigration' | 'refund' | 'services'
 
@@ -50,12 +46,8 @@ function a11yProps(index: any, isVertical?: boolean) {
 }
 
 
-interface QuestionsTabsConatinerProps {
-    isVertical?: boolean
-}
 
-
-export function QuestionsTabsConatiner({ isVertical = true }: QuestionsTabsConatinerProps) {
+export function QuestionsTabsConatiner() {
     const classes = useTabStyles();
     const [articles, setArticles] = useState<any>([])
     const [value, setValue] = useState(0);
@@ -71,29 +63,30 @@ export function QuestionsTabsConatiner({ isVertical = true }: QuestionsTabsConat
     }, [])
 
 
-    const tabOrientation = isVertical ? 'vertical' : 'horizontal'
-
-
     return (
         <div className={classes.tabContainer}>
             <Typography className={classes.title} variant="h5" gutterBottom color='secondary'>Frequently Asked Questions</Typography>
             <div className={classes.root}>
                 <Tabs
-                    orientation={tabOrientation}
+                    orientation={'vertical'}
                     value={value}
                     onChange={handleChange}
                     aria-label="faq tabs"
+                    indicatorColor="secondary"
                     className={classes.tabs}
                 >
                     {articles.map((article: any, index: number) => {
-                        return <Tab label={article[0]} {...a11yProps(index)} />
+                        return <Tab label={article[0]} {...a11yProps(index)} className={classes.tab} />
                     })}
                 </Tabs>
-                {articles.map((article: any, index: number) => {
-                    return <TabPanel value={value} index={index} >
-                        <CollapsibleList articles={article[1]} />
-                    </TabPanel>
-                })}
+                <div className="container">
+                    {articles.map((article: any, index: number) => {
+                        return <TabPanel value={value} index={index} >
+                            <CollapsibleList articles={article[1]} />
+                        </TabPanel>
+                    })}
+                </div>
+
             </div>
         </div>
     );

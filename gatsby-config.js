@@ -16,8 +16,6 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-typescript",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-robots-txt",
     {
       resolve: `gatsby-theme-material-ui`,
       options: {
@@ -33,6 +31,8 @@ module.exports = {
         },
       },
     },
+
+    "gatsby-plugin-robots-txt",
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
@@ -67,6 +67,14 @@ module.exports = {
           },
         ],
       },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ // See below to configure properly
+        }
+      }
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",

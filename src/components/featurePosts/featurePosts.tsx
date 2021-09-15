@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 import { createStyles, makeStyles, Theme } from '@material-ui/core'
 import Image from "gatsby-image";
 import { PostSnippet } from "../../types";
+import { Link } from "gatsby-theme-material-ui";
 
 export interface FeaturePosts {
   featurePosts: PostSnippet[];
@@ -10,7 +11,8 @@ export interface FeaturePosts {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     tag: {
-      color: theme.colors.mainGreen
+      color: theme.colors.mainGreen,
+      textDecoration: 'none'
     }
   }),
 );
@@ -28,31 +30,31 @@ export const FeaturePost: FunctionComponent<PostSnippet> = ({
   return (
     <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
       <div className="flex-shrink-0">
-        <a href={href}>
+        <Link to={href} className="hover:no-underline">
           <Image
             fluid={img}
             alt={imgAlt || title}
             className="h-48 w-full object-cover"
           />
-        </a>
+        </Link>
       </div>
       <div className="flex-1 bg-white p-6 flex flex-col justify-between">
         <div className="flex-1">
           <p className="text-sm leading-5 font-medium text-indigo-600">
             {tags.map((tag, index) => (
               <span key={index}>
-                <a href={`/tags/${tag}`} className={`${classes.tag} hover:underline`}>
+                <Link to={`/tags/${tag}`} className={`${classes.tag} hover:no-underline`}>
                   #{tag}
-                </a>{" "}
+                </Link>{" "}
               </span>
             ))}
           </p>
-          <a href={href} className="block">
-            <h3 className="mt-2 text-xl leading-7 font-semibold text-gray-900">
+          <Link to={href} className="block hover:no-underline">
+            <h3 className="mt-2 text-xl leading-7 font-semibold text-gray-900 ">
               {title}
             </h3>
-            <p className="mt-3 text-base leading-6 text-gray-500">{summary}</p>
-          </a>
+            <p className="mt-3 text-base leading-6 text-gray-500 hover:no-underline">{summary}</p>
+          </Link>
         </div>
       </div>
     </div>
@@ -68,7 +70,7 @@ export const TopFeaturePost: FunctionComponent<PostSnippet> = ({
 }) => {
   return (
     <div>
-      <a href={href}>
+      <Link to={href} className=" hover:no-underline">
         <Image
           fluid={img}
           alt={imgAlt || title}
@@ -78,7 +80,7 @@ export const TopFeaturePost: FunctionComponent<PostSnippet> = ({
         <div className="mb-16 max-w-prose mx-auto text-center text-lg text-gray-600">
           {summary}
         </div>
-      </a>
+      </Link>
     </div>
   );
 };

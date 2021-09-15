@@ -1,12 +1,10 @@
 import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Collapse from '@material-ui/core/Collapse';
 import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { lighten } from '@material-ui/core';
+
 
 interface CardProps {
     title: string
@@ -17,75 +15,38 @@ interface CardProps {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            margin: 'auto',
-            alignSelf: 'start',
-            boxShadow: '0 2px 16px 0 rgba(0, 0, 0, .08)',
+            alignSelf: 'center',
             borderRadius: 12,
-
-        },
-        media: {
+            marginBottom: 10,
+            cursor: 'pointer',
+            boxShadow: '0 2px 16px 0 rgb(0 0 0 / 8%)',
             margin: 'auto',
-            paddingTop: 50,
-            width: '100%',
-            display: 'flex'
-        },
-        expand: {
-            transform: 'rotate(0deg)',
-            marginLeft: 'auto',
-            transition: theme.transitions.create('transform', {
-                duration: theme.transitions.duration.shortest,
-            }),
-        },
-        expandOpen: {
-            transform: 'rotate(180deg)',
-        },
-        cardAction: {
-            marginTop: 10,
-            marginBottom: 30,
-            display: 'flex',
-            justifyContent: 'center'
-
-        },
-        mainButton: {
-            textTransform: 'none',
-            width: 150,
-            boxShadow: 'none',
-            background: lighten(`${theme.colors.mainGreen}`, 0.2),
-        },
-        learnMore: {
-            fontWeight: 400,
-            fontSize: '0.8rem',
-            color: theme.colors.mainGreen,
-            textTransform: 'none',
-            textAlign: 'center',
-            marginTop: 10,
-            cursor: 'pointer'
-
+            width: '90%',
+            [theme.breakpoints.up('md')]: {
+                width: '80%',
+            }
 
         },
         heading: {
-            fontWeight: 900,
-            color: '#333333',
-            padding: '20px 0px',
-            textAlign: 'center'
-        },
-        '& svg': {
-            width: 150,
-            margin: 'auto',
-            height: 150
-        },
-        paragraph: {
             fontWeight: 400,
-            fontSize: '0.8rem',
-            color: '#999999',
-            textAlign: 'center'
-
+            display: 'flex',
+            letterSpacing: '0.4',
+            justifyContent: 'space-between',
+            [theme.breakpoints.only('xs')]: {
+                fontSize: '0.8rem',
+            },
+            '& .expand-toggle': {
+                color: theme.colors.mainGreen,
+                fontWeight: 800,
+                fontSize: '1rem',
+                marginRight: -3,
+                cursor: 'pointer'
+            }
         },
         description: {
             fontSize: '0.8rem',
             letterSpacing: '0.4'
         },
-
     }),
 );
 
@@ -98,28 +59,14 @@ export function FaqCollapisbleCard({ title, content }: CardProps) {
         setExpanded(!expanded);
     };
 
+    const expandIcon = expanded ? 'x' : '+'
     return (
-        <Card className={classes.root}>
+        <Card className={classes.root} onClick={handleExpandClick} elevation={0}>
             <CardContent>
                 <Typography color="textSecondary" className={classes.heading}>
-                    {title}
-                </Typography>
-                <Typography
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                    className={classes.learnMore}
-                >
-                    Learn more
-                        <ExpandMoreIcon className={clsx(classes.expand, {
-                    [classes.expandOpen]: expanded,
-                })} />
-
+                    <span>{title}</span>  <span onClick={handleExpandClick} className={'expand-toggle'}> {expandIcon}</span>
                 </Typography>
             </CardContent>
-
-
-
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
                     <Typography className={classes.description} paragraph>

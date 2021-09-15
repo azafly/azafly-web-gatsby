@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { graphql } from "gatsby";
 import { FluidObject } from "gatsby-image";
-import { Disqus } from 'gatsby-plugin-disqus';
-
 
 import { Layout } from "../../components/layout";
 import { PostSnippet } from "../../types";

@@ -3,6 +3,8 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core'
 import { format } from "date-fns";
 import Image, { FluidObject } from "gatsby-image";
 import { Layout } from "../../components/layout";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { Link } from "gatsby-theme-material-ui";
 
 
 interface BlogPost {
@@ -15,8 +17,23 @@ interface BlogPost {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    root: {
+      color: theme.colors.black
+    },
     tag: {
       color: theme.colors.mainGreen
+    },
+    blogLink: {
+      fontWeight: "bolder",
+      cursor: 'pointer',
+      color: theme.colors.black
+    },
+    heroImage: {
+      [theme.breakpoints.up('sm')]: {
+        height: 500,
+        width: '60vw',
+        margin: 'auto'
+      }
     }
   }),
 );
@@ -33,30 +50,31 @@ export const BlogPost: FunctionComponent<BlogPost> = ({
   const classes = useStyles()
   return (
     <Layout>
-      <div className="">
-        <h1 className="text-3xl sm:text-5xl text-center font-bold mt-8 mb-2">
+      <div className={classes.root}>
+        <h1 className="text-2xl sm:text-4xl text-center font-bold mt-8 mb-2">
           {title}
         </h1>
         <div className="text-center mb-3 text-gray-500">
           {format(publishedDate, "dd MMM, yyyy")}
         </div>
         <div className="text-center mb-3 text-gray-500">
+          <Link to="/blog" className={classes.blogLink} ><ArrowBackIcon /> Back </Link>
           {tags.map((tag, index) => (
-            <span
+            <Link to={`/tags/${tag}`}
               key={index}
-              className={`${classes.tag}text-sm leading-5 font-medium text-indigo-600 mx-2`}
+              className={`${classes.tag}text-sm leading-5 font-medium mx-2`}
             >
-              <a className={classes.tag} href={`/tags/${tag}`}>#{tag}</a>
-            </span>
+              #{tag}
+            </Link>
           ))}
         </div>
-        <Image fluid={img} alt={imgAlt || title} className="w-full" />
+        <Image fluid={img} alt={imgAlt || title} className={classes.heroImage} />
         {imgAlt && (
           <div className="text-center my-2 text-gray-500">{imgAlt}</div>
         )}
         <div className="flex justify-center">
           <div className="max-w-screen-lg">
-            <div className="prose sm:prose-lg md:prose-xl text-gray-700">
+            <div className="prose sm:prose-md md:prose-lg text-gray-700">
               {children}
             </div>
           </div>

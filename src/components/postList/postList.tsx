@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { createStyles, makeStyles, Theme } from '@material-ui/core'
+import { Link } from "gatsby-theme-material-ui";
 import Image from "gatsby-image";
 import { PostSnippet } from "../../types";
 
@@ -27,38 +28,38 @@ export const PostListItem: FunctionComponent<PostSnippet> = ({
   return (
     <div className="flex mb-16 sm:mb-28 flex-col sm:flex-row">
       <div className="flex-shrink-0 mr-0 sm:mr-8 mb-6 sm:mb-0">
-        <a href={href}>
+        <Link to={href} className={`hover:no-underline`}>
           <Image
             fluid={img}
             alt={imgAlt || title}
             className="h-48 w-full sm:w-48 xl:h-52 xl:w-52 object-cover rounded-sm"
           />
-        </a>
+        </Link>
       </div>
       <div className="flex-1 flex flex-col justify-between">
         <div className="block">
-          <a href={href}>
+          <Link to={href} className={`hover:no-underline`}>
             <h3 className="mb-2 text-xl leading-7 font-semibold text-gray-900">
               {title}
             </h3>
-          </a>
+          </Link>
           <div className="text-sm leading-5 font-medium text-indigo-600">
             {tags.map((tag, index) => (
               <span key={index} className="mr-4">
-                <a href={`/tags/${tag}`} className={`${classes.tag} hover:underline`}>
+                <Link to={`/tags/${tag}`} className={`${classes.tag} hover:no-underline`}>
                   #{tag}
-                </a>
+                </Link>
               </span>
             ))}
           </div>
-          <a href={href}>
-            <p className="mt-3 text-base leading-6 text-gray-500">{summary}</p>
-          </a>
+          <Link to={href} className="hover:no-underline">
+            <p className="mt-3 text-base leading-6 text-gray-500 hover:no-underline">{summary}</p>
+          </Link>
         </div>
         <div className="mt-4">
-          <a href={href} className="block font-medium tracking-wide">
+          <Link to={href} className="block font-medium tracking-wide">
             Read More
-          </a>
+          </Link>
         </div>
       </div>
     </div>

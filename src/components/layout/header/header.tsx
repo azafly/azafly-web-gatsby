@@ -1,17 +1,14 @@
-import React from "react";
-import { AppBar, Toolbar, Button, IconButton, useMediaQuery, MenuItem, Link } from '@material-ui/core';
+import { AppBar, Toolbar, Button, IconButton, useMediaQuery, MenuItem } from '@material-ui/core';
+import { Link } from "gatsby-theme-material-ui";
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { useState } from 'react';
 import clsx from 'clsx';
-import { Logo1SvgComponent } from '../../common/icons'
 import MenuIcon from '@material-ui/icons/Menu';
-
+import React from "react";
 
 import { deskTopNavItems } from '../../../lib/constants';
-import { useState } from 'react';
+import { Logo1SvgComponent } from '../../common/icons'
 
-
-
-import { ThreeDots } from '../../common/css-loaders/three-dots/three-dots';
 
 interface NavbarProps {
   handleDrawerOpen?: () => void
@@ -129,7 +126,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const Header = ({ handleDrawerOpen, open, classNames, location }: NavbarProps) => {
+export const Header = ({ handleDrawerOpen, open, location }: NavbarProps) => {
   const classes = useStyles()
   const [currentLink, setCurrentLink] = useState('')
 
@@ -152,9 +149,7 @@ export const Header = ({ handleDrawerOpen, open, classNames, location }: NavbarP
           })}
         >
           <Toolbar>
-            {/* <Typography to="/" component={Link} variant="h6" noWrap className={`${classes.logo}`}> */}
-            <Link className={`${classes.logo}`}><Logo1SvgComponent /> </Link>
-            {/* </Typography> */}
+            <Link to="/" className={`${classes.logo}`}><Logo1SvgComponent /> </Link>
             <IconButton
               color="secondary"
               aria-label="open drawer"
@@ -171,10 +166,10 @@ export const Header = ({ handleDrawerOpen, open, classNames, location }: NavbarP
           elevation={0}
         >
           <Toolbar className={classes.toolBar}>
-            <Link className={`${classes.logo}`}><Logo1SvgComponent /> </Link>
+            <Link to="/" className={`${classes.logo}`}><Logo1SvgComponent /> </Link>
             <section className={classes.links}>
               {deskTopNavItems.map(({ name, route }) => {
-                return <Link href={route} className={clsx({
+                return <Link to={route} className={clsx({
                   [classes.underline]: currentLink === name,
                   [classes.active]: setActive(route)
                 })} onClick={() => handleClickListItem(name)} key={name} style={{ textDecoration: 'none' }}> <MenuItem className={classes.links}>
@@ -182,22 +177,12 @@ export const Header = ({ handleDrawerOpen, open, classNames, location }: NavbarP
                   </MenuItem></Link>
               })}
             </section>
-            {false ? <ThreeDots /> :
-              <section className={classes.downloadLink}>
-
-                {false ?
-                  <Button className={classes.register}
-                    component={Link}
-
-                  >Go to Dashboard </Button>
-                  :
-                  <>
-                    <Button component={Link} className={classes.signin} >Sign in</Button>
-                    <Button component={Link} className={classes.register} >Register</Button>
-                  </>
-                }
-              </section>
-            }
+            <section className={classes.downloadLink}>
+              <>
+                <Button component={Link} className={classes.signin} >Sign in</Button>
+                <Button component={Link} className={classes.register} >Register</Button>
+              </>
+            </section>
           </Toolbar>
         </AppBar>}
     </div >
