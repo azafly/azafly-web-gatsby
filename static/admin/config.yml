@@ -30,8 +30,8 @@ collections:
   - name: "Pages"   
     label: "pages"   
     files:  
-      - file: "content/home.md"    
-      - label: "Home Page"        
+      - label: "Home Page"  
+        file: "content/home.md"     
         name: "home"           
         fields:       
           - {label: Title, name: title, widget: string}          
@@ -59,7 +59,6 @@ collections:
           - {label: Coming Soon heading, name: comingSoonHeading, widget: string}
           - {label: Coming Soon paragraph, name: comingSoonParagraph, widget: string}
           - {label: Coming Soon button, name: comingSoonButton, widget: string}
-          
       - label: "About Page"        
         name: "About"        
         file: "content/about.md"        
