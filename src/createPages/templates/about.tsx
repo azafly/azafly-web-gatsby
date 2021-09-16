@@ -39,7 +39,6 @@ interface About {
 }
 
 const About: FunctionComponent<About> = ({ data }) => {
-    console.log(data)
     return (
         <>
             <SEO title="About" image="/logo.png" />

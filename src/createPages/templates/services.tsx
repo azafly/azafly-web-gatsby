@@ -37,7 +37,7 @@ interface Services {
 }
 
 const Services: FunctionComponent<Services> = ({ data }) => {
-    console.log(data)
+
     return (
         <>
             <SEO title="Services" image="/logo.png" />

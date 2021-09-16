@@ -2620,6 +2620,10 @@ video {
   color: rgba(55, 65, 81, var(--text-opacity));
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .capitalize {
   text-transform: capitalize;
 }

@@ -35,9 +35,10 @@ collections:
         name: "home"           
         fields:       
           - {label: Title, name: title, widget: string}          
-          - {label: Intro text, name: intro, widget: text}          
+          - {label: Intro heading, name: intro, widget: text}   
+          - {label: Intro paragraph, name: intro-paragraph, widget: text}                 
           - {label: Image, name: image, widget: image}
-          - {label: Image, name: paymentImage, widget: image}
+          - {label: Payment Image, name: paymentImage, widget: image}
           - {label: Offer Text, name: offerText, widget: string}
           - {label: Consult button, name: consultButtonText, widget: string}
           - {label: Payment Button, name: paymentButtonText, widget: string}
