@@ -127,7 +127,7 @@ export function Services() {
 
     return (
         <div className={classes.container}>
-            <ServicesBG2 className={classes.bgIllustration2} />
+            {/* <ServicesBG2 className={classes.bgIllustration2} /> */}
             <div className={classes.titleWrapper}>
                 <Typography variant='h3' className={classes.title}>
                     We put all the pieces together

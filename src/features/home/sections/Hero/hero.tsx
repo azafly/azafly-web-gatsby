@@ -3,7 +3,7 @@ import { Box, makeStyles, Theme, createStyles } from '@material-ui/core';
 import { Illustration } from './illustration'
 import { InfoBanner } from './info-banner';
 import React from "react";
-import { HomeBGIllustration2, HomeBGIllustration3 } from '../../../../components/illustrations/backgrounds'
+// import { HomeBGIllustration2, HomeBGIllustration3 } from '../../../../components/illustrations/backgrounds'
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -57,7 +57,7 @@ export const HomePageHeroSection = ({ frontMatter }: HomePageHeroSectionProps) =
 
     return (
         <div className={classes.homePageHeroMain}>
-            <HomeBGIllustration2 className={classes.homeBgllustration2} /> <HomeBGIllustration3 className={classes.homeBgllustration3} />
+            {/* <HomeBGIllustration2 className={classes.homeBgllustration2} /> <HomeBGIllustration3 className={classes.homeBgllustration3} /> */}
             <Grid container justify="space-around" spacing={3} alignItems="center" className={classes.homePageHeroInner}>
                 <Box clone order={{ xs: 2, sm: 1 }}>
                     <Grid item xs={12} sm={6}>

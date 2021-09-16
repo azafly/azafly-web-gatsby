@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme: Theme) =>
                 justifyContent: 'flex-start',
             },
             [theme.breakpoints.only("xs")]: {
-                marginTop: -210,
+                marginTop: -100,
+                paddingBottom: 50,
             },
             [theme.breakpoints.down("md")]: {
                 justifyContent: 'center',

@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme: Theme) =>
             width: '100%',
             height: 'auto',
             background: theme.palette.primary.main,
-            [theme.breakpoints.only('sm')]: {
-                padding: '20px 10px',
+            [theme.breakpoints.down('sm')]: {
+                padding: '50px 10px',
             },
             [theme.breakpoints.up('md')]: {
                 padding: '50px 10px',
