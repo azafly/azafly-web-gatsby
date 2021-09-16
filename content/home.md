@@ -1,6 +1,6 @@
 ---
 title: Home Page
-intro: Let's make you dreams fly!
+intro: Let's make your dreams fly!
 intro-paragraph: We offer world-class guidance to your dream world.
 image: ../../static/images/man-sunrise.jpeg
 paymentImage: ../../static/images/tables.jpeg
