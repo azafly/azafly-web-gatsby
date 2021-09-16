@@ -1,6 +1,5 @@
 
 import React from 'react';
-import clsx from 'clsx';
 
 
 // Material
@@ -34,18 +33,6 @@ const useStyles = makeStyles((theme: Theme) =>
         hide: {
             display: 'none',
         },
-        menuIcon: {
-            color: theme.palette.primary.main
-        },
-        drawer: {
-            width: drawerWidth,
-            flexShrink: 0,
-        },
-        drawerPaper: {
-            width: drawerWidth,
-            background: 'white',
-            filter: 'brightness(0.95)'
-        },
         drawerHeader: {
             display: 'flex',
             alignItems: 'center',
@@ -62,12 +49,6 @@ const useStyles = makeStyles((theme: Theme) =>
             transition: theme.transitions.create('margin', {
                 easing: theme.transitions.easing.sharp,
                 duration: theme.transitions.duration.leavingScreen,
-            }),
-        },
-        contentShift: {
-            transition: theme.transitions.create('margin', {
-                easing: theme.transitions.easing.easeOut,
-                duration: theme.transitions.duration.enteringScreen,
             }),
         },
         setupAndDesignSection: {
@@ -108,9 +89,7 @@ const Home = ({ frontMatter }: HomePops) => {
 
     return (
         <div className={classes.container}>
-            <main className={clsx(classes.content, {
-                [classes.contentShift]: open,
-            })}>
+            <main className={classes.content}>
                 <div className={classes.drawerHeader}></div>
                 <HomePageHeroSection frontMatter={frontMatter} />
                 <Services />

@@ -36,7 +36,6 @@ export const MenuListItem = ({ text, children, onClick }: PropsWithChildren<Menu
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             component={motion.li}
-
             button key={text} onClick={onClick}>
             <ListItemIcon>{children}</ListItemIcon>
             <ListItemText primary={text} />

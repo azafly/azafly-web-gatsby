@@ -16,31 +16,31 @@ export const sideMenu: SideMenu[] = [
     {
         name: 'Home',
         isOpened: false,
-        icon: <HomeSvgComponent />,
+        icon: <HomeSvgComponent stroke={'#0d324d'} />,
         route: '/'
     },
     {
         name: 'Services',
         isOpened: false,
-        icon: <HomeSvgComponent />,
+        icon: <HomeSvgComponent stroke={'#0d324d'} />,
         route: '/services'
     },
     {
         name: 'Blog',
         isOpened: false,
-        icon: <ActivitySvgComponent />,
+        icon: <ActivitySvgComponent stroke={'#0d324d'} />,
         route: '/blog'
     },
     {
         name: 'Register',
         isOpened: false,
-        icon: <ActivitySvgComponent />,
+        icon: <ActivitySvgComponent stroke={'#0d324d'} />,
         route: '/signup'
     },
     {
         name: 'Support',
         isOpened: false,
-        icon: <ActivitySvgComponent />,
+        icon: <ActivitySvgComponent stroke={'#0d324d'} />,
         route: '/faq'
     },
 ]
