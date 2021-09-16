@@ -8,6 +8,7 @@ import React from "react";
 
 import { deskTopNavItems } from '../../../lib/constants';
 import { Logo1SvgComponent } from '../../common/icons'
+import { MobileSideDrawer } from '../../mobile-side-drawer';
 
 
 interface NavbarProps {
@@ -109,6 +110,7 @@ const useStyles = makeStyles((theme: Theme) =>
       transition: 'background .25s ease-in -out, transform .15s ease,- webkit - transform .15s ease',
       '&:hover': {
         opacity: 0.9,
+        textDecoration: 'none',
         background: theme.palette.primary.main,
         transform: 'scale(1.01)',
         borderRadius: 6
@@ -120,7 +122,10 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: '2vw',
       fontWeight: 500,
       color: theme.palette.secondary.main,
-      textDecoration: 'none'
+      textDecoration: 'none',
+      '&:hover': {
+        textDecoration: 'none',
+      },
     },
     underline: {
       border: '3px solid #4990A4'
@@ -128,12 +133,24 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const Header = ({ handleDrawerOpen, open, location }: NavbarProps) => {
+export const Header = ({ location }: NavbarProps) => {
   const classes = useStyles()
   const [currentLink, setCurrentLink] = useState('')
 
+  const [open, setOpen] = React.useState(false);
 
   const isSmallScreen = useMediaQuery('(max-width:950px)');
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
+
+
 
   const handleClickListItem = (name: string) => {
     setCurrentLink(name);
@@ -142,6 +159,7 @@ export const Header = ({ handleDrawerOpen, open, location }: NavbarProps) => {
 
   return (
     <div className={`${classes.navbarContainer} classNames`}>
+      <MobileSideDrawer open={open} handleDrawerClose={handleDrawerClose} isSmallScreen={isSmallScreen} />
       { isSmallScreen ?
         <AppBar
           elevation={0}

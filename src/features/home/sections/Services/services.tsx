@@ -1,5 +1,5 @@
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Typography, Grid, } from '@material-ui/core';
+import { Typography, Grid, Hidden } from '@material-ui/core';
 import React from "react";
 import { ServicesBG2 } from '../../../../components/illustrations/backgrounds';
 import { ServiceCard } from './service-card';
@@ -127,7 +127,9 @@ export function Services() {
 
     return (
         <div className={classes.container}>
-            {/* <ServicesBG2 className={classes.bgIllustration2} /> */}
+            <Hidden>
+                <ServicesBG2 className={classes.bgIllustration2} />
+            </Hidden>
             <div className={classes.titleWrapper}>
                 <Typography variant='h3' className={classes.title}>
                     We put all the pieces together
