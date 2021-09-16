@@ -1,6 +1,7 @@
 ---
 title: Home Page
-intro: Planning a move? We got you covered
+intro: Let's make you dreams fly!
+intro-paragraph: We offer world-class guidance to your dream world.
 image: ../../static/images/man-sunrise.jpeg
 paymentImage: ../../static/images/tables.jpeg
 offerText: Get 10% off your 1st service, or when you refer a friend!
