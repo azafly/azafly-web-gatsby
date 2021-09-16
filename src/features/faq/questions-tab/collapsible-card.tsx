@@ -1,9 +1,7 @@
 import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Collapse from '@material-ui/core/Collapse';
-import Typography from '@material-ui/core/Typography';
+import { Box, Card, CardContent, Collapse, Typography } from '@material-ui/core';
+
 
 
 interface CardProps {
@@ -61,19 +59,22 @@ export function FaqCollapisbleCard({ title, content }: CardProps) {
 
     const expandIcon = expanded ? 'x' : '+'
     return (
-        <Card className={classes.root} onClick={handleExpandClick} elevation={0}>
-            <CardContent>
-                <Typography color="textSecondary" className={classes.heading}>
-                    <span>{title}</span>  <span onClick={handleExpandClick} className={'expand-toggle'}> {expandIcon}</span>
-                </Typography>
-            </CardContent>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <Box boxShadow={0} >
+            <Card className={classes.root} onClick={handleExpandClick} >
                 <CardContent>
-                    <Typography className={classes.description} paragraph>
-                        {content}
+                    <Typography color="textSecondary" className={classes.heading}>
+                        <span>{title}</span>  <span onClick={handleExpandClick} className={'expand-toggle'}> {expandIcon}</span>
                     </Typography>
                 </CardContent>
-            </Collapse>
-        </Card >
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                    <CardContent>
+                        <Typography className={classes.description} paragraph>
+                            {content}
+                        </Typography>
+                    </CardContent>
+                </Collapse>
+            </Card >
+        </Box>
+
     );
 }

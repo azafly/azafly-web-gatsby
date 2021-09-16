@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { ActivitySvgComponent, AvatarManSvgComponent, HomeSvgComponent, ProfileSvgComponent, SignOutSvgComponent } from '../components/common/icons'
+import { ActivitySvgComponent, HomeSvgComponent, ProfileSvgComponent, SignOutSvgComponent } from '../components/common/icons'
 
 
 
@@ -19,12 +19,6 @@ export const sideMenu: SideMenu[] = [
         icon: <HomeSvgComponent />,
         route: '/'
     },
-    // {
-    //     name: 'FAQ',
-    //     isOpened: false,
-    //     icon: <ActivitySvgComponent />,
-    //     route: '/faq'
-    // },
     {
         name: 'Services',
         isOpened: false,
@@ -38,37 +32,16 @@ export const sideMenu: SideMenu[] = [
         route: '/blog'
     },
     {
-        name: 'Consult us',
-        isOpened: false,
-        icon: <ActivitySvgComponent />,
-        route: '/consult-us'
-    },
-    {
         name: 'Register',
         isOpened: false,
         icon: <ActivitySvgComponent />,
         route: '/signup'
     },
-]
-
-export const privateMenu: SideMenu[] = [
     {
-        name: 'Dashboard',
+        name: 'Support',
         isOpened: false,
-        icon: <HomeSvgComponent />,
-        route: '/dashboard'
-    },
-    {
-        name: 'Profile',
-        isOpened: false,
-        icon: < ProfileSvgComponent />,
-        route: '/profile'
-    },
-    {
-        name: 'Logout',
-        isOpened: false,
-        isLogOut: true,
-        icon: < SignOutSvgComponent />
+        icon: <ActivitySvgComponent />,
+        route: '/faq'
     },
 ]
 
@@ -78,10 +51,6 @@ export const deskTopNavItems = [
         name: 'About',
         route: '/about'
     },
-    // {
-    //     name: 'FAQ',
-    //     route: '/faq'
-    // },
     {
         name: 'Support',
         route: '/faq'
@@ -95,53 +64,3 @@ export const deskTopNavItems = [
     }
 
 ]
-
-// todo : ftech from server
-export const experts = [
-    {
-        name: 'Ola John',
-        img: <AvatarManSvgComponent />
-    },
-    // {
-    //     name: 'Brit Spear',
-    //     img: <AvatarWomanSvgComponent />
-    // },
-    {
-        name: 'Femi Fola',
-        img: <AvatarManSvgComponent />
-    },
-    // {
-    //     name: 'Meg Smart',
-    //     img: <AvatarWomanSvgComponent />
-    // }
-
-
-]
-
-
-// export const internationalPayments = [
-//     {
-//         name: 'WES',
-//         img: <WesSvgComponent />
-//     },
-//     {
-//         name: 'SEVIS',
-//         img: <WesSvgComponent />
-//     },
-//     {
-//         name: 'Application2',
-//         img: <AvatarManSvgComponent />
-//     },
-//     {
-//         name: 'Tuitione',
-//         img: <WesSvgComponent />
-//     },
-//     {
-//         name: 'WES2',
-//         img: <WesSvgComponent />
-//     },
-//     {
-//         name: 'SEVISes',
-//         img: <WesSvgComponent />
-//     },
-// ]

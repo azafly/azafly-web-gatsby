@@ -29,8 +29,9 @@ const useStyles = makeStyles((theme: Theme) =>
         titleHeading: {
             fontWeight: 800,
             fontFamily: 'Nunito',
+            letterSpacing: -2.5,
             color: theme.colors.black,
-            fontSize: 50,
+            fontSize: 45,
             [theme.breakpoints.only('xs')]: {
                 fontSize: 40,
                 fontWeight: 900
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
         paragraph: {
             color: 'rgba(0, 0, 0, 0.5)',
             fontWeight: 500,
-            fontFamily: 'Varela round',
+
             marginTop: 20,
             [theme.breakpoints.only('xs')]: {
             },
@@ -50,7 +51,6 @@ const useStyles = makeStyles((theme: Theme) =>
         offer: {
             color: theme.colors.mainGreen,
             fontWeight: 700,
-            fontFamily: 'Varela round',
             fontSize: '0.9em',
             marginTop: 5,
             [theme.breakpoints.only('xs')]: {
@@ -67,12 +67,10 @@ const useStyles = makeStyles((theme: Theme) =>
             height: 40,
             width: 'max-content',
             color: 'white',
-            fontFamily: 'Varela round',
             fontWeight: 500,
             minWidth: 170,
             padding: '7px 15px',
             marginTop: 10,
-            marginRight: 10,
             borderRadius: 6,
             '&:hover': {
                 background: '#4990a4',
@@ -84,7 +82,6 @@ const useStyles = makeStyles((theme: Theme) =>
             height: 40,
             marginTop: 10,
             border: '1px solid #4990A4',
-            fontFamily: 'Varela round',
             color: theme.colors.mainGreen,
             fontWeight: 600,
             padding: '7px 15px',

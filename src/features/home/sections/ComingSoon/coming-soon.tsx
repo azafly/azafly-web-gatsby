@@ -3,7 +3,7 @@ import { Grid } from '@material-ui/core';
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 import { Illustration, } from './illustration'
 import { InfoBanner } from './info-banner';
-// import { ComingSoonBG, ComingSoonBG2 } from 'components/backgrounds';
+import { ComingSoonBG, ComingSoonBG2 } from '../../../../components/illustrations/backgrounds';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -11,18 +11,20 @@ const useStyles = makeStyles((theme: Theme) =>
         comingSoonContainer: {
             position: 'relative',
             flexGrow: 1,
+            display: 'flex',
             color: '#FFFFFF',
             width: '100%',
-            height: 750,
-            paddingBottom: 50,
+            height: 'auto',
             background: theme.palette.primary.main,
-            [theme.breakpoints.only('xs')]: {
-                height: 'auto',
+            [theme.breakpoints.only('sm')]: {
+                padding: '20px 10px',
+            },
+            [theme.breakpoints.up('md')]: {
+                padding: '50px 10px',
             },
         },
         inner: {
             flexGrow: 1,
-            padding: '70px 10px',
             marginLeft: '6vw',
             width: '75%',
             [theme.breakpoints.only('xs')]: {
@@ -55,8 +57,8 @@ export const ComingSoon = () => {
     const classes = useStyles()
     return (
         <div className={classes.comingSoonContainer}>
-            {/* <ComingSoonBG className={classes.bgIllustration} />    <ComingSoonBG2 className={classes.bgIllustration2} /> */}
-            <Grid container justify="space-around" spacing={3} alignItems="center" className={classes.inner}>
+            <ComingSoonBG className={classes.bgIllustration} />    <ComingSoonBG2 className={classes.bgIllustration2} />
+            <Grid container justify="space-around" alignItems="center" className={classes.inner}>
                 <Grid item xs={12} sm={6}>
                     <Illustration />
                 </Grid>

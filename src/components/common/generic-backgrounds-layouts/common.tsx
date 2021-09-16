@@ -8,7 +8,6 @@ const useStyle = makeStyles((theme: Theme) =>
             position: 'relative',
             overflowX: 'hidden',
             width: '100vw',
-            height: 'auto',
             background: theme.palette.background.default,
         },
         bgIllustration1: {

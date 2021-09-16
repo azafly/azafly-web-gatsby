@@ -2,13 +2,12 @@
 import Slider from "react-slick";
 import { forwardRef } from 'react'
 import { SliderCard } from './slider-card';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core'
-import { useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { useRef } from "react";
-// import { BackwardSvgComponent, ForwardSvgComponent } from 'components/icons';
-import React, { useState } from 'react';
+import { createStyles, makeStyles, Theme, useTheme } from '@material-ui/core/styles';
+import { Grid, useMediaQuery } from '@material-ui/core'
+
+
+import { BackwardSvgComponent, ForwardSvgComponent } from '../../../../components/icons';
+import React, { useState, useRef } from 'react';
 
 
 import { InfoBanner } from './info-banner'
@@ -73,6 +72,13 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         overflow: {
             width: '120%'
+        },
+        scrollers: {
+            display: 'flex',
+            [theme.breakpoints.only("xs")]: {
+                justifyContent: 'center'
+            }
+
         }
     })
 )
@@ -124,12 +130,10 @@ export const ReviewSliders = forwardRef((props: ReviewSlidersProps, ref) => {
 
 
     const scrollers = () => {
-
-        return <>
-            <div>Back Front</div>
-            {/* <div opacity={activeScroller === 'prev' ? 1 : 0.3} className={classes.prev} onClick={() => handleToggeleClass("prev")} />
-            <div opacity={activeScroller === 'next' ? 1 : 0.3} onClick={(e) => handleToggeleClass("next")} className={classes.next} /> */}
-        </>
+        return <div className={classes.scrollers}>
+            <BackwardSvgComponent opacity={activeScroller === 'prev' ? 1 : 0.3} className={classes.prev} onClick={() => handleToggeleClass("prev")} />
+            <ForwardSvgComponent opacity={activeScroller === 'next' ? 1 : 0.3} onClick={(e) => handleToggeleClass("next")} className={classes.next} />
+        </div>
 
 
     }

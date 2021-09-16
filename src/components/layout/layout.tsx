@@ -10,7 +10,7 @@ const footer = {
   copyrightOwner: "Azafly",
   linkedin: "https://www.linkedin.com/azafly",
   instagram: "https://www.instagram.com/azafly",
-  facebook: "https://www.facebook.com/azafly"
+  facebook: "https://www.instagram.com/azafly"
 };
 
 export const Layout: FunctionComponent = ({ children }) => {
@@ -53,10 +53,12 @@ export const Layout: FunctionComponent = ({ children }) => {
         />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <meta name="theme-color" content="#fff" />
+        <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
       </Helmet>
       <Header handleDrawerOpen={handleDrawerOpen} open={open} />
       <div className="min-h-screen">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
+        <div>{children}</div>
       </div>
       <Footer {...footer} />
     </>

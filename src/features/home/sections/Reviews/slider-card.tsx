@@ -1,7 +1,9 @@
 import { Avatar, Card, CardContent, Typography } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
+
+import { StarRating } from '../../../../components/star-ratings';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -11,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
             zIndex: 999,
         },
         paragraph: {
-            fontSize: '0.8em',
+            fontSize: '0.9em',
             color: '#044941',
             fontWeight: 300
         },
@@ -31,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
             fontWeight: 700,
             fontSize: '1.1em',
             [theme.breakpoints.down('sm')]: {
-                fontSize: '0.8em'
+                fontSize: '0.9em'
             }
         },
         ratingStars: {
@@ -71,7 +73,7 @@ export const SliderCard = ({ text, src, name }: ReviewCardProps) => {
                             <Typography className={classes.title} color="textSecondary" gutterBottom variant={'h6'}>
                                 {name}
                             </Typography>
-                            {/* <StarRating rating={rating} setRating={setRating} classNames={classes.ratingStars} /> */}
+                            <StarRating rating={rating} setRating={setRating} classNames={classes.ratingStars} />
                         </div>
                     </div>
                 </CardContent>

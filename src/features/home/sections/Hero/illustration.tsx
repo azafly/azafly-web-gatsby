@@ -1,6 +1,6 @@
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 import React from "react";
-// import { HomeMainIllustration } from 'components/illustrations';
+import { HomeMainIllustration } from '../../../../components/illustrations';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -38,7 +38,7 @@ export const Illustration = () => {
     return (
         <div
             className={classes.container}>
-            {/* <HomeMainIllustration className={classes.illustration} color={'#4990a4'} /> */}
+            <HomeMainIllustration className={classes.illustration} color={'#4990a4'} />
         </div>
     )
 }

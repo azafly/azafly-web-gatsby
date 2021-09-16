@@ -1,6 +1,6 @@
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 import React from "react";
-// import { EasySetUpSvg } from 'components/icons/easy-set-up';
+import { EasySetupvgComponent } from '../../../../components/illustrations';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -34,7 +34,7 @@ export const Illustration = () => {
 
     return (
         <div className={classes.container}>
-            {/* <EasySetUpSvg className={classes.illustration} color={'#4990a4'} /> */}
+            <EasySetupvgComponent className={classes.illustration} color={'#4990a4'} />
         </div>
     )
 }

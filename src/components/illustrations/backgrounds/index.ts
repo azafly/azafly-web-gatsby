@@ -1,0 +1,7 @@
+export { ComingSoonBG } from './coming-soon-bg'
+export { ComingSoonBG2 } from './coming-soon-bg-2'
+export { HomeBGIllustration2 } from './home-bg-illustration-2'
+export { HomeBGIllustration3 } from './home-bg-illustration-3'
+export { HomeBGIllustration6 } from './home-bg-illustration-6'
+export { HomeBGIllustration7 } from './home-bg-illustration-7'
+export { ServicesBG2 } from './services-bg-2'

@@ -1,6 +1,6 @@
 import { Grid, Typography } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import React from "react";
+import React from 'react'
 
 interface InfoBannerProps {
     scrollers: any

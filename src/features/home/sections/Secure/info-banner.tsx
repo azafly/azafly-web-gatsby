@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-import React, { useState } from "react";
+import React from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
             color: 'rgba(0, 0, 0, 0.5)',
             fontSize: '0.95em',
             fontWeight: 450,
-            fontFamily: 'Varela round',
+
             lineHeight: 1.5,
             [theme.breakpoints.only('xs')]: {
                 textAlign: 'center',

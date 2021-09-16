@@ -35,7 +35,7 @@ export const theme = {
             main: '#0D324D'
         },
         text: {
-            primary: 'rgba(0, 0, 0, 0.5)',
+            primary: '#0D324D',
             secondary: '#333333',
             hint: '#4990A4'
 

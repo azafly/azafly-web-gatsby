@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 import React from "react";
-// import { SecureByDesign } from 'components/illustrations';
+import { SecureByDesign } from '../../../../components/illustrations';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -49,7 +49,7 @@ export const Illustration = () => {
                 x: { type: "spring", stiffness: 100 },
                 default: { duration: 1 },
             }}>
-            {/* <SecureByDesign className={classes.illustration} color={'#4990a4'} /> */}
+            <SecureByDesign className={classes.illustration} color={'#4990a4'} />
         </motion.div>
     )
 }

@@ -1,7 +1,7 @@
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Typography, Grid, } from '@material-ui/core';
-import React, { useState } from "react";
-// import { ServicesBG2, ServicesBG1 } from 'components/backgrounds';
+import React from "react";
+import { ServicesBG2 } from '../../../../components/illustrations/backgrounds';
 import { ServiceCard } from './service-card';
 import { PayOnline, Travellers, ConnectedWord } from '../../../../components/illustrations';
 import { CalendarSvgComponent } from '../../../../components/icons/calendar';
@@ -127,7 +127,7 @@ export function Services() {
 
     return (
         <div className={classes.container}>
-            {/* <ServicesBG1 className={classes.bgIllustration} />  <ServicesBG2 className={classes.bgIllustration2} /> */}
+            <ServicesBG2 className={classes.bgIllustration2} />
             <div className={classes.titleWrapper}>
                 <Typography variant='h3' className={classes.title}>
                     We put all the pieces together

@@ -116,10 +116,12 @@ const Blog: FunctionComponent<Blog> = ({ data }) => {
   return (
     <>
       <SEO title="Blog" image="/logo.png" />
-      <Layout>
-        <FeaturePosts featurePosts={featuredPostData} />
-        <RecentPosts recentPosts={recentPostData} />
-        <Pagination next="/page/2" />
+      <Layout >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <FeaturePosts featurePosts={featuredPostData} />
+          <RecentPosts recentPosts={recentPostData} />
+          <Pagination next="/page/2" />
+        </div>
       </Layout>
     </>
   );

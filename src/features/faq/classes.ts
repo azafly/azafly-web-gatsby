@@ -1,5 +1,5 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core'
-import Background from './illustrations/background-circle.svg'
+
 
 export const useMainFAQStyle = makeStyles((theme: Theme) =>
     createStyles({
@@ -8,10 +8,6 @@ export const useMainFAQStyle = makeStyles((theme: Theme) =>
             background: 'white',
             maxWidth: '100vw',
             overflowX: 'hidden',
-            [theme.breakpoints.up('md')]: {
-                backgroundPosition: 'top -0px right -100px',
-                backgroundRepeat: 'no-repeat',
-            }
         },
     }),
 );
@@ -60,8 +56,11 @@ export const useSearchContainerStyle = makeStyles((theme: Theme) =>
         searchRoot: {
             height: '100%',
             marginTop: '20vh',
+            marginLeft: '-12vw',
+            margin: 'auto',
             [theme.breakpoints.down('sm')]: {
-                marginTop: '5vh'
+                marginTop: '5vh',
+                margin: 'auto',
             },
         },
         search: {
@@ -105,7 +104,6 @@ export const useSearchContainerStyle = makeStyles((theme: Theme) =>
 export const useCardStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            boxShadow: '0 1px 2px rgba(0,0,0,0.24)',
             maxWidth: 345,
             zIndex: 99,
             [theme.breakpoints.up('md')]: {

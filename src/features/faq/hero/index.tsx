@@ -1,6 +1,5 @@
 import React from 'react'
-import { Box, Hidden, Grid } from '@material-ui/core'
-import Image from "gatsby-image";
+import { Hidden, Grid } from '@material-ui/core'
 
 
 
@@ -14,11 +13,11 @@ export const HeroContainer = () => {
     const classes = useHeroStyle()
     return (
         <div className={classes.hero__main}>
-            <Grid container justifyContent="center" alignContent="center" className="content">
+            <Grid container justifyContent="center" className="content">
                 <Grid item xs={12} md={6} >
                     <FAQSvg className={classes.illustration} />
                 </Grid>
-                <Grid item xs={12} md={6} alignContent="center">
+                <Grid item xs={12} md={6} alignItems="flex-start">
                     <SearchContainer />
                 </Grid>
             </Grid>

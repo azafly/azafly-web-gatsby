@@ -6,18 +6,16 @@ import { motion } from "framer-motion"
 
 // Material
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Divider, Drawer, IconButton, List, useTheme, useMediaQuery, Button } from '@material-ui/core';
+import { Divider, Drawer, IconButton, List, useTheme, useMediaQuery } from '@material-ui/core';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 
 import { MenuListItem } from '../../components/menuListItem'
 
-import { Header as NavBar } from '../../components/layout/header'
-import { sideMenu, privateMenu } from '../../lib/constants'
+import { sideMenu } from '../../lib/constants'
 import { sideMenuAnimation } from '../../lib/animations'
-// import { SignOutSvgComponent } from 'components/icons'
-// import { BGIllustration7 } from 'components/backgrounds';
+import { HomeBGIllustration6, HomeBGIllustration7 } from '../../components/illustrations/backgrounds';
 
 
 
@@ -36,7 +34,7 @@ const drawerWidth = 180;
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
-            width: '100vw',
+            width: '100%',
             margin: 'auto',
             overflowX: 'hidden',
         },
@@ -141,7 +139,6 @@ const Home = ({ frontMatter }: HomePops) => {
 
     return (
         <div className={classes.container}>
-            <NavBar handleDrawerOpen={handleDrawerOpen} open={open} classNames={classes} />
             <main className={clsx(classes.content, {
                 [classes.contentShift]: open,
             })}>
@@ -149,8 +146,8 @@ const Home = ({ frontMatter }: HomePops) => {
                 <HomePageHeroSection frontMatter={frontMatter} />
                 <Services />
                 <div className={classes.setupAndDesignSection}>
-                    {/* <BGIllustration6 className={classes.setUpBackgroundVector1} /> */}
-                    {/* <BGIllustration7 className={classes.setUpBackgroundVector2} /> */}
+                    < HomeBGIllustration6 className={classes.setUpBackgroundVector1} />
+                    < HomeBGIllustration7 className={classes.setUpBackgroundVector2} />
                     <HowToSetUp />
                     <Secure />
                     <HomePageReviewsSection />

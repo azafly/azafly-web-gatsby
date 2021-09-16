@@ -1,6 +1,8 @@
-import React from "react";
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { ReviewSliders } from './sliders'
+import React from 'react'
+// import Bg from 'assets/reviews-bg'
+// import { ReviewsBgIllustration } from 'components/backgrounds'
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -39,7 +41,7 @@ export const HomePageReviewsSection = () => {
         <div className={classes.container}>
             <ReviewSliders />
             <div className={classes.bgIllustration} >
-
+                {/* <ReviewsBgIllustration /> */}
             </div>
         </div>
     )

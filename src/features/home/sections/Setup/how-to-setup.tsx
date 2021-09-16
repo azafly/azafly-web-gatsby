@@ -2,7 +2,7 @@ import { Grid } from '@material-ui/core';
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 import { Illustration } from './illustration'
 import { InfoBanner } from './info-banner';
-import React, { useState } from "react";
+import React from "react";
 
 
 const useStyles = makeStyles((theme: Theme) =>

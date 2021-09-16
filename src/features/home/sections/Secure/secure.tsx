@@ -1,6 +1,5 @@
-import { Grid } from '@material-ui/core';
-import { makeStyles, Theme, createStyles, Box } from '@material-ui/core';
-import React, { useState } from "react";
+import { Grid, makeStyles, Theme, createStyles, Box } from '@material-ui/core';
+import React from "react";
 
 import { Illustration } from './illustration'
 import { InfoBanner } from './info-banner';

@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 import { motion, Variants } from 'framer-motion'
 import { FadeInWhenVisible } from '../../../../components/animate-in-view';
-import VerifiedUser from '@material-ui/icons/VerifiedUser';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import { Link } from "gatsby-theme-material-ui";
 import React from "react";
 
@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             display: 'flex',
-            fontFamily: 'Varela Round',
             flexDirection: 'column',
             borderRadius: 6,
             justifyContent: 'center',
@@ -34,6 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
             fontFamily: 'Nunito',
             fontWeight: 900,
             fontSize: 40,
+            marginBottom: 30,
             [theme.breakpoints.down('md')]: {
                 fontSize: 35,
             },
@@ -42,16 +42,6 @@ const useStyles = makeStyles((theme: Theme) =>
                 paddingTop: 50
             },
         },
-        paragraph: {
-            color: theme.palette.text.primary,
-            fontWeight: 450,
-            fontSize: '0.95em',
-            [theme.breakpoints.only('xs')]: {
-                textAlign: 'center',
-                width: '88vw'
-            },
-        },
-        actionDiv: {},
         actionButton: {
             background: theme.colors.mainGreen,
             textTransform: 'none',
@@ -72,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
             '& span': {
                 color: theme.colors.black,
                 fontSize: '1rem',
-                fontWeight: 500,
+                fontWeight: 600,
                 marginBottom: 20,
                 marginLeft: 20,
             },
@@ -133,9 +123,6 @@ export const InfoBanner = () => {
             <motion.div className={classes.container}
             >
                 <Typography variant='h4' className={classes.titleHeading} >Set up in 3 steps </Typography>
-                <motion.p className={classes.paragraph} >
-                    It takes about 2 minutes to set you up for success.
-                 </motion.p >
                 <motion.ul
                     layout
                     variants={containerVariants}
@@ -143,12 +130,12 @@ export const InfoBanner = () => {
                     initial="exit"
                     animate="enter"
                     exit="exit">
-                    <motion.li variants={childVariants} className={classes.item}> <VerifiedUser /> <span> Open a Free Account</span> </motion.li>
-                    <motion.li variants={childVariants} className={classes.item}> <VerifiedUser />  <span>Make a Request</span> </motion.li>
-                    <motion.li variants={childVariants2} className={classes.item}><VerifiedUser />  <span>Done</span> </motion.li>
+                    <motion.li variants={childVariants} className={classes.item}> <CheckCircleIcon /> <span> Open a Free Account</span> </motion.li>
+                    <motion.li variants={childVariants} className={classes.item}> <CheckCircleIcon />  <span>Make a Request</span> </motion.li>
+                    <motion.li variants={childVariants2} className={classes.item}><CheckCircleIcon />  <span>Done</span> </motion.li>
                 </motion.ul>
 
-                <div className={classes.actionDiv} >
+                <div >
                     <Link className="link" to="/signup"> <Button className={classes.actionButton}>Get started</Button></Link>
                 </div>
             </motion.div>
