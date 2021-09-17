@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
         titleHeading: {
             fontWeight: 800,
             fontFamily: 'Nunito',
-            letterSpacing: -2.5,
+            letterSpacing: -1,
             color: theme.colors.black,
             fontSize: 45,
             [theme.breakpoints.only('xs')]: {
@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme: Theme) =>
             minWidth: 170,
             padding: '7px 15px',
             marginTop: 10,
-            marginRight: 5,
+            marginRight: 10,
             borderRadius: 6,
             '&:hover': {
                 background: '#4990a4',

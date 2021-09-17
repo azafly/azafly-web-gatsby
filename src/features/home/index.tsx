@@ -17,8 +17,6 @@ import { Secure } from './sections/Secure/secure';
 
 
 
-const drawerWidth = 180;
-
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {

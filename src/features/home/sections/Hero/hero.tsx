@@ -3,7 +3,7 @@ import { makeStyles, createStyles } from '@material-ui/styles';
 import { Illustration } from './illustration'
 import { InfoBanner } from './info-banner';
 import React from "react";
-import { HomeBGIllustration2, HomeBGIllustration3 } from '../../../../components/illustrations/backgrounds'
+import { HomeBGIllustration1, HomeBGIllustration2, HomeBGIllustration3 } from '../../../../components/illustrations/backgrounds'
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -18,6 +18,19 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: 50,
             [theme.breakpoints.only('xs')]: {
                 padding: 5,
+            }
+        },
+        homeBgllustration1: {
+            position: 'absolute',
+            left: 0,
+            top: -100,
+            pointerEvents: 'none',
+            opacity: 0.7,
+            height: '100%',
+            [theme.breakpoints.only('xs')]: {
+                left: -50,
+                top: -90,
+                height: 500
             }
         },
         homeBgllustration2: {
@@ -40,9 +53,7 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.down("sm")]: {
                 display: 'none'
             }
-
         }
-
     }),
 );
 
@@ -56,9 +67,10 @@ export const HomePageHeroSection = ({ frontMatter }: HomePageHeroSectionProps) =
     const classes = useStyles()
 
     return (
-        <div className={classes.homePageHeroMain}>
+        <div className={classes.homePageHeroMain}>]
+            <HomeBGIllustration1 className={classes.homeBgllustration1} />
             <Hidden smDown>
-                <HomeBGIllustration2 className={classes.homeBgllustration2} /> <HomeBGIllustration3 className={classes.homeBgllustration3} />
+                <HomeBGIllustration1 className={classes.homeBgllustration1} />   <HomeBGIllustration2 className={classes.homeBgllustration2} /> <HomeBGIllustration3 className={classes.homeBgllustration3} />
             </Hidden>
 
             <Grid container justify="space-around" spacing={3} alignItems="center" className={classes.homePageHeroInner}>
