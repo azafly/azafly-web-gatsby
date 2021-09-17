@@ -6,7 +6,6 @@ import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
 
-import { HomeBGIllustration6, HomeBGIllustration7 } from '../../components/illustrations/backgrounds';
 import { ComingSoon } from './sections/ComingSoon/coming-soon';
 import { Services } from './sections/Services/services';
 import { HowToSetUp } from './sections/Setup/how-to-setup';
@@ -54,24 +53,6 @@ const useStyles = makeStyles((theme: Theme) =>
             background: theme.palette.background.default,
             paddingTop: 120
         },
-        setUpBackgroundVector1: {
-            position: 'absolute',
-            left: 0,
-            opacity: 0.5,
-            [theme.breakpoints.only('xs')]: {
-                top: -40,
-                opacity: 0.1
-            },
-        },
-        setUpBackgroundVector2: {
-            position: 'absolute',
-            right: 0,
-            top: 0,
-            opacity: 0.3,
-            [theme.breakpoints.only('xs')]: {
-                opacity: 0.1
-            },
-        }
     }),
 );
 
@@ -92,8 +73,6 @@ const Home = ({ frontMatter }: HomePops) => {
                 <HomePageHeroSection frontMatter={frontMatter} />
                 <Services />
                 <div className={classes.setupAndDesignSection}>
-                    < HomeBGIllustration6 className={classes.setUpBackgroundVector1} />
-                    < HomeBGIllustration7 className={classes.setUpBackgroundVector2} />
                     <HowToSetUp />
                     <Secure />
                     <HomePageReviewsSection />

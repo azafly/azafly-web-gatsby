@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 import { motion, Variants } from 'framer-motion'
 import { FadeInWhenVisible } from '../../../../components/animate-in-view';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import VerifiedUser from '@material-ui/icons/VerifiedUser';
 import { Link } from "gatsby-theme-material-ui";
 import React from "react";
 
@@ -59,10 +59,12 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         item: {
             display: 'flex',
+
             '& span': {
                 color: theme.colors.black,
                 fontSize: '1rem',
-                fontWeight: 600,
+                fontFamily: 'Nunito',
+                fontWeight: 500,
                 marginBottom: 20,
                 marginLeft: 20,
             },
@@ -130,9 +132,9 @@ export const InfoBanner = () => {
                     initial="exit"
                     animate="enter"
                     exit="exit">
-                    <motion.li variants={childVariants} className={classes.item}> <CheckCircleIcon /> <span> Open a Free Account</span> </motion.li>
-                    <motion.li variants={childVariants} className={classes.item}> <CheckCircleIcon />  <span>Make a Request</span> </motion.li>
-                    <motion.li variants={childVariants2} className={classes.item}><CheckCircleIcon />  <span>Done</span> </motion.li>
+                    <motion.li variants={childVariants} className={classes.item}> <VerifiedUser /> <span> Open a Free Account</span> </motion.li>
+                    <motion.li variants={childVariants} className={classes.item}> <VerifiedUser />  <span>Make a Request</span> </motion.li>
+                    <motion.li variants={childVariants2} className={classes.item}><VerifiedUser />  <span>Done</span> </motion.li>
                 </motion.ul>
 
                 <div >

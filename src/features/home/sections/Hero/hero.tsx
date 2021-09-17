@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
         homePageHeroMain: {
             width: '100%',
             position: 'relative',
+            padding: '100px 0px'
         },
         homePageHeroInner: {
             flexGrow: 1,
@@ -38,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
             right: 0,
             top: -128,
             pointerEvents: 'none',
-            opacity: 0.5,
+            opacity: 0.,
             height: '110%',
             [theme.breakpoints.down("sm")]: {
                 display: 'none'
@@ -49,7 +50,7 @@ const useStyles = makeStyles((theme: Theme) =>
             left: 0,
             pointerEvents: 'none',
             bottom: 0,
-            opacity: 0.6,
+            opacity: 0.8,
             [theme.breakpoints.down("sm")]: {
                 display: 'none'
             }
@@ -68,9 +69,8 @@ export const HomePageHeroSection = ({ frontMatter }: HomePageHeroSectionProps) =
 
     return (
         <div className={classes.homePageHeroMain}>]
-            <HomeBGIllustration1 className={classes.homeBgllustration1} />
             <Hidden smDown>
-                <HomeBGIllustration1 className={classes.homeBgllustration1} />   <HomeBGIllustration2 className={classes.homeBgllustration2} /> <HomeBGIllustration3 className={classes.homeBgllustration3} />
+                <HomeBGIllustration1 className={classes.homeBgllustration1} />  <HomeBGIllustration3 className={classes.homeBgllustration3} />
             </Hidden>
 
             <Grid container justify="space-around" spacing={3} alignItems="center" className={classes.homePageHeroInner}>
