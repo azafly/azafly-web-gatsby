@@ -19,6 +19,7 @@ servicesHeaderText-subtext1-button: Make a payment
 servicesHeaderText-subtext2-button: Consult for free
 servicesHeaderText-subtext3-button: Start Now
 secureHeading: Secure by design
+setupImage: https://image.freepik.com/free-photo/handsome-black-guy-big-glasses-reading-phone-message-portrait-pleased-african-man-holding-smartphone_197531-20180.jpg
 secureParagraph: Already trusted by thousands of happy clients. We are protected
   by EU Financial charter. You have nothing to be worried about  Pay for all
   your service with secure payment channels. We accept dozens of methods across
