@@ -54,6 +54,7 @@ collections:
           - {label: Services subtext2 button, name: servicesHeaderText-subtext2-button, widget: string}
           - {label: Services subtext3 button, name: servicesHeaderText-subtext3-button, widget: string}
           - {label: Secure heading, name: secureHeading, widget: string}
+          - {label: SetUp Image, name: setupImage, widget: image}
           - {label: Secure paragraph, name: secureParagraph, widget: string}
           - {label: Review heading, name: reviewHeading, widget: string}
           - {label: Review paragraph, name: reviewParagraph, widget: string}
