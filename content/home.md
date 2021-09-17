@@ -2,8 +2,8 @@
 title: Home Page
 intro: Let's make your dreams fly!
 intro-paragraph: We offer world-class guidance to your dream world.
-image: ../../static/images/man-sunrise.jpeg
-paymentImage: ../../static/images/tables.jpeg
+image: https://cdn.pixabay.com/photo/2017/08/06/09/53/people-2590813_1280.jpg
+paymentImage: https://img.freepik.com/free-photo/happy-winner-young-rich-african-american-man-casual-t-shirt-holding-money_255757-5489.jpg?size=626&ext=jpg
 offerText: Get 10% off your 1st service, or when you refer a friend!
 consultButtonText: Consult for free
 paymentButtonText: Make a payment
