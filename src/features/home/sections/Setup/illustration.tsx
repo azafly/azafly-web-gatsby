@@ -34,7 +34,8 @@ export const Illustration = () => {
 
     return (
         <div className={classes.container}>
-            <EasySetupvgComponent className={classes.illustration} color={'#4990a4'} />
+            <img src="https://image.freepik.com/free-photo/handsome-black-guy-big-glasses-reading-phone-message-portrait-pleased-african-man-holding-smartphone_197531-20180.jpg" alt="eas-setup-man-holding-phone" style={{ borderRadius: 25 }}></img>
+            {/* <EasySetupvgComponent className={classes.illustration} color={'#4990a4'} /> */}
         </div>
     )
 }

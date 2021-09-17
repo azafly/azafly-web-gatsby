@@ -62,9 +62,9 @@ const useStyles = makeStyles((theme: Theme) =>
 
             '& span': {
                 color: theme.colors.black,
-                fontSize: '1rem',
+                fontSize: '0.9rem',
                 fontFamily: 'Nunito',
-                fontWeight: 500,
+                fontWeight: 700,
                 marginBottom: 20,
                 marginLeft: 20,
             },
