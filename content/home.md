@@ -2,7 +2,7 @@
 title: Home Page
 intro: Let's give your dreams wings!
 intro-paragraph: We offer world-class guidance to your dream world.
-heroMainImage1: ../../static/images/smiling-man.jpg
+heroMainImage1: ../../static/images/smiling.jpeg
 paymentImage: https://img.freepik.com/free-photo/happy-winner-young-rich-african-american-man-casual-t-shirt-holding-money_255757-5489.jpg?size=626&ext=jpg
 offerText: Get 10% off your 1st service, or when you refer a friend!
 consultButtonText: Consult for free
