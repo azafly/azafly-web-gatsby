@@ -47,9 +47,9 @@ collections:
           - {label: Services subtext1, name: servicesHeaderText-subtext1, widget: string}
           - {label: Services subtext2, name: servicesHeaderText-subtext2, widget: string}
           - {label: Services subtext3, name: servicesHeaderText-subtext3, widget: string}
-          - {label: Services subtext1, name: servicesHeaderText-subtext1-image, widget: image}
-          - {label: Services subtext2, name: servicesHeaderText-subtext2-image, widget: image}
-          - {label: Services subtext3, name: servicesHeaderText-subtext3-image, widget: image}
+          - {label: Services subtext1, name: servicesHeaderText-subtext1-image, widget: image ,required: false}
+          - {label: Services subtext2, name: servicesHeaderText-subtext2-image, widget: image,required: false}
+          - {label: Services subtext3, name: servicesHeaderText-subtext3-image, widget: image,required: false}
           - {label: Services subtext1 button, name: servicesHeaderText-subtext1-button, widget: string}
           - {label: Services subtext2 button, name: servicesHeaderText-subtext2-button, widget: string}
           - {label: Services subtext3 button, name: servicesHeaderText-subtext3-button, widget: string}
