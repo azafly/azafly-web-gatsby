@@ -5,6 +5,7 @@ import { Typography } from '@material-ui/core';
 import { Link } from "gatsby-theme-material-ui";
 import React from "react";
 
+import { useFetchHomeData } from '../../hooks/use-data';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -21,7 +22,6 @@ const useStyles = makeStyles((theme: Theme) =>
                 marginLeft: '3vw'
             },
             [theme.breakpoints.down("sm")]: {
-                marginTop: - 150,
                 padding: '10px 30px 10px 20px',
                 marginLeft: '2vw'
             },
@@ -101,12 +101,12 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface InfoBannerProps {
     isSmallScreen?: boolean
-    frontMatter: any
 }
 
 
-export const InfoBanner = ({ frontMatter }: InfoBannerProps) => {
+export const InfoBanner = () => {
     const classes = useStyles();
+    const frontMatter = useFetchHomeData()
 
     return (
         <motion.div className={classes.container}>

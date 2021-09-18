@@ -1,6 +1,8 @@
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 import React from "react";
-import { EasySetupvgComponent } from '../../../../components/illustrations';
+
+import { useFetchHomeData } from '../../hooks/use-data';
+import { getFormattedImageUrl } from '../../utils'
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -15,13 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
             },
         },
         illustration: {
-            marginBottom: -190,
-            marginTop: -220,
-            [theme.breakpoints.only('xs')]: {
-                alignSelf: 'center',
-                marginBottom: -100,
-                marginTop: -220
-            },
+            borderRadius: 25
         }
 
     }),
@@ -31,11 +27,12 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const Illustration = () => {
     const classes = useStyles()
+    const frontMatter = useFetchHomeData()
+    const imageUrl = getFormattedImageUrl(frontMatter.setupImage)
 
     return (
         <div className={classes.container}>
-            <img src="https://image.freepik.com/free-photo/handsome-black-guy-big-glasses-reading-phone-message-portrait-pleased-african-man-holding-smartphone_197531-20180.jpg" alt="eas-setup-man-holding-phone" style={{ borderRadius: 25 }}></img>
-            {/* <EasySetupvgComponent className={classes.illustration} color={'#4990a4'} /> */}
+            <img src={imageUrl} className={classes.illustration}></img>
         </div>
     )
 }

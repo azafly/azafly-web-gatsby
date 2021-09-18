@@ -7,7 +7,7 @@ import { getFakeArticles } from '../../../mocks/faq'
 import { CollapsibleList } from './collapsible-list'
 import { useTabStyles } from '../classes';
 
-type TabValue = 'general' | 'payments' | 'visa and immigration' | 'refund' | 'services'
+
 
 interface TabPanelProps {
     children?: React.ReactNode;

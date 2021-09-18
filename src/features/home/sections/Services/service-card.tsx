@@ -18,6 +18,7 @@ interface ServiceCardProps {
     actionRoute?: string
 }
 
+import { useHomeImageData } from '../../hooks/use-images'
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -25,7 +26,8 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: 'auto',
             alignSelf: 'start',
             borderRadius: 12,
-            boxShadow: 'none'
+            paddingTop: 50,
+            boxShadow: '0 2px 16px 0 rgb(0 0 0 / 8%);'
         },
         media: {
             margin: 'auto',
@@ -104,6 +106,8 @@ export function ServiceCard({ icon, heading, actionText, actionIcon, actionRoute
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
+
+    const img = useHomeImageData()
 
     return (
         <Card className={classes.root}>

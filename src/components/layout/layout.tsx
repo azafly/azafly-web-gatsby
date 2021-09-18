@@ -50,7 +50,7 @@ export const Layout: FunctionComponent = ({ children }) => {
       </Helmet>
       <Header />
       <div className="min-h-screen">
-        <div>{children}</div>
+        <div className="bg-white"> {children}</div>
       </div>
       <Footer {...footer} />
     </>

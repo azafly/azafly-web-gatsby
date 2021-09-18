@@ -12,6 +12,7 @@ module.exports = {
     siteUrl,
     description: siteDescription,
   },
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
     "gatsby-plugin-sitemap",
     "gatsby-plugin-typescript",

@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme: Theme) =>
             flexDirection: 'column',
             borderRadius: 6,
             justifyContent: 'center',
-            padding: 30,
             marginRight: 10,
             [theme.breakpoints.up("sm")]: {
                 marginLeft: '7vw'

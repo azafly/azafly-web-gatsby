@@ -13,6 +13,9 @@ import { HomePageHeroSection } from './sections/Hero/hero'
 import { HomePageReviewsSection } from './sections/Reviews'
 import { Secure } from './sections/Secure/secure';
 
+import { QuestionsTabsConatiner } from '../faq/questions-tab';
+
+
 
 
 
@@ -57,20 +60,15 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 
-interface HomePops {
-    frontMatter: any
-}
-
-const Home = ({ frontMatter }: HomePops) => {
+const Home = () => {
     const classes = useStyles();
-
 
 
     return (
         <div className={classes.container}>
             <main className={classes.content}>
                 <div className={classes.drawerHeader}></div>
-                <HomePageHeroSection frontMatter={frontMatter} />
+                <HomePageHeroSection />
                 <Services />
                 <div className={classes.setupAndDesignSection}>
                     <HowToSetUp />
@@ -78,6 +76,7 @@ const Home = ({ frontMatter }: HomePops) => {
                     <HomePageReviewsSection />
                 </div>
                 <ComingSoon />
+                <QuestionsTabsConatiner />
             </main>
         </div>
     )

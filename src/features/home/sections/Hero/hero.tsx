@@ -3,7 +3,8 @@ import { makeStyles, createStyles } from '@material-ui/styles';
 import { Illustration } from './illustration'
 import { InfoBanner } from './info-banner';
 import React from "react";
-import { HomeBGIllustration1, HomeBGIllustration2, HomeBGIllustration3 } from '../../../../components/illustrations/backgrounds'
+import { HomeBGIllustration1, HomeBGIllustration3 } from '../../../../components/illustrations/backgrounds'
+
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -11,7 +12,8 @@ const useStyles = makeStyles((theme: Theme) =>
         homePageHeroMain: {
             width: '100%',
             position: 'relative',
-            padding: '100px 0px'
+            paddingBottom: 70,
+            borderRadius: '50%'
         },
         homePageHeroInner: {
             flexGrow: 1,
@@ -58,17 +60,12 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-interface HomePageHeroSectionProps {
-    frontMatter: any
-}
 
-
-
-export const HomePageHeroSection = ({ frontMatter }: HomePageHeroSectionProps) => {
+export const HomePageHeroSection = () => {
     const classes = useStyles()
 
     return (
-        <div className={classes.homePageHeroMain}>]
+        <div className={classes.homePageHeroMain}>
             <Hidden smDown>
                 <HomeBGIllustration1 className={classes.homeBgllustration1} />  <HomeBGIllustration3 className={classes.homeBgllustration3} />
             </Hidden>
@@ -76,7 +73,7 @@ export const HomePageHeroSection = ({ frontMatter }: HomePageHeroSectionProps) =
             <Grid container justify="space-around" spacing={3} alignItems="center" className={classes.homePageHeroInner}>
                 <Box clone order={{ xs: 2, sm: 1 }}>
                     <Grid item xs={12} sm={6}>
-                        <InfoBanner frontMatter={frontMatter} />
+                        <InfoBanner />
                     </Grid>
                 </Box>
                 <Box clone order={{ xs: 1, sm: 2 }}>
@@ -86,7 +83,5 @@ export const HomePageHeroSection = ({ frontMatter }: HomePageHeroSectionProps) =
                 </Box>
             </Grid>
         </div>
-
-
     );
 }

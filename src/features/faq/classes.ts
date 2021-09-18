@@ -125,12 +125,16 @@ export const useCardStyles = makeStyles((theme: Theme) =>
 export const useTabStyles = makeStyles((theme: Theme) => ({
     tabContainer: {
         marginLeft: '2vw',
+        background: 'white',
         marginTop: 100,
+        paddingBottom: 50,
         [theme.breakpoints.up('lg')]: {
             marginLeft: '7vw',
+            paddingBottom: 100,
         },
         [theme.breakpoints.only('md')]: {
             marginLeft: '5vw',
+            paddingBottom: 50,
         },
     },
     title: {
