@@ -42,7 +42,7 @@ export const Illustration = () => {
         <div
             className={classes.container}>
 
-            <img className={classes.illustration} src="https://cdn.pixabay.com/photo/2017/08/06/09/53/people-2590813_1280.jpg" alt="" style={{ borderRadius: 12, zIndex: 9999 }} />
+            <img className={classes.illustration} src="https://cdn.pixabay.com/photo/2017/08/06/09/53/people-2590813_1280.jpg" alt="" style={{ borderRadius: 12, }} />
             {/* <HomeMainIllustration className={classes.illustration} color={'#4990a4'} /> */}
         </div>
     )
