@@ -1,6 +1,6 @@
 ---
 title: Home Page
-intro: Let's make your dreams fly!
+intro: Let's give your dreams wings!
 intro-paragraph: We offer world-class guidance to your dream world.
 heroMainImage1: ../../static/images/smiling-man.jpg
 paymentImage: https://img.freepik.com/free-photo/happy-winner-young-rich-african-american-man-casual-t-shirt-holding-money_255757-5489.jpg?size=626&ext=jpg
