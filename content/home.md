@@ -19,7 +19,7 @@ servicesHeaderText-subtext1-button: Make a payment
 servicesHeaderText-subtext2-button: Consult for free
 servicesHeaderText-subtext3-button: Start Now
 secureHeading: Secure by design
-setupImage: ../../static/images/pexels-william-fortunato-6393342.jpg
+setupImage: ../../static/images/set-up.jpeg
 secureParagraph: Already trusted by thousands of happy clients. We are protected
   by EU Financial charter. You have nothing to be worried about  Pay for all
   your service with secure payment channels. We accept dozens of methods across
