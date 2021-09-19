@@ -59,8 +59,11 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
+interface HomeViewProps {
+    images: any
+}
 
-const Home = () => {
+const Home = ({ images }: HomeViewProps) => {
     const classes = useStyles();
 
 
@@ -68,10 +71,10 @@ const Home = () => {
         <div className={classes.container}>
             <main className={classes.content}>
                 <div className={classes.drawerHeader}></div>
-                <HomePageHeroSection />
+                <HomePageHeroSection images={images} />
                 <Services />
                 <div className={classes.setupAndDesignSection}>
-                    <HowToSetUp />
+                    <HowToSetUp images={images} />
                     <Secure />
                     <HomePageReviewsSection />
                 </div>

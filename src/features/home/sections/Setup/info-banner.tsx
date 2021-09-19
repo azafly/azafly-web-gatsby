@@ -10,18 +10,17 @@ import React from "react";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
-            display: 'flex',
-            flexDirection: 'column',
-            borderRadius: 6,
-            justifyContent: 'center',
-            marginRight: 10,
+            boxShadow: '0 2px 16px 0 rgb(0 0 0 / 8%);',
+            borderRadius: 25,
+            padding: 150,
             [theme.breakpoints.up("sm")]: {
-                marginLeft: '7vw'
+                height: '80%',
+                marginLeft: '-25%',
             },
             [theme.breakpoints.only("xs")]: {
-                alignItems: 'center',
                 boxShadow: 'none',
                 padding: 0,
+                margin: 0,
             },
             '& .link': {
                 textDecoration: 'none'
@@ -33,32 +32,43 @@ const useStyles = makeStyles((theme: Theme) =>
             fontWeight: 900,
             fontSize: 40,
             marginBottom: 30,
+            marginLeft: '25%',
             [theme.breakpoints.down('md')]: {
                 fontSize: 35,
             },
             [theme.breakpoints.only('xs')]: {
                 textAlign: 'center',
-                paddingTop: 50
+                paddingTop: 50,
+                marginLeft: 0,
             },
         },
         actionButton: {
             background: theme.colors.mainGreen,
             textTransform: 'none',
+            marginLeft: '25%',
             color: 'white',
+            marginTop: 20,
             fontWeight: 450,
             width: 170,
             padding: '7px 25px',
             '&:hover': {
                 background: '#4990a4',
                 opacity: 0.7
-            }
+            },
+            [theme.breakpoints.only('xs')]: {
+                marginLeft: '0%',
+            },
         },
         items: {
-            paddingLeft: 0
+            marginLeft: '25%',
         },
         item: {
             display: 'flex',
-
+            marginLeft: 10,
+            margin: 'auto',
+            [theme.breakpoints.only('xs')]: {
+                marginLeft: '0%',
+            },
             '& span': {
                 color: theme.colors.black,
                 fontSize: '0.9rem',
@@ -98,7 +108,6 @@ const childVariants: Variants = {
         opacity: 1,
     },
     exit: {
-        x: -20,
         opacity: 0,
     },
 };
@@ -110,7 +119,6 @@ const childVariants2: Variants = {
         opacity: 1,
     },
     exit: {
-        x: -20,
         opacity: 0,
     },
 };
@@ -120,28 +128,24 @@ export const InfoBanner = () => {
 
 
     return (
-        <FadeInWhenVisible>
-            <motion.div className={classes.container}
-            >
-                <Typography variant='h4' className={classes.titleHeading} >Set up in 3 steps </Typography>
-                <motion.ul
-                    layout
-                    variants={containerVariants}
-                    className={classes.items}
-                    initial="exit"
-                    animate="enter"
-                    exit="exit">
-                    <motion.li variants={childVariants} className={classes.item}> <VerifiedUser /> <span> Open a Free Account</span> </motion.li>
-                    <motion.li variants={childVariants} className={classes.item}> <VerifiedUser />  <span>Make a Request</span> </motion.li>
-                    <motion.li variants={childVariants2} className={classes.item}><VerifiedUser />  <span>Done</span> </motion.li>
-                </motion.ul>
+        <motion.div className={classes.container}
+        >
+            <Typography variant='h4' className={classes.titleHeading} >Set up in 3 steps </Typography>
+            <motion.ul
+                layout
+                variants={containerVariants}
+                className={classes.items}
+                initial="exit"
+                animate="enter"
+                exit="exit">
+                <motion.li variants={childVariants} className={classes.item}> <VerifiedUser /> <span> Open a Free Account</span> </motion.li>
+                <motion.li variants={childVariants} className={classes.item}> <VerifiedUser />  <span>Make a Request</span> </motion.li>
+                <motion.li variants={childVariants2} className={classes.item}><VerifiedUser />  <span>Done</span> </motion.li>
+            </motion.ul>
 
-                <div >
-                    <Link className="link" to="/signup"> <Button className={classes.actionButton}>Get started</Button></Link>
-                </div>
-            </motion.div>
-        </FadeInWhenVisible>
-
-
+            <div >
+                <Link className="link" to="/signup"> <Button className={classes.actionButton}>Get started</Button></Link>
+            </div>
+        </motion.div>
     )
 }

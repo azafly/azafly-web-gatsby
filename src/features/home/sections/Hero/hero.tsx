@@ -60,8 +60,11 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
+interface Props {
+    images: any
+}
 
-export const HomePageHeroSection = () => {
+export const HomePageHeroSection = ({ images }: Props) => {
     const classes = useStyles()
 
     return (
@@ -78,7 +81,7 @@ export const HomePageHeroSection = () => {
                 </Box>
                 <Box clone order={{ xs: 1, sm: 2 }}>
                     <Grid item xs={12} sm={6}>
-                        <Illustration />
+                        <Illustration images={images} />
                     </Grid>
                 </Box>
             </Grid>

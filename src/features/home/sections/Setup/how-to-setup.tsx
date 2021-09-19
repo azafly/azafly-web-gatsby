@@ -11,7 +11,9 @@ const useStyles = makeStyles((theme: Theme) =>
             flexGrow: 1,
             width: '80%',
             margin: 'auto',
+            height: 800,
             paddingTop: 20,
+            display: 'flex',
             [theme.breakpoints.only("xs")]: {
                 marginTop: 10,
                 padding: '10px 10px',
@@ -31,21 +33,26 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface HomePageHeaderSectionProps {
     isMobileScreenSize?: boolean
+    images?: any
 }
 
 
-export const HowToSetUp = () => {
+export const HowToSetUp = ({ images }: HomePageHeaderSectionProps) => {
     const classes = useStyles()
     return (
 
-        <Grid container justify="space-around" className={classes.container} spacing={3} alignItems="center">
-            <Grid item xs={12} sm={6}>
-                <Illustration />
+        <div className={classes.container}>
+            <Grid container justify="space-around"
+                alignItems="center">
+                <Grid item xs={12} sm={6}>
+                    <Illustration images={images} />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <InfoBanner />
+                </Grid>
             </Grid>
-            <Grid item xs={12} sm={6}>
-                <InfoBanner />
-            </Grid>
-        </Grid>
+        </div>
+
 
     );
 }

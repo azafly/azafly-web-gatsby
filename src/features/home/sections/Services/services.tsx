@@ -54,11 +54,11 @@ const useStyles = makeStyles((theme: Theme) =>
             width: '100vw',
             overflowX: 'hidden',
             position: 'relative',
-            padding: '100px 0px',
+            padding: '10px 0px 70px 0px',
             background: 'white',
             [theme.breakpoints.only("xs")]: {
                 marginTop: 40,
-                padding: '40px 0px',
+                padding: '10px 0px 40px 0px',
                 marginBottom: 50
             }
         },
