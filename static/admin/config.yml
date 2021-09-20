@@ -34,7 +34,7 @@ collections:
         file: "content/home.md"     
         name: "home"           
         fields:  
-         -  {label: "Home Template", name: "homeTemplate", widget: "hidden", default: "home"}     
+          - {label: "Home Template", name: "homeTemplate", widget: "hidden", default: "home"}     
           - {label: Title, name: title, widget: string}          
           - {label: Intro heading, name: intro, widget: text}   
           - {label: Intro paragraph, name: intro-paragraph, widget: text}                 
