@@ -4,6 +4,7 @@ import { Illustration } from './illustration'
 import { InfoBanner } from './info-banner';
 import React from "react";
 import { HomeBGIllustration1, HomeBGIllustration3 } from '../../../../components/illustrations/backgrounds'
+import { HomeImages } from '../../../../createPages/templates/home'
 
 
 
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface Props {
-    images: any
+    images: HomeImages
 }
 
 export const HomePageHeroSection = ({ images }: Props) => {

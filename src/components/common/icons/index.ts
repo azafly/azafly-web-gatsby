@@ -1,8 +1,6 @@
 export { ActivitySvgComponent } from './activity'
 export { ArrowDownSvgComponent } from './arrow-down'
 export { ArrowUpSvgComponent } from './arrow-up'
-export { AvatarManSvgComponent } from './avatar-man'
-export { AvatarWomanSvgComponent } from './avatar-woman'
 export { BackwardSvgComponent } from './backward'
 export { CalendarSvgComponent } from './calendar'
 export { ChatSvgComponent } from './chat'

@@ -1,7 +1,9 @@
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 
 import React from "react";
-import Image, { FluidObject } from "gatsby-image"
+import Image from "gatsby-image"
+import { HomeImages } from '../../../../createPages/templates/home'
+
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -17,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface Props {
-    images: any
+    images: HomeImages
 }
 
 export const Illustration = ({ images }: Props) => {

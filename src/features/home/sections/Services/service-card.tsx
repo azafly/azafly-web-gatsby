@@ -10,15 +10,16 @@ import { Button, } from '@material-ui/core';
 import { Link } from "gatsby-theme-material-ui";
 
 interface ServiceCardProps {
-    icon: any,
+    icon: React.ReactElement,
     paragraph?: string
     heading: string
     actionText: string
-    actionIcon?: any
+    actionIcon?: React.ReactElement
     actionRoute?: string
 }
 
 import { useHomeImageData } from '../../hooks/use-images'
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

@@ -5,6 +5,7 @@ import { Layout } from "../../components/layout";
 import { SEO } from "../../components/seo";
 
 import HomeView from '../../features/home';
+import { FluidImageType } from '../../types'
 
 
 
@@ -35,63 +36,17 @@ export const pageQuery = graphql`
 `
 
 
-export interface HomeFrontMatter {
-    node: {
-        id: string;
-        fields: {
-            slug: string;
-        };
-        frontmatter: {
-            title: string
-            template: string
-            description: string
-            featured: boolean
-            img: File
-            imgAlt: string
-            tags: [string]
-            intro: string
-            intro_paragraph: string
-            heroMainImage1: string
-            paymentImage: string
-            offerText: string
-            consultButtonText: string
-            paymentButtonText: string
-            chatPromptText: string
-            servicesHeaderText: string
-            servicesHeaderText_subtext1: string
-            servicesHeaderText_subtext2: string
-            servicesHeaderText_subtext3: string
-            servicesHeaderText_subtext1_image: string
-            servicesHeaderText_subtext2_image: string
-            servicesHeaderText_subtext3_image: string
-            servicesHeaderText_subtext1_button: string
-            servicesHeaderText_subtext2_button: string
-            servicesHeaderText_subtext3_button: string
-            secureHeading: string
-            setupImage: string
-            secureParagraph: string
-            reviewHeading: string
-            reviewParagraph: string
-            comingSoonHeading: string
-            comingSoonParagraph: string
-            comingSoonButton: string
-            image: string
-        };
-    };
+export interface HomeImages {
+    heroMainImage1: FluidImageType,
+    setupImage: FluidImageType
 }
 
-interface QueryData {
-    homeData: {
-        edges: HomeFrontMatter[];
-    };
-}
 
 interface Home {
-    data: any
+    data: HomeImages
 }
 
 const Home: FunctionComponent<Home> = ({ data }) => {
-
 
     return (
         <>

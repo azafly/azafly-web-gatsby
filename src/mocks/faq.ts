@@ -1,7 +1,7 @@
 
 import faker from 'faker'
 
-export const categories: any = ['general', 'payments', 'visa and immigration', 'refund', 'services']
+export const categories = ['general', 'payments', 'visa and immigration', 'refund', 'services']
 
 
 const total = Array(5).fill(null)

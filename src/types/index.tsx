@@ -1,4 +1,4 @@
-import { FluidObject } from "gatsby-image";
+import { FixedObject, FluidObject } from "gatsby-image";
 
 type TemplateKey = "blog-post";
 
@@ -28,4 +28,13 @@ export interface BlogPost {
   slug: string;
   tags: string[];
   content: JSX.Element;
+}
+
+export interface FluidImageType {
+  childImageSharp: { fluid: FluidObject };
+}
+
+
+export interface FixedmageType {
+  childImageSharp: { fixed: FixedObject };
 }
