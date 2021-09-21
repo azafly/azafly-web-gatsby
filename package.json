@@ -34,7 +34,8 @@
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
     "format": "prettier --write src/**/*.{js,jsx,tsx,ts,json}",
     "test": "jest",
-    "generate-favicon": "npx favicons-generate --input ./static/logo.png --output ./static/img && cp ./static/img/favicon.ico ./static/favicon.ico"
+    "generate-favicon": "npx favicons-generate --input ./static/logo.png --output ./static/img && cp ./static/img/favicon.ico ./static/favicon.ico",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
@@ -119,10 +120,15 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.5",
     "gatsby-plugin-react-svg": "^3.0.1",
+    "husky": ">=6",
     "jest": "^26.2.2",
+    "lint-staged": ">=10",
     "prettier": "^2.0.5",
     "react-markdown": "^4.3.1",
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.7"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": "eslint --cache --fix"
   }
 }
