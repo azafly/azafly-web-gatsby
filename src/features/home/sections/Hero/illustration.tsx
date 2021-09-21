@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         illustration: {
             borderRadius: 25,
+            marginTop: -100,
             [theme.breakpoints.only('xs')]: {
                 borderRadius: 15,
                 width: '90%',
