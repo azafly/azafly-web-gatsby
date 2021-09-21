@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
-import { PostSnippet } from "../../types";
+import { PostSnippet } from "../../../types";
 import { PostList } from "../postList";
-import { Pagination } from "../pagination";
+import { Pagination } from "../../../components/pagination";
 
 export interface BlogList {
   page: number;

@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
-import { createStyles, makeStyles, Theme } from '@material-ui/core'
+import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import { Link } from "gatsby-theme-material-ui";
 import Image from "gatsby-image";
-import { PostSnippet } from "../../types";
+import { PostSnippet } from "../../../types";
 
 export interface PostList {
   posts: PostSnippet[];
@@ -10,13 +10,11 @@ export interface PostList {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-
-    },
+    root: {},
     tag: {
-      color: theme.colors.mainGreen
-    }
-  }),
+      color: theme.colors.mainGreen,
+    },
+  })
 );
 
 export const PostListItem: FunctionComponent<PostSnippet> = ({
@@ -27,7 +25,7 @@ export const PostListItem: FunctionComponent<PostSnippet> = ({
   tags,
   summary,
 }) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <div className={`${classes.root} flex mb-16 sm:mb-28 flex-col sm:flex-row`}>
       <div className="flex-shrink-0 mr-0 sm:mr-8 mb-6 sm:mb-0">
@@ -49,14 +47,19 @@ export const PostListItem: FunctionComponent<PostSnippet> = ({
           <div className="text-sm leading-5 font-medium text-indigo-600">
             {tags?.map((tag, index) => (
               <span key={index} className="mr-4">
-                <Link to={`/tags/${tag}`} className={`${classes.tag} hover:no-underline`}>
+                <Link
+                  to={`/tags/${tag}`}
+                  className={`${classes.tag} hover:no-underline`}
+                >
                   #{tag}
                 </Link>
               </span>
             ))}
           </div>
           <Link to={href} className="hover:no-underline">
-            <p className="mt-3 text-base leading-6 text-gray-500 hover:no-underline">{summary}</p>
+            <p className="mt-3 text-base leading-6 text-gray-500 hover:no-underline">
+              {summary}
+            </p>
           </Link>
         </div>
         <div className="mt-4">

@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
-import { createStyles, makeStyles, Theme } from '@material-ui/core'
+import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import Image from "gatsby-image";
-import { PostSnippet } from "../../types";
 import { Link } from "gatsby-theme-material-ui";
+import { PostSnippet } from "../../../types";
 
 export interface FeaturePosts {
   featurePosts: PostSnippet[];
@@ -12,11 +12,10 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     tag: {
       color: theme.colors.mainGreen,
-      textDecoration: 'none'
-    }
-  }),
+      textDecoration: "none",
+    },
+  })
 );
-
 
 export const FeaturePost: FunctionComponent<PostSnippet> = ({
   title,
@@ -26,7 +25,7 @@ export const FeaturePost: FunctionComponent<PostSnippet> = ({
   imgAlt,
   tags,
 }) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
       <div className="flex-shrink-0">
@@ -43,7 +42,10 @@ export const FeaturePost: FunctionComponent<PostSnippet> = ({
           <p className="text-sm leading-5 font-medium text-indigo-600">
             {tags.map((tag, index) => (
               <span key={index}>
-                <Link to={`/tags/${tag}`} className={`${classes.tag} hover:no-underline`}>
+                <Link
+                  to={`/tags/${tag}`}
+                  className={`${classes.tag} hover:no-underline`}
+                >
                   #{tag}
                 </Link>{" "}
               </span>
@@ -53,7 +55,9 @@ export const FeaturePost: FunctionComponent<PostSnippet> = ({
             <h3 className="mt-2 text-xl leading-7 font-semibold text-gray-900 ">
               {title}
             </h3>
-            <p className="mt-3 text-base leading-6 text-gray-500 hover:no-underline">{summary}</p>
+            <p className="mt-3 text-base leading-6 text-gray-500 hover:no-underline">
+              {summary}
+            </p>
           </Link>
         </div>
       </div>

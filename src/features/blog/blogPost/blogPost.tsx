@@ -1,11 +1,10 @@
 import React, { FunctionComponent } from "react";
-import { createStyles, makeStyles, Theme } from '@material-ui/core'
+import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import { format } from "date-fns";
 import Image, { FluidObject } from "gatsby-image";
-import { Layout } from "../../components/layout";
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { Link } from "gatsby-theme-material-ui";
-
+import { Layout } from "../../../components/layout";
 
 interface BlogPost {
   title: string;
@@ -18,26 +17,25 @@ interface BlogPost {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      color: theme.colors.black
+      color: theme.colors.black,
     },
     tag: {
-      color: theme.colors.mainGreen
+      color: theme.colors.mainGreen,
     },
     blogLink: {
       fontWeight: "bolder",
-      cursor: 'pointer',
-      color: theme.colors.black
+      cursor: "pointer",
+      color: theme.colors.black,
     },
     heroImage: {
-      [theme.breakpoints.up('sm')]: {
+      [theme.breakpoints.up("sm")]: {
         height: 500,
-        width: '60vw',
-        margin: 'auto'
-      }
-    }
-  }),
+        width: "60vw",
+        margin: "auto",
+      },
+    },
+  })
 );
-
 
 export const BlogPost: FunctionComponent<BlogPost> = ({
   title,
@@ -47,7 +45,7 @@ export const BlogPost: FunctionComponent<BlogPost> = ({
   publishedDate,
   children,
 }) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <Layout>
       <div className={classes.root}>
@@ -58,9 +56,12 @@ export const BlogPost: FunctionComponent<BlogPost> = ({
           {format(publishedDate, "dd MMM, yyyy")}
         </div>
         <div className="text-center mb-3 text-gray-500">
-          <Link to="/blog" className={classes.blogLink} ><ArrowBackIcon /> Back </Link>
+          <Link to="/blog" className={classes.blogLink}>
+            <ArrowBackIcon /> Back{" "}
+          </Link>
           {tags.map((tag, index) => (
-            <Link to={`/tags/${tag}`}
+            <Link
+              to={`/tags/${tag}`}
               key={index}
               className={`${classes.tag}text-sm leading-5 font-medium mx-2`}
             >
@@ -68,7 +69,11 @@ export const BlogPost: FunctionComponent<BlogPost> = ({
             </Link>
           ))}
         </div>
-        <Image fluid={img} alt={imgAlt || title} className={classes.heroImage} />
+        <Image
+          fluid={img}
+          alt={imgAlt || title}
+          className={classes.heroImage}
+        />
         {imgAlt && (
           <div className="text-center my-2 text-gray-500">{imgAlt}</div>
         )}

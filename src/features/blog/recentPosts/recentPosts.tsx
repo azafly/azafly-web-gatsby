@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { PostSnippet } from "../../types";
+import { PostSnippet } from "../../../types";
 import { PostList } from "../postList";
 
 export interface RecentPosts {

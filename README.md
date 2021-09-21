@@ -29,8 +29,8 @@ Replace the logo in `static/logo.png` and run `npm run generate-favicon` to gene
 
 **NB** :warning: :warning: :children_crossing:
 
->It is imporatnt not to ever push directly to master. Of course, ideally we should protect this branch but as we are still on free Github :star_struck: this is not a poissibility. 
-Hence, ensure ypu create a branch and go through the PR and merging process.
+>It is imporatnt not to ever push directly to master. Of course, ideally we should protect this branch but as we are still on free Github :star_struck: this is not a possibility. 
+Hence, ensure you create a branch and go through the PR and merging process.
 
 - Create the new branch with a summary of the feature/fix and issue. For example 'TASK-2-Create-footer-link'
 - Create a pull request after the fix or feature is completed
