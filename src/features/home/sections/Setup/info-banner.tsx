@@ -24,6 +24,15 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: 30,
       marginBottom: 20,
     },
+    paragraph: {
+      fontWeight: 450,
+      lineHeight: 1.5,
+      [theme.breakpoints.only("xs")]: {
+        textAlign: "center",
+        margin: "auto",
+        fontSize: "0.95em",
+      },
+    },
     actionButton: {
       background: theme.colors.mainGreen,
       textTransform: "none",
@@ -52,7 +61,7 @@ export const InfoBanner = () => {
         <Typography variant="h4" className={classes.titleHeading} gutterBottom>
           A better way to plan
         </Typography>
-        <Typography paragraph>
+        <Typography paragraph className={classes.paragraph}>
           Live your life on your terms and without limits. With an Azafly
           account, you can add money to your wallet for free, within seconds and
           start making transfers to other wallets or any bank accounts for
