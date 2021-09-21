@@ -1,13 +1,13 @@
 import Rating from '@material-ui/lab/Rating';
-import React from 'react'
+import React, { SetStateAction } from 'react'
 
 
 interface StarRatingProps {
     rating: number | null
-    setRating: Function
+    setRating: (rating: number | null) => SetStateAction<number | null>
     isReadOnly?: boolean
     disabled?: boolean,
-    size?: any
+    size?: 'small' | 'medium' | 'large'
     classNames?: string
 }
 

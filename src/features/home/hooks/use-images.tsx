@@ -16,18 +16,6 @@ export const homePageImages = {
   setupImage: ''
 }
 
-// const imageQueryTemplate = `  setupImage: file(relativePath: { eq: "images/smiling-man.jpg" }) {
-//       childImageSharp {
-//         fixed(width: 125, height: 125) {
-//           ...GatsbyImageSharpFixed
-//         }
-//       }
-//     }`
-
-// function computeImageQuery() {
-//   const queries = {}
-
-// }
 
 
 

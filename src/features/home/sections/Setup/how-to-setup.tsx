@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, makeStyles, Theme, createStyles } from "@material-ui/core";
 import { Illustration } from "./illustration";
 import { InfoBanner } from "./info-banner";
+import { HomeImages } from "../../../../createPages/templates/home";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -9,11 +10,8 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
       width: "80%",
       margin: "auto",
-      height: 800,
-      paddingTop: 20,
       display: "flex",
       [theme.breakpoints.only("xs")]: {
-        marginTop: 10,
         padding: "10px 10px",
         width: "100%",
         margin: "auto",
@@ -31,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface HomePageHeaderSectionProps {
   isMobileScreenSize?: boolean;
-  images?: any;
+  images: HomeImages;
 }
 
 export const HowToSetUp = ({ images }: HomePageHeaderSectionProps) => {

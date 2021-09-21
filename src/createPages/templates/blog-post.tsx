@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from "react";
 import { graphql } from "gatsby";
 import { FluidObject } from "gatsby-image";
-import { BlogPost } from "../../components/blogPost";
+import { DiscussionEmbed } from "disqus-react";
+import { BlogPost } from "../../features/blog/blogPost";
 import { SEO } from "../../components/seo";
-import { DiscussionEmbed } from "disqus-react"
 
 interface QueryData {
   markdownRemark: {
@@ -20,8 +20,6 @@ interface QueryData {
     };
   };
 }
-
-
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!, $tag: [String!]) {
@@ -96,14 +94,13 @@ export const Page: FunctionComponent<Page> = ({ data }) => {
     },
   } = data;
 
-
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME as string,
     config: {
-      identifier: `${imgAlt}+${description}`, title
+      identifier: `${imgAlt}+${description}`,
+      title,
     },
-  }
-
+  };
 
   return (
     <>

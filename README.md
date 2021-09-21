@@ -1,36 +1,41 @@
-# Gatsby Blog
+# Static Website and CMS Admin
 
-[Demo Site](https://static-blog.netlify.app/)
+[Live Site](https://azafly.com/)
 
-This repo contains an example blog that is built with Gatsby, and Netlify CMS.
+This repo contains our static website, blog and CMS Admin.It is built with Gatsby, and Netlify CMS.
 
 It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.
 
 ## Getting Started
 
-Netlify CMS can run in any frontend web environment, but the quickest way to try it out is by running it on a pre-configured starter site with Netlify.
+Netlify CMS can runs on a pre-configured starter site with Netlify.
+
+CMS can be reach on the path `/admin` fro example `https://locahost-xxxx/admin` 
 
 Use the link below to build and deploy your own copy of the repository:
 
-[Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/yehjxraymond/static-blog-template&stack=cms)
 
-After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template. Next, it will build and deploy the new site on Netlify, bringing you to the site dashboard when the build is complete. Next, you’ll need to set up Netlify’s Identity service to authorize users to log in to the CMS.
+## To run locally
 
-## Feature
-
-- Netlify CMS to manage blog
-- Contact form
-- Lighting fast page load
-
-## Configuration
-
+- Clone this repo
+- run `yarn install`
+- copy the content of `example.env` to `.env`. Ask for missing or placeholder `env` values from code owner
+- run `yarn dev`
 ### Generate site logo
 
 Replace the logo in `static/logo.png` and run `npm run generate-favicon` to generate the other favicon assets from that logo.
 
-### TODO
+### Contributing
 
-- active in menu bar
-- configurable menu bar
-- analytics
-- seo
+**NB** :warning: :warning: :children_crossing:
+
+>It is imporatnt not to ever push directly to master. Of course, ideally we should protect this branch but as we are still on free Github :star_struck: this is not a possibility. 
+Hence, ensure you create a branch and go through the PR and merging process.
+
+- Create the new branch with a summary of the feature/fix and issue. For example 'TASK-2-Create-footer-link'
+- Create a pull request after the fix or feature is completed
+- Merge pull request only after approval
+
+### Deployment
+
+Code is automatically deployed on Netlify after merging to master

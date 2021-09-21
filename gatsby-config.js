@@ -25,7 +25,7 @@ module.exports = {
             google: [
               {
                 family: `Nunito`,
-                variants: [`300`, `400`, `500`, '700', `900`],
+                variants: [`300`, `400`, `500`, "700", `900`],
               },
             ],
           },
@@ -73,9 +73,9 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/ // See below to configure properly
-        }
-      }
+          include: /assets/, // See below to configure properly
+        },
+      },
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
