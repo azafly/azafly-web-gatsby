@@ -1,7 +1,5 @@
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { Box, Button, Typography } from "@material-ui/core";
-import { motion, Variants } from "framer-motion";
-import VerifiedUser from "@material-ui/icons/VerifiedUser";
+import { Button, Typography } from "@material-ui/core";
 import { Link } from "gatsby-theme-material-ui";
 import React from "react";
 
@@ -56,7 +54,7 @@ export const InfoBanner = () => {
   const classes = useStyles();
 
   return (
-    <motion.div>
+    <div>
       <div className={classes.container}>
         <Typography variant="h4" className={classes.titleHeading} gutterBottom>
           A better way to plan
@@ -73,6 +71,6 @@ export const InfoBanner = () => {
           </Link>
         </Typography>
       </div>
-    </motion.div>
+    </div>
   );
 };

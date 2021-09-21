@@ -5,6 +5,7 @@ import { Link } from "gatsby-theme-material-ui";
 import React from "react";
 
 import { useFetchHomeData } from "../../hooks/use-data";
+import { CalendarSvgComponent } from "../../../../components/icons/calendar";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -93,10 +94,6 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface InfoBannerProps {
-  isSmallScreen?: boolean;
-}
-
 export const InfoBanner = () => {
   const classes = useStyles();
   const frontMatter = useFetchHomeData();
@@ -109,12 +106,22 @@ export const InfoBanner = () => {
       <motion.p className={classes.paragraph}>{frontMatter.intro}</motion.p>
       <motion.p className={classes.offer}>{frontMatter.offerText}</motion.p>
       <div className={classes.actionDiv}>
-        <Link to="/booking" className={classes.link}>
-          <Button variant="contained" className={classes.actionButtonBook}>
+        <Link
+          to={`${process.env.GATSBY_APP_URL}/booking`}
+          className={classes.link}
+        >
+          <Button
+            variant="contained"
+            className={classes.actionButtonBook}
+            endIcon={<CalendarSvgComponent />}
+          >
             {frontMatter.consultButtonText}
           </Button>
         </Link>
-        <Link to="/payment" className={classes.link}>
+        <Link
+          to={`${process.env.GATSBY_APP_URL}/payment`}
+          className={classes.link}
+        >
           <Button className={classes.actionButtonExplore}>
             {frontMatter.paymentButtonText}
           </Button>
