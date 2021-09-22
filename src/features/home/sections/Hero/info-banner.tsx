@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme: Theme) =>
       background: theme.colors.mainGreen,
       textTransform: "none",
       height: 40,
-      width: "20ch",
+      width: "25ch",
       color: "white",
       fontWeight: 500,
       minWidth: 170,
@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme: Theme) =>
       color: theme.colors.mainGreen,
       fontWeight: 600,
       padding: "7px 15px",
-      width: "20ch",
+      width: "25ch",
       borderRadius: 6,
       minWidth: 170,
       "&:hover": {
