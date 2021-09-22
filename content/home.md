@@ -6,7 +6,7 @@ heroMainImage1: ../../static/images/home-main.jpeg
 paymentImage: https://img.freepik.com/free-photo/happy-winner-young-rich-african-american-man-casual-t-shirt-holding-money_255757-5489.jpg?size=626&ext=jpg
 offerText: Get 10% off your 1st service, or when you refer a friend!
 consultButtonText: Consult for free
-paymentButtonText: Make an international payment
+paymentButtonText: Make payments abroad
 chatPromptText: Chat with us
 servicesHeaderText: We put all the pieces together
 servicesHeaderText-subtext1: International Payments
