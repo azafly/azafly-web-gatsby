@@ -27,8 +27,9 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: 'auto',
             alignSelf: 'start',
             borderRadius: 12,
+            backgroundColor: theme.palette.background.default,
             paddingTop: 50,
-            boxShadow: '0 2px 16px 0 rgb(0 0 0 / 8%);'
+            boxShadow: 'rgba(0, 27, 71, 0.16) 0px 29px 32px -25px',
         },
         media: {
             margin: 'auto',
@@ -102,13 +103,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export function ServiceCard({ icon, heading, actionText, actionIcon, actionRoute }: ServiceCardProps) {
     const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
 
-    const img = useHomeImageData()
 
     return (
         <Card className={classes.root}>
@@ -136,7 +132,6 @@ export function ServiceCard({ icon, heading, actionText, actionIcon, actionRoute
             </CardContent>
             <CardActions className={classes.cardAction}>
                 <Link style={{ textDecoration: 'none' }} to={actionRoute}><Button endIcon={actionIcon} className={classes.mainButton} color={'primary'} variant={'contained'} size={'medium'}> {actionText}</Button></Link>
-
             </CardActions>
         </Card >
     );

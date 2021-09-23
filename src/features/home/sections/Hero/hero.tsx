@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme: Theme) =>
         homePageHeroMain: {
             width: '100%',
             position: 'relative',
-            paddingBottom: 70,
             borderRadius: '50%'
         },
         homePageHeroInner: {
