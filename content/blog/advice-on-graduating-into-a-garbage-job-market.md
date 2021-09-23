@@ -7,7 +7,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   lectus quam. Enim neque volutpat ac tincidunt vitae semper quis lectus. At
   erat pellentesque adipiscing commodo elit at.
 featured: true
-img: ../../static/images/beach-seagull.jpeg
+img: ../../static/images/set-up.jpeg
 imgAlt: Get a table?
 tags:
   - opinion
