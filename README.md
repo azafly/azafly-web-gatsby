@@ -10,10 +10,7 @@ It follows the JAMstack architecture by using Git as a single source of truth, a
 
 Netlify CMS can runs on a pre-configured starter site with Netlify.
 
-CMS can be reach on the path `/admin` fro example `https://locahost-xxxx/admin` 
-
-Use the link below to build and deploy your own copy of the repository:
-
+CMS can be reached on the path `/admin` fro example `https://locahost-xxxx/admin` 
 
 ## To run locally
 
@@ -34,7 +31,9 @@ Hence, ensure you create a branch and go through the PR and merging process.
 
 - Create the new branch with a summary of the feature/fix and issue. For example 'TASK-2-Create-footer-link'
 - Create a pull request after the fix or feature is completed
+- Squash commits to keep history log lean.
 - Merge pull request only after approval
+- Monitor application for bugs and inconsistent behaviors.
 
 ### Deployment
 
