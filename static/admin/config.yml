@@ -86,3 +86,52 @@ collections:
           - {label: Title, name: title, widget: string}          
           - {label: Intro text, name: intro, widget: text}          
           - {label: Image, name: image, widget: image}
+      - label: "FAQ Page"
+        name: "faq"
+        widget: "object"
+        file: "content/faq.md"
+        summary: 'Faq Page contents'
+        fields:
+          - label: "General"
+            name: "general"
+            widget: "object"
+            collapsed: true
+            default: true
+            fields:
+              - label: "How to update my account"
+                name: "account"
+                widget: "object"
+                fields:
+                  - {label: "City", name: "city", widget: "string"}
+                  - {label: "Postal Code", name: "post-code", widget: "string"}   
+              - label: "How to update my account1"
+                name: "account1"
+                widget: "object"
+                fields:
+                  - {label: "City", name: "city", widget: "string"}
+                  - {label: "Postal Code", name: "post-code", widget: "string"} 
+              - label: "How to update my account2"
+                name: "account2"
+                widget: "object"
+                fields:
+                  - {label: "City", name: "city", widget: "string"}
+                  - {label: "Postal Code", name: "post-code", widget: "string"} 
+              - label: "How to update my account3"
+                name: "account3"
+                widget: "object"
+                fields:
+                  - {label: "City", name: "city", widget: "string"}
+                  - {label: "Postal Code", name: "post-code", widget: "string"}   
+              - label: "How to update my account4"
+                name: "account4"
+                widget: "object"
+                fields:
+                  - {label: "City", name: "city", widget: "string"}
+                  - {label: "Postal Code", name: "post-code", widget: "string"} 
+              - label: "How to update my account4"
+                name: "account5"
+                widget: "object"
+                fields:
+                  - {label: "City", name: "city", widget: "string"}
+                  - {label: "Postal Code", name: "post-code", widget: "string"} 
+       

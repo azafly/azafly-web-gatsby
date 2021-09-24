@@ -27,6 +27,24 @@ export const pageQuery = graphql`
         }
       }
     }
+    footer: allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            servicesHeaderText
+            servicesHeaderText_subtext1
+            servicesHeaderText_subtext1_button
+            servicesHeaderText_subtext1_image
+            servicesHeaderText_subtext2_button
+            servicesHeaderText_subtext2
+            servicesHeaderText_subtext2_image
+            servicesHeaderText_subtext3
+            servicesHeaderText_subtext3_button
+            servicesHeaderText_subtext3_image
+          }
+        }
+      }
+    }
   }
 `;
 

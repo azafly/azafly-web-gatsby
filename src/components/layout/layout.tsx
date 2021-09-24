@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, PropsWithChildren } from "react";
 import Helmet from "react-helmet";
 import { withPrefix } from "gatsby";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -48,7 +48,14 @@ const footer = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue lacus viverra vitae congue eu consequat. Egestas maecenas pharetra convallis posuere morbi. Sed faucibus turpis in eu mi bibendum neque egestas. Ullamcorper a lacus vestibulum sed arcu non odio euismod. Est velit egestas dui id ornare arcu odio ut. Integer feugiat scelerisque varius morbi enim nunc faucibus.",
 };
 
-export const Layout: FunctionComponent = ({ children }) => {
+interface FooterProps {
+  children?: any;
+  footerContent?: any;
+}
+
+export const Layout: FunctionComponent = ({
+  children,
+}: PropsWithChildren<FooterProps>) => {
   const { title } = useSiteMetadata();
 
   return (
