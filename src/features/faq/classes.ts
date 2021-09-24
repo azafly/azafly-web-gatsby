@@ -16,6 +16,7 @@ export const useCardContainerStyle = makeStyles((theme: Theme) =>
     cards: {
       width: "90%",
       margin: "auto",
+      [theme.breakpoints.up("md")]: {},
     },
   })
 );
@@ -98,8 +99,6 @@ export const useCardStyles = makeStyles((theme: Theme) =>
     root: {
       maxWidth: 345,
       zIndex: 99,
-      background: "#fafafa",
-      boxShadow: "rgba(0, 27, 71, 0.16) 0px 29px 32px -25px",
       [theme.breakpoints.up("md")]: {
         marginTop: -100,
       },

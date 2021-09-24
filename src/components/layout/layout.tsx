@@ -1,16 +1,51 @@
 import React, { FunctionComponent } from "react";
 import Helmet from "react-helmet";
 import { withPrefix } from "gatsby";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
 import { Header } from "./header";
 import { Footer } from "./footer";
 
-
 const footer = {
   copyrightOwner: "Azafly",
-  linkedin: "https://www.linkedin.com/azafly",
-  instagram: "https://www.instagram.com/azafly",
-  facebook: "https://www.instagram.com/azafly"
+  socialMedia: [
+    {
+      name: "Facebook",
+      icon: <FacebookIcon />,
+      link: "https://www.instagram.com/azafly",
+    },
+    {
+      name: "Instagram",
+      icon: <InstagramIcon />,
+      link: "https://www.instagram.com/azafly",
+    },
+    {
+      name: "LinkedIn",
+      icon: <LinkedInIcon />,
+      link: "https://www.linkedin.com/azafly",
+    },
+  ],
+  support: [
+    { title: "About Us", link: "/" },
+    { title: "Features", link: "/" },
+    { title: "FAQ's", link: "/" },
+    { title: "Blog", link: "/" },
+    { title: "Contact", link: "/" },
+  ],
+  account: [
+    { title: "Worldwide", link: "/" },
+    { title: "Scalable", link: "/" },
+    { title: "Modular", link: "/" },
+    { title: "Connectivity", link: "/" },
+    { title: "Cooporate", link: "/" },
+  ],
+  address: "455 West Orchard Street Kings Mountain, NC, 28097",
+  phone: "(272) 211-7370",
+  email: "support@azafly.com",
+  aboutContent:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue lacus viverra vitae congue eu consequat. Egestas maecenas pharetra convallis posuere morbi. Sed faucibus turpis in eu mi bibendum neque egestas. Ullamcorper a lacus vestibulum sed arcu non odio euismod. Est velit egestas dui id ornare arcu odio ut. Integer feugiat scelerisque varius morbi enim nunc faucibus.",
 };
 
 export const Layout: FunctionComponent = ({ children }) => {
@@ -45,8 +80,17 @@ export const Layout: FunctionComponent = ({ children }) => {
         />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <meta name="theme-color" content="#fff" />
-        <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          charSet="UTF-8"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
       </Helmet>
       <Header />
       <div className="min-h-screen">
