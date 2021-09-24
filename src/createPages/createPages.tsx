@@ -1,26 +1,24 @@
 import { CreatePagesArgs } from "gatsby";
 import * as path from "path";
 
-
 const pages = [
   {
-    path: 'about',
-    page: 'about'
+    path: "about",
+    page: "about",
   },
   {
-    path: 'blog',
-    page: 'blog'
+    path: "blog",
+    page: "blog",
   },
   {
-    path: 'services',
-    page: 'services'
+    path: "services",
+    page: "services",
   },
   {
-    path: '/',
-    page: 'home'
+    path: "/",
+    page: "home",
   },
-]
-
+];
 
 interface PostQuery {
   allMarkdownRemark: {
@@ -48,7 +46,7 @@ export const createPages = async ({
   const { createPage } = actions;
   const result = await graphql<PostQuery>(`
     {
-      allMarkdownRemark (filter: {fields: {slug: {regex: "/blog/"}}}) {
+      allMarkdownRemark(filter: { fields: { slug: { regex: "/blog/" } } }) {
         edges {
           node {
             id
@@ -75,11 +73,9 @@ export const createPages = async ({
       component: path.resolve(`src/createPages/templates/${page}.tsx`),
       context: {},
     });
+  });
 
-  })
-
-
-  const posts = result.data?.allMarkdownRemark.edges
+  const posts = result.data?.allMarkdownRemark.edges;
 
   const tagsCollection = new Set<string>();
 

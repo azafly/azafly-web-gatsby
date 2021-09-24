@@ -1,22 +1,23 @@
+import faker from "faker";
 
-import faker from 'faker'
+export const categories = [
+  "general",
+  "payments",
+  "visa and immigration",
+  "refund",
+  "services",
+];
 
-export const categories = ['general', 'payments', 'visa and immigration', 'refund', 'services']
-
-
-const total = Array(5).fill(null)
-export const mockArticles = () => total.map(() => ({
+const total = Array(5).fill(null);
+export const mockArticles = () =>
+  total.map(() => ({
     title: faker.lorem.sentence(7, 2),
-    content: faker.lorem.paragraphs(2)
-}))
-
+    content: faker.lorem.paragraphs(2),
+  }));
 
 export const getFakeArticles: Promise<any> = new Promise((resolve) => {
-
-    const articleByCategory = categories.map((it: any) => {
-        return [it, mockArticles()]
-
-    })
-    resolve(articleByCategory)
-})
-
+  const articleByCategory = categories.map((it: any) => {
+    return [it, mockArticles()];
+  });
+  resolve(articleByCategory);
+});
