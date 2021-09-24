@@ -79,7 +79,6 @@ collections:
           - {label: Title, name: title, widget: string}          
           - {label: Intro text, name: intro, widget: text}          
           - {label: Image, name: image, widget: image}
-          - {label: Image, name: image, widget: image}
       - label: "Services Page"        
         name: "Services"        
         file: "content/services.md"        
@@ -87,4 +86,3 @@ collections:
           - {label: Title, name: title, widget: string}          
           - {label: Intro text, name: intro, widget: text}          
           - {label: Image, name: image, widget: image}
-      
