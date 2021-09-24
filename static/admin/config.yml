@@ -62,6 +62,16 @@ collections:
           - {label: Coming Soon heading, name: comingSoonHeading, widget: string}
           - {label: Coming Soon paragraph, name: comingSoonParagraph, widget: string}
           - {label: Coming Soon button, name: comingSoonButton, widget: string}
+          - {label: Footer heading1, name: footerHeading1, widget: string}
+          - {label: Footer heading2, name: footerHeading2, widget: string}
+          - {label: Footer heading3, name: footerHeading3, widget: string}
+          - {label: Footer Intro, name: footerIntro, widget: text}
+          - label: "Footer Link List1" 
+            name: "footerLinkList1"
+            widget: "object"
+            fields: 
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Link", name: "link", widget: "string"}
       - label: "About Page"        
         name: "About"        
         file: "content/about.md"        
