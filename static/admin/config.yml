@@ -86,3 +86,219 @@ collections:
           - {label: Title, name: title, widget: string}          
           - {label: Intro text, name: intro, widget: text}          
           - {label: Image, name: image, widget: image}
+      - label: "FAQ Page"
+        name: "faq"
+        widget: "object"
+        file: "content/faq.md"
+        summary: 'Faq Page contents'
+        fields:
+          - label: "General"
+            name: "general"
+            widget: "object"
+            collapsed: true
+            default: true
+            fields:
+              - label: "How to update my account"
+                name: "account"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"}   
+              - label: "How to update my account1"
+                name: "account1"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account2"
+                name: "account2"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account3"
+                name: "account3"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"}   
+              - label: "How to update my account4"
+                name: "account4"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account4"
+                name: "account5"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+          - label: "Services"
+            name: "services"
+            widget: "object"
+            collapsed: true
+            default: true
+            fields:
+              - label: "How to update my account"
+                name: "account"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"}   
+              - label: "How to update my account1"
+                name: "account1"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account2"
+                name: "account2"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account3"
+                name: "account3"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"}   
+              - label: "How to update my account4"
+                name: "account4"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account4"
+                name: "account5"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+          - label: "Payments"
+            name: "payments"
+            widget: "object"
+            collapsed: true
+            default: true
+            fields:
+              - label: "How to send Money baroad"
+                name: "account"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"}   
+              - label: "How to update my account1"
+                name: "account1"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account2"
+                name: "account2"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account3"
+                name: "account3"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"}   
+              - label: "How to update my account4"
+                name: "account4"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account4"
+                name: "account5"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+          - label: "Visa and Immigration"
+            name: "visa"
+            widget: "object"
+            collapsed: true
+            default: true
+            fields:
+              - label: "How to pay for Visa"
+                name: "account"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"}   
+              - label: "How to update my account1"
+                name: "account1"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account2"
+                name: "account2"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account3"
+                name: "account3"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"}   
+              - label: "How to update my account4"
+                name: "account4"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account4"
+                name: "account5"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+          - label: "Refund"
+            name: "refund"
+            widget: "object"
+            collapsed: true
+            default: true
+            fields:
+              - label: "How to get refund"
+                name: "account"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"}   
+              - label: "How to update my account1"
+                name: "account1"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account2"
+                name: "account2"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account3"
+                name: "account3"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"}   
+              - label: "How to update my account4"
+                name: "account4"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
+              - label: "How to update my account4"
+                name: "account5"
+                widget: "object"
+                fields:
+                  - {label: "Heading", name: "heading", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"} 
