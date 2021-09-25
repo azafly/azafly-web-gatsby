@@ -19,6 +19,7 @@ servicesHeaderText-subtext1-button: Make a payment
 servicesHeaderText-subtext2-button: Consult for free
 servicesHeaderText-subtext3-button: Start Now
 secureHeading: Secure by design
+setupImage: ../../static/images/home-setup.jpeg
 secureParagraph: Already trusted by thousands of happy clients. We are protected
   by EU Financial charter. You have nothing to be worried about  Pay for all
   your service with secure payment channels. We accept dozens of methods across
@@ -31,6 +32,12 @@ comingSoonParagraph: Anticipate the amazing features in the works here on
   AzaFly. Singnup below to keep updated. We will send you an email every month.
   Promise No Spam.
 comingSoonButton: Sign me up
+footerHeading1: test
+footerHeading2: Hey
+footerHeading3: Ho
+footerIntro: HELLO
 image: ../../static/images/smiling-man.jpg
-setupImage: ../../static/images/home-setup.jpeg
+footerLinkList1:
+  title: Hello
+  link: /about
 ---
