@@ -98,6 +98,33 @@ export const Footer: FunctionComponent<Footer> = ({
 }) => {
   const classes = useStyles();
   const url = ["/", "/blog", "/services", "/about"];
+  const response = useStaticQuery(graphql`
+    query FooterContent {
+      homeData: allMarkdownRemark(
+        filter: { frontmatter: { title: { regex: "/Home/" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              footerLinkList1 {
+                link
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+  const { frontmatter } = response.homeData.edges[0].node;
+  // eslint-disable-next-line no-console
+  // internationalOfficeAddress
+  // internationalOfficePhone
+  // internationalOfficeEmail
+  // nigeriaOfficeAddress
+  // nigeriaOfficePhone
+  // nigeriaOfficeEmail
+  // footerIntroContent
   return (
     <footer>
       <Box px={{ xs: 3, sm: 10 }} py={{ xs: 5, sm: 10 }}>
@@ -109,7 +136,7 @@ export const Footer: FunctionComponent<Footer> = ({
                 <div className={classes.text}>{aboutContent}</div>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={4} md={3} lg={2}>
+            <Grid item xs={5} sm={4} md={3} lg={2}>
               <Box>
                 <Box className={classes.subTitle}>Helpful Links</Box>
               </Box>
@@ -123,7 +150,7 @@ export const Footer: FunctionComponent<Footer> = ({
                 );
               })}
             </Grid>
-            <Grid item xs={12} sm={6} lg={3}>
+            <Grid item xs={7} sm={6} lg={3}>
               <Box>
                 <Box className={classes.subTitle}>International Office</Box>
               </Box>
@@ -133,7 +160,7 @@ export const Footer: FunctionComponent<Footer> = ({
                 <div className={classes.text}>Email: {email1}</div>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6} lg={3}>
+            <Grid item xs={7} sm={6} lg={3}>
               <Box>
                 <Box className={classes.subTitle}>Nigeria Office</Box>
               </Box>
