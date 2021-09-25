@@ -61,7 +61,7 @@ const Home: FunctionComponent<Home> = ({ data }) => {
   return (
     <>
       <SEO
-        title=" | Emmigrate and Make Complex International Payments Easily"
+        title="Azafly | Emmigrate and Make Complex International Payments Easily"
         image="/logo.png"
       />
       <Layout>

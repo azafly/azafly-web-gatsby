@@ -18,21 +18,24 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     titleHeading: {
       color: theme.colors.black,
-      fontSize: 30,
+      fontSize: 40,
       fontFamily: "Nunito",
       fontWeight: 900,
+      marginBottom: 30,
       [theme.breakpoints.only("xs")]: {
         textAlign: "center",
         margin: "auto",
+        marginBottom: 20,
       },
     },
     paragraph: {
       fontWeight: 450,
       lineHeight: 1.5,
-      fontSize: "0.95rem",
+      fontSize: "1rem",
       [theme.breakpoints.only("xs")]: {
         textAlign: "center",
         margin: "auto",
+        fontSize: "0.9rem",
       },
     },
   })
