@@ -36,7 +36,12 @@ export const HowToSetUp = ({ images }: HomePageHeaderSectionProps) => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <Grid container justify="space-around" alignItems="center">
+      <Grid
+        container
+        justify="space-around"
+        alignItems="center"
+        style={{ maxWidth: 1200, margin: "auto" }}
+      >
         <Grid item xs={12} sm={6}>
           <Illustration images={images} />
         </Grid>

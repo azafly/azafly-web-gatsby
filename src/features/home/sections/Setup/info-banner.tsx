@@ -19,13 +19,13 @@ const useStyles = makeStyles((theme: Theme) =>
       color: theme.colors.black,
       fontFamily: "Nunito",
       fontWeight: 900,
-      fontSize: 30,
+      fontSize: 40,
       marginBottom: 20,
     },
     paragraph: {
       fontWeight: 450,
       lineHeight: 1.5,
-      fontSize: "0.95rem",
+      fontSize: "1rem",
       [theme.breakpoints.only("xs")]: {
         textAlign: "center",
         margin: "auto",

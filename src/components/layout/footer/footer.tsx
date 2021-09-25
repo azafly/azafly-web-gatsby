@@ -80,7 +80,7 @@ export interface Footer {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     title: {
-      fontWeight: "bolder",
+      fontWeight: 900,
       fontSize: 35,
     },
     subTitle: {
@@ -127,7 +127,7 @@ export const Footer: FunctionComponent<Footer> = ({
         <Container maxWidth="lg">
           <Grid container spacing={5}>
             <Grid item xs={12} sm={4}>
-              <Box className={classes.title}>Azafly</Box>
+              <Box className={classes.title}>azafly</Box>
               <Box className={classes.contentMargin}>
                 <div className={classes.text}>{aboutContent}</div>
               </Box>

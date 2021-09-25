@@ -13,14 +13,15 @@ import { HomeImages } from "../../../../createPages/templates/home";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     homePageHeroMain: {
-      width: "100%",
       position: "relative",
-      borderRadius: "50%",
+      background: "#F7F8F9",
+      width: "100%",
     },
     homePageHeroInner: {
       flexGrow: 1,
-      background: "#F7F8F9",
-      padding: 50,
+      padding: "50px 50px 50px 0px",
+      maxWidth: 1600,
+      margin: "auto",
       [theme.breakpoints.only("xs")]: {
         padding: 5,
       },
@@ -89,7 +90,7 @@ export const HomePageHeroSection = ({ images }: Props) => {
           </Grid>
         </Box>
         <Box clone order={{ xs: 1, sm: 2 }}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={5}>
             <Illustration images={images} />
           </Grid>
         </Box>

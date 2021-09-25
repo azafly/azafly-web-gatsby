@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       textAlign: "center",
-      fontWeight: 800,
+      fontWeight: 900,
       color: theme.colors.black,
       fontFamily: "Nunito",
       fontSize: 40,
@@ -122,6 +122,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     serviceCardContainer: {
       width: "86vw",
+      maxWidth: 1200,
       margin: "auto",
       marginTop: 50,
     },
