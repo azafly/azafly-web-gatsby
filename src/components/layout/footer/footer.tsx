@@ -99,7 +99,7 @@ export const Footer: FunctionComponent<Footer> = ({
   email2,
 }) => {
   const classes = useStyles();
-  const url = ["/", "/blog", "/services", "/about", "/"];
+  const url = ["/", "/blog", "/services", "/about",];
   return (
     <footer>
       <Box px={{ xs: 3, sm: 10 }} py={{ xs: 5, sm: 10 }}>
