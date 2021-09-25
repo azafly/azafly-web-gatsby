@@ -97,35 +97,7 @@ export const Footer: FunctionComponent<Footer> = ({
   email2,
 }) => {
   const classes = useStyles();
-  const url = ["/", "/blog", "/services", "/about", "/"];
-
-  const response = useStaticQuery(graphql`
-    query FooterContent {
-      homeData: allMarkdownRemark(
-        filter: { frontmatter: { title: { regex: "/Home/" } } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              footerLinkList1 {
-                link
-                title
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-  const { frontmatter } = response.homeData.edges[0].node;
-  // eslint-disable-next-line no-console
-  // internationalOfficeAddress
-  // internationalOfficePhone
-  // internationalOfficeEmail
-  // nigeriaOfficeAddress
-  // nigeriaOfficePhone
-  // nigeriaOfficeEmail
-  // footerIntroContent
+  const url = ["/", "/blog", "/services", "/about"];
   return (
     <footer>
       <Box px={{ xs: 3, sm: 10 }} py={{ xs: 5, sm: 10 }}>
