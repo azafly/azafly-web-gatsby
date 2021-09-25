@@ -21,9 +21,11 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: 40,
       fontFamily: "Nunito",
       fontWeight: 900,
+      marginBottom: 30,
       [theme.breakpoints.only("xs")]: {
         textAlign: "center",
         margin: "auto",
+        marginBottom: 20,
       },
     },
     paragraph: {
@@ -33,6 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.only("xs")]: {
         textAlign: "center",
         margin: "auto",
+        fontSize: "0.9rem",
       },
     },
   })

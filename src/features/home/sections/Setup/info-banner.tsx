@@ -21,6 +21,11 @@ const useStyles = makeStyles((theme: Theme) =>
       fontWeight: 900,
       fontSize: 40,
       marginBottom: 20,
+      [theme.breakpoints.only("xs")]: {
+        textAlign: "center",
+        margin: "auto",
+        marginBottom: 20,
+      },
     },
     paragraph: {
       fontWeight: 450,
@@ -29,6 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.only("xs")]: {
         textAlign: "center",
         margin: "auto",
+        fontSize: "0.9rem",
       },
     },
     actionButton: {
