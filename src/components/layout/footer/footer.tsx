@@ -33,28 +33,6 @@ export interface FooterContent {
   };
 }
 
-// const response = useStaticQuery(graphql`
-//   query FooterContent {
-//     homeData: allMarkdownRemark(
-//       filter: { frontmatter: { title: { regex: "/Home/" } } }
-//     ) {
-//       edges {
-//         node {
-//           frontmatter {
-//             footerIntroContent
-//             internationalOfficeAddress
-//             internationalOfficePhone
-//             internationalOfficeEmail
-//             nigeriaOfficeAddress
-//             nigeriaOfficePhone
-//             nigeriaOfficeEmail
-//             footerLinkList
-//           }
-//         }
-//       }
-//     }
-//   }
-// `);
 interface FooterLink {
   link: string;
 }
@@ -75,7 +53,6 @@ export interface Footer {
   address2?: string;
   email2?: string;
   phone2?: string;
-  footerContent?: any;
 }
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -121,18 +98,46 @@ export const Footer: FunctionComponent<Footer> = ({
 }) => {
   const classes = useStyles();
   const url = ["/", "/blog", "/services", "/about", "/"];
+
+  const response = useStaticQuery(graphql`
+    query FooterContent {
+      homeData: allMarkdownRemark(
+        filter: { frontmatter: { title: { regex: "/Home/" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              footerLinkList1 {
+                link
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+  const { frontmatter } = response.homeData.edges[0].node;
+  // eslint-disable-next-line no-console
+  // internationalOfficeAddress
+  // internationalOfficePhone
+  // internationalOfficeEmail
+  // nigeriaOfficeAddress
+  // nigeriaOfficePhone
+  // nigeriaOfficeEmail
+  // footerIntroContent
   return (
     <footer>
       <Box px={{ xs: 3, sm: 10 }} py={{ xs: 5, sm: 10 }}>
         <Container maxWidth="lg">
           <Grid container spacing={5}>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={7} md={9} lg={4}>
               <Box className={classes.title}>Azafly</Box>
               <Box className={classes.contentMargin}>
                 <div className={classes.text}>{aboutContent}</div>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={2}>
+            <Grid item xs={12} sm={4} md={3} lg={2}>
               <Box>
                 <Box className={classes.subTitle}>Helpful Links</Box>
               </Box>
@@ -146,7 +151,7 @@ export const Footer: FunctionComponent<Footer> = ({
                 );
               })}
             </Grid>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={6} lg={3}>
               <Box>
                 <Box className={classes.subTitle}>International Office</Box>
               </Box>
@@ -156,7 +161,7 @@ export const Footer: FunctionComponent<Footer> = ({
                 <div className={classes.text}>Email: {email1}</div>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={6} lg={3}>
               <Box>
                 <Box className={classes.subTitle}>Nigeria Office</Box>
               </Box>
