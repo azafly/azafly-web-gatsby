@@ -33,28 +33,7 @@ export interface FooterContent {
   };
 }
 
-// const response = useStaticQuery(graphql`
-//   query FooterContent {
-//     homeData: allMarkdownRemark(
-//       filter: { frontmatter: { title: { regex: "/Home/" } } }
-//     ) {
-//       edges {
-//         node {
-//           frontmatter {
-//             footerIntroContent
-//             internationalOfficeAddress
-//             internationalOfficePhone
-//             internationalOfficeEmail
-//             nigeriaOfficeAddress
-//             nigeriaOfficePhone
-//             nigeriaOfficeEmail
-//             footerLinkList
-//           }
-//         }
-//       }
-//     }
-//   }
-// `);
+/
 interface FooterLink {
   link: string;
 }
