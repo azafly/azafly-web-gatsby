@@ -78,8 +78,6 @@ collections:
               - {label: "Link3", name: "link3", widget: "string"}
               - {label: "Link4", name: "link4", widget: "string"}
               - {label: "Link5", name: "link5", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Link", name: "link", widget: "string"}
       - label: "About Page"        
         name: "About"        
         file: "content/about.md"        
