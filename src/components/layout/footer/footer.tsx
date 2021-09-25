@@ -46,7 +46,7 @@ export interface Footer {
   copyrightOwner: string;
   socialMedia: Media[];
   aboutContent?: string;
-  support: FooterLink[];
+  support?: FooterLink[];
   address1?: string;
   email1?: string;
   phone1?: string;
@@ -86,18 +86,10 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const Footer: FunctionComponent<Footer> = ({
   copyrightOwner,
-  aboutContent,
-  support,
   socialMedia,
-  address1,
-  phone1,
-  email1,
-  address2,
-  phone2,
-  email2,
 }) => {
   const classes = useStyles();
-  const url = ["/", "/blog", "/services", "/about"];
+  const url = ["/about", "/services", "/faq", "/blog", "/contact"];
   const response = useStaticQuery(graphql`
     query FooterContent {
       homeData: allMarkdownRemark(
@@ -106,9 +98,19 @@ export const Footer: FunctionComponent<Footer> = ({
         edges {
           node {
             frontmatter {
-              footerLinkList1 {
-                link
-                title
+              footerIntroContent
+              internationalOfficeAddress
+              internationalOfficeEmail
+              internationalOfficePhone
+              nigeriaOfficeAddress
+              nigeriaOfficeEmail
+              nigeriaOfficePhone
+              footerLinkList {
+                link1
+                link2
+                link3
+                link4
+                link5
               }
             }
           }
@@ -117,14 +119,14 @@ export const Footer: FunctionComponent<Footer> = ({
     }
   `);
   const { frontmatter } = response.homeData.edges[0].node;
-  // eslint-disable-next-line no-console
-  // internationalOfficeAddress
-  // internationalOfficePhone
-  // internationalOfficeEmail
-  // nigeriaOfficeAddress
-  // nigeriaOfficePhone
-  // nigeriaOfficeEmail
-  // footerIntroContent
+  const helfulLink = [
+    { link: frontmatter.footerLinkList.link1 },
+    { link: frontmatter.footerLinkList.link2 },
+    { link: frontmatter.footerLinkList.link3 },
+    { link: frontmatter.footerLinkList.link4 },
+    { link: frontmatter.footerLinkList.link5 },
+  ];
+
   return (
     <footer>
       <Box px={{ xs: 3, sm: 10 }} py={{ xs: 5, sm: 10 }}>
@@ -133,14 +135,16 @@ export const Footer: FunctionComponent<Footer> = ({
             <Grid item xs={12} sm={7} md={9} lg={4}>
               <Box className={classes.title}>Azafly</Box>
               <Box className={classes.contentMargin}>
-                <div className={classes.text}>{aboutContent}</div>
+                <div className={classes.text}>
+                  {frontmatter.footerIntroContent}
+                </div>
               </Box>
             </Grid>
             <Grid item xs={5} sm={4} md={3} lg={2}>
               <Box>
                 <Box className={classes.subTitle}>Helpful Links</Box>
               </Box>
-              {support.map((link, index) => {
+              {helfulLink.map((link, index) => {
                 return (
                   <Box key={index} className={classes.link}>
                     <Link href={url[index]} color="inherit">
@@ -155,19 +159,31 @@ export const Footer: FunctionComponent<Footer> = ({
                 <Box className={classes.subTitle}>International Office</Box>
               </Box>
               <Box className={classes.contentMargin}>
-                <div className={classes.text}>{address1}</div>
-                <div className={classes.text}>Phone: {phone1}</div>
-                <div className={classes.text}>Email: {email1}</div>
+                <div className={classes.text}>
+                  {frontmatter.internationalOfficeAddress}
+                </div>
+                <div className={classes.text}>
+                  Phone: {frontmatter.internationalOfficePhone}
+                </div>
+                <div className={classes.text}>
+                  Email: {frontmatter.internationalOfficeEmail}
+                </div>
               </Box>
             </Grid>
-            <Grid item xs={7} sm={6} lg={3}>
+            <Grid item xs={9} sm={6} lg={3}>
               <Box>
                 <Box className={classes.subTitle}>Nigeria Office</Box>
               </Box>
               <Box className={classes.contentMargin}>
-                <div className={classes.text}>{address2}</div>
-                <div className={classes.text}>Phone: {phone2}</div>
-                <div className={classes.text}>Email: {email2}</div>
+                <div className={classes.text}>
+                  {frontmatter.nigeriaOfficeAddress}
+                </div>
+                <div className={classes.text}>
+                  Phone: {frontmatter.nigeriaOfficePhone}
+                </div>
+                <div className={classes.text}>
+                  Email: {frontmatter.nigeriaOfficeEmail}
+                </div>
               </Box>
             </Grid>
           </Grid>
