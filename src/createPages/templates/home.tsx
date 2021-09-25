@@ -42,7 +42,10 @@ interface Home {
 const Home: FunctionComponent<Home> = ({ data }) => {
   return (
     <>
-      <SEO title="Home" image="/logo.png" />
+      <SEO
+        title=" | Emmigrate and Make Complex International Payments Easily"
+        image="/logo.png"
+      />
       <Layout>
         <HomeView images={data} />
       </Layout>

@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     heading: {
-      fontWeight: 400,
+      fontWeight: 550,
       display: "flex",
       letterSpacing: "0.4",
       justifyContent: "space-between",
@@ -44,8 +44,9 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     description: {
-      fontSize: "0.8rem",
+      fontSize: "0.95rem",
       letterSpacing: "0.4",
+      color: theme.palette.text.primary,
     },
   })
 );

@@ -64,13 +64,13 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       width: "100vw",
+      backgroundColor: "rgb(239, 242, 246)",
       overflowX: "hidden",
       position: "relative",
-      padding: "10px 0px 70px 0px",
+      padding: "70px 0px 70px 0px",
       background: "white",
       [theme.breakpoints.only("xs")]: {
-        marginTop: 40,
-        padding: "10px 0px 40px 0px",
+        padding: "40px 0px 40px 0px",
         marginBottom: 50,
       },
     },

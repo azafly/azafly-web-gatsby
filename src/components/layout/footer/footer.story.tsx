@@ -46,16 +46,12 @@ const data: Footer = {
     },
   ],
   support: [
-    { title: "Contact", link: "/" },
-    { title: "Support", link: "/" },
-    { title: "Terms and Condition", link: "/" },
-    { title: "Green Post", link: "/" },
+    { link: "Contact" },
+    { link: "Support" },
+    { link: "Terms and Condition" },
+    { link: "Green Post" },
   ],
-  account: [
-    { title: "Login", link: "/" },
-    { title: "Register", link: "/" },
-    { title: "Chat", link: "/" },
-  ],
+
   aboutContent:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue lacus viverra vitae congue eu consequat. Egestas maecenas pharetra convallis posuere morbi. Sed faucibus turpis in eu mi bibendum neque egestas. Ullamcorper a lacus vestibulum sed arcu non odio euismod. Est velit egestas dui id ornare arcu odio ut. Integer feugiat scelerisque varius morbi enim nunc faucibus.",
 };

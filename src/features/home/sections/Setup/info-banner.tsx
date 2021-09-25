@@ -25,10 +25,10 @@ const useStyles = makeStyles((theme: Theme) =>
     paragraph: {
       fontWeight: 450,
       lineHeight: 1.5,
+      fontSize: "0.95rem",
       [theme.breakpoints.only("xs")]: {
         textAlign: "center",
         margin: "auto",
-        fontSize: "0.95em",
       },
     },
     actionButton: {
