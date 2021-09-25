@@ -8,13 +8,32 @@ import {
   Link,
   makeStyles,
   Theme,
-  Typography,
 } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useStaticQuery, graphql } from "gatsby";
+
+export interface FooterContent {
+  node: {
+    id: string;
+    fields: {
+      slug: string;
+    };
+    frontmatter: {
+      footerIntroContent: string;
+      internationalOfficeAddress: string;
+      internationalOfficePhone: string;
+      internationalOfficeEmail: string;
+      nigeriaOfficeAddress: string;
+      nigeriaOfficePhone: string;
+      nigeriaOfficeEmail: string;
+      // eslint-disable-next-line @typescript-eslint/ban-types
+      footerLinkList: object;
+    };
+  };
+}
 
 interface FooterLink {
-  title: string;
   link: string;
 }
 interface Media {
@@ -28,10 +47,12 @@ export interface Footer {
   socialMedia: Media[];
   aboutContent?: string;
   support: FooterLink[];
-  account: FooterLink[];
-  address?: string;
-  email?: string;
-  phone?: string;
+  address1?: string;
+  email1?: string;
+  phone1?: string;
+  address2?: string;
+  email2?: string;
+  phone2?: string;
 }
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -67,66 +88,86 @@ export const Footer: FunctionComponent<Footer> = ({
   copyrightOwner,
   aboutContent,
   support,
-  account,
   socialMedia,
-  address,
-  phone,
-  email,
+  address1,
+  phone1,
+  email1,
+  address2,
+  phone2,
+  email2,
 }) => {
   const classes = useStyles();
-
+  const url = ["/", "/blog", "/services", "/about"];
+  const response = useStaticQuery(graphql`
+    query FooterContent {
+      homeData: allMarkdownRemark(
+        filter: { frontmatter: { title: { regex: "/Home/" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              footerLinkList1 {
+                link
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+  const { frontmatter } = response.homeData.edges[0].node;
+  // eslint-disable-next-line no-console
+  // internationalOfficeAddress
+  // internationalOfficePhone
+  // internationalOfficeEmail
+  // nigeriaOfficeAddress
+  // nigeriaOfficePhone
+  // nigeriaOfficeEmail
+  // footerIntroContent
   return (
     <footer>
       <Box px={{ xs: 3, sm: 10 }} py={{ xs: 5, sm: 10 }}>
         <Container maxWidth="lg">
           <Grid container spacing={5}>
-            <Grid item xs={12} sm={5}>
+            <Grid item xs={12} sm={7} md={9} lg={4}>
               <Box className={classes.title}>Azafly</Box>
               <Box className={classes.contentMargin}>
                 <div className={classes.text}>{aboutContent}</div>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={2}>
+            <Grid item xs={5} sm={4} md={3} lg={2}>
               <Box>
                 <Box className={classes.subTitle}>Helpful Links</Box>
               </Box>
               {support.map((link, index) => {
                 return (
                   <Box key={index} className={classes.link}>
-                    <Link href={link.link} color="inherit">
-                      <KeyboardArrowRightIcon /> {link.title}
+                    <Link href={url[index]} color="inherit">
+                      <KeyboardArrowRightIcon /> {link.link}
                     </Link>
                   </Box>
                 );
               })}
             </Grid>
-            <Grid item xs={12} sm={2}>
+            <Grid item xs={7} sm={6} lg={3}>
               <Box>
-                <Box className={classes.subTitle}>Services</Box>
-              </Box>
-              {account.map((link, index) => {
-                return (
-                  <Box key={index} className={classes.link}>
-                    <Link href={link.link} color="inherit">
-                      <KeyboardArrowRightIcon /> {link.title}
-                    </Link>
-                  </Box>
-                );
-              })}
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <Box>
-                <Box className={classes.subTitle}>Contact Us</Box>
+                <Box className={classes.subTitle}>International Office</Box>
               </Box>
               <Box className={classes.contentMargin}>
-                <div
-                  className={classes.text}
-                  // style={{ marginTop: 20, marginBottom: 10 }}
-                >
-                  {address}
-                </div>
-                <div className={classes.text}>Phone: {phone}</div>
-                <div className={classes.text}>Email: {email}</div>
+                <div className={classes.text}>{address1}</div>
+                <div className={classes.text}>Phone: {phone1}</div>
+                <div className={classes.text}>Email: {email1}</div>
+              </Box>
+            </Grid>
+            <Grid item xs={7} sm={6} lg={3}>
+              <Box>
+                <Box className={classes.subTitle}>Nigeria Office</Box>
+              </Box>
+              <Box className={classes.contentMargin}>
+                <div className={classes.text}>{address2}</div>
+                <div className={classes.text}>Phone: {phone2}</div>
+                <div className={classes.text}>Email: {email2}</div>
               </Box>
             </Grid>
           </Grid>
@@ -143,7 +184,9 @@ export const Footer: FunctionComponent<Footer> = ({
                       marginRight="1rem"
                       marginBottom="1rem"
                     >
-                      <IconButton color="primary">{media.icon}</IconButton>
+                      <IconButton href={media.link} color="primary">
+                        {media.icon}
+                      </IconButton>
                     </Box>
                   );
                 })}
