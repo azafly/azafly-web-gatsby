@@ -32,10 +32,28 @@ comingSoonParagraph: Anticipate the amazing features in the works here on
   AzaFly. Singnup below to keep updated. We will send you an email every month.
   Promise No Spam.
 comingSoonButton: Sign me up
+footerIntroContent: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+  do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue lacus
+  viverra vitae congue eu consequat. Egestas maecenas pharetra convallis posuere
+  morbi. Sed faucibus turpis in eu mi bibendum neque egestas. Ullamcorper a
+  lacus vestibulum sed arcu non odio euismod. Est velit egestas dui id ornare
+  arcu odio ut. Integer feugiat scelerisque varius morbi enim nunc faucibus.
+internationalOfficeAddress: 455 West Orchard Street Kings Mountain, NC, 28097
+internationalOfficePhone: (272) 211-7370
+internationalOfficeEmail: support@azafly.com
+nigeriaOfficeAddress: 77 Kings Royal Street Ajah, Lagos, Nigeria
+nigeriaOfficePhone: (234) 91-0083-7370
 footerHeading1: test
 footerHeading2: Hey
 footerHeading3: Ho
+nigeriaOfficeEmail: support-ng@azafly.com
 footerIntro: HELLO
+footerLinkList:
+  link1: About Us
+  link2: Features
+  link3: FAQ's
+  link4: Blog
+  link5: Contact
 image: ../../static/images/smiling-man.jpg
 footerLinkList1:
   title: Hello

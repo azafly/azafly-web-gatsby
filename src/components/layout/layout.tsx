@@ -27,21 +27,6 @@ const footer = {
       link: "https://www.linkedin.com/azafly",
     },
   ],
-  support: [
-    { link: "About Us" },
-    { link: "Features" },
-    { link: "FAQ's" },
-    { link: "Blog" },
-    { link: "Contact" },
-  ],
-  address1: "455 West Orchard Street Kings Mountain, NC, 28097",
-  phone1: "(272) 211-7370",
-  email1: "support@azafly.com",
-  address2: "77 Kings Royal Street Ajah, Lagos, Nigeria",
-  phone2: "(272) 211-7370",
-  email2: "support@azafly.com",
-  aboutContent:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue lacus viverra vitae congue eu consequat. Egestas maecenas pharetra convallis posuere morbi. Sed faucibus turpis in eu mi bibendum neque egestas. Ullamcorper a lacus vestibulum sed arcu non odio euismod. Est velit egestas dui id ornare arcu odio ut. Integer feugiat scelerisque varius morbi enim nunc faucibus.",
 };
 
 interface FooterProps {
