@@ -1,15 +1,17 @@
-import React, { ReactElement } from 'react'
-import { ActivitySvgComponent, HomeSvgComponent, ProfileSvgComponent, SignOutSvgComponent } from '../components/common/icons'
-
-
-
+import React, { ReactElement } from 'react';
+import {
+    ActivitySvgComponent,
+    HomeSvgComponent,
+    ProfileSvgComponent,
+    SignOutSvgComponent
+} from '../components/common/icons';
 
 interface SideMenu {
-    name: string
-    icon: ReactElement
-    isOpened?: boolean,
-    isLogOut?: boolean,
-    route?: string
+    name: string;
+    icon: ReactElement;
+    isOpened?: boolean;
+    isLogOut?: boolean;
+    route?: string;
 }
 
 export const sideMenu: SideMenu[] = [
@@ -42,9 +44,8 @@ export const sideMenu: SideMenu[] = [
         isOpened: false,
         icon: <ActivitySvgComponent stroke={'#0d324d'} />,
         route: '/faq'
-    },
-]
-
+    }
+];
 
 export const deskTopNavItems = [
     {
@@ -54,7 +55,8 @@ export const deskTopNavItems = [
     {
         name: 'Support',
         route: '/faq'
-    }, {
+    },
+    {
         name: 'Blog',
         route: '/blog'
     },
@@ -62,5 +64,4 @@ export const deskTopNavItems = [
         name: 'Services',
         route: '/services'
     }
-
-]
+];
