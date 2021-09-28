@@ -10,14 +10,7 @@ interface StarRatingProps {
     classNames?: string;
 }
 
-export function StarRating({
-    rating,
-    setRating,
-    isReadOnly = true,
-    disabled = false,
-    size = 'small',
-    classNames = ''
-}: StarRatingProps) {
+export function StarRating({ rating, setRating, isReadOnly = true, disabled = false, size = 'small', classNames = '' }: StarRatingProps) {
     return (
         <Rating
             name='read-only'

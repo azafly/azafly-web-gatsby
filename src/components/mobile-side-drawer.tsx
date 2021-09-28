@@ -51,11 +51,7 @@ const variants = {
     }
 };
 
-export const MobileSideDrawer = ({
-    open,
-    handleDrawerClose,
-    isSmallScreen
-}: MobileDrawerProps) => {
+export const MobileSideDrawer = ({ open, handleDrawerClose, isSmallScreen }: MobileDrawerProps) => {
     const theme = useTheme();
 
     const classes = useStyles();
@@ -72,23 +68,13 @@ export const MobileSideDrawer = ({
                     }}
                 >
                     <div className={classes.drawerHeader}>
-                        <IconButton onClick={handleDrawerClose}>
-                            {theme.direction === 'rtl' ? (
-                                <ChevronLeftIcon />
-                            ) : (
-                                <ChevronRightIcon />
-                            )}
-                        </IconButton>
+                        <IconButton onClick={handleDrawerClose}>{theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}</IconButton>
                     </div>
                     <Divider />
                     <List component={motion.ul} variants={variants}>
                         {sideMenu.map(({ name, icon, route }) => (
                             <Link to={route} key={name}>
-                                <MenuListItem
-                                    variant={sideMenuAnimation.item}
-                                    text={name}
-                                    key={name}
-                                >
+                                <MenuListItem variant={sideMenuAnimation.item} text={name} key={name}>
                                     {icon}
                                 </MenuListItem>
                             </Link>
@@ -98,11 +84,7 @@ export const MobileSideDrawer = ({
 
                     <Link to={'/signin'}>
                         <List component={motion.ul} variants={variants}>
-                            <MenuListItem
-                                variant={sideMenuAnimation.item}
-                                text={'LogIn'}
-                                key={'Login'}
-                            >
+                            <MenuListItem variant={sideMenuAnimation.item} text={'LogIn'} key={'Login'}>
                                 {'Signin'}
                             </MenuListItem>
                         </List>

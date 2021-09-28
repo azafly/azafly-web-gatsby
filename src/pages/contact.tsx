@@ -46,19 +46,13 @@ export const NotFound: FunctionComponent = () => {
             <div className='relative bg-white mt-2'>
                 <div className='hidden lg:block lg:absolute lg:inset-0'>
                     <div className='lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2'>
-                        <img
-                            className='h-56 w-full object-cover lg:absolute lg:h-full'
-                            src='/contact.jpeg'
-                            alt=''
-                        />
+                        <img className='h-56 w-full object-cover lg:absolute lg:h-full' src='/contact.jpeg' alt='' />
                     </div>
                 </div>
                 <div className='relative pt-12 pb-16 px-4 sm:pt-16 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-2'>
                     <div className='lg:pr-8'>
                         <div className='max-w-md mx-auto sm:max-w-lg lg:mx-0'>
-                            <h2 className='text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10'>
-                                Contact Me
-                            </h2>
+                            <h2 className='text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10'>Contact Me</h2>
                             <form
                                 name={FORM_NAME}
                                 data-netlify='true'
@@ -68,18 +62,13 @@ export const NotFound: FunctionComponent = () => {
                                 className='mt-9 grid grid-cols-1 row-gap-6 sm:grid-cols-2 sm:col-gap-8'
                             >
                                 <div>
-                                    <label
-                                        htmlFor='first_name'
-                                        className='block text-sm font-medium leading-5 text-gray-700'
-                                    >
+                                    <label htmlFor='first_name' className='block text-sm font-medium leading-5 text-gray-700'>
                                         First name
                                     </label>
                                     <div className='mt-1 relative rounded-md shadow-sm'>
                                         <input
                                             value={firstName}
-                                            onChange={e =>
-                                                setFirstName(e.target.value)
-                                            }
+                                            onChange={e => setFirstName(e.target.value)}
                                             name='FirstName'
                                             id='first_name'
                                             className='form-input block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5'
@@ -87,18 +76,13 @@ export const NotFound: FunctionComponent = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <label
-                                        htmlFor='last_name'
-                                        className='block text-sm font-medium leading-5 text-gray-700'
-                                    >
+                                    <label htmlFor='last_name' className='block text-sm font-medium leading-5 text-gray-700'>
                                         Last name
                                     </label>
                                     <div className='mt-1 relative rounded-md shadow-sm'>
                                         <input
                                             value={lastName}
-                                            onChange={e =>
-                                                setLastName(e.target.value)
-                                            }
+                                            onChange={e => setLastName(e.target.value)}
                                             name='LastName'
                                             id='last_name'
                                             className='form-input block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5'
@@ -106,18 +90,13 @@ export const NotFound: FunctionComponent = () => {
                                     </div>
                                 </div>
                                 <div className='sm:col-span-2'>
-                                    <label
-                                        htmlFor='email'
-                                        className='block text-sm font-medium leading-5 text-gray-700'
-                                    >
+                                    <label htmlFor='email' className='block text-sm font-medium leading-5 text-gray-700'>
                                         Email
                                     </label>
                                     <div className='mt-1 relative rounded-md shadow-sm'>
                                         <input
                                             value={email}
-                                            onChange={e =>
-                                                setEmail(e.target.value)
-                                            }
+                                            onChange={e => setEmail(e.target.value)}
                                             name='Email'
                                             id='email'
                                             type='email'
@@ -127,22 +106,15 @@ export const NotFound: FunctionComponent = () => {
                                 </div>
                                 <div className='sm:col-span-2'>
                                     <div className='flex justify-between'>
-                                        <label
-                                            htmlFor='phone'
-                                            className='block text-sm font-medium leading-5 text-gray-700'
-                                        >
+                                        <label htmlFor='phone' className='block text-sm font-medium leading-5 text-gray-700'>
                                             Phone
                                         </label>
-                                        <span className='text-sm leading-5 text-gray-500'>
-                                            Optional
-                                        </span>
+                                        <span className='text-sm leading-5 text-gray-500'>Optional</span>
                                     </div>
                                     <div className='mt-1 relative rounded-md shadow-sm'>
                                         <input
                                             value={phone}
-                                            onChange={e =>
-                                                setPhone(e.target.value)
-                                            }
+                                            onChange={e => setPhone(e.target.value)}
                                             name='Phone'
                                             id='phone'
                                             className='form-input block w-full transition ease-in-out duration-150 sm:text-sm sm:leading-5'
@@ -151,22 +123,15 @@ export const NotFound: FunctionComponent = () => {
                                 </div>
                                 <div className='sm:col-span-2'>
                                     <div className='flex justify-between'>
-                                        <label
-                                            htmlFor='message'
-                                            className='block text-sm font-medium leading-5 text-gray-700'
-                                        >
+                                        <label htmlFor='message' className='block text-sm font-medium leading-5 text-gray-700'>
                                             Message
                                         </label>
-                                        <span className='text-sm leading-5 text-gray-500'>
-                                            Max. 500 characters
-                                        </span>
+                                        <span className='text-sm leading-5 text-gray-500'>Max. 500 characters</span>
                                     </div>
                                     <div className='mt-1 relative rounded-md shadow-sm'>
                                         <textarea
                                             value={message}
-                                            onChange={e =>
-                                                setMessage(e.target.value)
-                                            }
+                                            onChange={e => setMessage(e.target.value)}
                                             name='Message'
                                             id='message'
                                             rows={4}

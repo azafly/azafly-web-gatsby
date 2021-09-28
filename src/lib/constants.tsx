@@ -1,10 +1,5 @@
 import React, { ReactElement } from 'react';
-import {
-    ActivitySvgComponent,
-    HomeSvgComponent,
-    ProfileSvgComponent,
-    SignOutSvgComponent
-} from '../components/common/icons';
+import { ActivitySvgComponent, HomeSvgComponent } from '../components/common/icons';
 
 interface SideMenu {
     name: string;

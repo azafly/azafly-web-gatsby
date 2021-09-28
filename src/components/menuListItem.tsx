@@ -26,11 +26,7 @@ const variants = {
     }
 };
 
-export const MenuListItem = ({
-    text,
-    children,
-    onClick
-}: PropsWithChildren<MenuListItemProps>) => {
+export const MenuListItem = ({ text, children, onClick }: PropsWithChildren<MenuListItemProps>) => {
     return (
         <ListItem
             variants={variants}
