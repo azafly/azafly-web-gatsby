@@ -1,10 +1,11 @@
-import React from "react";
-import { Grid } from '@material-ui/core';
-import { makeStyles, Theme, createStyles } from '@material-ui/core';
-import { Illustration, } from './illustration'
+import React from 'react';
+import { Grid, makeStyles, Theme, createStyles } from '@material-ui/core';
+import { Illustration } from './illustration';
 import { InfoBanner } from './info-banner';
-import { ComingSoonBG, ComingSoonBG2 } from '../../../../components/illustrations/backgrounds';
-
+import {
+    ComingSoonBG,
+    ComingSoonBG2
+} from '../../../../components/illustrations/backgrounds';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -17,11 +18,11 @@ const useStyles = makeStyles((theme: Theme) =>
             height: 'auto',
             background: theme.palette.primary.main,
             [theme.breakpoints.down('sm')]: {
-                padding: '50px 10px',
+                padding: '50px 10px'
             },
             [theme.breakpoints.up('md')]: {
-                padding: '50px 10px',
-            },
+                padding: '50px 10px'
+            }
         },
         inner: {
             flexGrow: 1,
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.only('xs')]: {
                 width: '100vw',
                 margin: 'auto'
-            },
+            }
         },
         bgIllustration: {
             position: 'absolute',
@@ -47,18 +48,22 @@ const useStyles = makeStyles((theme: Theme) =>
             opacity: 0.8,
             pointerEvents: 'none'
         }
-    }),
-
+    })
 );
 
-
-
 export const ComingSoon = () => {
-    const classes = useStyles()
+    const classes = useStyles();
     return (
         <div className={classes.comingSoonContainer}>
-            <ComingSoonBG className={classes.bgIllustration} />    <ComingSoonBG2 className={classes.bgIllustration2} />
-            <Grid container justify="space-around" alignItems="center" className={classes.inner}>
+            <ComingSoonBG className={classes.bgIllustration} />{' '}
+            <ComingSoonBG2 className={classes.bgIllustration2} />
+            <Grid
+                container
+                justify='space-around'
+                alignItems='center'
+                className={classes.inner}
+                style={{ maxWidth: 1400, margin: 'auto' }}
+            >
                 <Grid item xs={12} sm={6}>
                     <Illustration />
                 </Grid>
@@ -67,6 +72,5 @@ export const ComingSoon = () => {
                 </Grid>
             </Grid>
         </div>
-
     );
-}
+};

@@ -77,7 +77,7 @@ visa:
     text: Nihil dolore sed pariatur non sit molestiae.
 refund:
   account:
-    heading: Nihil dolore sed pariatur non sit molestiae.
+    heading: Refund policy is in development.
     text: Nihil dolore sed pariatur non sit molestiae.
   account1:
     heading: Nihil dolore sed pariatur non sit molestiae.
