@@ -39,16 +39,11 @@ interface PostQuery {
 
 const POST_PER_PAGE = 10;
 
-export const createPages = async ({
-    actions,
-    graphql
-}: CreatePagesArgs): Promise<void> => {
+export const createPages = async ({ actions, graphql }: CreatePagesArgs): Promise<void> => {
     const { createPage } = actions;
     const result = await graphql<PostQuery>(`
         {
-            allMarkdownRemark(
-                filter: { fields: { slug: { regex: "/blog/" } } }
-            ) {
+            allMarkdownRemark(filter: { fields: { slug: { regex: "/blog/" } } }) {
                 edges {
                     node {
                         id
@@ -66,9 +61,7 @@ export const createPages = async ({
     `);
     if (result.errors) {
         console.error(result.errors);
-        throw new Error(
-            'Unexpected error from graphql query during create pages'
-        );
+        throw new Error('Unexpected error from graphql query during create pages');
     }
 
     pages.forEach(({ path: href, page }) => {
@@ -94,9 +87,7 @@ export const createPages = async ({
         tags.forEach(tag => tagsCollection.add(tag));
         createPage({
             path: edge.node.fields.slug,
-            component: path.resolve(
-                `src/createPages/templates/${edge.node.frontmatter.template}.tsx`
-            ),
+            component: path.resolve(`src/createPages/templates/${edge.node.frontmatter.template}.tsx`),
             context: {
                 id,
                 tags

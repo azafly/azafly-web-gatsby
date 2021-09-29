@@ -1,37 +1,9 @@
 import React, { FunctionComponent } from 'react';
-import {
-    Box,
-    Container,
-    createStyles,
-    Grid,
-    IconButton,
-    Link,
-    makeStyles,
-    Theme
-} from '@material-ui/core';
+import { Box, Container, createStyles, Grid, IconButton, Link, makeStyles, Theme } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { useStaticQuery, graphql } from 'gatsby';
 
-export interface FooterContent {
-    node: {
-        id: string;
-        fields: {
-            slug: string;
-        };
-        frontmatter: {
-            footerIntroContent: string;
-            internationalOfficeAddress: string;
-            internationalOfficePhone: string;
-            internationalOfficeEmail: string;
-            nigeriaOfficeAddress: string;
-            nigeriaOfficePhone: string;
-            nigeriaOfficeEmail: string;
-            // eslint-disable-next-line @typescript-eslint/ban-types
-            footerLinkList: object;
-        };
-    };
-}
+import { useFetchHomeData } from '../../../features/home/hooks/use-data';
 
 interface FooterLink {
     link: string;
@@ -85,41 +57,11 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const Footer: FunctionComponent<Footer> = ({
-    copyrightOwner,
-    socialMedia
-}) => {
+export const Footer: FunctionComponent<Footer> = ({ copyrightOwner, socialMedia }) => {
     const classes = useStyles();
     const url = ['/about', '/services', '/faq', '/blog', '/contact'];
-    const response = useStaticQuery(graphql`
-        query FooterContent {
-            homeData: allMarkdownRemark(
-                filter: { frontmatter: { title: { regex: "/Home/" } } }
-            ) {
-                edges {
-                    node {
-                        frontmatter {
-                            footerIntroContent
-                            internationalOfficeAddress
-                            internationalOfficeEmail
-                            internationalOfficePhone
-                            nigeriaOfficeAddress
-                            nigeriaOfficeEmail
-                            nigeriaOfficePhone
-                            footerLinkList {
-                                link1
-                                link2
-                                link3
-                                link4
-                                link5
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    `);
-    const { frontmatter } = response.homeData.edges[0].node;
+    const frontmatter = useFetchHomeData();
+    console.log(frontmatter);
     const helfulLink = [
         { link: frontmatter.footerLinkList.link1 },
         { link: frontmatter.footerLinkList.link2 },
@@ -136,23 +78,18 @@ export const Footer: FunctionComponent<Footer> = ({
                         <Grid item xs={12} sm={7} md={9} lg={4}>
                             <Box className={classes.title}>azafly</Box>
                             <Box className={classes.contentMargin}>
-                                <div className={classes.text}>
-                                    {frontmatter.footerIntroContent}
-                                </div>
+                                <div className={classes.text}>{frontmatter.footerIntroContent}</div>
                             </Box>
                         </Grid>
                         <Grid item xs={5} sm={4} md={3} lg={2}>
                             <Box>
-                                <Box className={classes.subTitle}>
-                                    Helpful Links
-                                </Box>
+                                <Box className={classes.subTitle}>Helpful Links</Box>
                             </Box>
                             {helfulLink.map((link, index) => {
                                 return (
                                     <Box key={index} className={classes.link}>
                                         <Link href={url[index]} color='inherit'>
-                                            <KeyboardArrowRightIcon />{' '}
-                                            {link.link}
+                                            <KeyboardArrowRightIcon /> {link.link}
                                         </Link>
                                     </Box>
                                 );
@@ -160,40 +97,22 @@ export const Footer: FunctionComponent<Footer> = ({
                         </Grid>
                         <Grid item xs={7} sm={6} lg={3}>
                             <Box>
-                                <Box className={classes.subTitle}>
-                                    International Office
-                                </Box>
+                                <Box className={classes.subTitle}>International Office</Box>
                             </Box>
                             <Box className={classes.contentMargin}>
-                                <div className={classes.text}>
-                                    {frontmatter.internationalOfficeAddress}
-                                </div>
-                                <div className={classes.text}>
-                                    Phone:{' '}
-                                    {frontmatter.internationalOfficePhone}
-                                </div>
-                                <div className={classes.text}>
-                                    Email:{' '}
-                                    {frontmatter.internationalOfficeEmail}
-                                </div>
+                                <div className={classes.text}>{frontmatter.internationalOfficeAddress}</div>
+                                <div className={classes.text}>Phone: {frontmatter.internationalOfficePhone}</div>
+                                <div className={classes.text}>Email: {frontmatter.internationalOfficeEmail}</div>
                             </Box>
                         </Grid>
                         <Grid item xs={9} sm={6} lg={3}>
                             <Box>
-                                <Box className={classes.subTitle}>
-                                    Nigeria Office
-                                </Box>
+                                <Box className={classes.subTitle}>Nigeria Office</Box>
                             </Box>
                             <Box className={classes.contentMargin}>
-                                <div className={classes.text}>
-                                    {frontmatter.nigeriaOfficeAddress}
-                                </div>
-                                <div className={classes.text}>
-                                    Phone: {frontmatter.nigeriaOfficePhone}
-                                </div>
-                                <div className={classes.text}>
-                                    Email: {frontmatter.nigeriaOfficeEmail}
-                                </div>
+                                <div className={classes.text}>{frontmatter.nigeriaOfficeAddress}</div>
+                                <div className={classes.text}>Phone: {frontmatter.nigeriaOfficePhone}</div>
+                                <div className={classes.text}>Email: {frontmatter.nigeriaOfficeEmail}</div>
                             </Box>
                         </Grid>
                     </Grid>
@@ -204,16 +123,8 @@ export const Footer: FunctionComponent<Footer> = ({
                             <Box className='flex justify-center md:order-2'>
                                 {socialMedia.map((media, index) => {
                                     return (
-                                        <Box
-                                            key={index}
-                                            display='inline-block'
-                                            marginRight='1rem'
-                                            marginBottom='1rem'
-                                        >
-                                            <IconButton
-                                                href={media.link}
-                                                color='primary'
-                                            >
+                                        <Box key={index} display='inline-block' marginRight='1rem' marginBottom='1rem'>
+                                            <IconButton href={media.link} color='primary'>
                                                 {media.icon}
                                             </IconButton>
                                         </Box>
@@ -221,11 +132,8 @@ export const Footer: FunctionComponent<Footer> = ({
                                 })}
                             </Box>
                             <Box className='mt-8 md:mt-0 md:order-1'>
-                                <p
-                                    className={`text-center text-base leading-6 ${classes.copywrite}`}
-                                >
-                                    © {new Date().getFullYear()}{' '}
-                                    {copyrightOwner}. All rights reserved.
+                                <p className={`text-center text-base leading-6 ${classes.copywrite}`}>
+                                    © {new Date().getFullYear()} {copyrightOwner}. All rights reserved.
                                 </p>
                             </Box>
                         </Box>
