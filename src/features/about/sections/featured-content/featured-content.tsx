@@ -53,7 +53,7 @@ const FeatureContent: React.FunctionComponent = () => {
                 </Typography>
                 <br />
                 <Typography variant='div' className={classes.heading2}>
-                    Global first | Inclusivity | integrity | Curiosity | Courageous | Creativity | Autonomous teams | Pursuit of Excelence
+                    Global first | Inclusivity | integrity | Curiosity | Courageous | Creativity | Autonomous teams | Pursuit of Excellence
                 </Typography>
             </Box>
             <br />

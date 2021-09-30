@@ -1,10 +1,14 @@
+import { Box, Container, Grid } from '@material-ui/core';
 import React from 'react';
 
-const ImageHeader: React.FunctionComponent = () => {
-    const Image =
-        'https://images.unsplash.com/photo-1573496267526-08a69e46a409?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80';
+interface IHeaderProps {
+    image: string;
+    title?: string;
+}
+
+const ImageHeader: React.FunctionComponent<IHeaderProps> = ({ image, title }) => {
     const headerStyle = {
-        backgroundImage: `url(${Image})`,
+        backgroundImage: title ? `linear-gradient(rgba(36, 20, 38, 0.5), rgba(36, 39, 38, 0.5)),url(${image})` : `url(${image})`,
         WebkitBackgroundSize: 'cover',
         MozBackgroundSize: 'cover',
         OBackgroundSize: 'cover',
@@ -12,8 +16,27 @@ const ImageHeader: React.FunctionComponent = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         width: '100%',
-        height: '40vh'
+        height: '40vh',
+        marginTop: -30
     };
-    return <header style={headerStyle}></header>;
+    return (
+        <header style={headerStyle}>
+            <Container>
+                <Grid container direction='column'>
+                    <Grid item>
+                        <div
+                            style={{
+                                fontSize: 60,
+                                fontWeight: 'bolder',
+                                marginTop: 150
+                            }}
+                        >
+                            <h1 className='display-4 text-white mt-5 mb-2'>{title}</h1>
+                        </div>
+                    </Grid>
+                </Grid>
+            </Container>
+        </header>
+    );
 };
 export default ImageHeader;

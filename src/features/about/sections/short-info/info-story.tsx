@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         heading: {
             fontSize: 45,
-            fontWeight: 'bolder'
+            fontWeight: 'bolder',
+            marginTop: 40
         }
     })
 );
@@ -32,9 +33,7 @@ const InfoStory: React.FunctionComponent = () => {
     const classes = useStyles();
     return (
         <Box className={classes.root}>
-            <Typography variant='div' className={classes.heading}>
-                Our story
-            </Typography>
+            <div className={classes.heading}>Our story</div>
             <Typography>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue
                 lacus viverra vitae congue eu consequat. Egestas maecenas pharetra convallis posuere morbi. Sed faucibus turpis in eu mi bibendum

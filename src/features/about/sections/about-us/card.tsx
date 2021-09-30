@@ -2,8 +2,8 @@ import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import Typography from '@material-ui/core/Typography';
-import { Box, Link } from '@material-ui/core';
+import { Box } from '@material-ui/core';
+import { Link } from 'gatsby-theme-material-ui';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -12,9 +12,9 @@ const useStyles = makeStyles((theme: Theme) =>
             minHeight: 220,
             marginBottom: 20,
             backgroundColor: `${theme.colors.mainGreen} !important`,
+            transition: ' all 1s ease',
             '&:hover': {
-                transform: 'scale(1.1)',
-                transition: 'all .5 s'
+                transform: 'scale(1.1)'
             }
         },
         media: {
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
             backgroundPosition: 'center',
             color: 'white',
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            transition: ' all .5s ease',
             '&:hover': {
                 width: '100%',
                 background: theme.colors.mainGreen,
@@ -50,15 +51,16 @@ interface ICard {
     title: string;
     subtitle: string;
     images: string;
+    page: string;
 }
 
 const AboutUsCard: React.FunctionComponent<ICard> = props => {
     const classes = useStyles(props);
-    const { title, subtitle } = props;
+    const { title, subtitle, page } = props;
 
     return (
-        <Box className={classes.root}>
-            <Link href='/' color='inherit' underline='none'>
+        <Box m='auto' className={classes.root}>
+            <Link to={page} color='inherit' underline='none'>
                 <Box className={classes.media}>
                     <div style={{ marginLeft: 40 }}>
                         <div className={classes.title}>{title}</div>
