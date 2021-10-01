@@ -16,6 +16,19 @@ const Awards: React.FunctionComponent = () => {
                 },
                 { title: 'Reliable international payment platform ' }
             ]
+        },
+        {
+            year: '2020',
+            awardList: [
+                { title: 'Best payment platform in Nigeria ' },
+                {
+                    title: ' Egestas maecenas pharetra convallis posuere morbi. Sed faucibus turpis in eu mibibendum neque egestas. Ullamcorper a lacus vestibulum sed arcu non odio euismod.  '
+                },
+                {
+                    title: ' Egestas maecenas pharetra convallis posuere morbi. Sed faucibus turpis in eu mibibendum neque egestas. Ullamcorper a lacus vestibulum sed arcu non odio euismod.  '
+                },
+                { title: 'Reliable international payment platform ' }
+            ]
         }
     ];
     const awardContent =

@@ -1,7 +1,8 @@
-import { makeStyles, Theme, createStyles, Box, Container, Grid, Typography } from '@material-ui/core';
-import React, { useState } from 'react';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { makeStyles, Theme, createStyles, Box, Container, Grid, Button } from '@material-ui/core';
+import { Link } from 'gatsby-material-ui-components';
+import React from 'react';
+
+import AwardList from './award-list';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -30,7 +31,11 @@ const useStyles = makeStyles((theme: Theme) =>
                 marginBottom: 50
             }
         },
-
+        service: {
+            marginTop: 300,
+            height: 120,
+            background: theme.colors.mainGreen
+        },
         title: {
             fontSize: 35,
             fontWeight: 'bold',
@@ -39,6 +44,9 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         subTitle: {
             fontSize: 15
+        },
+        boxText: {
+            padding: 40
         },
         grid: {
             marginLeft: '8vw',
@@ -63,60 +71,46 @@ interface IAwardsProps {
 
 const AwardsView: React.FunctionComponent<IAwardsProps> = ({ awardsData, content }) => {
     const classes = useStyles();
-    const [toggleArrow, setToggleArrow] = useState<boolean>(false);
 
-    const handleToggle = () => {
-        setToggleArrow(!toggleArrow);
-    };
-    const icon = !toggleArrow ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />;
     return (
         <Box>
             <Container>
                 <Box className={classes.text}>
+                    <div className={classes.title}>Recognitions</div>
+                    <div className={classes.subTitle}>{content}</div>
+                    <br />
                     <div className={classes.subTitle}>{content}</div>
                 </Box>
                 <div className={classes.title}>Awards</div>
                 <Grid container style={{ alignContent: 'center', alignItems: 'center' }}>
                     <Grid item xs={12} className={classes.grid}>
                         {awardsData?.map((award, index) => {
-                            return (
-                                <Box key={index}>
-                                    <Box display='flex' justifyContent='space-between' style={{ width: '100%' }}>
-                                        <Box alignItems='end'>
-                                            <div style={{ fontSize: 25, fontWeight: 'bolder' }}>{award.year}</div>
-                                        </Box>
-                                        <Box onClick={handleToggle} className={classes.color}>
-                                            {icon}
-                                        </Box>
-                                    </Box>
-                                    <hr />
-
-                                    {!toggleArrow ? (
-                                        <Box style={{ backgroundColor: '#dfe9ec' }}>
-                                            {award.awardList.map((awardList, index) => {
-                                                return (
-                                                    <Typography
-                                                        key={index}
-                                                        style={{
-                                                            marginLeft: 50,
-                                                            margingBottom: 50
-                                                        }}
-                                                    >
-                                                        {awardList.title}
-                                                    </Typography>
-                                                );
-                                            })}
-                                        </Box>
-                                    ) : (
-                                        ''
-                                    )}
-                                    <br />
-                                </Box>
-                            );
+                            return <AwardList key={index} year={award.year} awardList={award.awardList} />;
                         })}
                     </Grid>
                 </Grid>
             </Container>
+
+            <Box className={classes.service}>
+                <Container>
+                    <Box display='flex' justifyContent='space-between' className={classes.boxText}>
+                        <div style={{ fontSize: 25, color: 'white', fontWeight: 'bolder' }}>Check out our services </div>
+                        <Link to='/services'>
+                            <Button
+                                style={{
+                                    backgroundColor: '#f5f6f7',
+                                    paddingLeft: 40,
+                                    paddingRight: 40,
+                                    paddingTop: 10,
+                                    paddingBottom: 10
+                                }}
+                            >
+                                View services
+                            </Button>
+                        </Link>
+                    </Box>
+                </Container>
+            </Box>
         </Box>
     );
 };
