@@ -1,6 +1,7 @@
 import { makeStyles, Theme, createStyles, Box, Container, Grid, Button } from '@material-ui/core';
 import { Link } from 'gatsby-material-ui-components';
 import React from 'react';
+import SubFooter from '../sub-footer';
 
 import AwardList from './award-list';
 
@@ -31,11 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 marginBottom: 50
             }
         },
-        service: {
-            marginTop: 300,
-            height: 120,
-            background: theme.colors.mainGreen
-        },
+
         title: {
             fontSize: 35,
             fontWeight: 'bold',
@@ -45,9 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
         subTitle: {
             fontSize: 15
         },
-        boxText: {
-            padding: 40
-        },
+
         grid: {
             marginLeft: '8vw',
             marginRight: '8vw',
@@ -90,27 +85,7 @@ const AwardsView: React.FunctionComponent<IAwardsProps> = ({ awardsData, content
                     </Grid>
                 </Grid>
             </Container>
-
-            <Box className={classes.service}>
-                <Container>
-                    <Box display='flex' justifyContent='space-between' className={classes.boxText}>
-                        <div style={{ fontSize: 25, color: 'white', fontWeight: 'bolder' }}>Check out our services </div>
-                        <Link to='/services'>
-                            <Button
-                                style={{
-                                    backgroundColor: '#f5f6f7',
-                                    paddingLeft: 40,
-                                    paddingRight: 40,
-                                    paddingTop: 10,
-                                    paddingBottom: 10
-                                }}
-                            >
-                                View services
-                            </Button>
-                        </Link>
-                    </Box>
-                </Container>
-            </Box>
+            <SubFooter content='Check out our services' link='/services' buttonTitle='View services' />
         </Box>
     );
 };

@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme: Theme) =>
             fontSize: 15
         },
         card: {
-            maxWidth: 345,
+            width: 345,
             [theme.breakpoints.only('xs')]: {
                 alignContent: 'center',
                 alignItems: 'center'
@@ -90,7 +90,15 @@ const OurLeadersView: React.FunctionComponent<ILeadersProps> = ({ leadersData })
                     </div>
                 </Box>
                 <div className={classes.title}>Meet our growing team</div>
-                <Grid container spacing={2} style={{ alignContent: 'center', alignItems: 'center' }}>
+                <Grid
+                    container
+                    spacing={5}
+                    style={{
+                        alignContent: 'center',
+                        alignItems: 'center',
+                        width: '100%'
+                    }}
+                >
                     {leadersData?.map((leader, index) => {
                         return (
                             <Grid item xs={12} sm={6} md={4} className={classes.card}>
