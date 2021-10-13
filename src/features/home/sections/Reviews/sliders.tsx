@@ -1,16 +1,15 @@
+/* eslint-disable no-else-return */
 // @ts-ignore
-import Slider from "react-slick";
-import { forwardRef } from 'react'
+import Slider from 'react-slick';
+import { forwardRef } from 'react';
 import { SliderCard } from './slider-card';
 import { createStyles, makeStyles, Theme, useTheme } from '@material-ui/core/styles';
-import { Grid, useMediaQuery } from '@material-ui/core'
-
+import { Grid, useMediaQuery } from '@material-ui/core';
 
 import { BackwardSvgComponent, ForwardSvgComponent } from '../../../../components/icons';
 import React, { useState, useRef } from 'react';
 
-
-import { InfoBanner } from './info-banner'
+import { InfoBanner } from './info-banner';
 
 const cards = [
     {
@@ -42,21 +41,20 @@ const cards = [
         name: 'Moin Moin',
         src: 'https://headshots-berlin.de/wp-content/uploads/2020/03/Victoire-Laly-by-Chris-Marxen-Headshots-Berlin.png',
         text: ''
-    },
-].map(({ src, name }) => <SliderCard src={src} name={name} />)
-
+    }
+].map(({ src, name }) => <SliderCard src={src} name={name} />);
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         reviewSlider_container: {
-            [theme.breakpoints.only("xs")]: {
+            [theme.breakpoints.only('xs')]: {
                 marginTop: 40,
-                padding: '40px 0px',
+                padding: '40px 0px'
             }
         },
         sliders: {
             width: '110vw',
-            [theme.breakpoints.only("xs")]: {
+            [theme.breakpoints.only('xs')]: {
                 marginTop: 40,
                 padding: '40px 0px',
                 marginLeft: '5vw'
@@ -64,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         prev: {
             marginRight: 5,
-            cursor: 'pointer',
+            cursor: 'pointer'
         },
         next: {
             marginLeft: 5,
@@ -75,42 +73,39 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         scrollers: {
             display: 'flex',
-            [theme.breakpoints.only("xs")]: {
+            [theme.breakpoints.only('xs')]: {
                 justifyContent: 'center'
             }
-
         }
     })
-)
+);
 
 interface ReviewSlidersProps {
-    sliderRef?: any,
+    sliderRef?: any;
 }
-type ActiveScroller = 'prev' | 'next'
+type ActiveScroller = 'prev' | 'next';
 
-export const ReviewSliders = forwardRef((props: ReviewSlidersProps, ref) => {
-    const classes = useStyles()
-    const [activeScroller, setActiveScroller] = useState<ActiveScroller>('next')
+export const ReviewSliders = forwardRef(() => {
+    const classes = useStyles();
+    const [activeScroller, setActiveScroller] = useState<ActiveScroller>('next');
 
     const theme = useTheme();
-    const mobile = useMediaQuery(theme.breakpoints.only('xs'))
-    const tablet = useMediaQuery(theme.breakpoints.only('sm'))
-    const laptopSm = useMediaQuery(theme.breakpoints.only('md'))
-    const laptopBg = useMediaQuery(theme.breakpoints.only('lg'))
+    const mobile = useMediaQuery(theme.breakpoints.only('xs'));
+    const tablet = useMediaQuery(theme.breakpoints.only('sm'));
+    const laptopSm = useMediaQuery(theme.breakpoints.only('md'));
+    const laptopBg = useMediaQuery(theme.breakpoints.only('lg'));
     const computeNumberOfCards = () => {
-        if (mobile || tablet) return 2
-        else if (laptopSm) return 3
-        else if (laptopBg) return 4
-        else return 5
+        if (mobile || tablet) return 2;
+        else if (laptopSm) return 3;
+        else if (laptopBg) return 4;
+        else return 5;
+    };
 
-    }
-
-    const sliderRef = useRef<Slider>(null)
-
+    const sliderRef = useRef<Slider>(null);
 
     const settings = {
         dots: false,
-        className: "slider overflow",
+        className: 'slider overflow',
         infinite: true,
         speed: 1000,
         slidesToShow: computeNumberOfCards(),
@@ -121,22 +116,28 @@ export const ReviewSliders = forwardRef((props: ReviewSlidersProps, ref) => {
         arrows: false
     };
 
-    const handleToggeleClass = (clickedScroller: ActiveScroller) => {
-        setActiveScroller(clickedScroller)
-        if (clickedScroller === 'prev') sliderRef?.current?.slickPrev()
-        sliderRef?.current?.slickNext()
-
-    }
-
+    const handleToggleClass = (clickedScroller: ActiveScroller) => {
+        setActiveScroller(clickedScroller);
+        if (clickedScroller === 'prev') sliderRef?.current?.slickPrev();
+        sliderRef?.current?.slickNext();
+    };
 
     const scrollers = () => {
-        return <div className={classes.scrollers}>
-            <BackwardSvgComponent opacity={activeScroller === 'prev' ? 1 : 0.3} className={classes.prev} onClick={() => handleToggeleClass("prev")} />
-            <ForwardSvgComponent opacity={activeScroller === 'next' ? 1 : 0.3} onClick={(e) => handleToggeleClass("next")} className={classes.next} />
-        </div>
-
-
-    }
+        return (
+            <div className={classes.scrollers}>
+                <BackwardSvgComponent
+                    opacity={activeScroller === 'prev' ? 1 : 0.3}
+                    className={classes.prev}
+                    onClick={() => handleToggleClass('prev')}
+                />
+                <ForwardSvgComponent
+                    opacity={activeScroller === 'next' ? 1 : 0.3}
+                    onClick={e => handleToggleClass('next')}
+                    className={classes.next}
+                />
+            </div>
+        );
+    };
 
     return (
         <Grid container justifyContent={'center'} alignItems={'center'} spacing={4}>
@@ -148,5 +149,4 @@ export const ReviewSliders = forwardRef((props: ReviewSlidersProps, ref) => {
             </Grid>
         </Grid>
     );
-})
-
+});

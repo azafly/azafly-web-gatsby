@@ -1,7 +1,6 @@
 import { Avatar, Card, CardContent, Typography } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import React, { useState } from 'react'
-
+import React, { useState } from 'react';
 
 import { StarRating } from '../../../../components/star-ratings';
 
@@ -10,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
         review_card_container: {
             margin: 5,
             maxWidth: 320,
-            zIndex: 999,
+            zIndex: 999
         },
         paragraph: {
             fontSize: '0.9em',
@@ -18,15 +17,14 @@ const useStyles = makeStyles((theme: Theme) =>
             fontWeight: 300
         },
         flex: {
-            display: 'flex',
-
+            display: 'flex'
         },
         starName: {
             display: 'flex',
             flexDirection: 'column',
             marginLeft: 20,
             [theme.breakpoints.down('sm')]: {
-                marginLeft: 10,
+                marginLeft: 10
             }
         },
         title: {
@@ -49,28 +47,28 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface ReviewCardProps {
-    text?: string
-    src?: string
-    name: string
+    text?: string;
+    src?: string;
+    name: string;
 }
 
 export const SliderCard = ({ text, src, name }: ReviewCardProps) => {
     const classes = useStyles();
-    const [rating, setRating] = useState(5)
+    const [rating, setRating] = useState(5);
 
     return (
         <div className={classes.review_card_container}>
-            <Card elevation={0} >
+            <Card elevation={0}>
                 <CardContent>
                     <Typography className={classes.paragraph} gutterBottom paragraph>
-                        {text ? text : "Sed non dui aliquam, ullamcorper est non, aliquet mauris. Quisque lacus ligula, dapibus nec dignissim Sed non dui aliquam, ullamcorper est non"}
+                        {text ||
+                            'Sed non dui aliquam, ullamcorper est non, aliquet mauris. Quisque lacus ligula, dapibus nec dignissim Sed non dui aliquam, ullamcorper est non'}
                     </Typography>
                     <div className={classes.flex}>
-                        <Avatar aria-label="recipe" alt={'avatar'} src={src} className={classes.avatar} sizes={'small'} />
-
+                        <Avatar aria-label='recipe' alt={'avatar'} src={src} className={classes.avatar} sizes={'small'} />
 
                         <div className={classes.starName}>
-                            <Typography className={classes.title} color="textSecondary" gutterBottom variant={'h6'}>
+                            <Typography className={classes.title} color='textSecondary' gutterBottom variant={'h6'}>
                                 {name}
                             </Typography>
                             <StarRating rating={rating} setRating={setRating} classNames={classes.ratingStars} />
@@ -79,7 +77,5 @@ export const SliderCard = ({ text, src, name }: ReviewCardProps) => {
                 </CardContent>
             </Card>
         </div>
-
-
-    )
-}
+    );
+};

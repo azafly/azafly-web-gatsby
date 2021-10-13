@@ -71,7 +71,7 @@ export const Footer: FunctionComponent<Footer> = ({ copyrightOwner, socialMedia 
     ];
 
     return (
-        <footer>
+        <footer style={{ background: '#0D324D' }}>
             <Box px={{ xs: 3, sm: 10 }} py={{ xs: 5, sm: 10 }}>
                 <Container maxWidth='lg'>
                     <Grid container spacing={5}>
