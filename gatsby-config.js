@@ -1,108 +1,108 @@
-const siteName = "Azafly";
-const siteShortName = "Azafly";
-const siteUrl = "https://azafly.com";
-const siteDescription = "Emmigrate and make international payment easily";
-const siteKeyword = "";
-const siteLogo = "logo.png";
+const siteName = 'Lucqax';
+const siteShortName = 'Lucqax';
+const siteUrl = 'https://lucqax.com';
+const siteDescription = 'Borderless Payments from Africa to the World';
+const siteKeyword = '';
+const siteLogo = 'logo.png';
 const siteLogoFolder = `static/${siteLogo}`;
 
 module.exports = {
-  siteMetadata: {
-    title: siteName,
-    siteUrl,
-    description: siteDescription,
-  },
-  flags: { PRESERVE_WEBPACK_CACHE: true },
-  plugins: [
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-typescript",
-    "gatsby-plugin-react-helmet",
-    {
-      resolve: `gatsby-theme-material-ui`,
-      options: {
-        webFontsConfig: {
-          fonts: {
-            google: [
-              {
-                family: `Nunito`,
-                variants: [`300`, `400`, `500`, "700", `900`],
-              },
-            ],
-          },
-        },
-      },
-    },
-
-    "gatsby-plugin-robots-txt",
-    {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/content`,
-        name: "contents",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: `${__dirname}/static`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 2048,
-              linkImagesToOriginal: true,
-            },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-          },
-          {
-            resolve: `gatsby-remark-copy-linked-files`,
-          },
-        ],
-      },
-    },
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /assets/, // See below to configure properly
-        },
-      },
-    },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-image",
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        name: siteName,
-        short_name: siteShortName,
-        description: siteDescription,
-        background_color: `#ffffff`,
-        theme_color: `#ffffff`,
-        display: `standalone`,
-        lang: "en",
-        start_url: "/",
-        include_favicon: true,
-        icon: siteLogoFolder, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: "gatsby-plugin-seo",
-      options: {
-        siteName,
-        defaultSiteImage: siteLogo,
+    siteMetadata: {
+        title: siteName,
         siteUrl,
-        keywords: siteKeyword,
-        globalSchema: `{
+        description: siteDescription
+    },
+    flags: { PRESERVE_WEBPACK_CACHE: true },
+    plugins: [
+        'gatsby-plugin-sitemap',
+        'gatsby-plugin-typescript',
+        'gatsby-plugin-react-helmet',
+        {
+            resolve: `gatsby-theme-material-ui`,
+            options: {
+                webFontsConfig: {
+                    fonts: {
+                        google: [
+                            {
+                                family: `Nunito`,
+                                variants: [`300`, `400`, `500`, '700', `900`]
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+
+        'gatsby-plugin-robots-txt',
+        {
+            // keep as first gatsby-source-filesystem plugin for gatsby image support
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                path: `${__dirname}/content`,
+                name: 'contents'
+            }
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'images',
+                path: `${__dirname}/static`
+            }
+        },
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 2048,
+                            linkImagesToOriginal: true
+                        }
+                    },
+                    {
+                        resolve: `gatsby-remark-prismjs`
+                    },
+                    {
+                        resolve: `gatsby-remark-copy-linked-files`
+                    }
+                ]
+            }
+        },
+        {
+            resolve: 'gatsby-plugin-react-svg',
+            options: {
+                rule: {
+                    include: /assets/ // See below to configure properly
+                }
+            }
+        },
+        'gatsby-transformer-sharp',
+        'gatsby-plugin-sharp',
+        'gatsby-plugin-image',
+        {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                name: siteName,
+                short_name: siteShortName,
+                description: siteDescription,
+                background_color: `#ffffff`,
+                theme_color: `#ffffff`,
+                display: `standalone`,
+                lang: 'en',
+                start_url: '/',
+                include_favicon: true,
+                icon: siteLogoFolder // This path is relative to the root of the site.
+            }
+        },
+        {
+            resolve: 'gatsby-plugin-seo',
+            options: {
+                siteName,
+                defaultSiteImage: siteLogo,
+                siteUrl,
+                keywords: siteKeyword,
+                globalSchema: `{
             "@type": "WebSite",
             "@id": "${siteUrl}",
             "url": "${siteUrl}",
@@ -116,21 +116,21 @@ module.exports = {
               "url": "${siteUrl}${siteLogo}",
               "caption": siteName
             }
-          }`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
-      options: {
-        siteUrl,
-        noTrailingSlash: true,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-netlify-cms",
-    },
-    {
-      resolve: `gatsby-plugin-slug`,
-    },
-  ],
+          }`
+            }
+        },
+        {
+            resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+            options: {
+                siteUrl,
+                noTrailingSlash: true
+            }
+        },
+        {
+            resolve: 'gatsby-plugin-netlify-cms'
+        },
+        {
+            resolve: `gatsby-plugin-slug`
+        }
+    ]
 };

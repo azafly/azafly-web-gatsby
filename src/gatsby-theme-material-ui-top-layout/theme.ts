@@ -29,10 +29,10 @@ declare module '@material-ui/core/styles/createTheme' {
 export const theme = {
     palette: {
         primary: {
-            main: '#4990A4'
+            main: '#0D324D'
         },
         secondary: {
-            main: '#0D324D'
+            main: '#4990A4'
         },
         text: {
             primary: '#0D324D',

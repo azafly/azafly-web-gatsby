@@ -32,7 +32,7 @@
     "build:gatsby": "gatsby build",
     "build:storybook": "build-storybook -c .storybook -o public/docs",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
-    "format": "prettier --write src/**/*.{jsx,tsx,ts,json}",
+    "format": "prettier --write src/**/*.{tsx,ts,json}",
     "test": "jest",
     "generate-favicon": "npx favicons-generate --input ./static/logo.png --output ./static/img && cp ./static/img/favicon.ico ./static/favicon.ico",
     "prepare": "husky install"
@@ -91,7 +91,8 @@
     "styled-components": "^5.1.1",
     "tailwindcss": "^1.6.2",
     "tailwindcss-gradients": "^3.0.0",
-    "ts-node": "^8.10.2"
+    "ts-node": "^8.10.2",
+    "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",

@@ -1,3 +1,4 @@
+/* eslint-disable no-else-return */
 // @ts-ignore
 import Slider from 'react-slick';
 import React, { forwardRef, useState, useRef } from 'react';
@@ -83,7 +84,7 @@ interface ReviewSlidersProps {
 }
 type ActiveScroller = 'prev' | 'next';
 
-export const ReviewSliders = forwardRef((props: ReviewSlidersProps, ref) => {
+export const ReviewSliders = forwardRef(() => {
     const classes = useStyles();
     const [activeScroller, setActiveScroller] = useState<ActiveScroller>('next');
 
@@ -94,9 +95,9 @@ export const ReviewSliders = forwardRef((props: ReviewSlidersProps, ref) => {
     const laptopBg = useMediaQuery(theme.breakpoints.only('lg'));
     const computeNumberOfCards = () => {
         if (mobile || tablet) return 2;
-        if (laptopSm) return 3;
-        if (laptopBg) return 4;
-        return 5;
+        else if (laptopSm) return 3;
+        else if (laptopBg) return 4;
+        else return 5;
     };
 
     const sliderRef = useRef<Slider>(null);
@@ -114,7 +115,7 @@ export const ReviewSliders = forwardRef((props: ReviewSlidersProps, ref) => {
         arrows: false
     };
 
-    const handleToggeleClass = (clickedScroller: ActiveScroller) => {
+    const handleToggleClass = (clickedScroller: ActiveScroller) => {
         setActiveScroller(clickedScroller);
         if (clickedScroller === 'prev') sliderRef?.current?.slickPrev();
         sliderRef?.current?.slickNext();
@@ -126,11 +127,11 @@ export const ReviewSliders = forwardRef((props: ReviewSlidersProps, ref) => {
                 <BackwardSvgComponent
                     opacity={activeScroller === 'prev' ? 1 : 0.3}
                     className={classes.prev}
-                    onClick={() => handleToggeleClass('prev')}
+                    onClick={() => handleToggleClass('prev')}
                 />
                 <ForwardSvgComponent
                     opacity={activeScroller === 'next' ? 1 : 0.3}
-                    onClick={e => handleToggeleClass('next')}
+                    onClick={e => handleToggleClass('next')}
                     className={classes.next}
                 />
             </div>

@@ -62,24 +62,16 @@ export const InfoBanner = () => {
     return (
         <div>
             <div className={classes.container}>
-                <Typography
-                    variant='h4'
-                    className={classes.titleHeading}
-                    gutterBottom
-                >
+                <Typography variant='h4' className={classes.titleHeading} gutterBottom>
                     A better way to plan
                 </Typography>
                 <Typography paragraph className={classes.paragraph}>
-                    Live your life on your terms and without limits. With an
-                    Azafly account, you can add money to your wallet for free,
-                    within seconds and start making transfers to other wallets
-                    or any bank accounts for free.*
+                    Live your life on your terms and without limits. With an Lucqax account, you can add money to your wallet for free, within seconds
+                    and start making transfers to other wallets or any bank accounts for free.*
                     <br />
                     <Link className='link' to='/signup'>
                         {' '}
-                        <Button className={classes.actionButton}>
-                            Get started
-                        </Button>
+                        <Button className={classes.actionButton}>Get started</Button>
                     </Link>
                 </Typography>
             </div>
