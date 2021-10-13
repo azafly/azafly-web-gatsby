@@ -54,7 +54,7 @@ const NewsView: React.FunctionComponent<INewsProps> = ({ newsData }) => {
                     })}
                 </Grid>
             </Box>
-            <SubFooter content='Get in touch' link='/services' buttonTitle='Contact us' />
+            <SubFooter content='Get in touch' link='/contact' buttonTitle='Contact us' />
         </Box>
     );
 };

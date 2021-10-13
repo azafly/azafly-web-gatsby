@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         illustration: {
             borderRadius: 25,
-            marginTop: -70,
+            // marginTop: -70,
             [theme.breakpoints.only('xs')]: {
                 borderRadius: 15,
                 width: '90%',
@@ -26,11 +26,5 @@ export const Illustration = ({ images }: Props) => {
     const classes = useStyles();
 
     const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;
-    return (
-        <Image
-            fluid={imageUrl}
-            alt={'Main image'}
-            className={classes.illustration}
-        />
-    );
+    return <Image fluid={imageUrl} alt={'Main image'} className={classes.illustration} />;
 };

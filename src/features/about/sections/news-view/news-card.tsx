@@ -21,14 +21,14 @@ const useStyles = makeStyles((theme: Theme) =>
             backgroundRepeat: 'no-repeat',
             marginBottom: 200,
             [theme.breakpoints.only('md')]: {
-                width: 300
+                maxWidth: 345
             },
             [theme.breakpoints.only('sm')]: {
-                width: 350
+                maxWidth: 345
             },
             [theme.breakpoints.only('xs')]: {
                 margin: 'auto',
-                width: 350,
+                maxWidth: 345,
                 marginBottom: 100,
                 marginTop: 50
             }
@@ -43,14 +43,14 @@ const useStyles = makeStyles((theme: Theme) =>
             marginBottom: 50,
             boxShadow: '0 0 3px',
             [theme.breakpoints.only('md')]: {
-                width: 300
+                maxWidth: 345
             },
             [theme.breakpoints.only('sm')]: {
-                width: 300
+                maxWidth: 345
             },
             [theme.breakpoints.only('xs')]: {
                 margin: 'auto',
-                width: 350,
+                maxWidth: 345,
                 marginBottom: 100
             }
         },

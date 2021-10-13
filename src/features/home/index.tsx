@@ -18,7 +18,8 @@ const useStyles = makeStyles((theme: Theme) =>
         container: {
             width: '100%',
             margin: 'auto',
-            overflowX: 'hidden'
+            overflowX: 'hidden',
+            marginTop: -95
         },
         toolBar: {
             display: 'flex',
@@ -40,6 +41,7 @@ const useStyles = makeStyles((theme: Theme) =>
         content: {
             maxWidth: '100vw',
             overflowX: 'hidden',
+
             transition: theme.transitions.create('margin', {
                 easing: theme.transitions.easing.sharp,
                 duration: theme.transitions.duration.leavingScreen

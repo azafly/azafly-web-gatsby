@@ -1,9 +1,12 @@
 import { Grid, Typography } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import React from 'react'
+import React from 'react';
 
 interface InfoBannerProps {
-    scrollers: any
+    scrollers: any;
+    title: string;
+    subtitle?: string;
+    information?: string;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -11,18 +14,16 @@ const useStyles = makeStyles((theme: Theme) =>
         infobanner_reviews: {
             zIndex: 999,
             alignSelf: 'start',
-            [theme.breakpoints.only("xs")]: {
-                textAlign: 'center',
+            [theme.breakpoints.only('xs')]: {
+                textAlign: 'center'
             }
-
         },
         lightHeading: {
             letterSpacing: '0.09em',
             textTransform: 'uppercase',
             color: '#000000',
             opacity: 0.38,
-            marginBottom: 20,
-
+            marginBottom: 20
         },
         largeHeading: {
             fontWeight: 900,
@@ -39,26 +40,23 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.only('xs')]: {
                 padding: 10
             }
-        },
+        }
     })
-)
+);
 
-
-
-export const InfoBanner = ({ scrollers }: InfoBannerProps) => {
-    const classes = useStyles()
-
+export const InfoBanner = ({ scrollers, title, subtitle, information }: InfoBannerProps) => {
+    const classes = useStyles();
 
     return (
         <Grid item xs={12} sm={4} md={3} className={classes.infobanner_reviews} alignContent={'flex-start'}>
             <div>
-                <Typography className={classes.lightHeading}> Testimonials</Typography>
-                <Typography className={classes.largeHeading}> What clients are saying about us</Typography>
+                <Typography className={classes.lightHeading}> {title}</Typography>
+                <Typography className={classes.largeHeading}> {subtitle}</Typography>
                 <Typography paragraph className={classes.paragraph}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies neque at nisl auctor.
+                    {information}
                 </Typography>
             </div>
             {scrollers && scrollers()}
         </Grid>
-    )
-}
+    );
+};

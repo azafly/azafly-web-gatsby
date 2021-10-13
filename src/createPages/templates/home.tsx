@@ -60,10 +60,7 @@ interface Home {
 const Home: FunctionComponent<Home> = ({ data }) => {
     return (
         <>
-            <SEO
-                title='Azafly | Emmigrate and Make Complex International Payments Easily'
-                image='/logo.png'
-            />
+            <SEO title='Azafly | Emmigrate and Make Complex International Payments Easily' image='/logo.png' />
             <Layout>
                 <HomeView images={data} />
             </Layout>
