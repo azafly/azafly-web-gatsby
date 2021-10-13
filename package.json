@@ -32,7 +32,7 @@
     "build:gatsby": "gatsby build",
     "build:storybook": "build-storybook -c .storybook -o public/docs",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
-    "format": "prettier --write src/**/*.{jsx,tsx,ts,json}",
+    "format": "prettier --write src/**/*.{tsx,ts,json}",
     "test": "jest",
     "generate-favicon": "npx favicons-generate --input ./static/logo.png --output ./static/img && cp ./static/img/favicon.ico ./static/favicon.ico",
     "prepare": "husky install"

@@ -76,7 +76,7 @@ export const Footer: FunctionComponent<Footer> = ({ copyrightOwner, socialMedia 
                 <Container maxWidth='lg'>
                     <Grid container spacing={5}>
                         <Grid item xs={12} sm={7} md={9} lg={4}>
-                            <Box className={classes.title}>azafly</Box>
+                            <Box className={classes.title}>lucqax</Box>
                             <Box className={classes.contentMargin}>
                                 <div className={classes.text}>{frontmatter.footerIntroContent}</div>
                             </Box>

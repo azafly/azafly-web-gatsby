@@ -1,7 +1,7 @@
-const siteName = 'Azafly';
-const siteShortName = 'Azafly';
-const siteUrl = 'https://azafly.com';
-const siteDescription = 'Emmigrate and make international payment easily';
+const siteName = 'Lucqax';
+const siteShortName = 'Lucqax';
+const siteUrl = 'https://lucqax.com';
+const siteDescription = 'Borderless Payments from Africa to the World';
 const siteKeyword = '';
 const siteLogo = 'logo.png';
 const siteLogoFolder = `static/${siteLogo}`;
