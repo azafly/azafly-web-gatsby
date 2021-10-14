@@ -1,4 +1,4 @@
-import { makeStyles, Theme, createStyles, Box } from '@material-ui/core';
+import { makeStyles, Theme, createStyles, Box, Typography } from '@material-ui/core';
 import React from 'react';
 import Image from 'gatsby-image';
 import backImage from '../../images/Objects.png';
@@ -19,14 +19,64 @@ const useStyles = makeStyles((theme: Theme) =>
                 margin: 'auto'
             }
         },
+        infoContainer1: {
+            position: 'relative',
+            width: 260,
+            left: 370,
+            top: 100,
+            [theme.breakpoints.only('md')]: {
+                left: 160
+            },
+            [theme.breakpoints.only('sm')]: {
+                left: 320,
+                width: 190
+            },
+            [theme.breakpoints.only('xs')]: {
+                left: 130,
+                width: 220
+            }
+        },
+        infoContainer2: {
+            position: 'relative',
+            width: 360,
+            left: 180,
+            top: 160,
+            [theme.breakpoints.only('md')]: {
+                left: 50
+            },
+            [theme.breakpoints.only('sm')]: {
+                left: 220
+            },
+            [theme.breakpoints.only('xs')]: {
+                left: 20
+            }
+        },
+        infoContainer3: {
+            position: 'relative',
+            width: 280,
+            left: 450,
+            top: 220,
+            [theme.breakpoints.only('md')]: {
+                left: 220
+            },
+            [theme.breakpoints.only('sm')]: {
+                left: 370,
+                width: 190
+            },
+            [theme.breakpoints.only('xs')]: {
+                left: 180,
+                width: 220
+            }
+        },
         notification: {
             position: 'relative',
             // marginRight: '20px',
             // marginBottom: '10px',
             padding: '10px',
             backgroundColor: 'white',
-            width: 300,
-            minHeight: 90,
+
+            minHeight: 70,
+            color: '#4990A4',
             textAlign: 'left',
             font: "400 .9em 'Open Sans', sans-serif",
             border: '1px solid white',
@@ -56,9 +106,27 @@ export const Illustration = ({ images }: Props) => {
     const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;
     return (
         <Box className={classes.illustration}>
-            <Box className={classes.notification}></Box>
-            <Box className={classes.notification}></Box>
-            <Box className={classes.notification}></Box>
+            <Box className={classes.infoContainer1}>
+                <Box className={classes.notification}>
+                    <Box display='flex' justifyContent='center' justifyItems='center'>
+                        <Typography>Send money to almost any bank account.</Typography>
+                    </Box>
+                </Box>
+            </Box>
+            <Box className={classes.infoContainer2}>
+                <Box className={classes.notification}>
+                    <Box display='flex' justifyContent='center' justifyItems='center'>
+                        <Typography>Send cash for pickup at a thousands of partner locations around the world</Typography>
+                    </Box>
+                </Box>
+            </Box>
+            <Box className={classes.infoContainer3}>
+                <Box className={classes.notification}>
+                    <Box display='flex' justifyContent='center' justifyItems='center'>
+                        <Typography>Send money directly to your recipient door</Typography>
+                    </Box>
+                </Box>
+            </Box>
         </Box>
     );
     // return <Image fluid={imageUrl} alt={'Main image'} className={classes.illustration} />;

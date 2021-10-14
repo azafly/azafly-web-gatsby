@@ -1,18 +1,22 @@
 import { motion } from 'framer-motion';
 import { makeStyles, createStyles, Theme, useTheme } from '@material-ui/core/styles';
-import { Button, Typography, Grid, Box, Link } from '@material-ui/core';
+import { Button, Typography, Grid, Box, Link, Snackbar, Container } from '@material-ui/core';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
-import React from 'react';
+import React, { useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import RoomIcon from '@mui/icons-material/Room';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Avatar from '@material-ui/core/Avatar';
+import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import playbtn from '../../images/playBtn.png';
 import { useFetchHomeData } from '../../hooks/use-data';
 
+function Alert(props: AlertProps) {
+    return <MuiAlert elevation={6} variant='filled' {...props} />;
+}
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
@@ -29,6 +33,21 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.down('sm')]: {
                 padding: '10px 30px 10px 20px',
                 marginLeft: '2vw'
+            }
+        },
+        clipPath: {
+            position: 'relative',
+
+            '&:after': {
+                content: "''",
+                position: 'absolute',
+                left: '0',
+                bottom: '-10px',
+                height: '15px',
+                width: '100%',
+                border: 'solid 5px white',
+                borderColor: 'white transparent transparent transparent',
+                borderRadius: '60%'
             }
         },
 
@@ -62,12 +81,14 @@ const useStyles = makeStyles((theme: Theme) =>
                 fontSize: 45
             }
         },
+
         searchContainer: {
             width: '100%',
             background: 'white',
             height: 70,
             borderRadius: 10,
             marginTop: 30,
+
             padding: 5,
             [theme.breakpoints.only('xs')]: {
                 minHeight: 200
@@ -163,33 +184,33 @@ const useStyles = makeStyles((theme: Theme) =>
         selectRoot: {
             color: '#FFFFFF'
         },
+        setMiddle: {
+            marginTop: 80,
+
+            [theme.breakpoints.only('xs')]: {
+                direction: 'row',
+                justify: 'center',
+                alignItems: 'center',
+                textAlign: 'center'
+            }
+        },
         select: {
             '& .MuiSvgIcon-root': {
                 color: '#4990A4'
-            },
-            '& .Mui-focused .MuiOutlinedInput-notchedOutline': {
-                border: '1px solid #484850',
-                borderRadius: '5px 5px 0 0'
             }
+            // '& .Mui-focused .MuiOutlinedInput-notchedOutline': {
+            //     border: '1px solid #484850',
+            //     borderRadius: '5px 5px 0 0'
+            // }
         }
     })
 );
 
-const names = [
-    'Oliver Hansen',
-    'Van Henry',
-    'April Tucker',
-    'Ralph Hubbard',
-    'Omar Alexander',
-    'Carlos Abbott',
-    'Miriam Wagner',
-    'Bradley Wilkerson',
-    'Virginia Andrews',
-    'Kelly Snyder'
-];
-function getStyles(name: string, personName: readonly string[], theme: Theme) {
+const otherCountries = ['Germany', 'Canada', 'United States of America', 'United Kingdom'];
+const africa = ['Nigeria', 'Cameroon', 'Ghana'];
+function getStyles(name: string, sendMoneyFrom: readonly string[], theme: Theme) {
     return {
-        fontWeight: personName.indexOf(name) === -1 ? theme.typography.fontWeightRegular : theme.typography.fontWeightMedium
+        fontWeight: sendMoneyFrom.indexOf(name) === -1 ? theme.typography.fontWeightRegular : theme.typography.fontWeightMedium
     };
 }
 const ITEM_HEIGHT = 48;
@@ -208,150 +229,190 @@ export const InfoBanner = () => {
 
     const frontMatter = useFetchHomeData();
     const theme = useTheme();
-    const [personName, setPersonName] = React.useState<string[]>([]);
+    const [sendMoneyFrom, setSendMoneyFrom] = useState<string[]>([]);
+    const [sendMoneyTo, setSendMoneyto] = useState<string[]>([]);
+    const [snackBarOpen, setSnackBarOpen] = useState<boolean>(false);
+    const [error, setError] = useState<string>('');
 
-    const handleChange = (event: SelectChangeEvent<typeof personName>) => {
+    const handleCloseSnack = (event?: React.SyntheticEvent, reason?: string) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setSnackBarOpen(false);
+    };
+    const handleChangeMoneyFrom = (event: SelectChangeEvent<typeof sendMoneyFrom>) => {
         const {
             target: { value }
         } = event;
-        setPersonName(
+        setSendMoneyFrom(
             // On autofill we get a the stringified value.
             typeof value === 'string' ? value.split(',') : value
         );
     };
+    const handleChangeMoneyTo = (event: SelectChangeEvent<typeof sendMoneyTo>) => {
+        const {
+            target: { value }
+        } = event;
+        setSendMoneyto(
+            // On autofill we get a the stringified value.
+            typeof value === 'string' ? value.split(',') : value
+        );
+    };
+    // eslint-disable-next-line no-console
 
+    const handleSearch = () => {
+        if (sendMoneyFrom.length === 0 || sendMoneyTo.length === 0) {
+            setError('Please select region');
+            setSnackBarOpen(true);
+        }
+    };
     return (
-        <motion.div className={classes.container}>
-            <Typography variant='h4' className={classes.titleHeading}>
-                {/* {frontMatter.intro} */}
-                Send money from <span>Africa</span> to any other country
-                {/* {frontMatter.intro} */}
-            </Typography>
+        <motion.div>
+            <Snackbar
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right'
+                }}
+                open={snackBarOpen}
+                autoHideDuration={6000}
+                onClose={handleCloseSnack}
+            >
+                <Alert onClose={handleCloseSnack} severity='warning'>
+                    {error}
+                </Alert>
+            </Snackbar>
+            {/* <Container> */}
+            <Box className={classes.container}>
+                <Typography variant='h4' className={classes.titleHeading}>
+                    Send money from <span className={classes.clipPath}>Africa</span> to any other country
+                </Typography>
 
-            {/* <motion.p className={classes.paragraph}>{frontMatter.intro}</motion.p> */}
-            <motion.p className={classes.offer}>{frontMatter.offerText}</motion.p>
-            <Grid container direction='row' alignItems='center' className={classes.subTitle}>
-                <Grid item>
-                    <Typography variant='h6'>Pay </Typography>
+                {/* <motion.p className={classes.paragraph}>{frontMatter.intro}</motion.p> */}
+                <motion.p className={classes.offer}>{frontMatter.offerText}</motion.p>
+                <Grid container direction='row' alignItems='center' className={classes.subTitle}>
+                    <Grid item>
+                        <Typography variant='h6'>Pay </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Box className={classes.typeWriter}>
+                            <Typography variant='h6'>
+                                <Typewriter
+                                    options={{
+                                        strings: [' medical', ' morgage', 'tuition'],
+                                        autoStart: true,
+                                        loop: true
+                                    }}
+                                />
+                            </Typography>
+                        </Box>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant='h6'>bills in</Typography>
+                    </Grid>
+                    <Grid item>
+                        <Box className={classes.typeWriter} style={{ color: 'white' }}>
+                            <Typography variant='h6'>
+                                <Typewriter
+                                    options={{
+                                        strings: ['Africa', 'India', 'Europe'],
+                                        autoStart: true,
+                                        loop: true,
+                                        delay: 220
+                                    }}
+                                />
+                            </Typography>
+                        </Box>
+                    </Grid>
                 </Grid>
-                <Grid item>
-                    <Box className={classes.typeWriter}>
-                        <Typography variant='h6'>
-                            <Typewriter
-                                options={{
-                                    strings: [' medical', ' morgage', 'tuition'],
-                                    autoStart: true,
-                                    loop: true
-                                }}
-                            />
-                        </Typography>
+                <Box>
+                    <Box className={classes.searchContainer}>
+                        <Grid container justify='space-around' spacing={1} alignItems='center' className={classes.searchItem}>
+                            <Grid item xs={12} sm={12} lg={4}>
+                                <FormControl variant='standard' sx={{ width: '100%' }}>
+                                    <Select
+                                        displayEmpty
+                                        className={classes.select}
+                                        value={sendMoneyFrom}
+                                        onChange={handleChangeMoneyFrom}
+                                        input={<OutlinedInput />}
+                                        IconComponent={KeyboardArrowDownIcon}
+                                        renderValue={selected => {
+                                            if (selected.length === 0) {
+                                                return (
+                                                    <Grid className={classes.searchItem} container direction='row' alignItems='center'>
+                                                        <RoomIcon style={{ fontSize: 20 }} />
+                                                        <Typography style={{ marginLeft: 2, fontSize: 13 }}>Transfer money from </Typography>
+                                                    </Grid>
+                                                );
+                                            }
+
+                                            return selected.join(', ');
+                                        }}
+                                        MenuProps={MenuProps}
+                                    >
+                                        {africa.map(name => (
+                                            <MenuItem key={name} value={name} style={getStyles(name, sendMoneyFrom, theme)}>
+                                                {name}
+                                            </MenuItem>
+                                        ))}
+                                    </Select>
+                                </FormControl>
+                            </Grid>
+                            <Grid item xs={12} sm={12} lg={4}>
+                                <FormControl fullWidth sx={{ width: '100%' }}>
+                                    <Select
+                                        displayEmpty
+                                        className={classes.select}
+                                        value={sendMoneyTo}
+                                        onChange={handleChangeMoneyTo}
+                                        input={<OutlinedInput />}
+                                        IconComponent={KeyboardArrowDownIcon}
+                                        renderValue={selected => {
+                                            if (selected.length === 0) {
+                                                return (
+                                                    <Grid className={classes.searchItem} container direction='row' alignItems='center'>
+                                                        <RoomIcon style={{ fontSize: 20 }} />
+                                                        <Typography style={{ marginLeft: 2, fontSize: 13 }}>Transfer money to </Typography>
+                                                    </Grid>
+                                                );
+                                            }
+
+                                            return selected.join(', ');
+                                        }}
+                                        MenuProps={MenuProps}
+                                    >
+                                        {otherCountries.map(name => (
+                                            <MenuItem key={name} value={name} style={getStyles(name, sendMoneyTo, theme)}>
+                                                {name}
+                                            </MenuItem>
+                                        ))}
+                                    </Select>
+                                </FormControl>
+                            </Grid>
+
+                            <Grid item xs={12} sm={12} md={12} lg={3} container justify='center'>
+                                <Button onClick={() => handleSearch()} variant='contained' className={classes.actionButtonBook}>
+                                    Get Started
+                                </Button>
+                            </Grid>
+                        </Grid>
                     </Box>
-                </Grid>
-                <Grid item>
-                    <Typography variant='h6'>bills in</Typography>
-                </Grid>
-                <Grid item>
-                    <Box className={classes.typeWriter} style={{ color: 'white' }}>
-                        <Typography variant='h6'>
-                            <Typewriter
-                                options={{
-                                    strings: ['Africa', 'India', 'Europe'],
-                                    autoStart: true,
-                                    loop: true,
-                                    delay: 220
-                                }}
-                            />
-                        </Typography>
-                    </Box>
-                </Grid>
-            </Grid>
-
-            <Box className={classes.searchContainer}>
-                <Grid container justify='space-around' spacing={1} alignItems='center' className={classes.searchItem}>
-                    <Grid item xs={12} sm={12} lg={4}>
-                        <FormControl variant='standard' sx={{ width: '100%' }}>
-                            <Select
-                                color='primary'
-                                displayEmpty
-                                className={classes.select}
-                                value={personName}
-                                onChange={handleChange}
-                                input={<OutlinedInput />}
-                                IconComponent={KeyboardArrowDownIcon}
-                                renderValue={selected => {
-                                    if (selected.length === 0) {
-                                        return (
-                                            <Grid className={classes.searchItem} container direction='row' alignItems='center'>
-                                                <RoomIcon />
-                                                <Typography style={{ marginLeft: 20 }}>Transfer money from </Typography>
-                                            </Grid>
-                                        );
-                                    }
-
-                                    return selected.join(', ');
-                                }}
-                                MenuProps={MenuProps}
-                            >
-                                {names.map(name => (
-                                    <MenuItem key={name} value={name} style={getStyles(name, personName, theme)}>
-                                        {name}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-                    </Grid>
-                    <Grid item xs={12} sm={12} lg={4}>
-                        <FormControl fullWidth sx={{ width: '100%' }}>
-                            <Select
-                                color='primary'
-                                displayEmpty
-                                className={classes.select}
-                                value={personName}
-                                onChange={handleChange}
-                                input={<OutlinedInput />}
-                                IconComponent={KeyboardArrowDownIcon}
-                                renderValue={selected => {
-                                    if (selected.length === 0) {
-                                        return (
-                                            <Grid className={classes.searchItem} container direction='row' alignItems='center'>
-                                                <RoomIcon />
-                                                <Typography style={{ marginLeft: 20 }}>Transfer money to </Typography>
-                                            </Grid>
-                                        );
-                                    }
-
-                                    return selected.join(', ');
-                                }}
-                                MenuProps={MenuProps}
-                            >
-                                {names.map(name => (
-                                    <MenuItem key={name} value={name} style={getStyles(name, personName, theme)}>
-                                        {name}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-                    </Grid>
-
-                    <Grid item xs={12} sm={12} md={12} lg={2} container justify='center'>
-                        <Button variant='contained' className={classes.actionButtonBook}>
-                            Get Started
-                        </Button>
-                    </Grid>
-                </Grid>
-            </Box>
-            <Box style={{ marginTop: 100 }}>
-                <Grid className={classes.searchItem} container direction='row' alignItems='center'>
-                    <Link href='#' color='inherit' underline='none'>
-                        <Avatar style={{ marginRight: 20, width: 50, height: 50 }} alt='How it works' src={playbtn} />
-                    </Link>
-                    <Typography style={{ color: 'white' }}>
-                        <Link href='#' color='inherit' underline='always'>
-                            See how it works?
+                </Box>
+                <Box className={classes.setMiddle}>
+                    <Grid className={classes.searchItem} container direction='row' alignItems='center'>
+                        <Link href='#' color='inherit' underline='none'>
+                            <Avatar style={{ marginRight: 20, width: 50, height: 50 }} alt='How it works' src={playbtn} />
                         </Link>
-                    </Typography>
-                </Grid>
+                        <Typography style={{ color: 'white' }}>
+                            <Link href='#' color='inherit' underline='always'>
+                                See how it works?
+                            </Link>
+                        </Typography>
+                    </Grid>
+                </Box>
             </Box>
+            {/* </Container> */}
         </motion.div>
     );
 };
