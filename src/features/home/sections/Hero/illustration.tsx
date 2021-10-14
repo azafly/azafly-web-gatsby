@@ -1,7 +1,6 @@
 import { makeStyles, Theme, createStyles, Box, Typography } from '@material-ui/core';
 import React from 'react';
-import Image from 'gatsby-image';
-import backImage from '../../images/Objects.png';
+import backImage from '../../../../../static/images/home/OBJECTS.png';
 import { HomeImages } from '../../../../createPages/templates/home';
 
 const useStyles = makeStyles((theme: Theme) =>
