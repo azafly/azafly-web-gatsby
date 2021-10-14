@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { makeStyles, createStyles, Theme, useTheme } from '@material-ui/core/styles';
-import { Button, Typography, Grid, Box, Link, Snackbar, Container } from '@material-ui/core';
+import { Button, Typography, Grid, Box, Link, Snackbar } from '@material-ui/core';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
 import React, { useState } from 'react';
@@ -11,7 +11,7 @@ import RoomIcon from '@mui/icons-material/Room';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Avatar from '@material-ui/core/Avatar';
 import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
-import playbtn from '../../images/playBtn.png';
+import playbtn from '../../../../../static/images/home/playBtn.png';
 import { useFetchHomeData } from '../../hooks/use-data';
 
 function Alert(props: AlertProps) {
