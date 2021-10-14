@@ -56,29 +56,33 @@ const useStyles = makeStyles((theme: Theme) =>
             fontFamily: 'Nunito',
             letterSpacing: -1,
             color: theme.colors.white,
-            fontSize: 45,
+            fontSize: '64px',
             [theme.breakpoints.only('xs')]: {
                 fontSize: 40,
                 fontWeight: 900
             },
             [theme.breakpoints.only('sm')]: {
-                fontSize: 45
+                fontSize: '32px'
+            }
+        },
+        subContainer: {
+            marginTop: 20,
+            marginBottom: 20,
+            color: '#89CDFF',
+            [theme.breakpoints.only('xs')]: {
+                justifyContent: 'center'
             }
         },
         subTitle: {
-            marginTop: 20,
-            marginBottom: 20,
-            fontWeight: 800,
+            fontWeight: 700,
             fontFamily: 'Nunito',
             letterSpacing: -1,
-            color: '#89CDFF',
-            fontSize: 45,
+
+            fontSize: '36px',
+            lineHeight: '29.05px',
+
             [theme.breakpoints.only('xs')]: {
-                fontSize: 40,
-                fontWeight: 900
-            },
-            [theme.breakpoints.only('sm')]: {
-                fontSize: 45
+                fontSize: '24px'
             }
         },
 
@@ -110,19 +114,23 @@ const useStyles = makeStyles((theme: Theme) =>
         offer: {
             color: theme.colors.mainGreen,
             fontWeight: 700,
-            fontSize: '0.9em',
+            fontSize: '18px',
             marginTop: 20,
-            [theme.breakpoints.only('xs')]: {}
+
+            [theme.breakpoints.only('xs')]: {
+                fontSize: '16px',
+                textAlign: 'center'
+            }
+        },
+        offerContainer: {
+            [theme.breakpoints.only('lg')]: {
+                marginRigt: 200
+            }
         },
         actionDiv: {
             display: 'flex'
         },
-        rootSelect: {
-            '& .Mui-focused .MuiOutlinedInput-notchedOutline': {
-                border: '1px solid #484850',
-                borderRadius: '5px 5px 0 0'
-            }
-        },
+
         actionButtonBook: {
             textTransform: 'none',
             height: 50,
@@ -149,7 +157,12 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         searchItem: {
-            color: '#4990A4'
+            color: '#4990A4',
+            display: 'flex',
+            alignItems: 'center',
+            [theme.breakpoints.only('xs')]: {
+                justifyContent: 'center'
+            }
         },
         underline: {
             position: 'absolute',
@@ -158,9 +171,15 @@ const useStyles = makeStyles((theme: Theme) =>
             background: '#FFFFFF'
         },
         typeWriter: {
-            marginLeft: 10,
-            marginRight: 10,
-            maxWidth: 85
+            marginLeft: 20,
+            marginRight: 20,
+            minWidth: 85,
+            textAlign: 'center',
+            [theme.breakpoints.only('xs')]: {
+                marginLeft: 10,
+                marginRight: 10,
+                minWidth: 85
+            }
         },
         actionButtonExplore: {
             textTransform: 'none',
@@ -181,27 +200,43 @@ const useStyles = makeStyles((theme: Theme) =>
         link: {
             textDecoration: 'none'
         },
-        selectRoot: {
-            color: '#FFFFFF'
-        },
+
         setMiddle: {
             marginTop: 80,
 
             [theme.breakpoints.only('xs')]: {
-                direction: 'row',
-                justify: 'center',
-                alignItems: 'center',
-                textAlign: 'center'
+                justifyContent: 'center'
             }
         },
         select: {
             '& .MuiSvgIcon-root': {
                 color: '#4990A4'
             }
-            // '& .Mui-focused .MuiOutlinedInput-notchedOutline': {
-            //     border: '1px solid #484850',
-            //     borderRadius: '5px 5px 0 0'
-            // }
+        },
+        avatar: {
+            marginRight: '12.4px',
+            width: '46px',
+            height: '46px',
+            [theme.breakpoints.only('xs')]: {
+                marginRight: '10px',
+                width: '26px',
+                height: '26px'
+            }
+        },
+        links: {
+            color: 'white',
+            fontSize: '16px',
+            [theme.breakpoints.only('xs')]: {
+                fontSize: '14px'
+            }
+        },
+        searchText: {
+            marginLeft: 2,
+            fontWeight: 500,
+            fontSize: '16px',
+            [theme.breakpoints.only('xs')]: {
+                fontSize: '14px'
+            }
         }
     })
 );
@@ -289,14 +324,17 @@ export const InfoBanner = () => {
                 </Typography>
 
                 {/* <motion.p className={classes.paragraph}>{frontMatter.intro}</motion.p> */}
-                <motion.p className={classes.offer}>{frontMatter.offerText}</motion.p>
-                <Grid container direction='row' alignItems='center' className={classes.subTitle}>
+                <Box className={classes.offerContainer}>
+                    <motion.p className={classes.offer}>{frontMatter.offerText}</motion.p>
+                </Box>
+
+                <Grid container direction='row' className={classes.subContainer}>
                     <Grid item>
-                        <Typography variant='h6'>Pay </Typography>
+                        <Typography className={classes.subTitle}>Pay </Typography>
                     </Grid>
                     <Grid item>
                         <Box className={classes.typeWriter}>
-                            <Typography variant='h6'>
+                            <Typography className={classes.subTitle}>
                                 <Typewriter
                                     options={{
                                         strings: [' medical', ' morgage', 'tuition'],
@@ -308,11 +346,11 @@ export const InfoBanner = () => {
                         </Box>
                     </Grid>
                     <Grid item>
-                        <Typography variant='h6'>bills in</Typography>
+                        <Typography className={classes.subTitle}>bills in</Typography>
                     </Grid>
                     <Grid item>
                         <Box className={classes.typeWriter} style={{ color: 'white' }}>
-                            <Typography variant='h6'>
+                            <Typography className={classes.subTitle}>
                                 <Typewriter
                                     options={{
                                         strings: ['Africa', 'India', 'Europe'],
@@ -327,7 +365,7 @@ export const InfoBanner = () => {
                 </Grid>
                 <Box>
                     <Box className={classes.searchContainer}>
-                        <Grid container justify='space-around' spacing={1} alignItems='center' className={classes.searchItem}>
+                        <Grid container justify='flex-start' spacing={1} className={classes.searchItem}>
                             <Grid item xs={12} sm={12} lg={4}>
                                 <FormControl variant='standard' sx={{ width: '100%' }}>
                                     <Select
@@ -340,9 +378,9 @@ export const InfoBanner = () => {
                                         renderValue={selected => {
                                             if (selected.length === 0) {
                                                 return (
-                                                    <Grid className={classes.searchItem} container direction='row' alignItems='center'>
-                                                        <RoomIcon style={{ fontSize: 20 }} />
-                                                        <Typography style={{ marginLeft: 2, fontSize: 13 }}>Transfer money from </Typography>
+                                                    <Grid className={classes.searchItem} container>
+                                                        <RoomIcon style={{ fontSize: 23 }} />
+                                                        <Typography className={classes.searchText}>Transfer money from </Typography>
                                                     </Grid>
                                                 );
                                             }
@@ -371,9 +409,9 @@ export const InfoBanner = () => {
                                         renderValue={selected => {
                                             if (selected.length === 0) {
                                                 return (
-                                                    <Grid className={classes.searchItem} container direction='row' alignItems='center'>
-                                                        <RoomIcon style={{ fontSize: 20 }} />
-                                                        <Typography style={{ marginLeft: 2, fontSize: 13 }}>Transfer money to </Typography>
+                                                    <Grid className={classes.searchItem} container>
+                                                        <RoomIcon style={{ fontSize: 23 }} />
+                                                        <Typography className={classes.searchText}>Transfer money to </Typography>
                                                     </Grid>
                                                 );
                                             }
@@ -391,8 +429,13 @@ export const InfoBanner = () => {
                                 </FormControl>
                             </Grid>
 
-                            <Grid item xs={12} sm={12} md={12} lg={3} container justify='center'>
-                                <Button onClick={() => handleSearch()} variant='contained' className={classes.actionButtonBook}>
+                            <Grid item xs={12} sm={12} md={12} lg={3} container justify='space-evenly'>
+                                <Button
+                                    style={{ fontSize: '16px' }}
+                                    onClick={() => handleSearch()}
+                                    variant='contained'
+                                    className={classes.actionButtonBook}
+                                >
                                     Get Started
                                 </Button>
                             </Grid>
@@ -402,9 +445,9 @@ export const InfoBanner = () => {
                 <Box className={classes.setMiddle}>
                     <Grid className={classes.searchItem} container direction='row' alignItems='center'>
                         <Link href='#' color='inherit' underline='none'>
-                            <Avatar style={{ marginRight: 20, width: 50, height: 50 }} alt='How it works' src={playbtn} />
+                            <Avatar className={classes.avatar} alt='How it works' src={playbtn} />
                         </Link>
-                        <Typography style={{ color: 'white' }}>
+                        <Typography className={classes.links}>
                             <Link href='#' color='inherit' underline='always'>
                                 See how it works?
                             </Link>

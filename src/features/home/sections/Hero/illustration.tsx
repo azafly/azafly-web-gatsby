@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
         infoContainer1: {
             position: 'relative',
             width: 260,
-            left: 370,
+            left: 300,
             top: 100,
             [theme.breakpoints.only('md')]: {
                 left: 160
@@ -30,9 +30,10 @@ const useStyles = makeStyles((theme: Theme) =>
                 left: 320,
                 width: 190
             },
+
             [theme.breakpoints.only('xs')]: {
                 left: 130,
-                width: 220
+                width: 200
             }
         },
         infoContainer2: {
@@ -47,7 +48,8 @@ const useStyles = makeStyles((theme: Theme) =>
                 left: 220
             },
             [theme.breakpoints.only('xs')]: {
-                left: 20
+                left: 10,
+                width: 300
             }
         },
         infoContainer3: {
@@ -63,23 +65,28 @@ const useStyles = makeStyles((theme: Theme) =>
                 width: 190
             },
             [theme.breakpoints.only('xs')]: {
-                left: 180,
-                width: 220
+                left: 160,
+                width: 200
+            }
+        },
+        innerText: {
+            fontSize: '18px',
+            fontWeight: 500,
+            [theme.breakpoints.only('xs')]: {
+                fontSize: '10px'
             }
         },
         notification: {
             position: 'relative',
-            // marginRight: '20px',
-            // marginBottom: '10px',
+
             padding: '10px',
             backgroundColor: 'white',
-
-            minHeight: 70,
+            minHeight: 50,
             color: '#4990A4',
             textAlign: 'left',
-            font: "400 .9em 'Open Sans', sans-serif",
             border: '1px solid white',
             borderRadius: '10px',
+
             '&:after': {
                 content: "''",
                 position: 'absolute',
@@ -108,21 +115,23 @@ export const Illustration = ({ images }: Props) => {
             <Box className={classes.infoContainer1}>
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
-                        <Typography>Send money to almost any bank account.</Typography>
+                        <Typography className={classes.innerText}>Send money to almost any bank account.</Typography>
                     </Box>
                 </Box>
             </Box>
             <Box className={classes.infoContainer2}>
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
-                        <Typography>Send cash for pickup at a thousands of partner locations around the world</Typography>
+                        <Typography className={classes.innerText}>
+                            Send cash for pickup at a thousands of partner locations around the world
+                        </Typography>
                     </Box>
                 </Box>
             </Box>
             <Box className={classes.infoContainer3}>
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
-                        <Typography>Send money directly to your recipient door</Typography>
+                        <Typography className={classes.innerText}>Send money directly to your recipient door</Typography>
                     </Box>
                 </Box>
             </Box>
