@@ -4,15 +4,15 @@ import { makeStyles, createStyles } from '@material-ui/styles';
 import React from 'react';
 import { Illustration } from './illustration';
 import { InfoBanner } from './info-banner';
-import { HomeBGIllustration1, HomeBGIllustration3 } from '../../../../components/illustrations/backgrounds';
 import { HomeImages } from '../../../../createPages/templates/home';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         homePageHeroMain: {
             position: 'relative',
-            background: '#F7F8F9',
-            width: '100%'
+            background: 'linear-gradient(102.84deg, #0D324D 1.08%, #224C6C 59.23%, #062741 97.46%)',
+            width: '100%',
+            minHeight: 600
         },
         homePageHeroInner: {
             flexGrow: 1,
@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.only('xs')]: {
                 left: -50,
                 top: -90,
+
                 height: 500
             }
         },
@@ -69,18 +70,18 @@ export const HomePageHeroSection = ({ images }: Props) => {
 
     return (
         <div className={classes.homePageHeroMain}>
-            <Hidden smDown>
+            {/* <Hidden smDown>
                 <HomeBGIllustration1 className={classes.homeBgllustration1} /> <HomeBGIllustration3 className={classes.homeBgllustration3} />
-            </Hidden>
+            </Hidden> */}
 
             <Grid container justify='space-around' spacing={3} alignItems='center' className={classes.homePageHeroInner}>
                 <Box clone order={{ xs: 2, sm: 1 }}>
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={12} sm={12} md={6} style={{ marginBottom: 50 }}>
                         <InfoBanner />
                     </Grid>
                 </Box>
                 <Box clone order={{ xs: 1, sm: 2 }}>
-                    <Grid item xs={12} sm={5}>
+                    <Grid item xs={12} sm={12} md={6}>
                         <Illustration images={images} />
                     </Grid>
                 </Box>

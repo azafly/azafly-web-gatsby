@@ -1,14 +1,13 @@
-/* eslint-disable no-else-return */
 // @ts-ignore
 import Slider from 'react-slick';
 import React, { forwardRef, useState, useRef } from 'react';
 import { createStyles, makeStyles, Theme, useTheme } from '@material-ui/core/styles';
 import { Grid, useMediaQuery } from '@material-ui/core';
-import { SliderCard } from './slider-card';
+import { SliderCard } from '../../../home/sections/Reviews/slider-card';
 
 import { BackwardSvgComponent, ForwardSvgComponent } from '../../../../components/icons';
 
-import { InfoBanner } from './info-banner';
+import { InfoBanner } from '../../../home/sections/Reviews/info-banner';
 
 const cards = [
     {
@@ -51,6 +50,9 @@ const useStyles = makeStyles((theme: Theme) =>
                 padding: '40px 0px'
             }
         },
+        color: {
+            background: theme.colors.mainGreen
+        },
         sliders: {
             width: '110vw',
             [theme.breakpoints.only('xs')]: {
@@ -84,7 +86,7 @@ interface ReviewSlidersProps {
 }
 type ActiveScroller = 'prev' | 'next';
 
-export const ReviewSliders = forwardRef(() => {
+export const SliderGallery = forwardRef((props: ReviewSlidersProps, ref) => {
     const classes = useStyles();
     const [activeScroller, setActiveScroller] = useState<ActiveScroller>('next');
 
@@ -95,9 +97,9 @@ export const ReviewSliders = forwardRef(() => {
     const laptopBg = useMediaQuery(theme.breakpoints.only('lg'));
     const computeNumberOfCards = () => {
         if (mobile || tablet) return 2;
-        else if (laptopSm) return 3;
-        else if (laptopBg) return 4;
-        else return 5;
+        if (laptopSm) return 3;
+        if (laptopBg) return 4;
+        return 5;
     };
 
     const sliderRef = useRef<Slider>(null);
@@ -115,7 +117,7 @@ export const ReviewSliders = forwardRef(() => {
         arrows: false
     };
 
-    const handleToggleClass = (clickedScroller: ActiveScroller) => {
+    const handleToggeleClass = (clickedScroller: ActiveScroller) => {
         setActiveScroller(clickedScroller);
         if (clickedScroller === 'prev') sliderRef?.current?.slickPrev();
         sliderRef?.current?.slickNext();
@@ -127,11 +129,11 @@ export const ReviewSliders = forwardRef(() => {
                 <BackwardSvgComponent
                     opacity={activeScroller === 'prev' ? 1 : 0.3}
                     className={classes.prev}
-                    onClick={() => handleToggleClass('prev')}
+                    onClick={() => handleToggeleClass('prev')}
                 />
                 <ForwardSvgComponent
                     opacity={activeScroller === 'next' ? 1 : 0.3}
-                    onClick={e => handleToggleClass('next')}
+                    onClick={e => handleToggeleClass('next')}
                     className={classes.next}
                 />
             </div>
@@ -140,8 +142,8 @@ export const ReviewSliders = forwardRef(() => {
     const information = ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies neque at nisl auctor.';
 
     return (
-        <Grid container justifyContent={'center'} alignItems={'center'} spacing={4}>
-            <InfoBanner scrollers={scrollers} title='Testimonials' subtitle=' What clients are saying about us' information={information} />
+        <Grid className={classes.color} container justifyContent={'center'} alignItems={'center'} spacing={4}>
+            <InfoBanner scrollers={scrollers} title='Events Gallary' information={information} />
             <Grid item xs={12} sm={7} md={8} className={classes.sliders}>
                 <Slider ref={sliderRef} {...settings} className={classes.overflow}>
                     {cards}

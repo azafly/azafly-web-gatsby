@@ -62,7 +62,7 @@ const Home: FunctionComponent<Home> = ({ data }) => {
         <>
             <SEO title='Lucqax | Emmigrate and Make Complex International Payments Easily' image='/logo.png' />
             <Layout>
-                <HomeView images={data} />
+                <HomeView images='../../features/home/images/Objects.png' />
             </Layout>
         </>
     );

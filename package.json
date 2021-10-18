@@ -91,7 +91,8 @@
     "styled-components": "^5.1.1",
     "tailwindcss": "^1.6.2",
     "tailwindcss-gradients": "^3.0.0",
-    "ts-node": "^8.10.2"
+    "ts-node": "^8.10.2",
+    "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
