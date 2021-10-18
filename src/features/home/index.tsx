@@ -12,6 +12,7 @@ import { HomePageReviewsSection } from './sections/Reviews';
 import { Secure } from './sections/Secure/secure';
 
 import { QuestionsTabsConatiner } from '../faq/questions-tab';
+import { JoinUs } from './sections/Joinus';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -68,15 +69,18 @@ const Home = ({ images }: HomeViewProps) => {
                 <div className={classes.drawerHeader}></div>
                 <HomePageHeroSection images={images} />
                 <Services />
+
                 <div className={classes.setupAndDesignSection}>
                     <HowToSetUp images={images} />
                     <Secure />
                     <HomePageReviewsSection />
                 </div>
                 <ComingSoon />
+
                 <Box style={{ maxWidth: 1400, margin: 'auto' }}>
                     <QuestionsTabsConatiner />
                 </Box>
+                <JoinUs />
             </main>
         </div>
     );
