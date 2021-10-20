@@ -1,54 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+interface LocationProps {
+    loaded: boolean;
+    locations: any;
+    error: string;
+}
+
 const useGeolocation = () => {
-    const [location, setLocation] = useState({ loaded: false, locations: null, error: '' });
+    const [location, setLocation] = useState<LocationProps>({ loaded: false, locations: null, error: '' });
     const [countryList, setCountryList] = useState<string[]>([]);
 
     const onError = (error: any) => {
         setLocation({
             loaded: true,
-            error
+            error,
+            locations: []
         });
     };
 
-    const getUserGeolocationDetails = async () => {
-        await axios
-            .get(`https://us-central1-pick-safe.cloudfunctions.net/countryList`)
-            .then(list => {
-                setCountryList(list.data.countriesByRegion);
-            })
-            .catch(error => {
-                console.log(error);
-            });
+    const getCountriesByRegion = async () =>
+        axios.get(`https://us-central1-pick-safe.cloudfunctions.net/countryList`).then(({ data }) => data.countriesByRegion);
 
-        await axios
-            .get(`https://geolocation-db.com/json/${process.env.GEOLOCATION_KEY}`)
-            .then(countryItem => {
-                setLocation({
-                    loaded: true,
-                    locations: countryItem.data.country_name
-                });
-                // setCountry(countryItem.data.country_name);
-            })
-            .catch(error => {
-                onError({
-                    code: 0,
-                    loaded: false,
-                    message: 'Geolocation not supported'
-                });
-            });
+    const getUserGeoLocationData = async () =>
+        axios.get(`https://geolocation-db.com/json/${process.env.GEOLOCATION_KEY}`).then(({ data }) => data.country_name);
+
+    const getUserGeolocationDetails = async () => {
+        const [countriesByRegion, userCurrentCountry] = await Promise.all([getCountriesByRegion(), getUserGeoLocationData()]);
+
+        const isAfrica = userCurrentCountry in countriesByRegion.Africa;
+        // const isAfrica = 'Nigeria' in countriesByRegion.Africa;
+        console.log(isAfrica);
     };
+
     useEffect(() => {
         getUserGeolocationDetails();
     }, []);
 
-    const countryLocation = {
+    return {
         countryList,
         location
     };
-
-    return countryLocation;
 };
 
 export default useGeolocation;
