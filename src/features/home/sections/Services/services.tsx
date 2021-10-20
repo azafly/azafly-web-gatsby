@@ -1,14 +1,12 @@
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Typography, Grid, Hidden } from '@material-ui/core';
+import { Typography, Grid, Hidden, Box } from '@material-ui/core';
 import React from 'react';
 import { ServicesBG2 } from '../../../../components/illustrations/backgrounds';
-import { ServiceCard } from './service-card';
-import {
-    PayOnline,
-    Travellers,
-    ConnectedWord
-} from '../../../../components/illustrations';
+import { ServiceIllustration } from './illustration';
+// import { ServiceCard } from './service-card';
+import { PayOnline, Travellers, ConnectedWord } from '../../../../components/illustrations';
 import { CalendarSvgComponent } from '../../../../components/icons/calendar';
+import { ServiceInfoBanner } from './info-banner';
 
 const services = [
     {
@@ -64,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             width: '100vw',
-            backgroundColor: 'rgb(239, 242, 246)',
+            // backgroundColor: 'rgb(239, 242, 246)',
             overflowX: 'hidden',
             position: 'relative',
             padding: '70px 0px 70px 0px',
@@ -138,20 +136,29 @@ export function Services() {
     const classes = useStyles();
 
     return (
-        <div className={classes.container}>
+        <Box className={classes.container}>
             <Hidden>
                 <ServicesBG2 className={classes.bgIllustration2} />
             </Hidden>
-            <div className={classes.titleWrapper}>
+            {/* <div className={classes.titleWrapper}>
                 <Typography variant='h3' className={classes.title}>
                     We put all the pieces together
                 </Typography>
-                <p className={classes.subText}>
-                    We combine data and extensive expertize to offer you a
-                    personalized experience.
-                </p>
-            </div>
-            <div className={classes.serviceCardContainer}>
+                <p className={classes.subText}>We combine data and extensive expertize to offer you a personalized experience.</p>
+            </div> */}
+            <Grid container justify='space-around' spacing={2} alignItems='center' className={classes.serviceCardContainer}>
+                <Box clone order={{ xs: 2, sm: 1 }}>
+                    <Grid item xs={12} sm={12} md={6} style={{ marginBottom: 50 }}>
+                        <ServiceInfoBanner />
+                    </Grid>
+                </Box>
+                <Box clone order={{ xs: 1, sm: 2 }}>
+                    <Grid item xs={12} sm={12} md={6}>
+                        <ServiceIllustration images='' />
+                    </Grid>
+                </Box>
+            </Grid>
+            {/* <div className={classes.serviceCardContainer}>
                 <Grid
                     container
                     justify={'space-around'}
@@ -182,7 +189,7 @@ export function Services() {
                         }
                     )}
                 </Grid>
-            </div>
-        </div>
+            </div> */}
+        </Box>
     );
 }
