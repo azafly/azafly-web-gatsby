@@ -137,12 +137,12 @@ const useStyles = makeStyles((theme: Theme) =>
         actionButtonBook: {
             textTransform: 'none',
             height: 50,
-            minWidth: '133px',
+            minWidth: '100% !important',
             color: 'white',
             fontWeight: 500,
             backgroundColor: '#214662',
             padding: '7px 15px',
-            margin: 5,
+            margin: 'auto',
 
             // marginRight: 10,
             borderRadius: 6,
@@ -151,14 +151,9 @@ const useStyles = makeStyles((theme: Theme) =>
                 opacity: 0.9
             },
             [theme.breakpoints.only('xs')]: {
-                minWidth: '97% !important',
+                minWidth: '100% !important',
+                margin: 'auto',
                 justifyContent: 'center !important'
-            },
-            [theme.breakpoints.only('md')]: {
-                minWidth: '98%'
-            },
-            [theme.breakpoints.only('sm')]: {
-                minWidth: '98.5%'
             }
         },
         searchItem: {
@@ -409,7 +404,7 @@ export const InfoBanner = () => {
                 <Box>
                     <Box className={classes.searchContainer}>
                         <Grid container spacing={1} className={classes.searchItem}>
-                            <Grid item xs={12} sm={12} lg={4} className={classes.searchItemControl}>
+                            <Grid item xs={12} sm={12} lg={5} className={classes.searchItemControl}>
                                 <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
                                     <Select
                                         displayEmpty
@@ -446,7 +441,7 @@ export const InfoBanner = () => {
                                     </Select>
                                 </FormControl>
                             </Grid>
-                            <Grid item xs={12} sm={12} lg={4} className={classes.searchItemControl}>
+                            <Grid item xs={12} sm={12} lg={5} className={classes.searchItemControl}>
                                 <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
                                     <Select
                                         displayEmpty
@@ -484,7 +479,7 @@ export const InfoBanner = () => {
                                 </FormControl>
                             </Grid>
 
-                            <Grid container item xs={12} sm={12} md={12} lg={3}>
+                            <Grid container item xs={12} sm={12} md={12} lg={2}>
                                 <Button
                                     style={{ fontSize: '16px' }}
                                     onClick={() => handleSearch()}
