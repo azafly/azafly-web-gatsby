@@ -9,7 +9,6 @@ interface LocationProps {
 
 const useGeolocation = () => {
     const [location, setLocation] = useState<LocationProps>({ loaded: false, locations: null, error: '' });
-    const [countryList, setCountryList] = useState<string[]>([]);
 
     const onError = (error: any) => {
         setLocation({
@@ -30,7 +29,16 @@ const useGeolocation = () => {
 
         const isAfrica = userCurrentCountry in countriesByRegion.Africa;
         // const isAfrica = 'Nigeria' in countriesByRegion.Africa;
-        console.log(isAfrica);
+        if (isAfrica) {
+            setLocation({
+                loaded: true,
+                locations: userCurrentCountry
+            });
+        } else {
+            setLocation({
+                loaded: false
+            });
+        }
     };
 
     useEffect(() => {
@@ -38,7 +46,6 @@ const useGeolocation = () => {
     }, []);
 
     return {
-        countryList,
         location
     };
 };

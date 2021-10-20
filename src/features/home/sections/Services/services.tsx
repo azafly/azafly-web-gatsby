@@ -148,12 +148,12 @@ export function Services() {
             </div> */}
             <Grid container justify='space-around' spacing={2} alignItems='center' className={classes.serviceCardContainer}>
                 <Box clone order={{ xs: 2, sm: 1 }}>
-                    <Grid item xs={12} sm={12} md={6} style={{ marginBottom: 50 }}>
+                    <Grid item xs={12} sm={12} md={7} style={{ marginBottom: 50 }}>
                         <ServiceInfoBanner />
                     </Grid>
                 </Box>
                 <Box clone order={{ xs: 1, sm: 2 }}>
-                    <Grid item xs={12} sm={12} md={6}>
+                    <Grid item xs={10} sm={10} md={5}>
                         <ServiceIllustration images='' />
                     </Grid>
                 </Box>

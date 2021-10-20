@@ -298,13 +298,9 @@ export const InfoBanner = () => {
     const [snackBarOpen, setSnackBarOpen] = useState<boolean>(false);
     const [error, setError] = useState<string>('');
 
-    // getting users location via
-    const uselocation = useGeolocation();
-    const { countryList, location } = uselocation;
-    // needed review
-    // const getCountryContinent = location.loaded && location.locations in countryList.countriesByRegion.Africa ? location.locations : 'Africa';
+    // getting users location via IP address
+    const { location } = useGeolocation();
 
-    // const regionLocation = location.loaded ? JSON.stringify(location.coordinates.lat) : 'Africa';
     const handleCloseSnack = (event?: React.SyntheticEvent, reason?: string) => {
         if (reason === 'clickaway') {
             return;
@@ -358,7 +354,7 @@ export const InfoBanner = () => {
             <Box className={classes.container}>
                 {/* {location.loaded ? ( */}
                 <Typography variant='h4' className={classes.titleHeading}>
-                    Send money from <span className={classes.clipPath}>Africa</span> to any other country
+                    Send money from <span className={classes.clipPath}>{location.loaded ? location.locations : 'Africa'}</span> to any other country
                 </Typography>
 
                 {/* <motion.p className={classes.paragraph}>{frontMatter.intro}</motion.p> */}
