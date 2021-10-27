@@ -144,7 +144,6 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: '7px 15px',
             margin: 'auto',
 
-            // marginRight: 10,
             borderRadius: 6,
             '&:hover': {
                 background: '#214662',
