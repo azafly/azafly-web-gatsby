@@ -208,16 +208,11 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         formControl: {
-            width: '95% !important',
-            [theme.breakpoints.only('md')]: {
-                width: '100% !important '
+            width: '100% !important',
+            [theme.breakpoints.up('md')]: {
+                width: '95% !important '
             },
-            [theme.breakpoints.only('sm')]: {
-                width: '100% !important'
-            },
-            [theme.breakpoints.only('xs')]: {
-                width: '100% !important'
-            }
+     
         },
         overflow: {
             [theme.breakpoints.only('lg')]: {
