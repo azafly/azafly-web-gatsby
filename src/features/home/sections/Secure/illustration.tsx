@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { makeStyles, Theme, createStyles } from '@material-ui/core';
+import { makeStyles, Theme, createStyles, Grid } from '@material-ui/core';
 import React from 'react';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -26,9 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.only('xs')]: {
                 alignSelf: 'center',
                 justifyContent: 'center',
-                height: 400,
-                marginLeft: '5vw',
-                marginRight: '5vw'
+                height: 400
             }
         }
     })
@@ -50,7 +48,11 @@ export const Illustration = ({ image }: Props) => {
                 default: { duration: 1 }
             }}
         >
-            <img className={classes.illustration} src={image} />
+            <Grid container justifyContent='center'>
+                <Grid item xs={10} sm={12}>
+                    <img className={classes.illustration} src={image} />
+                </Grid>
+            </Grid>
         </motion.div>
     );
 };
