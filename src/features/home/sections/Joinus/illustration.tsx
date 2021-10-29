@@ -26,12 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
 
-            // marginTop: -70,
-            [theme.breakpoints.only('xs')]: {
-                width: '100%',
-                margin: 'auto'
-            },
-            [theme.breakpoints.only('sm')]: {
+            [theme.breakpoints.down('sm')]: {
                 width: '100%',
                 margin: 'auto'
             }

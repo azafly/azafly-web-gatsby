@@ -1,27 +1,21 @@
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { motion } from 'framer-motion';
 import { Typography, Grid, Box, Button, Avatar, Link } from '@material-ui/core';
 import React from 'react';
 import { Link as RouteLink } from 'gatsby-theme-material-ui';
-import playbtn2 from '../../../../../static/images/home/playBtn2.png';
+import playbtn from '../../../../../static/images/home/playBtn.png';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            marginLeft: '40px !important',
             [theme.breakpoints.only('xs')]: {
-                margin: 'auto',
-                marginBottom: ' 30px !important'
-            }
-        },
-        btn: {
-            [theme.breakpoints.only('xs')]: {
-                justifyContent: 'center !important'
+                marginBottom: 60
             }
         },
         avatar: {
             marginRight: '12.4px',
-            width: '46px',
-            height: '46px',
+            width: '50px',
+            height: '50px',
             boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.03)',
             [theme.breakpoints.only('xs')]: {
                 marginRight: '10px',
@@ -30,8 +24,9 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         links: {
-            color: 'white',
+            color: '#4990A4',
             fontSize: '16px',
+
             [theme.breakpoints.only('xs')]: {
                 fontSize: '14px'
             }
@@ -40,7 +35,8 @@ const useStyles = makeStyles((theme: Theme) =>
         justify: {
             justifyContent: 'space-between',
             [theme.breakpoints.only('xs')]: {
-                justifyContent: 'center'
+                justifyContent: 'center',
+                margin: 'auto'
             }
         },
         actionButtonExplore: {
@@ -53,11 +49,11 @@ const useStyles = makeStyles((theme: Theme) =>
             borderRadius: '10px',
             fontSize: '16px',
             color: 'white',
-            minWidth: 170,
+            minWidth: 120,
             '&:hover': {
                 background: ' #4990A4'
             },
-            [theme.breakpoints.only('xs')]: {
+            [theme.breakpoints.down('md')]: {
                 justifyContent: 'center',
                 width: '100% !important',
                 marginBottom: 20
@@ -66,23 +62,22 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const JoinUsBotton = () => {
+export const SecureButton = () => {
     const classes = useStyles();
 
     return (
-        <Box className={classes.root} style={{ marginTop: 50 }}>
-            <Grid container direction='row' className={classes.justify}>
-                <Grid item xs={12} sm={3} md={5}>
-                    <Button component={RouteLink} to='/signup' className={classes.actionButtonExplore}>
-                        Get Started
-                    </Button>
-                </Grid>
-
-                <Grid item xs={12} sm={6} md={5} direction='row'>
-                    <Box className={classes.btn}>
-                        <Grid container direction='row' alignItems='center' justifyContent='center'>
+        <motion.div className={classes.root}>
+            <Box style={{ marginTop: 30 }}>
+                <Grid container direction='row' spacing={1} className={classes.justify}>
+                    <Grid item xs={12} sm={12} lg={6}>
+                        <Button component={RouteLink} to='/signup' className={classes.actionButtonExplore}>
+                            Get Started
+                        </Button>
+                    </Grid>
+                    <Grid item xs={6} sm={12} lg={6}>
+                        <Grid container direction='row' justifyContent='center' alignItems='center'>
                             <Link href='/services' color='inherit' underline='none'>
-                                <Avatar className={classes.avatar} alt='How it works' src={playbtn2} />
+                                <Avatar className={classes.avatar} alt='How it works' src={playbtn} />
                             </Link>
                             <Typography className={classes.links}>
                                 <Link href='/services' color='inherit' underline='always'>
@@ -90,9 +85,9 @@ export const JoinUsBotton = () => {
                                 </Link>
                             </Typography>
                         </Grid>
-                    </Box>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </Box>
+            </Box>
+        </motion.div>
     );
 };

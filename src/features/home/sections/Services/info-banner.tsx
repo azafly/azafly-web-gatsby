@@ -73,7 +73,6 @@ const useStyles = makeStyles((theme: Theme) =>
                 margin: 'auto',
                 width: '100%',
                 fontSize: '14px'
-                // justifyContent: 'center !important'
             }
         },
         titleText: {
@@ -110,7 +109,11 @@ const useStyles = makeStyles((theme: Theme) =>
         circle: {
             background: 'transparent',
             border: '1px solid #0D324D',
-            color: '#0D324D'
+            color: '#0D324D',
+            [theme.breakpoints.only('xs')]: {
+                justifyContent: 'center !important',
+                marginTop: '10px'
+            }
         },
 
         hr: {
@@ -151,15 +154,22 @@ export const ServiceInfoBanner = () => {
                     return (
                         <Grid key={index} container spacing={2}>
                             <Card className={classes.card}>
-                                <CardHeader
-                                    action={
-                                        <Avatar className={classes.circle}>
-                                            <KeyboardArrowRightIcon />
-                                        </Avatar>
-                                    }
-                                    title={<Typography className={classes.heading}>{item.title}</Typography>}
-                                />
+                                <Box display={{ xs: 'none', lg: 'block', sm: 'block' }}>
+                                    <CardHeader
+                                        action={
+                                            <Avatar className={classes.circle}>
+                                                <KeyboardArrowRightIcon />
+                                            </Avatar>
+                                        }
+                                        title={<Typography className={classes.heading}>{item.title}</Typography>}
+                                    />
+                                </Box>
+
                                 <CardContent>
+                                    <Box display={{ xs: 'block', lg: 'none', sm: 'none' }}>
+                                        <Typography className={classes.heading}>{item.title}</Typography>
+                                    </Box>
+
                                     <Box clone order={{ xs: 2, sm: 2 }}>
                                         <Grid item xs={12}>
                                             <Typography variant='subtitle1' component='p' className={classes.content}>
@@ -169,8 +179,15 @@ export const ServiceInfoBanner = () => {
                                     </Box>
 
                                     <Grid item xs={12} sm={11} justifyContent='center'>
-                                        <Box clone order={{ xs: 3, sm: 3 }}>
+                                        <Box clone order={{ xs: 1, sm: 3 }}>
                                             <Box className={classes.hr} />
+                                        </Box>
+                                    </Grid>
+                                    <Grid item xs={12} sm={11} justify='center'>
+                                        <Box justifyContent='center' alignContent='center' display={{ xs: 'block', lg: 'none', sm: 'none' }}>
+                                            <Avatar className={classes.circle}>
+                                                <KeyboardArrowRightIcon />
+                                            </Avatar>
                                         </Box>
                                     </Grid>
                                 </CardContent>
