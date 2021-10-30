@@ -1,18 +1,22 @@
 ---
 intro: Making your dreams COME alive
-servicesHeaderText_content2: Lorem ipsom
-servicesHeaderText_content3: Lorem ipsom
-secureHeadingText_content2: Lorem ipsom
-secureHeadingText_content3: Lorem ipsom
-internationalOfficePhone: (272) 211-7370
-nigeriaOfficePhone: (234) 91-0083-7370
-servicesHeaderText-subtext3-button: Start Now
-servicesHeaderText-subtext2-button: Consult for free
+heroMainImage1: ../../static/images/home-main.jpeg
+offerText: Get free travel consultation when anyone with your last name makes a
+  payment through us
+consultButtonText: Consult for free
 paymentButtonText: Make a payment
-comingSoonHeading: Coming Soon
-servicesHeaderText-subtext1-button: Make a payment
-nigeriaOfficeAddress: 77 Kings Royal Street Ajah, Lagos, Nigeria
-servicesHeaderText-subtext1-image: ../../static/images/how-to-download_youtube-videos_thumb1200_4-3.jpg
+chatPromptText: Chat with us
+servicesHeaderText_subtext1: Lowest Fee
+servicesHeaderText_subtext2: Fast Transactions
+servicesHeaderText_content2: The sky was cloudless and of a deep dark blue spectacle before.
+servicesHeaderText_content3: The sky was cloudless and of a deep dark blue spectacle before.
+secureHeadingText_content2: Lorem ipsum dolor sit amet, consectetur adipiscing
+  elit. Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
+  adipiscing. Vel ut semper tristique.
+secureHeadingText_content3: Lorem ipsum dolor sit amet, consectetur adipiscing
+  elit. Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
+  adipiscing. Vel ut semper tristique.
+reviewHeading: What clients are saying about us
 joinUsHeadingText: Malesuada molestie nulla amet habitant.
 footerIntroContent: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
   do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue lacus
@@ -20,37 +24,38 @@ footerIntroContent: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
   morbi. Sed faucibus turpis in eu mi bibendum neque egestas. Ullamcorper a
   lacus vestibulum sed arcu non odio euismod. Est velit egestas dui id ornare
   arcu odio ut. Integer feugiat scelerisque varius morbi enim nunc faucibus.
+internationalOfficeAddress: 455 West Orchard Street Kings Mountain, NC, 28097
+internationalOfficePhone: (272) 211-7370
+nigeriaOfficePhone: (234) 91-0083-7370
+servicesHeaderText-subtext3-button: Start Now
+servicesHeaderText-subtext2-button: Consult for free
+comingSoonHeading: Coming Soon
+servicesHeaderText-subtext1-button: Make a payment
+nigeriaOfficeAddress: 77 Kings Royal Street Ajah, Lagos, Nigeria
+servicesHeaderText-subtext1-image: ../../static/images/how-to-download_youtube-videos_thumb1200_4-3.jpg
 servicesHeaderText-subtext2-image: ""
 hero-quote1: Send money to almost any bank account.
-heroMainImage1: ../../static/images/home-main.jpeg
 servicesHeaderText-subtext3-image: ""
-offerText: Get free travel consultation when anyone with your last name makes a
-  payment through us
-chatPromptText: Chat with us
 hero-quote2: Send cash for pickup at a thousands of partner locations around the world
 footerHeading1: test
-internationalOfficeAddress: 455 West Orchard Street Kings Mountain, NC, 28097
 hero-quote3: Send money directly to your recipient door
-consultButtonText: Consult for free
-reviewHeading: What clients are saying about us
 footerHeading2: Hey
-servicesHeaderText_subtext1: Lorem ipsom
 secureHeading: Secure by design
 footerHeading3: Ho
-servicesHeaderText_subtext2: Lorem ipsomLorem ipsom
 servicesHeaderText-content1: Our fee is the lowest in the market compared to any other
-hero_quote1: Make most of your savings
-servicesHeaderText_subtext3: Lorem ipsom
+servicesHeaderText_subtext3: Safe & Secure
 secureHeadingText-content1: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
   ornare metus, elit. Vestibulum maecenas convallis enim velit, nulla amet
   scelerisque. Faucibus arcu dignissim sem ornare
+title: Lucqas | Pay your most importnat bills Abroad
 intro-paragraph: "Confused on what country to travel or relocate to ? Are you
   stuck in making that payment? We offer world-class guidance to making sure
   your travels is well catered for. "
 servicesHeaderText-content2: The sky was cloudless and of a deep dark blue spectacle before.
-reviewParagraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-  ultricies neque at nisl auctor.
+hero_quote1: Send money to almost any bank account.
+hero_quote2: Send cash for pickup at a thousands of partner locations around the world.
+servicesHeaderText_content1: Our fee is the lowest in the market compared to any other
 comingSoonButton: Forum and Chats
 secureHeadingText-content2: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
@@ -61,9 +66,16 @@ secureHeadingText-content3: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
   ornare metus, elit. Vestibulum maecenas convallis enim velit, nulla amet
   scelerisque. Faucibus arcu dignissim sem ornare
+paymentImage: https://img.freepik.com/free-photo/happy-winner-young-rich-african-american-man-casual-t-shirt-holding-money_255757-5489.jpg?size=626&ext=jpg
+servicesHeaderText: Some of our advantages
+hero_quote3: Send money directly to your recipient door.
+secureHeadingText1: Vitae nulla ac purus pharetra
+secureHeadingText2: Vitae nulla ac purus pharetra
+secureHeadingText3: Vitae nulla ac purus pharetra
+reviewParagraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+  ultricies neque at nisl auctor.
 nigeriaOfficeEmail: support-ng@lucqax.com
 footerIntro: HELLO
-paymentImage: https://img.freepik.com/free-photo/happy-winner-young-rich-african-american-man-casual-t-shirt-holding-money_255757-5489.jpg?size=626&ext=jpg
 comingSoonParagraph: For monthly newsletter and products update, sign up below
   to keep updated. We will send you an email every month. Promise No Spam.
 internationalOfficeEmail: support@lucqax.com
@@ -77,23 +89,17 @@ secureParagraph: Already trusted by thousands of happy clients. We are protected
   by EU Financial charter. You have nothing to be worried about  Pay for all
   your service with secure payment channels. We accept dozens of methods across
   multiple currencies.
-title: Lucqas | Pay your most importnat bills Abroad
-servicesHeaderText: Some of our advantages
 servicesHeaderText-subtext1: Lowest Fee
-secureHeadingText1: Vitae nulla ac purus pharetra
 servicesHeaderText-subtext2: Fast Transactions
-secureHeadingText2: Vitae nulla ac purus pharetra
 servicesHeaderText-subtext3: Safe & Secure
-hero_quote2: Make the best
-secureHeadingText3: Vitae nulla ac purus pharetra
 image: ../../static/images/smiling-man.jpg
-hero_quote3: Lorem ipsom
 footerLinkList1:
   title: Hello
   link: /about
 setupImage: ../../static/images/home-setup.jpeg
-servicesHeaderText_content1: Lorem ipsom
-secureHeadingText_content1: Lorem ipsom
+secureHeadingText_content1: Lorem ipsum dolor sit amet, consectetur adipiscing
+  elit. Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
+  adipiscing. Vel ut semper tristique.
 joinUsHeadingContent: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
   adipiscing. Vel ut semper tristique.
