@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.only('xs')]: {
                 alignSelf: 'center',
                 justifyContent: 'center',
-                height: 400
+                height: 300
             }
         }
     })

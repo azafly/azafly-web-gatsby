@@ -28,7 +28,7 @@ interface Props {
 export const ServiceIllustration = ({ images }: Props) => {
     const classes = useStyles();
 
-    const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;
+    // const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;
     return (
         <Box className={classes.illustration}>
             <img src={serviceImage} alt='service' />
