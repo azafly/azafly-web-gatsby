@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { makeStyles, createStyles, Theme, useTheme } from '@material-ui/core/styles';
-import { Button, Typography, Grid, Box, Link, Snackbar } from '@material-ui/core';
+import { Button, Typography, Grid, Box, Link, Snackbar, InputAdornment, CircularProgress } from '@material-ui/core';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
@@ -11,6 +11,8 @@ import RoomIcon from '@mui/icons-material/Room';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Avatar from '@material-ui/core/Avatar';
 import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
+
+import useGeolocation from '../../hooks/useGeolocation';
 import playbtn from '../../../../../static/images/home/playBtn.png';
 import { useFetchHomeData } from '../../hooks/use-data';
 
@@ -59,7 +61,8 @@ const useStyles = makeStyles((theme: Theme) =>
             fontSize: '64px',
             [theme.breakpoints.only('xs')]: {
                 fontSize: 40,
-                fontWeight: 900
+                fontWeight: 900,
+                textAlign: 'center'
             },
             [theme.breakpoints.only('sm')]: {
                 fontSize: '32px'
@@ -134,31 +137,38 @@ const useStyles = makeStyles((theme: Theme) =>
         actionButtonBook: {
             textTransform: 'none',
             height: 50,
-            minwidth: 100,
+            minWidth: '100% !important',
             color: 'white',
             fontWeight: 500,
             backgroundColor: '#214662',
-            // padding: '7px 15px',
-            margin: 5,
-            // marginRight: 10,
+            padding: '7px 15px',
+            margin: 'auto',
+
             borderRadius: 6,
             '&:hover': {
                 background: '#214662',
                 opacity: 0.9
             },
             [theme.breakpoints.only('xs')]: {
-                minWidth: '100%'
-            },
-            [theme.breakpoints.only('md')]: {
-                minWidth: '100%'
-            },
-            [theme.breakpoints.only('sm')]: {
-                minWidth: '100%'
+                minWidth: '100% !important',
+                margin: 'auto',
+                justifyContent: 'center !important'
             }
         },
         searchItem: {
             color: '#4990A4',
             display: 'flex',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            [theme.breakpoints.only('xs')]: {
+                justifyContent: 'center !important'
+            }
+        },
+        searchItemControl: {
+            color: '#4990A4',
+            display: 'flex',
+            // height: 20,
+            justifyContent: 'flex-start !important',
             alignItems: 'center',
             [theme.breakpoints.only('xs')]: {
                 justifyContent: 'center'
@@ -196,7 +206,20 @@ const useStyles = makeStyles((theme: Theme) =>
                 opacity: 0.9
             }
         },
-
+        formControl: {
+            width: '100% !important',
+            [theme.breakpoints.up('md')]: {
+                width: '95% !important '
+            },
+     
+        },
+        overflow: {
+            [theme.breakpoints.only('lg')]: {
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                width: '9rem'
+            }
+        },
         link: {
             textDecoration: 'none'
         },
@@ -269,6 +292,9 @@ export const InfoBanner = () => {
     const [snackBarOpen, setSnackBarOpen] = useState<boolean>(false);
     const [error, setError] = useState<string>('');
 
+    // getting users location via IP address
+    const { location } = useGeolocation();
+
     const handleCloseSnack = (event?: React.SyntheticEvent, reason?: string) => {
         if (reason === 'clickaway') {
             return;
@@ -318,9 +344,11 @@ export const InfoBanner = () => {
                 </Alert>
             </Snackbar>
             {/* <Container> */}
+
             <Box className={classes.container}>
+                {/* {location.loaded ? ( */}
                 <Typography variant='h4' className={classes.titleHeading}>
-                    Send money from <span className={classes.clipPath}>Africa</span> to any other country
+                    Send money from <span className={classes.clipPath}>{location.loaded ? location.locations : 'Africa'}</span> to any other country
                 </Typography>
 
                 {/* <motion.p className={classes.paragraph}>{frontMatter.intro}</motion.p> */}
@@ -365,22 +393,28 @@ export const InfoBanner = () => {
                 </Grid>
                 <Box>
                     <Box className={classes.searchContainer}>
-                        <Grid container justify='flex-start' spacing={1} className={classes.searchItem}>
-                            <Grid item xs={12} sm={12} lg={4}>
-                                <FormControl variant='standard' sx={{ width: '100%' }}>
+                        <Grid container spacing={1} className={classes.searchItem}>
+                            <Grid item xs={12} sm={12} lg={5} className={classes.searchItemControl}>
+                                <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
                                     <Select
                                         displayEmpty
                                         className={classes.select}
                                         value={sendMoneyFrom}
                                         onChange={handleChangeMoneyFrom}
+                                        startAdornment={
+                                            <InputAdornment position='start'>
+                                                <RoomIcon style={{ fontSize: 23 }} />
+                                            </InputAdornment>
+                                        }
                                         input={<OutlinedInput />}
                                         IconComponent={KeyboardArrowDownIcon}
                                         renderValue={selected => {
                                             if (selected.length === 0) {
                                                 return (
-                                                    <Grid className={classes.searchItem} container>
-                                                        <RoomIcon style={{ fontSize: 23 }} />
-                                                        <Typography className={classes.searchText}>Transfer money from </Typography>
+                                                    <Grid className={classes.searchItemControl} container>
+                                                        <div className={classes.overflow}>
+                                                            <Typography className={classes.searchText}>Transfer money from </Typography>
+                                                        </div>
                                                     </Grid>
                                                 );
                                             }
@@ -397,21 +431,27 @@ export const InfoBanner = () => {
                                     </Select>
                                 </FormControl>
                             </Grid>
-                            <Grid item xs={12} sm={12} lg={4}>
-                                <FormControl fullWidth sx={{ width: '100%' }}>
+                            <Grid item xs={12} sm={12} lg={5} className={classes.searchItemControl}>
+                                <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
                                     <Select
                                         displayEmpty
                                         className={classes.select}
                                         value={sendMoneyTo}
                                         onChange={handleChangeMoneyTo}
+                                        startAdornment={
+                                            <InputAdornment position='start'>
+                                                <RoomIcon style={{ fontSize: 23 }} />
+                                            </InputAdornment>
+                                        }
                                         input={<OutlinedInput />}
                                         IconComponent={KeyboardArrowDownIcon}
                                         renderValue={selected => {
                                             if (selected.length === 0) {
                                                 return (
-                                                    <Grid className={classes.searchItem} container>
-                                                        <RoomIcon style={{ fontSize: 23 }} />
-                                                        <Typography className={classes.searchText}>Transfer money to </Typography>
+                                                    <Grid className={classes.searchItemControl} container>
+                                                        <div className={classes.overflow}>
+                                                            <Typography className={classes.searchText}>Transfer money to </Typography>
+                                                        </div>
                                                     </Grid>
                                                 );
                                             }
@@ -429,7 +469,7 @@ export const InfoBanner = () => {
                                 </FormControl>
                             </Grid>
 
-                            <Grid item xs={12} sm={12} md={12} lg={3} container justify='space-evenly'>
+                            <Grid container item xs={12} sm={12} md={12} lg={2}>
                                 <Button
                                     style={{ fontSize: '16px' }}
                                     onClick={() => handleSearch()}

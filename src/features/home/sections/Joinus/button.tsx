@@ -1,6 +1,7 @@
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Typography, Grid, Hidden, Box, Button, Avatar, Link } from '@material-ui/core';
+import { Typography, Grid, Box, Button, Avatar, Link } from '@material-ui/core';
 import React from 'react';
+import { Link as RouteLink } from 'gatsby-theme-material-ui';
 import playbtn2 from '../../../../../static/images/home/playBtn2.png';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 fontSize: '14px'
             }
         },
+
         justify: {
             justifyContent: 'space-between',
             [theme.breakpoints.only('xs')]: {
@@ -71,17 +73,19 @@ export const JoinUsBotton = () => {
         <Box className={classes.root} style={{ marginTop: 50 }}>
             <Grid container direction='row' className={classes.justify}>
                 <Grid item xs={12} sm={3} md={5}>
-                    <Button className={classes.actionButtonExplore}>Get Started</Button>
+                    <Button component={RouteLink} to='/signup' className={classes.actionButtonExplore}>
+                        Get Started
+                    </Button>
                 </Grid>
 
                 <Grid item xs={12} sm={6} md={5} direction='row'>
                     <Box className={classes.btn}>
                         <Grid container direction='row' alignItems='center' justifyContent='center'>
-                            <Link href='#' color='inherit' underline='none'>
+                            <Link href='/services' color='inherit' underline='none'>
                                 <Avatar className={classes.avatar} alt='How it works' src={playbtn2} />
                             </Link>
                             <Typography className={classes.links}>
-                                <Link href='#' color='inherit' underline='always'>
+                                <Link href='/services' color='inherit' underline='always'>
                                     See how it works?
                                 </Link>
                             </Typography>

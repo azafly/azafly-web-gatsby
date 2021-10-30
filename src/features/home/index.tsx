@@ -6,7 +6,6 @@ import { Box } from '@material-ui/core';
 
 import { ComingSoon } from './sections/ComingSoon/coming-soon';
 import { Services } from './sections/Services/services';
-import { HowToSetUp } from './sections/Setup/how-to-setup';
 import { HomePageHeroSection } from './sections/Hero/hero';
 import { HomePageReviewsSection } from './sections/Reviews';
 import { Secure } from './sections/Secure/secure';
@@ -71,7 +70,6 @@ const Home = ({ images }: HomeViewProps) => {
                 <Services />
 
                 <div className={classes.setupAndDesignSection}>
-                    <HowToSetUp images={images} />
                     <Secure />
                     <HomePageReviewsSection />
                 </div>

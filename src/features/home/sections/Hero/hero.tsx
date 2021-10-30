@@ -71,10 +71,10 @@ export const HomePageHeroSection = ({ images }: Props) => {
     return (
         <div className={classes.homePageHeroMain}>
             {/* <Hidden smDown>
-                <HomeBGIllustration1 className={classes.homeBgllustration1} /> <HomeBGIllustration3 className={classes.homeBgllustration3} />
+ 
             </Hidden> */}
 
-            <Grid container justify='space-around' spacing={3} alignItems='center' className={classes.homePageHeroInner}>
+            <Grid container justify='space-around' spacing={2} alignItems='center' className={classes.homePageHeroInner}>
                 <Box clone order={{ xs: 2, sm: 1 }}>
                     <Grid item xs={12} sm={12} md={6} style={{ marginBottom: 50 }}>
                         <InfoBanner />

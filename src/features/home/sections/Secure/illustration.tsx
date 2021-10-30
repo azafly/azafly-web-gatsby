@@ -1,45 +1,41 @@
 import { motion } from 'framer-motion';
-import { makeStyles, Theme, createStyles } from '@material-ui/core';
-import React from "react";
-import { SecureByDesign } from '../../../../components/illustrations';
-
-
+import { makeStyles, Theme, createStyles, Grid } from '@material-ui/core';
+import React from 'react';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         secureIllustratioCcontainer: {
             display: 'flex',
-            [theme.breakpoints.up("sm")]: {
-                justifyContent: 'flex-start',
-
+            marginBottom: '60px !important',
+            [theme.breakpoints.up('sm')]: {
+                justifyContent: 'flex-start'
             },
-            [theme.breakpoints.down("md")]: {
-                justifyContent: 'center',
+            [theme.breakpoints.down('md')]: {
+                justifyContent: 'center'
             },
-            [theme.breakpoints.only("xs")]: {
-                marginTop: -50,
-                width: '115vw',
-                margin: 'auto'
-
-            },
+            [theme.breakpoints.only('xs')]: {
+                marginTop: '-60px',
+                width: '100%',
+                margin: 'auto',
+                marginBottom: '-40px !important'
+            }
         },
         illustration: {
-            marginTop: -150,
+            // marginTop: -150,
             pointerEvents: 'none',
             [theme.breakpoints.only('xs')]: {
                 alignSelf: 'center',
-                height: 500,
-                marginLeft: '-22vw'
-            },
+                justifyContent: 'center',
+                height: 300
+            }
         }
-
-    }),
-
+    })
 );
-
-
-export const Illustration = () => {
-    const classes = useStyles()
+interface Props {
+    image: any;
+}
+export const Illustration = ({ image }: Props) => {
+    const classes = useStyles();
 
     return (
         <motion.div
@@ -48,10 +44,15 @@ export const Illustration = () => {
             initial={{ scale: 0.5 }}
             transition={{
                 delay: 1,
-                x: { type: "spring", stiffness: 100 },
-                default: { duration: 1 },
-            }}>
-            <SecureByDesign className={classes.illustration} color={'#4990a4'} />
+                x: { type: 'spring', stiffness: 100 },
+                default: { duration: 1 }
+            }}
+        >
+            <Grid container justifyContent='center'>
+                <Grid item xs={10} sm={12}>
+                    <img className={classes.illustration} src={image} />
+                </Grid>
+            </Grid>
         </motion.div>
-    )
-}
+    );
+};

@@ -45,23 +45,32 @@ collections:
           - {label: Payment Button, name: paymentButtonText, widget: string}
           - {label: Chat Prompt, name: chatPromptText, widget: string}
           - {label: Services, name: servicesHeaderText, widget: string}
+          - {label: Hero quote1, name: hero-quote1, widget: text}
+          - {label: Hero quote2, name: hero-quote2, widget: text}
+          - {label: Hero quote3, name: hero-quote3, widget: text}
           - {label: Services subtext1, name: servicesHeaderText-subtext1, widget: string}
           - {label: Services subtext2, name: servicesHeaderText-subtext2, widget: string}
           - {label: Services subtext3, name: servicesHeaderText-subtext3, widget: string}
-          - {label: Services subtext1, name: servicesHeaderText-subtext1-image, widget: image ,required: false}
-          - {label: Services subtext2, name: servicesHeaderText-subtext2-image, widget: image,required: false}
-          - {label: Services subtext3, name: servicesHeaderText-subtext3-image, widget: image,required: false}
-          - {label: Services subtext1 button, name: servicesHeaderText-subtext1-button, widget: string}
-          - {label: Services subtext2 button, name: servicesHeaderText-subtext2-button, widget: string}
-          - {label: Services subtext3 button, name: servicesHeaderText-subtext3-button, widget: string}
-          - {label: Secure heading, name: secureHeading, widget: string}
-          - {label: SetUp Image, name: setupImage, widget: image}
-          - {label: Secure paragraph, name: secureParagraph, widget: string}
+          - {label: Services content1, name: servicesHeaderText-content1, widget: text}
+          - {label: Services content2, name: servicesHeaderText-content2, widget: text}
+          - {label: Services content3, name: servicesHeaderText-content3, widget: text}
+          - {label: Services image1, name: servicesHeaderText_image1, widget: image ,required: false}
+          - {label: Services image2, name: servicesHeaderText_image2, widget: image ,required: false}
+          - {label: Services image3, name: servicesHeaderText_image3, widget: image ,required: false}
+          - {label: Secure heading1, name: secureHeadingText1, widget: string}
+          - {label: Secure heading2, name: secureHeadingText2, widget: string}
+          - {label: Secure heading3, name: secureHeadingText3, widget: string}
+          - {label: Secure content1, name: secureHeadingText-content1, widget: text}
+          - {label: Secure content2, name: secureHeadingText-content2, widget: text}
+          - {label: Secure content3, name: secureHeadingText-content3, widget: text}
           - {label: Review heading, name: reviewHeading, widget: string}
           - {label: Review paragraph, name: reviewParagraph, widget: string}
           - {label: Coming Soon heading, name: comingSoonHeading, widget: string}
           - {label: Coming Soon paragraph, name: comingSoonParagraph, widget: string}
           - {label: Coming Soon button, name: comingSoonButton, widget: string}
+          - {label: JoinUs heading, name: joinUsHeadingText, widget: string}
+          - {label: JoinUs content, name: joinUsHeadingContent, widget: text}
+          - {label: JoinUs image, name: joinUs_image, widget: image ,required: false}
           - {label: Footer Intro Content, name: footerIntroContent, widget: text}
           - {label: International Office Address, name: internationalOfficeAddress, widget: text}
           - {label: International Office Phone, name: internationalOfficePhone, widget: string}
