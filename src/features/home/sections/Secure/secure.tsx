@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const Secure = () => {
+export const Secure: React.FC = () => {
     const classes = useStyles();
     const formatter = useFetchHomeData();
     const secureData = [
