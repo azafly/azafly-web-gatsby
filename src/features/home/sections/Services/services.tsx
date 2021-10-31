@@ -147,7 +147,7 @@ export function Services() {
                 </Box>
                 <Box clone order={{ xs: 1, sm: 2 }}>
                     <Grid item xs={10} sm={10} md={5}>
-                        <ServiceIllustration images='' />
+                        <ServiceIllustration />
                     </Grid>
                 </Box>
             </Grid>

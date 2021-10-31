@@ -1,7 +1,7 @@
 import { makeStyles, Theme, createStyles, Box, Grid } from '@material-ui/core';
 import React from 'react';
 import joinBackImg from '../../../../../static/images/home/joinus.png';
-import { HomeImages } from '../../../../createPages/templates/home';
+// import { HomeImages } from '../../../../createPages/templates/home';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -34,14 +34,10 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-interface Props {
-    images: HomeImages;
-}
-
-export const JoinUsIllustration = ({ images }: Props) => {
+export const JoinUsIllustration = () => {
     const classes = useStyles();
 
-    const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;
+    // const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;
     return (
         <Box className={classes.root}>
             <Box>

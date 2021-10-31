@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable @typescript-eslint/camelcase */
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -26,23 +27,24 @@ export interface HomeFrontMatter {
             consultButtonText: string;
             paymentButtonText: string;
             chatPromptText: string;
-            // hero_quote1: string;
-            // hero_quote2: string;
-            // hero_quote3: string;
-            // servicesHeaderText: string;
-            // servicesHeaderText_image: string;
-            // servicesHeaderText_subtext1: string;
-            // servicesHeaderText_content1: string;
-            // servicesHeaderText_subtext2: string;
-            // servicesHeaderText_content2: string;
-            // servicesHeaderText_subtext3: string;
-            // servicesHeaderText_content3: string;
-            // secureHeadingText1: string;
-            // secureHeadingText2: string;
-            // secureHeadingText3: string;
-            // secureHeadingText_content1: string;
-            // secureHeadingText_content2: string;
-            // secureHeadingText_content3: string;
+            hero_quote1: string;
+            hero_quote2: string;
+            hero_quote3: string;
+            joinUsHeadingText: string;
+            joinUsHeadingContent: string;
+            servicesHeaderText: string;
+            servicesHeaderText_subtext1: string;
+            servicesHeaderText_content1: string;
+            servicesHeaderText_subtext2: string;
+            servicesHeaderText_content2: string;
+            servicesHeaderText_subtext3: string;
+            servicesHeaderText_content3: string;
+            secureHeadingText1: string;
+            secureHeadingText2: string;
+            secureHeadingText3: string;
+            secureHeadingText_content1: string;
+            secureHeadingText_content2: string;
+            secureHeadingText_content3: string;
             secureHeading: string;
             setupImage: string;
             secureParagraph: string;
@@ -94,7 +96,24 @@ export const useFetchHomeData = () => {
                             secureHeading
                             secureParagraph
                             setupImage
-
+                            hero_quote1
+                            hero_quote2
+                            hero_quote3
+                            joinUsHeadingText
+                            joinUsHeadingContent
+                            servicesHeaderText
+                            servicesHeaderText_subtext1
+                            servicesHeaderText_content1
+                            servicesHeaderText_subtext2
+                            servicesHeaderText_content2
+                            servicesHeaderText_subtext3
+                            servicesHeaderText_content3
+                            secureHeadingText1
+                            secureHeadingText2
+                            secureHeadingText3
+                            secureHeadingText_content1
+                            secureHeadingText_content2
+                            secureHeadingText_content3
                             heroMainImage1
                             footerHeading1
                             footerHeading2
@@ -121,21 +140,3 @@ export const useFetchHomeData = () => {
 
     return response?.homeData?.edges[0]?.node?.frontmatter as HomeFrontMatter['node']['frontmatter'];
 };
-
-// hero_quote1
-// hero_quote2
-// hero_quote3
-// servicesHeaderText
-// servicesHeaderText_image
-// servicesHeaderText_subtext1
-// servicesHeaderText_content1
-// servicesHeaderText_subtext2
-// servicesHeaderText_content2
-// servicesHeaderText_subtext3
-// servicesHeaderText_content3
-// secureHeadingText1
-// secureHeadingText2
-// secureHeadingText3
-// secureHeadingText_content1
-// secureHeadingText_content2
-// secureHeadingText_content3

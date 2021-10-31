@@ -1,5 +1,6 @@
 import { makeStyles, Theme, createStyles, Box, Typography } from '@material-ui/core';
 import React from 'react';
+import { useFetchHomeData } from '../../hooks/use-data';
 import backImage from '../../../../../static/images/home/globemap.png';
 import { HomeImages } from '../../../../createPages/templates/home';
 
@@ -108,6 +109,7 @@ interface Props {
 
 export const Illustration = ({ images }: Props) => {
     const classes = useStyles();
+    const formatter = useFetchHomeData();
 
     const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;
     return (
@@ -115,23 +117,21 @@ export const Illustration = ({ images }: Props) => {
             <Box className={classes.infoContainer1}>
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
-                        <Typography className={classes.innerText}>Send money to almost any bank account.</Typography>
+                        <Typography className={classes.innerText}>{formatter.hero_quote1}</Typography>
                     </Box>
                 </Box>
             </Box>
             <Box className={classes.infoContainer2}>
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
-                        <Typography className={classes.innerText}>
-                            Send cash for pickup at a thousands of partner locations around the world
-                        </Typography>
+                        <Typography className={classes.innerText}>{formatter.hero_quote2}</Typography>
                     </Box>
                 </Box>
             </Box>
             <Box className={classes.infoContainer3}>
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
-                        <Typography className={classes.innerText}>Send money directly to your recipient door</Typography>
+                        <Typography className={classes.innerText}>{formatter.hero_quote3}</Typography>
                     </Box>
                 </Box>
             </Box>

@@ -25,7 +25,7 @@ interface Props {
     images: HomeImages;
 }
 
-export const ServiceIllustration = ({ images }: Props) => {
+export const ServiceIllustration = () => {
     const classes = useStyles();
 
     // const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;
