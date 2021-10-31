@@ -1,18 +1,18 @@
-import { makeStyles, Theme, createStyles, Grid, Box, Typography } from '@material-ui/core';
+import { makeStyles, Theme, createStyles, Box } from '@material-ui/core';
 import React from 'react';
-import serviceImage from '../../../../../static/images/home/services.png';
+import serviceImage from '../../../../../static/images/home/joinus.png';
 import { HomeImages } from '../../../../createPages/templates/home';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         illustration: {
-            // backgroundImage: `url(${serviceImage})`,
-            // minHeight: '618.35px',
+            boxShadow: '0 2px 20px 0 rgba(0,0,0,.05) !important',
             justifyContent: 'center',
+            padding: 50,
+            borderRadius: 8,
             width: '100%',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
-            // marginTop: -70,
             [theme.breakpoints.only('xs')]: {
                 width: '100%',
                 margin: 'auto'

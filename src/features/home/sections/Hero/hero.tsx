@@ -19,41 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: 'auto',
             maxWidth: 1920,
             [theme.breakpoints.only('xs')]: {}
-        },
-        homeBgllustration1: {
-            position: 'absolute',
-            left: 0,
-            top: -100,
-            pointerEvents: 'none',
-            opacity: 0.7,
-            height: '100%',
-            [theme.breakpoints.only('xs')]: {
-                left: -50,
-                top: -90,
-
-                height: 500
-            }
-        },
-        homeBgllustration2: {
-            position: 'absolute',
-            right: 0,
-            top: -128,
-            pointerEvents: 'none',
-            opacity: 0,
-            height: '110%',
-            [theme.breakpoints.down('sm')]: {
-                display: 'none'
-            }
-        },
-        homeBgllustration3: {
-            position: 'absolute',
-            left: 0,
-            pointerEvents: 'none',
-            bottom: 0,
-            opacity: 0.8,
-            [theme.breakpoints.down('sm')]: {
-                display: 'none'
-            }
         }
     })
 );
@@ -62,7 +27,7 @@ interface Props {
     images: HomeImages;
 }
 
-export const HomePageHeroSection = ({ images }: Props) => {
+export const HomePageHeroSection: React.FC<Props> = ({ images }) => {
     const classes = useStyles();
 
     return (

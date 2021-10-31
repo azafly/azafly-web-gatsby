@@ -1,8 +1,9 @@
 import { makeStyles, Theme, createStyles, Box, Typography } from '@material-ui/core';
 import React from 'react';
+
+import { HomeImages } from '../../../../createPages/templates/home';
 import { useFetchHomeData } from '../../hooks/use-data';
 import backImage from '../../../../../static/images/home/globemap.png';
-import { HomeImages } from '../../../../createPages/templates/home';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
