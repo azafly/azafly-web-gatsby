@@ -47,9 +47,9 @@ const useStyles = makeStyles((theme: Theme) =>
             })
         },
         setupAndDesignSection: {
-            position: 'relative',
-            background: theme.palette.background.default,
-            paddingTop: 120
+            // position: 'relative',
+            // background: theme.palette.background.default,
+            // paddingTop: 100
         }
     })
 );

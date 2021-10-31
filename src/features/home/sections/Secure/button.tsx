@@ -43,6 +43,12 @@ const useStyles = makeStyles((theme: Theme) =>
             '&:hover': {
                 background: ' #4990A4'
             },
+            [theme.breakpoints.only('md')]: {
+                width: '10ch'
+            },
+            [theme.breakpoints.only('sm')]: {
+                width: '10ch'
+            },
             [theme.breakpoints.down('md')]: {
                 justifyContent: 'center',
                 width: '100% !important',

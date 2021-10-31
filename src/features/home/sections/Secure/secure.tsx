@@ -12,15 +12,13 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         secureByDesigncontainer: {
             paddingBottom: 50,
+            margin: '6vw',
             flexGrow: 1,
-            [theme.breakpoints.only('md')]: {
-                marginLeft: '8vw'
-            },
-            [theme.breakpoints.only('sm')]: {
-                marginLeft: '7vw'
-            },
+            // [theme.breakpoints.only('md')]: {
+            //     marginLeft: '8vw'
+            // },
+            [theme.breakpoints.up('sm')]: {},
             [theme.breakpoints.only('xs')]: {
-                margin: 'auto',
                 marginTop: '-30px'
             }
         }
@@ -85,7 +83,6 @@ export const Secure: React.FC = () => {
                         container
                         key={index}
                         justifyContent='space-around'
-                        spacing={4}
                         alignItems='center'
                         style={{ maxWidth: 1400, margin: 'auto', paddingTop: 50 }}
                     >

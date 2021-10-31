@@ -119,7 +119,6 @@ const useStyles = makeStyles((theme: Theme) =>
         getStarted: {
             textTransform: 'none',
             height: 40,
-            width: '20ch',
             minWidth: '10ch',
             color: 'white',
             fontWeight: 500,
@@ -182,7 +181,6 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: '7px 15px',
             width: '20ch',
             borderRadius: 6,
-            minWidth: 170,
             '&:hover': {
                 opacity: 0.9
             }
