@@ -128,7 +128,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const Header = ({ location }: NavbarProps) => {
+export const Header: React.FC<NavbarProps> = ({ location }) => {
     const classes = useStyles();
     const [currentLink, setCurrentLink] = useState('');
 

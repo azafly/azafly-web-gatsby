@@ -17,12 +17,6 @@ export const sideMenu: SideMenu[] = [
         route: '/'
     },
     {
-        name: 'Services',
-        isOpened: false,
-        icon: <HomeSvgComponent stroke={'#0d324d'} />,
-        route: '/services'
-    },
-    {
         name: 'Blog',
         isOpened: false,
         icon: <ActivitySvgComponent stroke={'#0d324d'} />,
@@ -54,9 +48,5 @@ export const deskTopNavItems = [
     {
         name: 'Blog',
         route: '/blog'
-    },
-    {
-        name: 'Services',
-        route: '/services'
     }
 ];

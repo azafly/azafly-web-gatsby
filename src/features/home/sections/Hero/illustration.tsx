@@ -132,7 +132,7 @@ export const Illustration: React.FC<Props> = ({ images }) => {
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
                         <Typography className={classes.innerText}>
-                            The most <strong>affordable</strong> way to pay your school fees in 🇬🇧 &nbsp; and &nbsp; 🇪🇺.
+                            The most <strong>affordable</strong> way to pay your school fees in UK🇬🇧&nbsp;and&nbsp;EU🇪🇺.
                         </Typography>
                     </Box>
                 </Box>
@@ -141,7 +141,7 @@ export const Illustration: React.FC<Props> = ({ images }) => {
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
                         <Typography className={classes.innerText}>
-                            The <strong>fastest</strong> way to pay for that important course in 🇺🇸 &nbsp; and &nbsp; 🇨🇦{' '}
+                            The <strong>fastest</strong> way to pay your invoices in US🇺🇸&nbsp;and&nbsp;Canada🇨🇦
                         </Typography>
                     </Box>
                 </Box>
@@ -150,7 +150,7 @@ export const Illustration: React.FC<Props> = ({ images }) => {
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
                         <Typography className={classes.innerText}>
-                            The most <strong>efficient</strong> way to pay your urgent medical bill in 🇮🇳
+                            The most <strong>efficient</strong> way to pay that urgent medical bill in India 🇮🇳
                         </Typography>
                     </Box>
                 </Box>
