@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 bottom: '-10px',
                 height: '15px',
                 width: '100%',
-                border: 'solid 5px white',
+                border: 'solid 1px white',
                 borderColor: 'white transparent transparent transparent',
                 borderRadius: '60%'
             }
@@ -92,9 +92,8 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: 5
         },
         paragraph: {
-            color: 'rgba(0, 0, 0, 0.5)',
             fontWeight: 500,
-
+            color: 'grey',
             marginTop: 20,
             [theme.breakpoints.only('xs')]: {}
         },
@@ -139,7 +138,7 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         searchItem: {
-            color: '#4990A4',
+            color: '#040d21',
             display: 'flex',
             justifyContent: 'flex-start',
             alignItems: 'center',
@@ -148,7 +147,7 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         searchItemControl: {
-            color: '#4990A4',
+            color: '#040d21',
             display: 'flex',
             height: 60,
             justifyContent: 'flex-start !important',
@@ -178,7 +177,7 @@ const useStyles = makeStyles((theme: Theme) =>
             textTransform: 'none',
             height: 0,
             marginTop: 10,
-            border: '1px solid #4990A4',
+            border: '1px solid #040d21',
             color: theme.colors.mainGreen,
             fontWeight: 600,
             padding: '7px 15px',
@@ -215,7 +214,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         select: {
             '& .MuiSvgIcon-root': {
-                color: '#4990A4'
+                color: '#040d21'
             }
         },
         avatar: {
@@ -327,11 +326,13 @@ export const InfoBanner = () => {
             </Snackbar>
             <Box className={classes.container}>
                 {/* {location.loaded ? ( */}
-                <Typography variant='h4' className={classes.titleHeading}>
-                    Pay your most important bills anywhere in the world
+                <Typography variant='h4' className={classes.titleHeading} gutterBottom>
+                    Pay your most important international bills and invoices
                 </Typography>
-                <Typography variant='h4' className={classes.titleHeading}>
-                    from <span className={classes.clipPath}>{location.loaded ? location.locations : 'Africa'}</span>
+                <Typography paragraph className={classes.paragraph}>
+                    We empower individuals and small businesses in{' '}
+                    <span className={classes.clipPath}>{location.loaded ? location.locations : 'Africa'}</span> to pay their most important bills and
+                    invoices to any institution or business in the world efficiently.
                 </Typography>
 
                 <Box>
@@ -420,6 +421,9 @@ export const InfoBanner = () => {
                     </Box>
                 </Box>
                 <Box className={classes.setMiddle}>
+                    <Box sx={{ pl: 1, color: 'grey' }}>
+                        <Typography>Built By Africans for Africans 🙌🏿</Typography>
+                    </Box>
                     <Grid className={classes.searchItem} container direction='row' alignItems='center'>
                         <Link href='#' color='inherit' underline='none'>
                             <Avatar className={classes.avatar} alt='How it works' src={playbtn} />

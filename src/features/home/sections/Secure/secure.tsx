@@ -87,7 +87,7 @@ export const Secure = () => {
                         justifyContent='space-around'
                         spacing={4}
                         alignItems='center'
-                        style={{ maxWidth: 1600, margin: 'auto' }}
+                        style={{ maxWidth: 1400, margin: 'auto' }}
                     >
                         <Box clone order={{ xs: data.bannerOrder.xs, sm: data.bannerOrder.sm }}>
                             <Grid item xs={12} sm={6} md={5}>

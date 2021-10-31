@@ -9,20 +9,35 @@ const useStyles = makeStyles((theme: Theme) =>
             backgroundImage: `url(${backImage})`,
             height: 600,
             width: '100%',
-
+            position: 'relative',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
-            // marginTop: -70,
             [theme.breakpoints.only('xs')]: {
                 width: '90%',
                 margin: 'auto'
             }
         },
         infoContainer1: {
-            position: 'relative',
-            width: 260,
-            left: 300,
-            top: 100,
+            position: 'absolute',
+            width: 250,
+            left: '50%',
+            top: '20%',
+            [theme.breakpoints.only('md')]: {
+                left: 50
+            },
+            [theme.breakpoints.only('sm')]: {
+                left: 220
+            },
+            [theme.breakpoints.only('xs')]: {
+                left: 10,
+                width: 300
+            }
+        },
+        infoContainer2: {
+            position: 'absolute',
+            width: 250,
+            left: '2%',
+            top: '25%',
             [theme.breakpoints.only('md')]: {
                 left: 160
             },
@@ -36,27 +51,30 @@ const useStyles = makeStyles((theme: Theme) =>
                 width: 200
             }
         },
-        infoContainer2: {
-            position: 'relative',
-            width: 360,
-            left: 180,
-            top: 160,
+        infoContainer3: {
+            position: 'absolute',
+            width: 250,
+            right: '5%',
+            top: '50%',
+            marginTop: 10,
             [theme.breakpoints.only('md')]: {
-                left: 50
-            },
-            [theme.breakpoints.only('sm')]: {
                 left: 220
             },
+            [theme.breakpoints.only('sm')]: {
+                left: 370,
+                width: 190
+            },
             [theme.breakpoints.only('xs')]: {
-                left: 10,
-                width: 300
+                left: 160,
+                width: 200
             }
         },
-        infoContainer3: {
-            position: 'relative',
-            width: 280,
-            left: 450,
-            top: 220,
+        infoContainer4: {
+            position: 'absolute',
+            width: 250,
+            right: '2%',
+            top: '30%',
+            marginTop: 20,
             [theme.breakpoints.only('md')]: {
                 left: 220
             },
@@ -70,7 +88,7 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         innerText: {
-            fontSize: '18px',
+            fontSize: '0.85rem',
             fontWeight: 500,
             [theme.breakpoints.only('xs')]: {
                 fontSize: '10px'
@@ -78,15 +96,12 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         notification: {
             position: 'relative',
-
             padding: '10px',
             backgroundColor: 'white',
             minHeight: 50,
-            color: '#4990A4',
-            textAlign: 'left',
+            color: '#040d21',
             border: '1px solid white',
             borderRadius: '10px',
-
             '&:after': {
                 content: "''",
                 position: 'absolute',
@@ -95,7 +110,6 @@ const useStyles = makeStyles((theme: Theme) =>
                 borderTop: '15px solid white',
                 borderRight: '15px solid transparent',
                 borderLeft: '15px solid transparent',
-                // bottom: '0'
                 bottom: '-15px'
             }
         }
@@ -115,7 +129,9 @@ export const Illustration = ({ images }: Props) => {
             <Box className={classes.infoContainer1}>
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
-                        <Typography className={classes.innerText}>Send money to almost any bank account.</Typography>
+                        <Typography className={classes.innerText}>
+                            The most <strong>affordable</strong> way to pay your school fees in 🇬🇧 and 🇪🇺.
+                        </Typography>
                     </Box>
                 </Box>
             </Box>
@@ -123,7 +139,7 @@ export const Illustration = ({ images }: Props) => {
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
                         <Typography className={classes.innerText}>
-                            Send cash for pickup at a thousands of partner locations around the world
+                            The <strong>fastest</strong> way to pay for that important course in 🇺🇸 and 🇨🇦{' '}
                         </Typography>
                     </Box>
                 </Box>
@@ -131,11 +147,21 @@ export const Illustration = ({ images }: Props) => {
             <Box className={classes.infoContainer3}>
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
-                        <Typography className={classes.innerText}>Send money directly to your recipient door</Typography>
+                        <Typography className={classes.innerText}>
+                            The <strong>efficient</strong> way to pay your urgent medical bill in 🇮🇳
+                        </Typography>
+                    </Box>
+                </Box>
+            </Box>
+            <Box className={classes.infoContainer4}>
+                <Box className={classes.notification}>
+                    <Box display='flex' justifyContent='center' justifyItems='center'>
+                        <Typography className={classes.innerText}>
+                            The <strong>surest</strong> way to pay your suppliers in China 🇨🇳
+                        </Typography>
                     </Box>
                 </Box>
             </Box>
         </Box>
     );
-    // return <Image fluid={imageUrl} alt={'Main image'} className={classes.illustration} />;
 };
