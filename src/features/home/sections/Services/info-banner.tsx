@@ -141,31 +141,18 @@ export const ServiceInfoBanner = () => {
     const classes = useStyles();
     const formatter = useFetchHomeData();
 
-    const data = [
-        { title: 'Lowest Fee', content: 'Our fee is the lowest in the market compare to any other', hoverWidth: '167px' },
-        { title: ' Fast Transactions', content: 'The sky was cloudless and of a deep dark blue spectacle before.', hoverWidth: '267px' },
-        { title: 'Safe & Secure', content: 'The sky was cloudless and of a deep dark blue spectacle before.', hoverWidth: '367px' }
-    ];
     const serviceData = [
-        { title: formatter.servicesHeaderText_subtext1, content: 'Our fee is the lowest in the market compare to any other', hoverWidth: '167px' },
-        {
-            title: formatter.servicesHeaderText_subtext2,
-            content: 'The sky was cloudless and of a deep dark blue spectacle before.',
-            hoverWidth: '267px'
-        },
-        {
-            title: formatter.servicesHeaderText_subtext3,
-            content: 'The sky was cloudless and of a deep dark blue spectacle before.',
-            hoverWidth: '367px'
-        }
+        { title: formatter.servicesHeaderText_subtext1, content: formatter.servicesHeaderText_content1, hoverWidth: '167px' },
+        { title: formatter.servicesHeaderText_subtext2, content: formatter.servicesHeaderText_content2, hoverWidth: '267px' },
+        { title: formatter.servicesHeaderText_subtext3, content: formatter.servicesHeaderText_content3, hoverWidth: '367px' }
     ];
 
     return (
         <motion.div>
             <Box className={classes.container}>
                 <Typography className={classes.title}>Why choose us</Typography>
-                <Typography className={classes.titleText}>Some of our advantages</Typography>
-                {data.map((item, index) => {
+                <Typography className={classes.titleText}>{formatter.servicesHeaderText}</Typography>
+                {serviceData.map((item, index) => {
                     return (
                         <Grid key={index} container spacing={2}>
                             <Card className={classes.card}>

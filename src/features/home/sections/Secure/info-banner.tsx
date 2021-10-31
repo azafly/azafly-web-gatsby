@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Box, Grid, Typography } from '@material-ui/core';
 import React from 'react';
+import { HeadsetRounded } from '@mui/icons-material';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -86,10 +87,11 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface InfoBannerProps {
-    isMobileScreenSize?: boolean;
+    title: string;
+    content: string;
 }
 
-export const InfoBanner = () => {
+export const InfoBanner = ({ title, content }: InfoBannerProps) => {
     const classes = useStyles();
 
     return (
@@ -98,13 +100,10 @@ export const InfoBanner = () => {
                 <Grid item xs={12}>
                     <Typography className={classes.banner}>Lorem ipsum</Typography>
                     <Typography variant='h3' className={classes.titleHeading}>
-                        Vitae nulla ac purus pharetra
+                        {title}
                     </Typography>
                     <Grid container className={classes.content}>
-                        <Typography>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu
-                            mauris adipiscing. Vel ut semper tristique.
-                        </Typography>
+                        <Typography>{content}</Typography>
                     </Grid>
                 </Grid>
             </Box>

@@ -44,7 +44,7 @@ export const JoinUs = () => {
 
                             <Box clone order={{ xs: 2, sm: 2 }}>
                                 <Grid item xs={11} sm={10} md={5}>
-                                    <JoinUsIllustration images='' />
+                                    <JoinUsIllustration />
                                 </Grid>
                             </Box>
 

@@ -73,7 +73,7 @@ const Home = ({ images }: HomeViewProps) => {
                     <Secure />
                     <HomePageReviewsSection />
                 </div>
-                <ComingSoon />
+                {/* <ComingSoon /> */}
 
                 <Box style={{ maxWidth: 1400, margin: 'auto' }}>
                     <QuestionsTabsConatiner />
