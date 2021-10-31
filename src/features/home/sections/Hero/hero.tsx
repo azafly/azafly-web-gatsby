@@ -10,8 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
         homePageHeroMain: {
             padding: '10px 0',
             position: 'relative',
-            backgroundColor: '#040d21',
-            background: 'linear-gradient(102.84deg, #040d21 1.08%, #040d21 59.23%, #040d21 97.46%)'
+            background: 'linear-gradient(102.84deg, #0D324D 1.08%, #224C6C 59.23%, #062741 97.46%)'
         },
         homePageHeroInner: {
             flexGrow: 1,

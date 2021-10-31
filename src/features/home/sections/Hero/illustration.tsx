@@ -132,7 +132,7 @@ export const Illustration: React.FC<Props> = ({ images }) => {
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
                         <Typography className={classes.innerText}>
-                            The most <strong>affordable</strong> way to pay your school fees in 🇬🇧 and 🇪🇺.
+                            The most <strong>affordable</strong> way to pay your school fees in 🇬🇧 &nbsp; and &nbsp; 🇪🇺.
                         </Typography>
                     </Box>
                 </Box>
@@ -141,7 +141,7 @@ export const Illustration: React.FC<Props> = ({ images }) => {
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
                         <Typography className={classes.innerText}>
-                            The <strong>fastest</strong> way to pay for that important course in 🇺🇸 and 🇨🇦{' '}
+                            The <strong>fastest</strong> way to pay for that important course in 🇺🇸 &nbsp; and &nbsp; 🇨🇦{' '}
                         </Typography>
                     </Box>
                 </Box>
