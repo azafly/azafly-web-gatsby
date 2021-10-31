@@ -1,15 +1,16 @@
 import { Grid, makeStyles, Theme, createStyles, Box } from '@material-ui/core';
 import React from 'react';
-import { SecureButton } from './button';
-import saveMoney from '../../../../../static/images/home/save_money.png';
-import transferMoney from '../../../../../static/images/home/transfer_money.png';
-import withdrawMoney from '../../../../../static/images/home/withdraw_money.png';
+
 import { Illustration } from './illustration';
 import { InfoBanner } from './info-banner';
+import { SecureButton } from './button';
+import saveMoney from '../../../../../static/images/home/save_money.png';
+import withdrawMoney from '../../../../../static/images/home/withdraw_money.png';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         secureByDesigncontainer: {
+            paddingBottom: 50,
             flexGrow: 1,
             [theme.breakpoints.only('md')]: {
                 marginLeft: '8vw'
@@ -87,7 +88,7 @@ export const Secure = () => {
                         justifyContent='space-around'
                         spacing={4}
                         alignItems='center'
-                        style={{ maxWidth: 1400, margin: 'auto' }}
+                        style={{ maxWidth: 1400, margin: 'auto', paddingTop: 50 }}
                     >
                         <Box clone order={{ xs: data.bannerOrder.xs, sm: data.bannerOrder.sm }}>
                             <Grid item xs={12} sm={6} md={5}>

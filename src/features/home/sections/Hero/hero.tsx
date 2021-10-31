@@ -11,13 +11,14 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: '10px 0',
             position: 'relative',
             backgroundColor: '#040d21',
-            background: 'linear-gradient(102.84deg, #040d21 1.08%, #040d21 59.23%, #040d21 97.46%)',
-            minHeight: 600
+            background: 'linear-gradient(102.84deg, #040d21 1.08%, #040d21 59.23%, #040d21 97.46%)'
         },
         homePageHeroInner: {
             flexGrow: 1,
+            minHeight: 700,
             padding: '50px 0px 0px 0px',
             margin: 'auto',
+            maxWidth: 1920,
             [theme.breakpoints.only('xs')]: {}
         },
         homeBgllustration1: {

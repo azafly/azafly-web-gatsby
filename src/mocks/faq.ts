@@ -1,6 +1,6 @@
 import faker from 'faker';
 
-export const categories = ['general', 'payments', 'visa and immigration', 'refund', 'services'];
+export const categories = ['general', 'payments', 'my account', 'refund', 'services'];
 
 const total = Array(5).fill(null);
 export const mockArticles = () =>

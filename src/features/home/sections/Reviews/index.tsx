@@ -1,5 +1,5 @@
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import React from 'react';
+import React, { FC } from 'react';
 
 import { ReviewSliders } from './sliders';
 
@@ -32,17 +32,13 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const HomePageReviewsSection = () => {
+export const HomePageReviewsSection: FC = () => {
     const classes = useStyles();
 
     return (
         <div className={classes.container}>
             <ReviewSliders />
-            <div className={classes.bgIllustration}>
-                {/* <Hidden smDown>
-                    <ReviewsBgIllustration />
-                </Hidden> */}
-            </div>
+            <div className={classes.bgIllustration}></div>
         </div>
     );
 };
