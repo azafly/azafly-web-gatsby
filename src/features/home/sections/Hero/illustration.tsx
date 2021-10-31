@@ -1,5 +1,6 @@
 import { makeStyles, Theme, createStyles, Box, Typography } from '@material-ui/core';
 import React from 'react';
+import { useFetchHomeData } from '../../hooks/use-data';
 import backImage from '../../../../../static/images/home/globemap.png';
 import { HomeImages } from '../../../../createPages/templates/home';
 
@@ -120,8 +121,9 @@ interface Props {
     images: HomeImages;
 }
 
-export const Illustration = ({ images }: Props) => {
+export const Illustration: React.FC<Props> = ({ images }) => {
     const classes = useStyles();
+    const formatter = useFetchHomeData();
 
     const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;
     return (

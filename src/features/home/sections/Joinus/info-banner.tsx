@@ -1,6 +1,7 @@
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Typography, Grid, Hidden, Box } from '@material-ui/core';
 import React from 'react';
+import { useFetchHomeData } from '../../hooks/use-data';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -75,19 +76,16 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const JoinUsInforBanner = () => {
     const classes = useStyles();
-
+    const formatter = useFetchHomeData();
     return (
         <Box className={classes.root}>
             <Box>
                 <Typography className={classes.banner}>Join Us</Typography>
                 <Typography variant='h3' className={classes.titlleHeading}>
-                    Malesuada molestie nulla amet habitant.
+                    {formatter.joinUsHeadingText}
                 </Typography>
                 <Grid container className={classes.content}>
-                    <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu
-                        mauris adipiscing. Vel ut semper tristique.
-                    </Typography>
+                    <Typography>{formatter.joinUsHeadingContent}</Typography>
                 </Grid>
             </Box>
         </Box>

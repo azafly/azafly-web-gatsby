@@ -58,7 +58,7 @@ interface HomeViewProps {
     images: any;
 }
 
-const Home = ({ images }: HomeViewProps) => {
+const Home: React.FC<HomeViewProps> = ({ images }) => {
     const classes = useStyles();
 
     return (

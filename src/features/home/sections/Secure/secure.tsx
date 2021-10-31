@@ -6,6 +6,7 @@ import { InfoBanner } from './info-banner';
 import { SecureButton } from './button';
 import saveMoney from '../../../../../static/images/home/save_money.png';
 import withdrawMoney from '../../../../../static/images/home/withdraw_money.png';
+import { useFetchHomeData } from '../../hooks/use-data';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -28,13 +29,13 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const Secure = () => {
     const classes = useStyles();
+    const formatter = useFetchHomeData();
     const secureData = [
         {
             image: saveMoney,
             shortTitle: 'Lorem ipsum',
-            title: 'Vitae nulla ac purus pharetra',
-            content:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor ornare metus, elit. Vestibulum maecenas convallis enim velit, nulla amet scelerisque. Faucibus arcu dignissim sem ornare',
+            title: formatter.secureHeadingText1,
+            content: formatter.secureHeadingText_content1,
             route: '',
             bannerOrder: {
                 xs: 1,
@@ -48,9 +49,8 @@ export const Secure = () => {
         {
             image: saveMoney,
             shortTitle: 'Lorem ipsum',
-            title: 'Vitae nulla ac purus pharetra',
-            content:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor ornare metus, elit. Vestibulum maecenas convallis enim velit, nulla amet scelerisque. Faucibus arcu dignissim sem ornare',
+            title: formatter.secureHeadingText2,
+            content: formatter.secureHeadingText_content2,
             route: '',
             bannerOrder: {
                 xs: 1,
@@ -64,9 +64,8 @@ export const Secure = () => {
         {
             image: withdrawMoney,
             shortTitle: 'Lorem ipsum',
-            title: 'Vitae nulla ac purus pharetra',
-            content:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor ornare metus, elit. Vestibulum maecenas convallis enim velit, nulla amet scelerisque. Faucibus arcu dignissim sem ornare',
+            title: formatter.secureHeadingText3,
+            content: formatter.secureHeadingText_content3,
             route: '',
             bannerOrder: {
                 xs: 1,
@@ -92,7 +91,7 @@ export const Secure = () => {
                     >
                         <Box clone order={{ xs: data.bannerOrder.xs, sm: data.bannerOrder.sm }}>
                             <Grid item xs={12} sm={6} md={5}>
-                                <InfoBanner />
+                                <InfoBanner title={data.title} content={data.content} />
                                 <Box display={{ xs: 'none', lg: 'block', sm: 'block' }}>
                                     <SecureButton />
                                 </Box>

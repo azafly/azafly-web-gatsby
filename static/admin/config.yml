@@ -48,15 +48,16 @@ collections:
           - {label: Hero quote1, name: hero_quote1, widget: text}
           - {label: Hero quote2, name: hero_quote2, widget: text}
           - {label: Hero quote3, name: hero_quote3, widget: text}
+          - {label: Services image, name: servicesHeaderText_image, widget: image ,required: false}
           - {label: Services subtext1, name: servicesHeaderText_subtext1, widget: string}
           - {label: Services subtext2, name: servicesHeaderText_subtext2, widget: string}
           - {label: Services subtext3, name: servicesHeaderText_subtext3, widget: string}
           - {label: Services content1, name: servicesHeaderText_content1, widget: text}
           - {label: Services content2, name: servicesHeaderText_content2, widget: text}
           - {label: Services content3, name: servicesHeaderText_content3, widget: text}
-          - {label: Services image1, name: servicesHeaderText_image1, widget: image ,required: false}
-          - {label: Services image2, name: servicesHeaderText_image2, widget: image ,required: false}
-          - {label: Services image3, name: servicesHeaderText_image3, widget: image ,required: false}
+          - {label: Secure image1, name: secureHeaderText_image1, widget: image ,required: false}
+          - {label: Secure image2, name: secureHeaderText_image2, widget: image ,required: false}
+          - {label: Secure image3, name: secureHeaderText_image3, widget: image ,required: false}
           - {label: Secure heading1, name: secureHeadingText1, widget: string}
           - {label: Secure heading2, name: secureHeadingText2, widget: string}
           - {label: Secure heading3, name: secureHeadingText3, widget: string}

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable @typescript-eslint/camelcase */
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -29,6 +30,8 @@ export interface HomeFrontMatter {
             hero_quote1: string;
             hero_quote2: string;
             hero_quote3: string;
+            joinUsHeadingText: string;
+            joinUsHeadingContent: string;
             servicesHeaderText: string;
             servicesHeaderText_subtext1: string;
             servicesHeaderText_content1: string;
@@ -96,6 +99,8 @@ export const useFetchHomeData = () => {
                             hero_quote1
                             hero_quote2
                             hero_quote3
+                            joinUsHeadingText
+                            joinUsHeadingContent
                             servicesHeaderText
                             servicesHeaderText_subtext1
                             servicesHeaderText_content1
