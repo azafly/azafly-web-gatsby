@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
 import { makeStyles, createStyles, Theme, useTheme } from '@material-ui/core/styles';
-import { Button, Typography, Grid, Box, Link, Snackbar, InputAdornment, CircularProgress } from '@material-ui/core';
+import { Button, Typography, Grid, Box, Link, Snackbar, InputAdornment } from '@material-ui/core';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
-import React, { useEffect, useState } from 'react';
-import Typewriter from 'typewriter-effect';
-import OutlinedInput from '@mui/material/OutlinedInput';
+import React, { useState } from 'react';
+import Input from '@mui/material/Input';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import RoomIcon from '@mui/icons-material/Room';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -26,39 +25,21 @@ const useStyles = makeStyles((theme: Theme) =>
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            // [theme.breakpoints.up('lg')]: {
-            //     marginLeft: '8vw'
-            // },
-            [theme.breakpoints.only('md')]: {
-                marginLeft: '3vw'
+            [theme.breakpoints.up('md')]: {
+                marginLeft: '4vw',
+                width: '90%'
             },
             [theme.breakpoints.down('sm')]: {
                 padding: '10px 30px 10px 20px',
                 marginLeft: '2vw'
             }
         },
-        clipPath: {
-            position: 'relative',
-
-            '&:after': {
-                content: "''",
-                position: 'absolute',
-                left: '0',
-                bottom: '-10px',
-                height: '15px',
-                width: '100%',
-                border: 'solid 5px white',
-                borderColor: 'white transparent transparent transparent',
-                borderRadius: '60%'
-            }
-        },
-
         titleHeading: {
-            fontWeight: 800,
+            fontWeight: 750,
             fontFamily: 'Nunito',
             letterSpacing: -1,
             color: theme.colors.white,
-            fontSize: '64px',
+            fontSize: 48,
             [theme.breakpoints.only('xs')]: {
                 fontSize: 40,
                 fontWeight: 900,
@@ -76,14 +57,27 @@ const useStyles = makeStyles((theme: Theme) =>
                 justifyContent: 'center'
             }
         },
+        clipPath: {
+            position: 'relative',
+
+            '&:after': {
+                content: "''",
+                position: 'absolute',
+                left: '0',
+                bottom: '-10px',
+                height: '15px',
+                width: '100%',
+                border: 'solid 5px white',
+                borderColor: 'white transparent transparent transparent',
+                borderRadius: '60%'
+            }
+        },
         subTitle: {
             fontWeight: 700,
             fontFamily: 'Nunito',
             letterSpacing: -1,
-
             fontSize: '36px',
             lineHeight: '29.05px',
-
             [theme.breakpoints.only('xs')]: {
                 fontSize: '24px'
             }
@@ -91,21 +85,11 @@ const useStyles = makeStyles((theme: Theme) =>
 
         searchContainer: {
             width: '100%',
+            maxWidth: 600,
             background: 'white',
-            height: 70,
-            borderRadius: 10,
+            borderRadius: 4,
             marginTop: 30,
-
-            padding: 5,
-            [theme.breakpoints.only('xs')]: {
-                minHeight: 200
-            },
-            [theme.breakpoints.only('sm')]: {
-                minHeight: 200
-            },
-            [theme.breakpoints.only('md')]: {
-                minHeight: 200
-            }
+            padding: 5
         },
         paragraph: {
             color: 'rgba(0, 0, 0, 0.5)',
@@ -134,22 +118,21 @@ const useStyles = makeStyles((theme: Theme) =>
             display: 'flex'
         },
 
-        actionButtonBook: {
+        getStarted: {
             textTransform: 'none',
-            height: 50,
-            minWidth: '100% !important',
+            height: 40,
+            width: '20ch',
+            minWidth: '10ch',
             color: 'white',
             fontWeight: 500,
             backgroundColor: '#214662',
             padding: '7px 15px',
-            margin: 'auto',
-
             borderRadius: 6,
             '&:hover': {
                 background: '#214662',
                 opacity: 0.9
             },
-            [theme.breakpoints.only('xs')]: {
+            [theme.breakpoints.down('sm')]: {
                 minWidth: '100% !important',
                 margin: 'auto',
                 justifyContent: 'center !important'
@@ -167,7 +150,7 @@ const useStyles = makeStyles((theme: Theme) =>
         searchItemControl: {
             color: '#4990A4',
             display: 'flex',
-            // height: 20,
+            height: 60,
             justifyContent: 'flex-start !important',
             alignItems: 'center',
             [theme.breakpoints.only('xs')]: {
@@ -210,8 +193,7 @@ const useStyles = makeStyles((theme: Theme) =>
             width: '100% !important',
             [theme.breakpoints.up('md')]: {
                 width: '95% !important '
-            },
-     
+            }
         },
         overflow: {
             [theme.breakpoints.only('lg')]: {
@@ -343,58 +325,19 @@ export const InfoBanner = () => {
                     {error}
                 </Alert>
             </Snackbar>
-            {/* <Container> */}
-
             <Box className={classes.container}>
                 {/* {location.loaded ? ( */}
                 <Typography variant='h4' className={classes.titleHeading}>
-                    Send money from <span className={classes.clipPath}>{location.loaded ? location.locations : 'Africa'}</span> to any other country
+                    Pay your most important bills anywhere in the world
+                </Typography>
+                <Typography variant='h4' className={classes.titleHeading}>
+                    from <span className={classes.clipPath}>{location.loaded ? location.locations : 'Africa'}</span>
                 </Typography>
 
-                {/* <motion.p className={classes.paragraph}>{frontMatter.intro}</motion.p> */}
-                <Box className={classes.offerContainer}>
-                    <motion.p className={classes.offer}>{frontMatter.offerText}</motion.p>
-                </Box>
-
-                <Grid container direction='row' className={classes.subContainer}>
-                    <Grid item>
-                        <Typography className={classes.subTitle}>Pay </Typography>
-                    </Grid>
-                    <Grid item>
-                        <Box className={classes.typeWriter}>
-                            <Typography className={classes.subTitle}>
-                                <Typewriter
-                                    options={{
-                                        strings: [' medical', ' morgage', 'tuition'],
-                                        autoStart: true,
-                                        loop: true
-                                    }}
-                                />
-                            </Typography>
-                        </Box>
-                    </Grid>
-                    <Grid item>
-                        <Typography className={classes.subTitle}>bills in</Typography>
-                    </Grid>
-                    <Grid item>
-                        <Box className={classes.typeWriter} style={{ color: 'white' }}>
-                            <Typography className={classes.subTitle}>
-                                <Typewriter
-                                    options={{
-                                        strings: ['Africa', 'India', 'Europe'],
-                                        autoStart: true,
-                                        loop: true,
-                                        delay: 220
-                                    }}
-                                />
-                            </Typography>
-                        </Box>
-                    </Grid>
-                </Grid>
                 <Box>
                     <Box className={classes.searchContainer}>
                         <Grid container spacing={1} className={classes.searchItem}>
-                            <Grid item xs={12} sm={12} lg={5} className={classes.searchItemControl}>
+                            <Grid item xs={12} md={4} className={classes.searchItemControl}>
                                 <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
                                     <Select
                                         displayEmpty
@@ -406,14 +349,14 @@ export const InfoBanner = () => {
                                                 <RoomIcon style={{ fontSize: 23 }} />
                                             </InputAdornment>
                                         }
-                                        input={<OutlinedInput />}
+                                        input={<Input disableUnderline={true} />}
                                         IconComponent={KeyboardArrowDownIcon}
                                         renderValue={selected => {
                                             if (selected.length === 0) {
                                                 return (
                                                     <Grid className={classes.searchItemControl} container>
                                                         <div className={classes.overflow}>
-                                                            <Typography className={classes.searchText}>Transfer money from </Typography>
+                                                            <Typography className={classes.searchText}>Pay from </Typography>
                                                         </div>
                                                     </Grid>
                                                 );
@@ -431,7 +374,7 @@ export const InfoBanner = () => {
                                     </Select>
                                 </FormControl>
                             </Grid>
-                            <Grid item xs={12} sm={12} lg={5} className={classes.searchItemControl}>
+                            <Grid item xs={12} md={4} className={classes.searchItemControl}>
                                 <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
                                     <Select
                                         displayEmpty
@@ -443,14 +386,14 @@ export const InfoBanner = () => {
                                                 <RoomIcon style={{ fontSize: 23 }} />
                                             </InputAdornment>
                                         }
-                                        input={<OutlinedInput />}
+                                        input={<Input disableUnderline={true} />}
                                         IconComponent={KeyboardArrowDownIcon}
                                         renderValue={selected => {
                                             if (selected.length === 0) {
                                                 return (
                                                     <Grid className={classes.searchItemControl} container>
                                                         <div className={classes.overflow}>
-                                                            <Typography className={classes.searchText}>Transfer money to </Typography>
+                                                            <Typography className={classes.searchText}>Pay to </Typography>
                                                         </div>
                                                     </Grid>
                                                 );
@@ -468,14 +411,8 @@ export const InfoBanner = () => {
                                     </Select>
                                 </FormControl>
                             </Grid>
-
-                            <Grid container item xs={12} sm={12} md={12} lg={2}>
-                                <Button
-                                    style={{ fontSize: '16px' }}
-                                    onClick={() => handleSearch()}
-                                    variant='contained'
-                                    className={classes.actionButtonBook}
-                                >
+                            <Grid container item xs={12} md={4} justifyContent={'center'} alignItems={'center'}>
+                                <Button onClick={handleSearch} variant='contained' className={classes.getStarted} disableElevation>
                                     Get Started
                                 </Button>
                             </Grid>
@@ -495,7 +432,6 @@ export const InfoBanner = () => {
                     </Grid>
                 </Box>
             </Box>
-            {/* </Container> */}
         </motion.div>
     );
 };

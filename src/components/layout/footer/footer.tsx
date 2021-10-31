@@ -38,14 +38,14 @@ const useStyles = makeStyles((theme: Theme) =>
             fontSize: 15
         },
         link: {
-            color: grey[700],
+            color: theme.colors.mainGreen,
             textDecoration: 'none',
             marginTop: 20,
             marginBottom: 20
         },
 
         text: {
-            color: grey[700],
+            color: 'grey',
             fontSize: 14,
             marginTop: 20,
             marginBottom: 10

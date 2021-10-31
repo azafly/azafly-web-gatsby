@@ -4,13 +4,12 @@ import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 
-import { ComingSoon } from './sections/ComingSoon/coming-soon';
 import { Services } from './sections/Services/services';
 import { HomePageHeroSection } from './sections/Hero/hero';
 import { HomePageReviewsSection } from './sections/Reviews';
 import { Secure } from './sections/Secure/secure';
 
-import { QuestionsTabsConatiner } from '../faq/questions-tab';
+import { QuestionsTabsContainer } from '../faq/questions-tab';
 import { JoinUs } from './sections/Joinus';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -68,15 +67,12 @@ const Home = ({ images }: HomeViewProps) => {
                 <div className={classes.drawerHeader}></div>
                 <HomePageHeroSection images={images} />
                 <Services />
-
                 <div className={classes.setupAndDesignSection}>
                     <Secure />
                     <HomePageReviewsSection />
                 </div>
-                <ComingSoon />
-
                 <Box style={{ maxWidth: 1400, margin: 'auto' }}>
-                    <QuestionsTabsConatiner />
+                    <QuestionsTabsContainer />
                 </Box>
                 <JoinUs />
             </main>

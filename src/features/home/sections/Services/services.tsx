@@ -3,65 +3,14 @@ import { Grid, Hidden, Box } from '@material-ui/core';
 import React from 'react';
 import { ServicesBG2 } from '../../../../components/illustrations/backgrounds';
 import { ServiceIllustration } from './illustration';
-import { PayOnline, Travellers, ConnectedWord } from '../../../../components/illustrations';
-import { CalendarSvgComponent } from '../../../../components/icons/calendar';
-import { ServiceInfoBanner } from './info-banner';
 
-const services = [
-    {
-        icon: (
-            <PayOnline
-                style={{
-                    width: 175,
-                    margin: 'auto',
-                    height: 150
-                }}
-            />
-        ),
-        heading: 'International Payments',
-        paragraph: '',
-        actionText: 'Make a payment',
-        actionRoute: `${process.env.GATSBY_APP_URL}/payment`,
-        redirectParam: 'tobeDecided'
-    },
-    {
-        icon: (
-            <Travellers
-                style={{
-                    width: 175,
-                    margin: 'auto',
-                    height: 150
-                }}
-            />
-        ),
-        heading: 'Immigration consultation',
-        paragraph: '',
-        actionText: 'Consult for Free',
-        actionRoute: `${process.env.GATSBY_APP_URL}/booking`,
-        actionIcon: <CalendarSvgComponent />
-    },
-    {
-        icon: (
-            <ConnectedWord
-                style={{
-                    width: 175,
-                    margin: 'auto',
-                    height: 150
-                }}
-            />
-        ),
-        heading: 'Explore the world',
-        paragraph: '',
-        actionText: 'Start Now',
-        actionRoute: `${process.env.GATSBY_APP_URL}/booking`
-    }
-];
+import { ServiceInfoBanner } from './info-banner';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             width: '100vw',
-            // backgroundColor: 'rgb(239, 242, 246)',
+            paddingTop: 100,
             overflowX: 'hidden',
             position: 'relative',
             padding: '70px 0px 70px 0px',

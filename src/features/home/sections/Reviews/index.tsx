@@ -1,9 +1,7 @@
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { ReviewSliders } from './sliders'
-import React from 'react'
-// import Bg from 'assets/reviews-bg'
-// import { ReviewsBgIllustration } from '...=components/backgrounds'
+import React from 'react';
 
+import { ReviewSliders } from './sliders';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -29,23 +27,22 @@ const useStyles = makeStyles((theme: Theme) =>
             bottom: -50,
             left: -50,
             pointerEvents: 'none',
-            zIndex: -1,
+            zIndex: -1
         }
-    }),
+    })
 );
 
 export const HomePageReviewsSection = () => {
-    const classes = useStyles()
+    const classes = useStyles();
 
     return (
         <div className={classes.container}>
             <ReviewSliders />
-            <div className={classes.bgIllustration} >
+            <div className={classes.bgIllustration}>
                 {/* <Hidden smDown>
                     <ReviewsBgIllustration />
                 </Hidden> */}
-
             </div>
         </div>
-    )
-}
+    );
+};

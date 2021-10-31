@@ -1,5 +1,4 @@
-import { Box, Grid, Hidden, Theme } from '@material-ui/core';
-// eslint-disable-next-line import/no-extraneous-dependencies
+import { Box, Grid, Theme } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/styles';
 import React from 'react';
 import { Illustration } from './illustration';
@@ -9,19 +8,16 @@ import { HomeImages } from '../../../../createPages/templates/home';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         homePageHeroMain: {
+            padding: '10px 0',
             position: 'relative',
             background: 'linear-gradient(102.84deg, #0D324D 1.08%, #224C6C 59.23%, #062741 97.46%)',
-            width: '100%',
             minHeight: 600
         },
         homePageHeroInner: {
             flexGrow: 1,
-            padding: '50px 50px 50px 0px',
-            maxWidth: 1600,
+            padding: '50px 0px 0px 0px',
             margin: 'auto',
-            [theme.breakpoints.only('xs')]: {
-                padding: 5
-            }
+            [theme.breakpoints.only('xs')]: {}
         },
         homeBgllustration1: {
             position: 'absolute',
@@ -70,18 +66,14 @@ export const HomePageHeroSection = ({ images }: Props) => {
 
     return (
         <div className={classes.homePageHeroMain}>
-            {/* <Hidden smDown>
- 
-            </Hidden> */}
-
-            <Grid container justify='space-around' spacing={2} alignItems='center' className={classes.homePageHeroInner}>
+            <Grid container justify='space-between' spacing={2} alignItems='center' className={classes.homePageHeroInner}>
                 <Box clone order={{ xs: 2, sm: 1 }}>
-                    <Grid item xs={12} sm={12} md={6} style={{ marginBottom: 50 }}>
+                    <Grid item xs={12} md={6} style={{ marginBottom: 50 }}>
                         <InfoBanner />
                     </Grid>
                 </Box>
                 <Box clone order={{ xs: 1, sm: 2 }}>
-                    <Grid item xs={12} sm={12} md={6}>
+                    <Grid item xs={12} md={6}>
                         <Illustration images={images} />
                     </Grid>
                 </Box>

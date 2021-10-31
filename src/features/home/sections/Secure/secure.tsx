@@ -11,8 +11,6 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         secureByDesigncontainer: {
             flexGrow: 1,
-            // marginLeft: '14vw',
-
             [theme.breakpoints.only('md')]: {
                 marginLeft: '8vw'
             },
@@ -83,7 +81,14 @@ export const Secure = () => {
         <div className={classes.secureByDesigncontainer}>
             {secureData.map((data, index) => {
                 return (
-                    <Grid container key={index} justifyContent='center' spacing={2} alignItems='center' style={{ maxWidth: 1400, margin: 'auto' }}>
+                    <Grid
+                        container
+                        key={index}
+                        justifyContent='space-around'
+                        spacing={4}
+                        alignItems='center'
+                        style={{ maxWidth: 1600, margin: 'auto' }}
+                    >
                         <Box clone order={{ xs: data.bannerOrder.xs, sm: data.bannerOrder.sm }}>
                             <Grid item xs={12} sm={6} md={5}>
                                 <InfoBanner />
