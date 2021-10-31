@@ -148,7 +148,7 @@ export const Illustration = ({ images }: Props) => {
                 <Box className={classes.notification}>
                     <Box display='flex' justifyContent='center' justifyItems='center'>
                         <Typography className={classes.innerText}>
-                            The <strong>efficient</strong> way to pay your urgent medical bill in 🇮🇳
+                            The most <strong>efficient</strong> way to pay your urgent medical bill in 🇮🇳
                         </Typography>
                     </Box>
                 </Box>

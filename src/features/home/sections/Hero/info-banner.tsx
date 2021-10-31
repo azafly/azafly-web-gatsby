@@ -1,19 +1,18 @@
-import { motion } from 'framer-motion';
-import { makeStyles, createStyles, Theme, useTheme } from '@material-ui/core/styles';
 import { Button, Typography, Grid, Box, Link, Snackbar, InputAdornment } from '@material-ui/core';
+import { makeStyles, createStyles, Theme, useTheme } from '@material-ui/core/styles';
+import { motion } from 'framer-motion';
 import FormControl from '@mui/material/FormControl';
-import MenuItem from '@mui/material/MenuItem';
-import React, { useState } from 'react';
 import Input from '@mui/material/Input';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import RoomIcon from '@mui/icons-material/Room';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import Avatar from '@material-ui/core/Avatar';
+import MenuItem from '@mui/material/MenuItem';
 import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
+import React, { useState } from 'react';
+import RoomIcon from '@mui/icons-material/Room';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-import useGeolocation from '../../hooks/useGeolocation';
-import playbtn from '../../../../../static/images/home/playBtn.png';
+import { RipplePlayButton } from '../../../../components/common/ripple-button';
 import { useFetchHomeData } from '../../hooks/use-data';
+import useGeolocation from '../../hooks/useGeolocation';
 
 function Alert(props: AlertProps) {
     return <MuiAlert elevation={6} variant='filled' {...props} />;
@@ -92,7 +91,7 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: 5
         },
         paragraph: {
-            fontWeight: 500,
+            fontWeight: 550,
             color: 'grey',
             marginTop: 20,
             [theme.breakpoints.only('xs')]: {}
@@ -207,7 +206,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
         setMiddle: {
             marginTop: 80,
-
             [theme.breakpoints.only('xs')]: {
                 justifyContent: 'center'
             }
@@ -215,16 +213,6 @@ const useStyles = makeStyles((theme: Theme) =>
         select: {
             '& .MuiSvgIcon-root': {
                 color: '#040d21'
-            }
-        },
-        avatar: {
-            marginRight: '12.4px',
-            width: '46px',
-            height: '46px',
-            [theme.breakpoints.only('xs')]: {
-                marginRight: '10px',
-                width: '26px',
-                height: '26px'
             }
         },
         links: {
@@ -332,7 +320,7 @@ export const InfoBanner = () => {
                 <Typography paragraph className={classes.paragraph}>
                     We empower individuals and small businesses in{' '}
                     <span className={classes.clipPath}>{location.loaded ? location.locations : 'Africa'}</span> to pay their most important bills and
-                    invoices to any institution or business in the world efficiently.
+                    invoices to any institution or business in the world.
                 </Typography>
 
                 <Box>
@@ -425,9 +413,7 @@ export const InfoBanner = () => {
                         <Typography>Built By Africans for Africans 🙌🏿</Typography>
                     </Box>
                     <Grid className={classes.searchItem} container direction='row' alignItems='center'>
-                        <Link href='#' color='inherit' underline='none'>
-                            <Avatar className={classes.avatar} alt='How it works' src={playbtn} />
-                        </Link>
+                        <RipplePlayButton />
                         <Typography className={classes.links}>
                             <Link href='#' color='inherit' underline='always'>
                                 See how it works?

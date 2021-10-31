@@ -1,8 +1,9 @@
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Typography, Grid, Box, Button, Avatar, Link } from '@material-ui/core';
-import React from 'react';
 import { Link as RouteLink } from 'gatsby-theme-material-ui';
-import playbtn2 from '../../../../../static/images/home/playBtn2.png';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { Typography, Grid, Box, Button, Link } from '@material-ui/core';
+import React from 'react';
+
+import { RipplePlayButton } from '../../../../components/common/ripple-button';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -16,17 +17,6 @@ const useStyles = makeStyles((theme: Theme) =>
         btn: {
             [theme.breakpoints.only('xs')]: {
                 justifyContent: 'center !important'
-            }
-        },
-        avatar: {
-            marginRight: '12.4px',
-            width: '46px',
-            height: '46px',
-            boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.03)',
-            [theme.breakpoints.only('xs')]: {
-                marginRight: '10px',
-                width: '26px',
-                height: '26px'
             }
         },
         links: {
@@ -53,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
             borderRadius: '10px',
             fontSize: '16px',
             color: 'white',
-            minWidth: 170,
+            width: '20ch',
             '&:hover': {
                 background: ' #4990A4'
             },
@@ -71,7 +61,7 @@ export const JoinUsBotton = () => {
 
     return (
         <Box className={classes.root} style={{ marginTop: 50 }}>
-            <Grid container direction='row' className={classes.justify}>
+            <Grid container direction='row' className={classes.justify} alignItems={'center'}>
                 <Grid item xs={12} sm={3} md={5}>
                     <Button component={RouteLink} to='/signup' className={classes.actionButtonExplore}>
                         Get Started
@@ -81,9 +71,7 @@ export const JoinUsBotton = () => {
                 <Grid item xs={12} sm={6} md={5} direction='row'>
                     <Box className={classes.btn}>
                         <Grid container direction='row' alignItems='center' justifyContent='center'>
-                            <Link href='/services' color='inherit' underline='none'>
-                                <Avatar className={classes.avatar} alt='How it works' src={playbtn2} />
-                            </Link>
+                            <RipplePlayButton />
                             <Typography className={classes.links}>
                                 <Link href='/services' color='inherit' underline='always'>
                                     See how it works?
