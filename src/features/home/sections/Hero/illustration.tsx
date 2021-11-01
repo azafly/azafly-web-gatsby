@@ -28,9 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.only('md')]: {
                 left: 50
             },
-            [theme.breakpoints.only('sm')]: {
-                left: 220
-            },
+
             [theme.breakpoints.only('xs')]: {
                 left: 10,
                 width: 300
@@ -44,11 +42,6 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.only('md')]: {
                 left: 160
             },
-            [theme.breakpoints.only('sm')]: {
-                left: 320,
-                width: 190
-            },
-
             [theme.breakpoints.only('xs')]: {
                 left: 130,
                 width: 200
@@ -63,10 +56,6 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.only('md')]: {
                 left: 220
             },
-            [theme.breakpoints.only('sm')]: {
-                left: 370,
-                width: 190
-            },
             [theme.breakpoints.only('xs')]: {
                 left: 160,
                 width: 200
@@ -80,10 +69,6 @@ const useStyles = makeStyles((theme: Theme) =>
             marginTop: 20,
             [theme.breakpoints.only('md')]: {
                 left: 220
-            },
-            [theme.breakpoints.only('sm')]: {
-                left: 370,
-                width: 190
             },
             [theme.breakpoints.only('xs')]: {
                 left: 160,

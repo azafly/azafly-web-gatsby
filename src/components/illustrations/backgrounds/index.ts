@@ -1,6 +1,0 @@
-export { ComingSoonBG } from './coming-soon-bg'
-export { ComingSoonBG2 } from './coming-soon-bg-2'
-export { HomeBGIllustration1 } from './home-bg-illustration-1'
-export { HomeBGIllustration2 } from './home-bg-illustration-2'
-export { HomeBGIllustration3 } from './home-bg-illustration-3'
-export { ServicesBG2 } from './services-bg-2'

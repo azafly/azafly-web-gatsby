@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 textAlign: 'center'
             },
             [theme.breakpoints.only('sm')]: {
-                fontSize: '32px'
+                fontSize: 48
             }
         },
         subContainer: {
@@ -88,7 +88,11 @@ const useStyles = makeStyles((theme: Theme) =>
             background: 'white',
             borderRadius: 4,
             marginTop: 30,
-            padding: 5
+            padding: 5,
+            [theme.breakpoints.down('sm')]: {
+                margin: 'auto',
+                marginTop: 30
+            }
         },
         paragraph: {
             fontWeight: 550,
@@ -155,10 +159,9 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         underline: {
-            position: 'absolute',
-            width: '167.05px',
-            height: '13.19px',
-            background: '#FFFFFF'
+            [theme.breakpoints.down('sm')]: {
+                borderBottom: '1px solid grey'
+            }
         },
         actionButtonExplore: {
             textTransform: 'none',
@@ -193,8 +196,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
         setMiddle: {
             marginTop: 80,
-            [theme.breakpoints.only('xs')]: {
-                justifyContent: 'center'
+            [theme.breakpoints.only('sm')]: {
+                justifyContent: 'left'
             }
         },
         select: {
@@ -325,7 +328,7 @@ export const InfoBanner = () => {
                                                 <RoomIcon style={{ fontSize: 23 }} />
                                             </InputAdornment>
                                         }
-                                        input={<Input disableUnderline={true} />}
+                                        input={<Input disableUnderline={true} className={classes.underline} />}
                                         IconComponent={KeyboardArrowDownIcon}
                                         renderValue={selected => {
                                             if (selected.length === 0) {

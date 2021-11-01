@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
             position: 'relative',
             padding: '50px 0px 0px 0px',
             background: 'white',
-            [theme.breakpoints.only('xs')]: {
+            [theme.breakpoints.down('sm')]: {
                 padding: '40px 0px 40px 0px',
                 marginBottom: 50
             }
