@@ -1,7 +1,6 @@
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Grid, Hidden, Box } from '@material-ui/core';
+import { Grid, Box } from '@material-ui/core';
 import React from 'react';
-import { ServicesBG2 } from '../../../../components/illustrations/backgrounds';
 import { ServiceIllustration } from './illustration';
 
 import { ServiceInfoBanner } from './info-banner';
@@ -41,30 +40,6 @@ const useStyles = makeStyles((theme: Theme) =>
             fontWeight: 500,
             padding: 10
         },
-        bgIllustration: {
-            position: 'absolute',
-            left: 0,
-            top: -100,
-            height: '100%',
-            pointerEvents: 'none',
-            opacity: 0.8,
-            [theme.breakpoints.only('xs')]: {
-                left: -50,
-                top: -100,
-                height: 500
-            }
-        },
-        bgIllustration2: {
-            position: 'absolute',
-            right: -80,
-            top: -150,
-            height: '100%',
-            opacity: 0.3,
-            pointerEvents: 'none',
-            [theme.breakpoints.only('xs')]: {
-                display: 'none'
-            }
-        },
         serviceCardContainer: {
             width: '86vw',
             maxWidth: 1200,
@@ -79,14 +54,10 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export function Services() {
+export const Services: React.FC = () => {
     const classes = useStyles();
-
     return (
         <Box className={classes.container}>
-            <Hidden>
-                <ServicesBG2 className={classes.bgIllustration2} />
-            </Hidden>
             <Grid container justify='space-around' spacing={2} alignItems='center' className={classes.serviceCardContainer}>
                 <Box clone order={{ xs: 2, sm: 1 }}>
                     <Grid item xs={12} sm={12} md={7} style={{ marginBottom: 50 }}>
@@ -101,4 +72,4 @@ export function Services() {
             </Grid>
         </Box>
     );
-}
+};

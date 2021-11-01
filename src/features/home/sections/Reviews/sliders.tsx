@@ -1,12 +1,11 @@
-/* eslint-disable no-else-return */
-// @ts-ignore
-import Slider from 'react-slick';
-import React, { forwardRef, useState, useRef } from 'react';
 import { createStyles, makeStyles, Theme, useTheme } from '@material-ui/core/styles';
 import { Grid, useMediaQuery } from '@material-ui/core';
-import { SliderCard } from './slider-card';
+import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
+import React, { forwardRef, useState, useRef } from 'react';
+import Slider from 'react-slick';
 
-import { BackwardSvgComponent, ForwardSvgComponent } from '../../../../components/icons';
+import { SliderCard } from './slider-card';
 
 import { InfoBanner } from './info-banner';
 
@@ -41,7 +40,7 @@ const cards = [
         src: 'https://headshots-berlin.de/wp-content/uploads/2020/03/Victoire-Laly-by-Chris-Marxen-Headshots-Berlin.png',
         text: ''
     }
-].map(({ src, name }) => <SliderCard src={src} name={name} />);
+].map(({ src, name }) => <SliderCard key={src} src={src} name={name} />);
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -95,9 +94,9 @@ export const ReviewSliders = forwardRef(() => {
     const laptopBg = useMediaQuery(theme.breakpoints.only('lg'));
     const computeNumberOfCards = () => {
         if (mobile || tablet) return 2;
-        else if (laptopSm) return 3;
-        else if (laptopBg) return 4;
-        else return 5;
+        if (laptopSm) return 3;
+        if (laptopBg) return 4;
+        return 5;
     };
 
     const sliderRef = useRef<Slider>(null);
@@ -124,12 +123,12 @@ export const ReviewSliders = forwardRef(() => {
     const scrollers = () => {
         return (
             <div className={classes.scrollers}>
-                <BackwardSvgComponent
+                <ArrowBackOutlinedIcon
                     opacity={activeScroller === 'prev' ? 1 : 0.3}
                     className={classes.prev}
                     onClick={() => handleToggleClass('prev')}
                 />
-                <ForwardSvgComponent
+                <ArrowForwardOutlinedIcon
                     opacity={activeScroller === 'next' ? 1 : 0.3}
                     onClick={e => handleToggleClass('next')}
                     className={classes.next}

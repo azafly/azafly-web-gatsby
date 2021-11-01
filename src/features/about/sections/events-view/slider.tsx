@@ -1,13 +1,12 @@
-// @ts-ignore
-import Slider from 'react-slick';
-import React, { forwardRef, useState, useRef } from 'react';
 import { createStyles, makeStyles, Theme, useTheme } from '@material-ui/core/styles';
 import { Grid, useMediaQuery } from '@material-ui/core';
-import { SliderCard } from '../../../home/sections/Reviews/slider-card';
-
-import { BackwardSvgComponent, ForwardSvgComponent } from '../../../../components/icons';
+import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
+import React, { forwardRef, useState, useRef } from 'react';
+import Slider from 'react-slick';
 
 import { InfoBanner } from '../../../home/sections/Reviews/info-banner';
+import { SliderCard } from '../../../home/sections/Reviews/slider-card';
 
 const cards = [
     {
@@ -40,7 +39,7 @@ const cards = [
         src: 'https://headshots-berlin.de/wp-content/uploads/2020/03/Victoire-Laly-by-Chris-Marxen-Headshots-Berlin.png',
         text: ''
     }
-].map(({ src, name }) => <SliderCard src={src} name={name} />);
+].map(({ src, name }) => <SliderCard key={src} src={src} name={name} />);
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -81,12 +80,9 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-interface ReviewSlidersProps {
-    sliderRef?: any;
-}
 type ActiveScroller = 'prev' | 'next';
 
-export const SliderGallery = forwardRef((props: ReviewSlidersProps, ref) => {
+export const SliderGallery = forwardRef(() => {
     const classes = useStyles();
     const [activeScroller, setActiveScroller] = useState<ActiveScroller>('next');
 
@@ -126,12 +122,12 @@ export const SliderGallery = forwardRef((props: ReviewSlidersProps, ref) => {
     const scrollers = () => {
         return (
             <div className={classes.scrollers}>
-                <BackwardSvgComponent
+                <ArrowBackOutlinedIcon
                     opacity={activeScroller === 'prev' ? 1 : 0.3}
                     className={classes.prev}
                     onClick={() => handleToggeleClass('prev')}
                 />
-                <ForwardSvgComponent
+                <ArrowForwardOutlinedIcon
                     opacity={activeScroller === 'next' ? 1 : 0.3}
                     onClick={e => handleToggeleClass('next')}
                     className={classes.next}
