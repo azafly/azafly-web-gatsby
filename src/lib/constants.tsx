@@ -1,5 +1,9 @@
+import BookOutlinedIcon from '@mui/icons-material/BookOutlined';
+import ContactSupportOutlinedIcon from '@mui/icons-material/ContactSupportOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import React, { ReactElement } from 'react';
-import { ActivitySvgComponent, HomeSvgComponent } from '../components/common/icons';
+import SupervisedUserCircleOutlinedIcon from '@mui/icons-material/SupervisedUserCircleOutlined';
 
 interface SideMenu {
     name: string;
@@ -13,26 +17,32 @@ export const sideMenu: SideMenu[] = [
     {
         name: 'Home',
         isOpened: false,
-        icon: <HomeSvgComponent stroke={'#0d324d'} />,
+        icon: <HomeOutlinedIcon />,
         route: '/'
     },
     {
         name: 'Blog',
         isOpened: false,
-        icon: <ActivitySvgComponent stroke={'#0d324d'} />,
+        icon: <BookOutlinedIcon />,
         route: '/blog'
-    },
-    {
-        name: 'Register',
-        isOpened: false,
-        icon: <ActivitySvgComponent stroke={'#0d324d'} />,
-        route: '/signup'
     },
     {
         name: 'Support',
         isOpened: false,
-        icon: <ActivitySvgComponent stroke={'#0d324d'} />,
+        icon: <ContactSupportOutlinedIcon />,
         route: '/faq'
+    },
+    {
+        name: 'Register',
+        isOpened: false,
+        icon: <SupervisedUserCircleOutlinedIcon />,
+        route: `${process.env.GATSBY_APP_URL}/signup`
+    },
+    {
+        name: 'Login',
+        isOpened: false,
+        icon: <LoginOutlinedIcon />,
+        route: `${process.env.GATSBY_APP_URL}/signin`
     }
 ];
 

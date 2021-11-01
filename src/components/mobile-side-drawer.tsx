@@ -51,7 +51,7 @@ const variants = {
     }
 };
 
-export const MobileSideDrawer = ({ open, handleDrawerClose, isSmallScreen }: MobileDrawerProps) => {
+export const MobileSideDrawer: React.FC<MobileDrawerProps> = ({ open, handleDrawerClose, isSmallScreen }) => {
     const theme = useTheme();
 
     const classes = useStyles();
@@ -81,14 +81,6 @@ export const MobileSideDrawer = ({ open, handleDrawerClose, isSmallScreen }: Mob
                         ))}
                     </List>
                     <Divider />
-
-                    <Link to={'/signin'}>
-                        <List component={motion.ul} variants={variants}>
-                            <MenuListItem variant={sideMenuAnimation.item} text={'LogIn'} key={'Login'}>
-                                {'Signin'}
-                            </MenuListItem>
-                        </List>
-                    </Link>
                 </Drawer>
             )}
         </>

@@ -160,17 +160,6 @@ const useStyles = makeStyles((theme: Theme) =>
             height: '13.19px',
             background: '#FFFFFF'
         },
-        typeWriter: {
-            marginLeft: 20,
-            marginRight: 20,
-            minWidth: 85,
-            textAlign: 'center',
-            [theme.breakpoints.only('xs')]: {
-                marginLeft: 10,
-                marginRight: 10,
-                minWidth: 85
-            }
-        },
         actionButtonExplore: {
             textTransform: 'none',
             height: 0,

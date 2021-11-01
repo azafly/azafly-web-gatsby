@@ -10,10 +10,9 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             width: '100vw',
-            paddingTop: 100,
             overflowX: 'hidden',
             position: 'relative',
-            padding: '70px 0px 70px 0px',
+            padding: '50px 0px 0px 0px',
             background: 'white',
             [theme.breakpoints.only('xs')]: {
                 padding: '40px 0px 40px 0px',

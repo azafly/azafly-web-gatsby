@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme: Theme) =>
         setupAndDesignSection: {
             position: 'relative',
             background: theme.palette.background.default,
-            paddingTop: 100
+            paddingTop: 10
         }
     })
 );
@@ -71,7 +71,7 @@ const Home: React.FC<HomeViewProps> = ({ images }) => {
                     <Secure />
                     <HomePageReviewsSection />
                 </div>
-                <Box style={{ maxWidth: 1400, margin: 'auto' }}>
+                <Box style={{ maxWidth: 1600, margin: 'auto' }}>
                     <QuestionsTabsContainer />
                 </Box>
                 <JoinUs />

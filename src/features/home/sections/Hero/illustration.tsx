@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         infoContainer1: {
             position: 'absolute',
-            width: 250,
+            width: 260,
             left: '50%',
             top: '20%',
             [theme.breakpoints.only('md')]: {
