@@ -1,4 +1,4 @@
-import { Box, Grid, Theme } from '@material-ui/core';
+import { Box, Hidden, Grid, Theme } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/styles';
 import React from 'react';
 import { Illustration } from './illustration';
@@ -38,11 +38,13 @@ export const HomePageHeroSection: React.FC<Props> = ({ images }) => {
                         <InfoBanner />
                     </Grid>
                 </Box>
-                <Box clone order={{ xs: 1, sm: 2 }}>
-                    <Grid item xs={12} md={6}>
-                        <Illustration images={images} />
-                    </Grid>
-                </Box>
+                <Hidden smDown>
+                    <Box clone order={{ xs: 1, sm: 2 }}>
+                        <Grid item xs={12} md={6}>
+                            <Illustration images={images} />
+                        </Grid>
+                    </Box>
+                </Hidden>
             </Grid>
         </div>
     );

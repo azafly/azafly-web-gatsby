@@ -5,9 +5,8 @@ import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 import React, { forwardRef, useState, useRef } from 'react';
 import Slider from 'react-slick';
 
-import { SliderCard } from './slider-card';
-
 import { InfoBanner } from './info-banner';
+import { SliderCard } from './slider-card';
 
 const cards = [
     {

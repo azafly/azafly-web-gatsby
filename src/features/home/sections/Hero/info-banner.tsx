@@ -124,6 +124,7 @@ const useStyles = makeStyles((theme: Theme) =>
             textTransform: 'none',
             height: 40,
             minWidth: '10ch',
+            width: '100%',
             color: 'white',
             fontWeight: 500,
             backgroundColor: '#214662',

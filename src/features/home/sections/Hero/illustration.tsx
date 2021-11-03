@@ -22,29 +22,37 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         infoContainer1: {
             position: 'absolute',
-            width: 260,
+            width: 240,
             left: '50%',
-            top: '20%',
-            [theme.breakpoints.only('md')]: {
-                left: 50
-            },
-
-            [theme.breakpoints.only('xs')]: {
-                left: 10,
-                width: 300
-            }
+            top: '20%'
+            //     [theme.breakpoints.only('lg')]: {
+            //          left: '50%',
+            //     },
+            //    [theme.breakpoints.only('md')]: {
+            //          left: '50%',
+            //     },
+            //     [theme.breakpoints.only('sm')]: {
+            //         left: '50%'
+            //     },
+            // [theme.breakpoints.only('xs')]: {
+            //     left: 10,
+            //     width: 300
+            // }
         },
         infoContainer2: {
             position: 'absolute',
-            width: 250,
+            width: 220,
+            marginRight: 10,
             left: '2%',
             top: '25%',
-            [theme.breakpoints.only('md')]: {
-                left: 160
+            [theme.breakpoints.only('sm')]: {
+                left: '10%'
             },
-            [theme.breakpoints.only('xs')]: {
-                left: 130,
-                width: 200
+            [theme.breakpoints.only('md')]: {
+                left: '0%'
+            },
+            [theme.breakpoints.up('lg')]: {
+                left: '14%'
             }
         },
         infoContainer3: {
@@ -63,7 +71,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         infoContainer4: {
             position: 'absolute',
-            width: 250,
+            width: 180,
             right: '2%',
             top: '30%',
             marginTop: 20,
@@ -85,17 +93,17 @@ const useStyles = makeStyles((theme: Theme) =>
         notification: {
             position: 'relative',
             padding: '10px',
-            backgroundColor: 'white',
+            backgroundColor: '#B0C4DE',
             minHeight: 50,
             color: '#040d21',
-            border: '1px solid white',
+            border: '1px solid #B0C4DE',
             borderRadius: '10px',
             '&:after': {
                 content: "''",
                 position: 'absolute',
                 width: '0',
                 height: '0',
-                borderTop: '15px solid white',
+                borderTop: '15px solid #B0C4DE',
                 borderRight: '15px solid transparent',
                 borderLeft: '15px solid transparent',
                 bottom: '-15px'
