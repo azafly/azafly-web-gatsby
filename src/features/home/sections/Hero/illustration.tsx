@@ -22,22 +22,10 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         infoContainer1: {
             position: 'absolute',
-            width: 240,
+            width: 260,
             left: '50%',
-            top: '20%'
-            //     [theme.breakpoints.only('lg')]: {
-            //          left: '50%',
-            //     },
-            //    [theme.breakpoints.only('md')]: {
-            //          left: '50%',
-            //     },
-            //     [theme.breakpoints.only('sm')]: {
-            //         left: '50%'
-            //     },
-            // [theme.breakpoints.only('xs')]: {
-            //     left: 10,
-            //     width: 300
-            // }
+            top: '20%',
+            marginRight: 10
         },
         infoContainer2: {
             position: 'absolute',
@@ -71,7 +59,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         infoContainer4: {
             position: 'absolute',
-            width: 180,
+            width: 200,
             right: '2%',
             top: '30%',
             marginTop: 20,

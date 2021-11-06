@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 
 // Material
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
@@ -60,6 +60,7 @@ interface HomeViewProps {
 
 const Home: React.FC<HomeViewProps> = ({ images }) => {
     const classes = useStyles();
+    const faqRef = createRef();
 
     return (
         <div className={classes.container}>
@@ -71,9 +72,7 @@ const Home: React.FC<HomeViewProps> = ({ images }) => {
                     <Secure />
                     <HomePageReviewsSection />
                 </div>
-                <Box style={{ maxWidth: 1600, margin: 'auto' }}>
-                    <QuestionsTabsContainer />
-                </Box>
+                <QuestionsTabsContainer ref={faqRef} />
                 <JoinUs />
             </main>
         </div>

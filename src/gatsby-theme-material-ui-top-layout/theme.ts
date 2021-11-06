@@ -53,14 +53,9 @@ export const theme = {
     },
     typography: {
         fontFamily: [
-            'Circluar',
-            'Varela Round',
             'Nunito',
-            'Poppins',
-            'Raleway',
+            'LL Bold',
             'sans-serif',
-            '-apple-system',
-            'BlinkMacSystemFont',
             '"Segoe UI"',
             'Roboto',
             '"Helvetica Neue"',

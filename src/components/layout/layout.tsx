@@ -8,6 +8,8 @@ import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import { Header } from './header';
 import { Footer } from './footer';
 
+import './layout.css';
+
 const footer = {
     copyrightOwner: 'Lucqax',
     socialMedia: [

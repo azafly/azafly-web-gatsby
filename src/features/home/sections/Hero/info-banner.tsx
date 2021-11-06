@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         titleHeading: {
             fontWeight: 750,
-            fontFamily: 'Nunito',
+            fontFamily: 'LL Bold',
             letterSpacing: -1,
             color: theme.colors.white,
             fontSize: 48,
@@ -286,6 +286,8 @@ export const InfoBanner = () => {
         if (sendMoneyFrom.length === 0 || sendMoneyTo.length === 0) {
             setError('Please select region');
             setSnackBarOpen(true);
+        } else {
+            window.location.replace(`https://app-staging.lucqax.com/payment?send_from=${sendMoneyFrom[0]}&sendTo=${sendMoneyTo}`);
         }
     };
     return (

@@ -61,7 +61,6 @@ export const Footer: FunctionComponent<Footer> = ({ copyrightOwner, socialMedia 
     const classes = useStyles();
     const url = ['/about', '/services', '/faq', '/blog', '/contact'];
     const frontmatter = useFetchHomeData();
-    console.log(frontmatter);
     const helfulLink = [
         { link: frontmatter.footerLinkList.link1 },
         { link: frontmatter.footerLinkList.link2 },

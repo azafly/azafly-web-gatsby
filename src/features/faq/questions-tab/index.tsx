@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { Box, Tab, Tabs, Typography } from '@material-ui/core';
 
 import { getFakeArticles } from '../../../mocks/faq';
@@ -41,7 +41,7 @@ function a11yProps(index: any, isVertical?: boolean) {
     };
 }
 
-export function QuestionsTabsContainer() {
+export const QuestionsTabsContainer = forwardRef((props, ref) => {
     const classes = useTabStyles();
     const [articles, setArticles] = useState<any>([]);
     const [value, setValue] = useState(0);
@@ -58,7 +58,7 @@ export function QuestionsTabsContainer() {
     }, []);
 
     return (
-        <div className={classes.tabContainer}>
+        <div ref={ref} className={classes.tabContainer}>
             <Typography className={classes.title} variant='h5' gutterBottom color='secondary'>
                 Frequently Asked Questions
             </Typography>
@@ -87,4 +87,4 @@ export function QuestionsTabsContainer() {
             </div>
         </div>
     );
-}
+});
