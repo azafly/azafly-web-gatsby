@@ -9,10 +9,13 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             maxWidth: 1600,
-            width: '86vw',
+            margin: 'auto',
             overflowX: 'hidden',
             position: 'relative',
-            background: 'white'
+            background: 'white',
+            [theme.breakpoints.up('md')]: {
+                padding: '10vh 6vw'
+            }
         },
         titleWrapper: {
             color: theme.colors.black,
@@ -37,8 +40,6 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: 10
         },
         serviceCardContainer: {
-            maxWidth: 1600,
-            margin: 'auto',
             marginTop: 50
         },
         serviceCard: {

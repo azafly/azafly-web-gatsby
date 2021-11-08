@@ -10,9 +10,9 @@ const useStyles = makeStyles((theme: Theme) =>
         container: {
             order: 1,
             display: 'flex',
-            width: '85%',
             flexDirection: 'column',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            padding: '0px 8vw'
         },
         card: {
             border: 'none',

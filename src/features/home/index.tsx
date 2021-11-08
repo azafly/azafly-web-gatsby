@@ -4,7 +4,7 @@ import React, { createRef } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 
-import { Services } from './sections/Services/services';
+import { Services } from './sections/why-choose-us';
 import { HomePageHeroSection } from './sections/Hero/hero';
 import { HomePageReviewsSection } from './sections/Reviews';
 import { Secure } from './sections/Secure/secure';
@@ -40,7 +40,6 @@ const useStyles = makeStyles((theme: Theme) =>
         content: {
             maxWidth: '100vw',
             overflowX: 'hidden',
-
             transition: theme.transitions.create('margin', {
                 easing: theme.transitions.easing.sharp,
                 duration: theme.transitions.duration.leavingScreen

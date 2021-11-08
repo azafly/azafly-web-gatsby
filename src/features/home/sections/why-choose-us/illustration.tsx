@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme: Theme) =>
             justifyContent: 'center',
             padding: 50,
             borderRadius: 8,
-            width: '100%',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             [theme.breakpoints.only('xs')]: {
