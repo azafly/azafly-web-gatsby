@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         text: {
             fontSize: '1.1rem',
-            color: 'pink'
+            color: 'pink',
+            fontWeight: 700
         },
         avatar: {
             display: 'flex',

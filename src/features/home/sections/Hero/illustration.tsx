@@ -46,6 +46,9 @@ const useStyles = makeStyles((theme: Theme) =>
             left: '2%',
             [theme.breakpoints.only('xs')]: {
                 left: '-10%'
+            },
+            [theme.breakpoints.up('lg')]: {
+                left: '15%'
             }
         },
         canada__: {
@@ -56,12 +59,15 @@ const useStyles = makeStyles((theme: Theme) =>
             left: '0%',
             [theme.breakpoints.only('xs')]: {
                 left: '-10%'
+            },
+            [theme.breakpoints.up('lg')]: {
+                left: '12%'
             }
         },
         india__: {
             position: 'absolute',
             width: 250,
-            right: '-5%',
+            right: '-2%',
             top: '50%',
             marginTop: 10
         },

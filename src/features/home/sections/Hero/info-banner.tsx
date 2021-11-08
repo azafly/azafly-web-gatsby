@@ -391,13 +391,13 @@ export const InfoBanner = () => {
                     </Box>
                 </Box>
                 <Grid container className={classes.setMiddle}>
-                    <Grid item className={classes.searchItem} container direction='row' alignItems='center' xs={6}>
+                    <Grid item className={classes.searchItem} container direction='row' alignItems='center' sm={6}>
                         <Box sx={{ pl: 1, color: 'grey' }}>
                             <Typography>By Africans for Africans 🙌🏿</Typography>
                         </Box>
                     </Grid>
 
-                    <Grid item className={classes.searchItem} container direction='row' alignItems='center' xs={6}>
+                    <Grid item className={classes.searchItem} container direction='row' alignItems='center' sm={6}>
                         <RipplePlayButton />
                         <Typography className={classes.links}>
                             <Link href='#' color='inherit' underline='always'>
