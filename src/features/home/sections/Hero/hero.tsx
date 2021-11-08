@@ -32,18 +32,14 @@ export const HomePageHeroSection: React.FC<Props> = ({ images }) => {
 
     return (
         <div className={classes.homePageHeroMain}>
-            <Grid container justify='space-between' spacing={2} alignItems='center' className={classes.homePageHeroInner}>
-                <Box clone order={{ xs: 2, sm: 1 }}>
-                    <Grid item xs={12} md={6} style={{ marginBottom: 50 }}>
-                        <InfoBanner />
-                    </Grid>
-                </Box>
+            <Grid container justify='space-between' alignItems='center' className={classes.homePageHeroInner}>
+                <Grid item xs={12} md={6} style={{ marginBottom: 50 }}>
+                    <InfoBanner />
+                </Grid>
                 <Hidden smDown>
-                    <Box clone order={{ xs: 1, sm: 2 }}>
-                        <Grid item xs={12} md={6}>
-                            <Illustration images={images} />
-                        </Grid>
-                    </Box>
+                    <Grid item xs={12} md={6}>
+                        <Illustration images={images} />
+                    </Grid>
                 </Hidden>
             </Grid>
         </div>

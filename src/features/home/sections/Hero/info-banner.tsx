@@ -34,15 +34,14 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         titleHeading: {
-            fontWeight: 750,
+            fontWeight: 700,
             fontFamily: 'LL Bold',
             letterSpacing: -1,
             color: theme.colors.white,
             fontSize: 48,
             [theme.breakpoints.only('xs')]: {
                 fontSize: 40,
-                fontWeight: 900,
-                textAlign: 'center'
+                fontWeight: 900
             },
             [theme.breakpoints.only('sm')]: {
                 fontSize: 48
@@ -105,10 +104,8 @@ const useStyles = makeStyles((theme: Theme) =>
             fontWeight: 700,
             fontSize: '18px',
             marginTop: 20,
-
             [theme.breakpoints.only('xs')]: {
-                fontSize: '16px',
-                textAlign: 'center'
+                fontSize: '16px'
             }
         },
         offerContainer: {
@@ -133,21 +130,13 @@ const useStyles = makeStyles((theme: Theme) =>
             '&:hover': {
                 background: '#214662',
                 opacity: 0.9
-            },
-            [theme.breakpoints.down('sm')]: {
-                minWidth: '100% !important',
-                margin: 'auto',
-                justifyContent: 'center !important'
             }
         },
         searchItem: {
             color: '#040d21',
             display: 'flex',
             justifyContent: 'flex-start',
-            alignItems: 'center',
-            [theme.breakpoints.only('xs')]: {
-                justifyContent: 'center !important'
-            }
+            alignItems: 'center'
         },
         searchItemControl: {
             color: '#040d21',
@@ -401,11 +390,14 @@ export const InfoBanner = () => {
                         </Grid>
                     </Box>
                 </Box>
-                <Box className={classes.setMiddle}>
-                    <Box sx={{ pl: 1, color: 'grey' }}>
-                        <Typography>Built By Africans for Africans 🙌🏿</Typography>
-                    </Box>
-                    <Grid className={classes.searchItem} container direction='row' alignItems='center'>
+                <Grid container className={classes.setMiddle}>
+                    <Grid item className={classes.searchItem} container direction='row' alignItems='center' xs={6}>
+                        <Box sx={{ pl: 1, color: 'grey' }}>
+                            <Typography>By Africans for Africans 🙌🏿</Typography>
+                        </Box>
+                    </Grid>
+
+                    <Grid item className={classes.searchItem} container direction='row' alignItems='center' xs={6}>
                         <RipplePlayButton />
                         <Typography className={classes.links}>
                             <Link href='#' color='inherit' underline='always'>
@@ -413,7 +405,7 @@ export const InfoBanner = () => {
                             </Link>
                         </Typography>
                     </Grid>
-                </Box>
+                </Grid>
             </Box>
         </motion.div>
     );
