@@ -391,9 +391,9 @@ export const InfoBanner = () => {
                     </Box>
                 </Box>
                 <Grid container className={classes.setMiddle}>
-                    <Grid item className={classes.searchItem} container direction='row' alignItems='center' xs={12} sm={6}>
+                    <Grid item container direction='row' alignItems='center' xs={12} sm={6}>
                         <Box sx={{ pl: 1, color: 'grey' }}>
-                            <Typography>By Africans for Africans 🙌🏿</Typography>
+                            <Typography>Built By Africans for Africans 🙌🏿</Typography>
                         </Box>
                     </Grid>
 
