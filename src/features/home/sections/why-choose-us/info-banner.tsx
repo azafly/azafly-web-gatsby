@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            padding: '0px 8vw'
+            paddingRight: '8vw'
         },
         card: {
             border: 'none',
