@@ -12,7 +12,9 @@ const useStyles = makeStyles((theme: Theme) =>
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            paddingRight: '8vw'
+            [theme.breakpoints.up('md')]: {
+                paddingRight: '6vw'
+            }
         },
         card: {
             border: 'none',
