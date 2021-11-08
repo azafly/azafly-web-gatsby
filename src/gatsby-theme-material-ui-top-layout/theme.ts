@@ -46,7 +46,7 @@ export const theme = {
     colors: {
         yellow: '#FFDC5F',
         mainGreen: '#4990a4',
-        pink: '#e83e8c',
+        pink: '#4990a4',
         white: '#FFFFFF',
         black: '#0d324d',
         darkGreen: '#09273d'

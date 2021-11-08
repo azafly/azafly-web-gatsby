@@ -107,7 +107,7 @@ export const ReviewSliders = forwardRef(() => {
         speed: 1000,
         slidesToShow: computeNumberOfCards(),
         slidesToScroll: computeNumberOfCards(),
-        autoplaySpeed: 10000,
+        autoplaySpeed: 5000,
         pauseOnHover: true,
         autoplay: true,
         arrows: false

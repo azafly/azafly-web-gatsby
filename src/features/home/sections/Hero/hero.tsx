@@ -17,8 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
             minHeight: 700,
             padding: '50px 0px 0px 0px',
             margin: 'auto',
-            maxWidth: 1920,
-            [theme.breakpoints.only('xs')]: {}
+            maxWidth: 1920
         }
     })
 );

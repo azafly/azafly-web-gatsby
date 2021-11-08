@@ -393,11 +393,11 @@ export const InfoBanner = () => {
                 <Grid container className={classes.setMiddle}>
                     <Grid item container direction='row' alignItems='center' xs={12} sm={6}>
                         <Box sx={{ pl: 1, color: 'grey' }}>
-                            <Typography>Built By Africans for Africans 🙌🏿</Typography>
+                            <Typography>By Africans for Africans 🙌🏿</Typography>
                         </Box>
                     </Grid>
 
-                    <Grid item className={classes.searchItem} container direction='row' alignItems='center' xs={12} sm={6}>
+                    <Grid item container direction='row' alignItems='center' xs={12} sm={6}>
                         <RipplePlayButton />
                         <Typography className={classes.links}>
                             <Link href='#' color='inherit' underline='always'>

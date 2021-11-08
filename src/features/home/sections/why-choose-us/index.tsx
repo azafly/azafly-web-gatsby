@@ -8,15 +8,11 @@ import { ServiceInfoBanner } from './info-banner';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
-            width: '100vw',
+            maxWidth: 1600,
+            width: '86vw',
             overflowX: 'hidden',
             position: 'relative',
-            padding: '50px 0px 0px 0px',
-            background: 'white',
-            [theme.breakpoints.down('sm')]: {
-                padding: '40px 0px 40px 0px',
-                marginBottom: 50
-            }
+            background: 'white'
         },
         titleWrapper: {
             color: theme.colors.black,
@@ -41,8 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: 10
         },
         serviceCardContainer: {
-            width: '86vw',
-            maxWidth: 1200,
+            maxWidth: 1600,
             margin: 'auto',
             marginTop: 50
         },
@@ -60,7 +55,7 @@ export const Services: React.FC = () => {
         <Box className={classes.container}>
             <Grid container justify='space-around' spacing={2} alignItems='center' className={classes.serviceCardContainer}>
                 <Box clone order={{ xs: 2, sm: 1 }}>
-                    <Grid item xs={12} sm={12} md={7} style={{ marginBottom: 50 }}>
+                    <Grid item xs={12} sm={12} md={7}>
                         <ServiceInfoBanner />
                     </Grid>
                 </Box>

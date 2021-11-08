@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
         illustration: {
             // marginTop: -150,
             pointerEvents: 'none',
+            margin: 20,
             [theme.breakpoints.only('xs')]: {
                 alignSelf: 'center',
                 justifyContent: 'center',
