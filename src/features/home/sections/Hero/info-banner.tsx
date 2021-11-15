@@ -295,7 +295,7 @@ export const InfoBanner = () => {
             <Box className={classes.container}>
                 {/* {location.loaded ? ( */}
                 <Typography variant='h4' className={classes.titleHeading} gutterBottom>
-                    Cross-border Digital Bank for Africans
+                    The Cross-border Digital Bank for Africans
                 </Typography>
 
                 <Typography paragraph className={classes.paragraph}>
