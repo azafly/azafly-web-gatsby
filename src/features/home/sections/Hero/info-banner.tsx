@@ -125,6 +125,7 @@ const useStyles = makeStyles((theme: Theme) =>
             fontWeight: 500,
             backgroundColor: '#214662',
             padding: '7px 15px',
+            border: '1px solid white',
             borderRadius: 6,
             '&:hover': {
                 background: '#214662',
@@ -278,7 +279,7 @@ export const InfoBanner = () => {
         }
     };
     const bannerText = location.isAfrica
-        ? `Pay your most important Bills abroad. Receive international payments from`
+        ? `Pay your most important Bills abroad. Receive international payments from `
         : `Pay your bills back home with ease. Send money to friends in Family in `;
     return (
         <motion.div>
@@ -310,89 +311,97 @@ export const InfoBanner = () => {
                 </Typography>
 
                 <Box>
-                    <Box className={classes.searchContainer}>
-                        <Grid container spacing={1} className={classes.searchItem}>
-                            <Grid item xs={12} md={4} className={classes.searchItemControl}>
-                                <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
-                                    <Select
-                                        displayEmpty
-                                        className={classes.select}
-                                        value={sendMoneyFrom}
-                                        onChange={handleChangeMoneyFrom}
-                                        startAdornment={
-                                            <InputAdornment position='start'>
-                                                <RoomIcon style={{ fontSize: 23 }} />
-                                            </InputAdornment>
-                                        }
-                                        input={<Input disableUnderline={true} className={classes.underline} />}
-                                        IconComponent={KeyboardArrowDownIcon}
-                                        renderValue={selected => {
-                                            if (selected.length === 0) {
-                                                return (
-                                                    <Grid className={classes.searchItemControl} container>
-                                                        <div className={classes.overflow}>
-                                                            <Typography className={classes.searchText}>Pay from </Typography>
-                                                        </div>
-                                                    </Grid>
-                                                );
+                    {!location.isAfrica ? (
+                        <Box className={classes.searchContainer}>
+                            <Grid container spacing={1} className={classes.searchItem}>
+                                <Grid item xs={12} md={4} className={classes.searchItemControl}>
+                                    <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
+                                        <Select
+                                            displayEmpty
+                                            className={classes.select}
+                                            value={sendMoneyFrom}
+                                            onChange={handleChangeMoneyFrom}
+                                            startAdornment={
+                                                <InputAdornment position='start'>
+                                                    <RoomIcon style={{ fontSize: 23 }} />
+                                                </InputAdornment>
                                             }
+                                            input={<Input disableUnderline={true} className={classes.underline} />}
+                                            IconComponent={KeyboardArrowDownIcon}
+                                            renderValue={selected => {
+                                                if (selected.length === 0) {
+                                                    return (
+                                                        <Grid className={classes.searchItemControl} container>
+                                                            <div className={classes.overflow}>
+                                                                <Typography className={classes.searchText}> from </Typography>
+                                                            </div>
+                                                        </Grid>
+                                                    );
+                                                }
 
-                                            return selected.join(', ');
-                                        }}
-                                        MenuProps={MenuProps}
-                                    >
-                                        {africa.map(name => (
-                                            <MenuItem key={name} value={name} style={getStyles(name, sendMoneyFrom, theme)}>
-                                                {name}
-                                            </MenuItem>
-                                        ))}
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid item xs={12} md={4} className={classes.searchItemControl}>
-                                <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
-                                    <Select
-                                        displayEmpty
-                                        className={classes.select}
-                                        value={sendMoneyTo}
-                                        onChange={handleChangeMoneyTo}
-                                        startAdornment={
-                                            <InputAdornment position='start'>
-                                                <RoomIcon style={{ fontSize: 23 }} />
-                                            </InputAdornment>
-                                        }
-                                        input={<Input disableUnderline={true} />}
-                                        IconComponent={KeyboardArrowDownIcon}
-                                        renderValue={selected => {
-                                            if (selected.length === 0) {
-                                                return (
-                                                    <Grid className={classes.searchItemControl} container>
-                                                        <div className={classes.overflow}>
-                                                            <Typography className={classes.searchText}>Pay to </Typography>
-                                                        </div>
-                                                    </Grid>
-                                                );
+                                                return selected.join(', ');
+                                            }}
+                                            MenuProps={MenuProps}
+                                        >
+                                            {africa.map(name => (
+                                                <MenuItem key={name} value={name} style={getStyles(name, sendMoneyFrom, theme)}>
+                                                    {name}
+                                                </MenuItem>
+                                            ))}
+                                        </Select>
+                                    </FormControl>
+                                </Grid>
+                                <Grid item xs={12} md={4} className={classes.searchItemControl}>
+                                    <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
+                                        <Select
+                                            displayEmpty
+                                            className={classes.select}
+                                            value={sendMoneyTo}
+                                            onChange={handleChangeMoneyTo}
+                                            startAdornment={
+                                                <InputAdornment position='start'>
+                                                    <RoomIcon style={{ fontSize: 23 }} />
+                                                </InputAdornment>
                                             }
+                                            input={<Input disableUnderline={true} />}
+                                            IconComponent={KeyboardArrowDownIcon}
+                                            renderValue={selected => {
+                                                if (selected.length === 0) {
+                                                    return (
+                                                        <Grid className={classes.searchItemControl} container>
+                                                            <div className={classes.overflow}>
+                                                                <Typography className={classes.searchText}>Send to </Typography>
+                                                            </div>
+                                                        </Grid>
+                                                    );
+                                                }
 
-                                            return selected.join(', ');
-                                        }}
-                                        MenuProps={MenuProps}
-                                    >
-                                        {otherCountries.map(name => (
-                                            <MenuItem key={name} value={name} style={getStyles(name, sendMoneyTo, theme)}>
-                                                {name}
-                                            </MenuItem>
-                                        ))}
-                                    </Select>
-                                </FormControl>
+                                                return selected.join(', ');
+                                            }}
+                                            MenuProps={MenuProps}
+                                        >
+                                            {otherCountries.map(name => (
+                                                <MenuItem key={name} value={name} style={getStyles(name, sendMoneyTo, theme)}>
+                                                    {name}
+                                                </MenuItem>
+                                            ))}
+                                        </Select>
+                                    </FormControl>
+                                </Grid>
+                                <Grid container item xs={12} md={4} justifyContent={'center'} alignItems={'center'}>
+                                    <Button onClick={handleSearch} variant='contained' className={classes.getStarted} disableElevation>
+                                        Get Started
+                                    </Button>
+                                </Grid>
                             </Grid>
-                            <Grid container item xs={12} md={4} justifyContent={'center'} alignItems={'center'}>
-                                <Button onClick={handleSearch} variant='contained' className={classes.getStarted} disableElevation>
-                                    Get Started
-                                </Button>
-                            </Grid>
+                        </Box>
+                    ) : (
+                        <Grid container item xs={12} md={4} justifyContent={'center'} alignItems={'center'}>
+                            <Button onClick={handleSearch} variant='contained' className={classes.getStarted} disableElevation>
+                                Create Accounts
+                            </Button>
                         </Grid>
-                    </Box>
+                    )}
                 </Box>
                 <Grid container className={classes.setMiddle}>
                     <Grid item container direction='row' alignItems='center' xs={12} sm={6}>
