@@ -11,7 +11,6 @@ import RoomIcon from '@mui/icons-material/Room';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import { RipplePlayButton } from '../../../../components/common/ripple-button';
-import { useFetchHomeData } from '../../hooks/use-data';
 import useGeolocation from '../../hooks/useGeolocation';
 
 function Alert(props: AlertProps) {
@@ -234,7 +233,6 @@ const MenuProps = {
 export const InfoBanner = () => {
     const classes = useStyles();
 
-    const frontMatter = useFetchHomeData();
     const theme = useTheme();
     const [sendMoneyFrom, setSendMoneyFrom] = useState<string[]>([]);
     const [sendMoneyTo, setSendMoneyto] = useState<string[]>([]);
@@ -297,12 +295,16 @@ export const InfoBanner = () => {
             <Box className={classes.container}>
                 {/* {location.loaded ? ( */}
                 <Typography variant='h4' className={classes.titleHeading} gutterBottom>
-                    Pay your most important international bills and invoices
+                    Cross-border Digital Bank for Africans
+                </Typography>
+
+                <Typography paragraph className={classes.paragraph}>
+                    Pay and get paid in multiple currencies
                 </Typography>
                 <Typography paragraph className={classes.paragraph}>
                     We empower individuals and small businesses in{' '}
-                    <span className={classes.clipPath}>{location.loaded ? location.locations : 'Africa'}</span> to pay their most important bills and
-                    invoices to any institution or business in the world.
+                    <span className={classes.clipPath}>{location.loaded ? location.locations : 'Africa'}</span> to pay their most important
+                    cross-border bills and invoices
                 </Typography>
 
                 <Box>
@@ -393,7 +395,7 @@ export const InfoBanner = () => {
                 <Grid container className={classes.setMiddle}>
                     <Grid item container direction='row' alignItems='center' xs={12} sm={6}>
                         <Box sx={{ pl: 1, color: 'grey' }}>
-                            <Typography>By Africans for Africans 🙌🏿</Typography>
+                            <Typography>By Africans for Africans 🙌🏽</Typography>
                         </Box>
                     </Grid>
 

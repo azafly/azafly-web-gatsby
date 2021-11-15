@@ -77,9 +77,6 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-interface ReviewSlidersProps {
-    sliderRef?: any;
-}
 type ActiveScroller = 'prev' | 'next';
 
 export const ReviewSliders = forwardRef(() => {
@@ -129,7 +126,7 @@ export const ReviewSliders = forwardRef(() => {
                 />
                 <ArrowForwardOutlinedIcon
                     opacity={activeScroller === 'next' ? 1 : 0.3}
-                    onClick={e => handleToggleClass('next')}
+                    onClick={() => handleToggleClass('next')}
                     className={classes.next}
                 />
             </div>

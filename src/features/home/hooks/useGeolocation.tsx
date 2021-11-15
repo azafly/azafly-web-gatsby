@@ -28,7 +28,7 @@ const useGeolocation = () => {
         const [countriesByRegion, userCurrentCountry] = await Promise.all([getCountriesByRegion(), getUserGeoLocationData()]);
 
         const isAfrica = userCurrentCountry in countriesByRegion.Africa;
-      
+
         if (isAfrica) {
             setLocation({
                 loaded: true,

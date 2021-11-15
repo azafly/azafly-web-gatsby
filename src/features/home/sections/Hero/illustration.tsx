@@ -1,9 +1,7 @@
-import { makeStyles, Theme, createStyles, Box, Typography } from '@material-ui/core';
+import { makeStyles, Theme, createStyles, Box } from '@material-ui/core';
 import React from 'react';
 
-import { HomeImages } from '../../../../createPages/templates/home';
 import { RipplePlayButton } from '../../../../components/common/ripple-button';
-import { useFetchHomeData } from '../../hooks/use-data';
 import backImage from '../../../../../static/images/home/globemap.png';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -64,6 +62,21 @@ const useStyles = makeStyles((theme: Theme) =>
                 left: '12%'
             }
         },
+        naija__: {
+            position: 'absolute',
+            width: 200,
+            left: '35%',
+            top: '40%',
+            marginTop: 20,
+            [theme.breakpoints.only('md')]: {
+                left: 190
+            },
+            [theme.breakpoints.only('xs')]: {
+                left: 160,
+                width: 200
+            }
+        },
+
         india__: {
             position: 'absolute',
             width: 250,
@@ -100,15 +113,8 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-interface Props {
-    images: HomeImages;
-}
-
-export const Illustration: React.FC<Props> = ({ images }) => {
+export const Illustration: React.FC<Props> = () => {
     const classes = useStyles();
-    const formatter = useFetchHomeData();
-
-    const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;
     return (
         <Box className={classes.illustration}>
             <Box className={classes.uk__}>
@@ -119,6 +125,11 @@ export const Illustration: React.FC<Props> = ({ images }) => {
             <Box className={classes.eu__}>
                 <Box display='flex' justifyContent='center' justifyItems='center'>
                     <RipplePlayButton icon={'🇪🇺'} text={'EUR'} />
+                </Box>
+            </Box>
+            <Box className={classes.naija__}>
+                <Box display='flex' justifyContent='center' justifyItems='center'>
+                    <RipplePlayButton icon={'🇳🇬'} text={'NGN'} />
                 </Box>
             </Box>
             <Box className={classes.us__}>
