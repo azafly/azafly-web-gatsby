@@ -277,6 +277,9 @@ export const InfoBanner = () => {
             window.location.replace(`https://app-staging.lucqax.com/payment?send_from=${sendMoneyFrom[0]}&sendTo=${sendMoneyTo}`);
         }
     };
+    const bannerText = location.isAfrica
+        ? `Pay your most important Bills abroad. Receive international payments from`
+        : `Pay your bills back home with ease. Send money to friends in Family in `;
     return (
         <motion.div>
             <Snackbar
@@ -295,16 +298,15 @@ export const InfoBanner = () => {
             <Box className={classes.container}>
                 {/* {location.loaded ? ( */}
                 <Typography variant='h4' className={classes.titleHeading} gutterBottom>
-                    The Cross-border Digital Bank for Africans
+                    The Cross-Border Digital Bank for Africans
                 </Typography>
 
                 <Typography paragraph className={classes.paragraph}>
                     Pay and get paid in multiple currencies
                 </Typography>
                 <Typography paragraph className={classes.paragraph}>
-                    We empower individuals and small businesses in{' '}
-                    <span className={classes.clipPath}>{location.loaded ? location.locations : 'Africa'}</span> to pay their most important
-                    cross-border bills and invoices
+                    {bannerText}
+                    <span className={classes.clipPath}>{location.isAfrica ? 'abroad' : 'Nigeria'}</span>
                 </Typography>
 
                 <Box>

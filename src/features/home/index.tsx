@@ -2,7 +2,6 @@ import React, { createRef } from 'react';
 
 // Material
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Box } from '@material-ui/core';
 
 import { Services } from './sections/why-choose-us';
 import { HomePageHeroSection } from './sections/Hero/hero';

@@ -3,20 +3,13 @@ import axios from 'axios';
 
 interface LocationProps {
     loaded: boolean;
-    locations: any;
-    error: string;
+    userCurrentCountry: any;
+    error?: string;
+    isAfrica?: boolean;
 }
 
 const useGeolocation = () => {
     const [location, setLocation] = useState<LocationProps>({ loaded: false, locations: null, error: '' });
-
-    const onError = (error: any) => {
-        setLocation({
-            loaded: true,
-            error,
-            locations: []
-        });
-    };
 
     const getCountriesByRegion = async () =>
         axios.get(`https://us-central1-pick-safe.cloudfunctions.net/countryList`).then(({ data }) => data.countriesByRegion);
@@ -29,16 +22,11 @@ const useGeolocation = () => {
 
         const isAfrica = userCurrentCountry in countriesByRegion.Africa;
 
-        if (isAfrica) {
-            setLocation({
-                loaded: true,
-                locations: userCurrentCountry
-            });
-        } else {
-            setLocation({
-                loaded: false
-            });
-        }
+        setLocation({
+            loaded: true,
+            userCurrentCountry,
+            isAfrica
+        });
     };
 
     useEffect(() => {
