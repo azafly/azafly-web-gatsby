@@ -333,7 +333,7 @@ export const InfoBanner = () => {
                                                     return (
                                                         <Grid className={classes.searchItemControl} container>
                                                             <div className={classes.overflow}>
-                                                                <Typography className={classes.searchText}> from </Typography>
+                                                                <Typography className={classes.searchText}>Send from </Typography>
                                                             </div>
                                                         </Grid>
                                                     );
