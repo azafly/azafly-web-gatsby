@@ -278,9 +278,11 @@ export const InfoBanner = () => {
             window.location.replace(`https://app-staging.lucqax.com/payment?send_from=${sendMoneyFrom[0]}&sendTo=${sendMoneyTo}`);
         }
     };
+
     const bannerText = location.isAfrica
         ? ` Pay your most important Bills abroad. Receive international payments from `
-        : ` Pay your bills back home with ease. Send money to Friends and Family in `;
+        : `Send money to Friends and Family in `;
+    const bannerText2 = location.isAfrica ? ` Pay and get paid in multiple currencies` : ` Manage your remittance in your local currency`;
     return (
         <motion.div>
             <Snackbar
@@ -303,9 +305,8 @@ export const InfoBanner = () => {
                 </Typography>
 
                 <Typography paragraph className={classes.paragraph}>
-                    Pay and get paid in multiple currencies.
                     {bannerText}
-                    <span className={classes.clipPath}>{location.isAfrica ? 'abroad' : 'Nigeria'}</span>
+                    <span className={classes.clipPath}>{location.isAfrica ? 'abroad' : 'Nigeria'}</span>.{bannerText2}
                 </Typography>
 
                 <Box>
