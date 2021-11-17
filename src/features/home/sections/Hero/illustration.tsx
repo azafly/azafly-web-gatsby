@@ -113,7 +113,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const Illustration: React.FC<Props> = () => {
+export const Illustration: React.FC<unknown> = () => {
     const classes = useStyles();
     return (
         <Box className={classes.illustration}>

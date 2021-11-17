@@ -6,7 +6,6 @@ import { HomeImages } from '../../../../createPages/templates/home';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         illustration: {
-            boxShadow: '0 2px 20px 0 rgba(0,0,0,.05) !important',
             justifyContent: 'center',
             padding: 50,
             borderRadius: 8,

@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         titleHeading: {
-            fontWeight: 700,
-            fontFamily: 'LL Bold',
+            fontWeight: 600,
+            fontFamily: 'Nunito',
             letterSpacing: -1,
             color: theme.colors.white,
             fontSize: 48,
@@ -279,8 +279,8 @@ export const InfoBanner = () => {
         }
     };
     const bannerText = location.isAfrica
-        ? `Pay your most important Bills abroad. Receive international payments from `
-        : `Pay your bills back home with ease. Send money to friends in Family in `;
+        ? ` Pay your most important Bills abroad. Receive international payments from `
+        : ` Pay your bills back home with ease. Send money to Friends and Family in `;
     return (
         <motion.div>
             <Snackbar
@@ -299,13 +299,11 @@ export const InfoBanner = () => {
             <Box className={classes.container}>
                 {/* {location.loaded ? ( */}
                 <Typography variant='h4' className={classes.titleHeading} gutterBottom>
-                    The Cross-Border Digital Bank for Africans
+                    The Cross-Border Digital Bank for Africans.
                 </Typography>
 
                 <Typography paragraph className={classes.paragraph}>
-                    Pay and get paid in multiple currencies
-                </Typography>
-                <Typography paragraph className={classes.paragraph}>
+                    Pay and get paid in multiple currencies.
                     {bannerText}
                     <span className={classes.clipPath}>{location.isAfrica ? 'abroad' : 'Nigeria'}</span>
                 </Typography>

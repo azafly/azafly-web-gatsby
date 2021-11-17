@@ -43,13 +43,14 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-type Icon = ReactNode | string;
+type Icon = React.ReactNode | string;
 interface RipplePlayButtonProps {
     className?: string;
     href?: string;
     variant?: '1' | '2' | Icon;
     alt?: string;
     text?: string;
+    icon: Icon;
 }
 
 export const RipplePlayButton: FC<RipplePlayButtonProps> = ({ icon, className, href = '#', variant = '1', alt = 'How it works', text }) => {
@@ -63,7 +64,6 @@ export const RipplePlayButton: FC<RipplePlayButtonProps> = ({ icon, className, h
                     fontSize={'1.1rem'}
                     color={'white'}
                     fontWeight={700}
-                    color={'textPrimary'}
                     display='flex'
                     justifyContent='center'
                     alignItems={'center'}
