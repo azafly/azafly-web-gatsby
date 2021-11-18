@@ -132,11 +132,11 @@ export const ReviewSliders = forwardRef(() => {
             </div>
         );
     };
-    const information = ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies neque at nisl auctor.';
+    const information = `Don't just take our words. Listen to thousands of our happy customers`;
 
     return (
         <Grid container justifyContent={'center'} alignItems={'center'} spacing={4}>
-            <InfoBanner scrollers={scrollers} title='Testimonials' subtitle=' What clients are saying about us' information={information} />
+            <InfoBanner scrollers={scrollers} title='Testimonials' subtitle=' What our clients are saying' information={information} />
             <Grid item xs={12} sm={7} md={8} className={classes.sliders}>
                 <Slider ref={sliderRef} {...settings} className={classes.overflow}>
                     {cards}

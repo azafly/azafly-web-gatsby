@@ -1,4 +1,4 @@
-import { Box, Hidden, Grid, Theme } from '@material-ui/core';
+import { Hidden, Grid, Theme } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/styles';
 import React from 'react';
 import { Illustration } from './illustration';

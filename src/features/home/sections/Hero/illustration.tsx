@@ -13,7 +13,10 @@ const useStyles = makeStyles((theme: Theme) =>
             paddingRight: 100,
             position: 'relative',
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center'
+            backgroundPosition: 'center',
+            [theme.breakpoints.up('md')]: {
+                marginTop: '-10%'
+            }
         },
         uk__: {
             position: 'absolute',

@@ -21,15 +21,18 @@ const useStyles = makeStyles((theme: Theme) =>
         container: {
             order: 1,
             display: 'flex',
+            margin: 'auto',
             flexDirection: 'column',
             justifyContent: 'center',
             [theme.breakpoints.up('md')]: {
                 marginLeft: '4vw',
-                width: '90%'
+                width: '90%',
+                marginTop: '150px'
             },
             [theme.breakpoints.down('sm')]: {
                 padding: '10px 30px 10px 20px',
-                marginLeft: '2vw'
+                marginLeft: '2vw',
+                marginTop: '50px'
             }
         },
         titleHeading: {
@@ -37,13 +40,9 @@ const useStyles = makeStyles((theme: Theme) =>
             fontFamily: 'Nunito',
             letterSpacing: -1,
             color: theme.colors.white,
-            fontSize: 48,
-            [theme.breakpoints.only('xs')]: {
-                fontSize: 40,
-                fontWeight: 900
-            },
-            [theme.breakpoints.only('sm')]: {
-                fontSize: 48
+            fontSize: '3rem',
+            [theme.breakpoints.down('md')]: {
+                fontSize: '2.25rem'
             }
         },
         subContainer: {
@@ -231,7 +230,7 @@ const MenuProps = {
     }
 };
 
-export const InfoBanner = () => {
+export const InfoBanner: React.FC = () => {
     const classes = useStyles();
 
     const theme = useTheme();
@@ -279,10 +278,13 @@ export const InfoBanner = () => {
         }
     };
 
-    const bannerText = location.isAfrica
-        ? ` Pay your most important Bills abroad. Receive international payments from `
-        : `Send money to Friends and Family in `;
-    const bannerText2 = location.isAfrica ? ` Pay and get paid in multiple currencies` : ` Manage your remittance in your local currency`;
+    const BANNER_TEXT = {
+        heading: location.isAfrica
+            ? `Pay your most important bills and invoices abroad.`
+            : `The Cross-Border Digital Bank for Africans. Move your money fluently.`,
+        subHeading: location.isAfrica ? ` Receive international payments from ` : `Send money to Friends and Family in `,
+        subHeading2: location.isAfrica ? ` Pay and get paid in multiple currencies` : ` Manage your remittance in multiple currencies!`
+    };
     return (
         <motion.div>
             <Snackbar
@@ -301,12 +303,12 @@ export const InfoBanner = () => {
             <Box className={classes.container}>
                 {/* {location.loaded ? ( */}
                 <Typography variant='h4' className={classes.titleHeading} gutterBottom>
-                    The Cross-Border Digital Bank for Africans.
+                    {BANNER_TEXT.heading}
                 </Typography>
 
                 <Typography paragraph className={classes.paragraph}>
-                    {bannerText}
-                    <span className={classes.clipPath}>{location.isAfrica ? 'abroad' : 'Nigeria'}</span>.{bannerText2}
+                    {BANNER_TEXT.subHeading}
+                    <strong className={classes.clipPath}>{location.isAfrica ? 'abroad' : 'Nigeria'}</strong>. {BANNER_TEXT.subHeading2}
                 </Typography>
 
                 <Box>

@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme: Theme) =>
             justifyContent: 'center',
             [theme.breakpoints.up('md')]: {
                 paddingRight: '6vw'
+            },
+            [theme.breakpoints.only('sm')]: {
+                width: '86vw',
+                margin: 'auto'
             }
         },
         card: {
