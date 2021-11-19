@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const JoinUsBotton = () => {
+export const JoinUsButton: React.FC = () => {
     const classes = useStyles();
 
     return (

@@ -9,7 +9,7 @@ import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import React, { useState } from 'react';
 import RoomIcon from '@mui/icons-material/Room';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import TinyFlag from 'tiny-flag-react';
+
 import { RipplePlayButton } from '../../../../components/common/ripple-button';
 import useGeolocation from '../../hooks/useGeolocation';
 
@@ -255,7 +255,9 @@ const africa = [
 
 function getStyles(name: string, sendMoneyFrom: readonly string[], theme: Theme) {
     return {
-        fontWeight: sendMoneyFrom.indexOf(name) === -1 ? theme.typography.fontWeightRegular : theme.typography.fontWeightMedium
+        fontWeight: sendMoneyFrom.indexOf(name) === -1 ? theme.typography.fontWeightRegular : theme.typography.fontWeightMedium,
+        fontFamily: 'Nunito',
+        fontSize: '1em'
     };
 }
 const ITEM_HEIGHT = 48;
@@ -264,7 +266,8 @@ const MenuProps = {
     PaperProps: {
         style: {
             maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-            width: 250
+            width: 'max-content',
+            minWidth: 250
         }
     }
 };
@@ -315,7 +318,7 @@ export const InfoBanner: React.FC = () => {
             setError('Please select region');
             setSnackBarOpen(true);
         } else {
-            window.location.replace(`https://app-staging.lucqax.com/payment?send_from=${sendMoneyFrom}&sendTo=${sendMoneyTo}`);
+            window.location.replace(`https://app-staging.lucqax.com/payment?send_from=${sendMoneyFrom}&send_to=${sendMoneyTo}`);
         }
     };
 
@@ -371,7 +374,7 @@ export const InfoBanner: React.FC = () => {
                                             input={<Input disableUnderline={true} className={classes.underline} />}
                                             IconComponent={KeyboardArrowDownIcon}
                                             renderValue={selected => {
-                                                if (selected.length === 0) {
+                                                if (!selected.length) {
                                                     return (
                                                         <Grid className={classes.searchItemControl} container>
                                                             <div className={classes.overflow}>
@@ -387,12 +390,11 @@ export const InfoBanner: React.FC = () => {
                                         >
                                             {moneyFromCountryList.map((name, index) => (
                                                 <MenuItem key={index} value={name.currecyCode} style={getStyles(name.country, sendMoneyFrom, theme)}>
-                                                    <TinyFlag
-                                                        country={name.flag}
+                                                    <img
                                                         alt={name.country}
-                                                        fallbackImageURL={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
+                                                        src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
                                                     />
-                                                    &nbsp;
+                                                    &nbsp; &nbsp;
                                                     {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)
                                                 </MenuItem>
                                             ))}
@@ -430,12 +432,11 @@ export const InfoBanner: React.FC = () => {
                                         >
                                             {moneyToCountryList.map((name, index) => (
                                                 <MenuItem key={index} value={name.currecyCode} style={getStyles(name.country, sendMoneyTo, theme)}>
-                                                    <TinyFlag
-                                                        country={name.flag}
+                                                    <img
                                                         alt={name.country}
-                                                        fallbackImageURL={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
+                                                        src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
                                                     />
-                                                    &nbsp;
+                                                    &nbsp; &nbsp;
                                                     {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)
                                                 </MenuItem>
                                             ))}

@@ -95,7 +95,6 @@
     "styled-components": "^5.1.1",
     "tailwindcss": "^1.6.2",
     "tailwindcss-gradients": "^3.0.0",
-    "tiny-flag-react": "^2.0.2",
     "ts-node": "^8.10.2"
   },
   "devDependencies": {

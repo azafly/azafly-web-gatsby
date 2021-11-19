@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
+import Avatar from '@mui/material/Avatar';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Avatar, Box, Link } from '@material-ui/core';
+import { Box, Link } from '@material-ui/core';
 
 import PlayButton1 from '../../../../static/images/home/playBtn.png';
-import PlayButton2 from '../../../../static/images/home/playBtn2.png';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -43,43 +43,38 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-type Icon = React.ReactNode | string;
 interface RipplePlayButtonProps {
     className?: string;
     href?: string;
-    variant?: '1' | '2' | Icon;
     alt?: string;
     text?: string;
-    icon?: Icon;
+    icon?: string;
 }
 
-export const RipplePlayButton: FC<RipplePlayButtonProps> = ({ icon, className, href = '#', variant = '1', alt = 'How it works', text }) => {
+export const RipplePlayButton: FC<RipplePlayButtonProps> = ({ icon, className, href = '#', alt = 'How it works', text }) => {
     const classes = useStyles();
-    const centerIcon = variant === '1' ? PlayButton1 : PlayButton2;
-    const iconButton =
-        typeof icon === 'string' ? (
-            <div className={`${classes.avatar} ${classes.round}`}>
-                {' '}
-                <Box
-                    fontSize={'1.1rem'}
-                    color={'white'}
-                    fontWeight={700}
-                    display='flex'
-                    justifyContent='center'
-                    alignItems={'center'}
-                    justifyItems='center'
-                >
-                    {' '}
-                    <span className={classes.text}>{text}</span> {icon}
-                </Box>{' '}
-            </div>
-        ) : (
-            icon
-        );
 
     return (
         <Link href={href} color='inherit' underline='none' className={className}>
-            {icon ? iconButton : <Avatar className={classes.avatar} alt='How it works' src={centerIcon} />}
+            {!icon ? (
+                <Avatar className={classes.avatar} alt='How it works' src={PlayButton1} />
+            ) : (
+                <div className={`${classes.avatar} ${classes.round}`}>
+                    {' '}
+                    <Box
+                        fontSize={'1.1rem'}
+                        color={'white'}
+                        fontWeight={700}
+                        display='flex'
+                        justifyContent='center'
+                        alignItems={'center'}
+                        justifyItems='center'
+                    >
+                        {' '}
+                        <span className={classes.text}>{text}&nbsp;</span> <Avatar src={icon} alt={alt} sx={{ width: 24, height: 24 }} />
+                    </Box>
+                </div>
+            )}
         </Link>
     );
 };
