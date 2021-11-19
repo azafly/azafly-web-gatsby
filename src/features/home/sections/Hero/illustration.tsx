@@ -14,11 +14,11 @@ const useStyles = makeStyles((theme: Theme) =>
             position: 'relative',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
-            [theme.breakpoints.up('md')]: {
+            [theme.breakpoints.up('sm')]: {
                 marginTop: '-10%'
             }
         },
-        uk__: {
+        uk: {
             position: 'absolute',
             width: 200,
             left: '40%',
@@ -32,14 +32,14 @@ const useStyles = makeStyles((theme: Theme) =>
                 width: 200
             }
         },
-        eu__: {
+        eu: {
             position: 'absolute',
             width: 260,
             left: '50%',
             top: '20%',
             marginRight: 10
         },
-        us__: {
+        us: {
             position: 'absolute',
             width: 220,
             marginRight: 10,
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 left: '15%'
             }
         },
-        canada__: {
+        canada: {
             position: 'absolute',
             width: 220,
             marginRight: 10,
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 left: '12%'
             }
         },
-        naija__: {
+        naija: {
             position: 'absolute',
             width: 200,
             left: '35%',
@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
 
-        india__: {
+        india: {
             position: 'absolute',
             width: 250,
             right: '-2%',
@@ -116,38 +116,42 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
+const getFlag = (countryCode: string) => {
+    return `https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${countryCode}.svg`;
+};
+
 export const Illustration: React.FC<unknown> = () => {
     const classes = useStyles();
     return (
         <Box className={classes.illustration}>
-            <Box className={classes.uk__}>
+            <Box className={classes.uk}>
                 <Box display='flex' justifyContent='center' justifyItems='center'>
-                    <RipplePlayButton icon={'🇬🇧'} text={'GBP'} />
+                    <RipplePlayButton icon={getFlag('GB')} />
                 </Box>
             </Box>
-            <Box className={classes.eu__}>
+            <Box className={classes.eu}>
                 <Box display='flex' justifyContent='center' justifyItems='center'>
-                    <RipplePlayButton icon={'🇪🇺'} text={'EUR'} />
+                    <RipplePlayButton icon={'https://freesvg.org/img/Anonymous-Flag-of-European-Union.png'} />
                 </Box>
             </Box>
-            <Box className={classes.naija__}>
+            <Box className={classes.naija}>
                 <Box display='flex' justifyContent='center' justifyItems='center'>
-                    <RipplePlayButton icon={'🇳🇬'} text={'NGN'} />
+                    <RipplePlayButton icon={getFlag('NG')} />
                 </Box>
             </Box>
-            <Box className={classes.us__}>
+            <Box className={classes.us}>
                 <Box display='flex' justifyContent='center' justifyItems='center'>
-                    <RipplePlayButton icon={'🇺🇸'} text={'USD'} />
+                    <RipplePlayButton icon={getFlag('US')} />
                 </Box>
             </Box>
-            <Box className={classes.canada__}>
+            <Box className={classes.canada}>
                 <Box display='flex' justifyContent='center' justifyItems='center'>
-                    <RipplePlayButton icon={'🇨🇦'} text={'CAD'} />
+                    <RipplePlayButton icon={getFlag('CA')} />
                 </Box>
             </Box>
-            <Box className={classes.india__}>
+            <Box className={classes.india}>
                 <Box display='flex' justifyContent='center' justifyItems='center'>
-                    <RipplePlayButton icon={'🇮🇳'} text={'INR'} />
+                    <RipplePlayButton icon={getFlag('IN')} />
                 </Box>
             </Box>
         </Box>
