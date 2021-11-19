@@ -10,7 +10,6 @@ import React, { useState } from 'react';
 import RoomIcon from '@mui/icons-material/Room';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-import { width } from '@mui/system';
 import { RipplePlayButton } from '../../../../components/common/ripple-button';
 import useGeolocation from '../../hooks/useGeolocation';
 
