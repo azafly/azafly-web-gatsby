@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
             position: 'relative',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
-            [theme.breakpoints.up('md')]: {
+            [theme.breakpoints.up('sm')]: {
                 marginTop: '-10%'
             }
         },

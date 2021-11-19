@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
             color: theme.colors.white,
             fontSize: '3rem',
             [theme.breakpoints.down('md')]: {
-                fontSize: '2.25rem'
+                fontSize: '2.5rem'
             }
         },
         subContainer: {

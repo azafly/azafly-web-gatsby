@@ -71,7 +71,8 @@ export const RipplePlayButton: FC<RipplePlayButtonProps> = ({ icon, className, h
                         justifyItems='center'
                     >
                         {' '}
-                        <span className={classes.text}>{text}&nbsp;</span> <Avatar src={icon} alt={alt} sx={{ width: 24, height: 24 }} />
+                        <span className={classes.text}>{text}&nbsp;</span>{' '}
+                        <Avatar src={icon} alt={alt} sx={{ width: 35, height: 25 }} variant={'rounded'} />
                     </Box>
                 </div>
             )}
