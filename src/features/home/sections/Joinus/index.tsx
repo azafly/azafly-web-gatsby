@@ -3,7 +3,7 @@ import { Grid, Box, Container } from '@material-ui/core';
 import React from 'react';
 import { JoinUsIllustration } from './illustration';
 import { JoinUsInforBanner } from './info-banner';
-import { JoinUsBotton } from './button';
+import { JoinUsButton } from './button';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
         }
     })
 );
-export const JoinUs = () => {
+export const JoinUs: React.FC = () => {
     const classes = useStyles();
 
     return (
@@ -37,7 +37,7 @@ export const JoinUs = () => {
                                 <Grid item xs={11} sm={11} md={6}>
                                     <JoinUsInforBanner />
                                     <Box display={{ xs: 'none', lg: 'block', sm: 'block' }}>
-                                        <JoinUsBotton />
+                                        <JoinUsButton />
                                     </Box>
                                 </Grid>
                             </Box>
@@ -50,7 +50,7 @@ export const JoinUs = () => {
 
                             <Box clone order={{ xs: 3 }} display={{ xs: 'block', lg: 'none', sm: 'none' }}>
                                 <Grid item xs={11}>
-                                    <JoinUsBotton />
+                                    <JoinUsButton />
                                 </Grid>
                             </Box>
                         </Grid>

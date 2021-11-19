@@ -1,9 +1,12 @@
-import { Hidden, Grid, Theme } from '@material-ui/core';
-import { makeStyles, createStyles } from '@material-ui/styles';
 import React from 'react';
+
+import Grid from '@mui/material/Grid';
+import { Hidden, Theme } from '@material-ui/core';
+import { makeStyles, createStyles } from '@material-ui/styles';
+
+import { HomeImages } from '../../../../createPages/templates/home';
 import { Illustration } from './illustration';
 import { InfoBanner } from './info-banner';
-import { HomeImages } from '../../../../createPages/templates/home';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -31,11 +34,12 @@ export const HomePageHeroSection: React.FC<Props> = ({ images }) => {
 
     return (
         <div className={classes.homePageHeroMain}>
-            <Grid container justify='space-between' alignItems='center' className={classes.homePageHeroInner}>
+            <Grid container justifyContent='space-between' alignItems='center' className={classes.homePageHeroInner}>
                 <Grid item xs={12} md={6} style={{ marginBottom: 50 }}>
                     <InfoBanner />
                 </Grid>
-                <Hidden smDown>
+
+                <Hidden xsDown>
                     <Grid item xs={12} md={6}>
                         <Illustration images={images} />
                     </Grid>
