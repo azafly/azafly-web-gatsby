@@ -138,7 +138,5 @@ export const useFetchHomeData = () => {
         }
     `);
 
-    console.log(response?.homeData);
-
     return response?.homeData?.edges[0]?.node?.frontmatter as HomeFrontMatter['node']['frontmatter'];
 };

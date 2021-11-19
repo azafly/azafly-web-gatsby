@@ -84,7 +84,7 @@ export const Secure: React.FC = () => {
                         key={index}
                         justifyContent='space-around'
                         alignItems='center'
-                        style={{ maxWidth: 1400, margin: 'auto', paddingTop: 50 }}
+                        style={{ maxWidth: 1600, margin: 'auto', paddingTop: 50 }}
                     >
                         <Box clone order={{ xs: data.bannerOrder.xs, sm: data.bannerOrder.sm }}>
                             <Grid item xs={12} sm={6} md={5}>

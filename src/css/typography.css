@@ -1,4 +1,6 @@
+
+
 @font-face {
-    font-family: 'Circular';
-    src: local('Circular'), url(../fonts/Circular/CircularStd-Black.woff) format('truetype');
-}
+    font-family: "LL Bold";
+    src: url("../fonts/lineto-circular-bold.woff2");
+  }

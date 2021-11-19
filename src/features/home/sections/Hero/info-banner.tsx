@@ -9,9 +9,8 @@ import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import React, { useState } from 'react';
 import RoomIcon from '@mui/icons-material/Room';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-
+import TinyFlag from 'tiny-flag-react';
 import { RipplePlayButton } from '../../../../components/common/ripple-button';
-import { useFetchHomeData } from '../../hooks/use-data';
 import useGeolocation from '../../hooks/useGeolocation';
 
 function Alert(props: AlertProps) {
@@ -22,30 +21,28 @@ const useStyles = makeStyles((theme: Theme) =>
         container: {
             order: 1,
             display: 'flex',
+            margin: 'auto',
             flexDirection: 'column',
             justifyContent: 'center',
             [theme.breakpoints.up('md')]: {
                 marginLeft: '4vw',
-                width: '90%'
+                width: '90%',
+                marginTop: '150px'
             },
             [theme.breakpoints.down('sm')]: {
                 padding: '10px 30px 10px 20px',
-                marginLeft: '2vw'
+                marginLeft: '2vw',
+                marginTop: '50px'
             }
         },
         titleHeading: {
-            fontWeight: 750,
+            fontWeight: 600,
             fontFamily: 'Nunito',
             letterSpacing: -1,
             color: theme.colors.white,
-            fontSize: 48,
-            [theme.breakpoints.only('xs')]: {
-                fontSize: 40,
-                fontWeight: 900,
-                textAlign: 'center'
-            },
-            [theme.breakpoints.only('sm')]: {
-                fontSize: '32px'
+            fontSize: '3rem',
+            [theme.breakpoints.down('md')]: {
+                fontSize: '2.25rem'
             }
         },
         subContainer: {
@@ -88,7 +85,11 @@ const useStyles = makeStyles((theme: Theme) =>
             background: 'white',
             borderRadius: 4,
             marginTop: 30,
-            padding: 5
+            padding: 5,
+            [theme.breakpoints.down('sm')]: {
+                margin: 'auto',
+                marginTop: 30
+            }
         },
         paragraph: {
             fontWeight: 550,
@@ -101,10 +102,8 @@ const useStyles = makeStyles((theme: Theme) =>
             fontWeight: 700,
             fontSize: '18px',
             marginTop: 20,
-
             [theme.breakpoints.only('xs')]: {
-                fontSize: '16px',
-                textAlign: 'center'
+                fontSize: '16px'
             }
         },
         offerContainer: {
@@ -120,29 +119,23 @@ const useStyles = makeStyles((theme: Theme) =>
             textTransform: 'none',
             height: 40,
             minWidth: '10ch',
+            width: '100%',
             color: 'white',
             fontWeight: 500,
             backgroundColor: '#214662',
             padding: '7px 15px',
+            border: '1px solid white',
             borderRadius: 6,
             '&:hover': {
                 background: '#214662',
                 opacity: 0.9
-            },
-            [theme.breakpoints.down('sm')]: {
-                minWidth: '100% !important',
-                margin: 'auto',
-                justifyContent: 'center !important'
             }
         },
         searchItem: {
             color: '#040d21',
             display: 'flex',
             justifyContent: 'flex-start',
-            alignItems: 'center',
-            [theme.breakpoints.only('xs')]: {
-                justifyContent: 'center !important'
-            }
+            alignItems: 'center'
         },
         searchItemControl: {
             color: '#040d21',
@@ -155,20 +148,8 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         underline: {
-            position: 'absolute',
-            width: '167.05px',
-            height: '13.19px',
-            background: '#FFFFFF'
-        },
-        typeWriter: {
-            marginLeft: 20,
-            marginRight: 20,
-            minWidth: 85,
-            textAlign: 'center',
-            [theme.breakpoints.only('xs')]: {
-                marginLeft: 10,
-                marginRight: 10,
-                minWidth: 85
+            [theme.breakpoints.down('sm')]: {
+                borderBottom: '1px solid grey'
             }
         },
         actionButtonExplore: {
@@ -204,8 +185,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
         setMiddle: {
             marginTop: 80,
-            [theme.breakpoints.only('xs')]: {
-                justifyContent: 'center'
+            [theme.breakpoints.only('sm')]: {
+                justifyContent: 'left'
             }
         },
         select: {
@@ -234,22 +215,22 @@ const useStyles = makeStyles((theme: Theme) =>
 const otherCountries = [
     {
         country: 'Germany',
-        flag: '',
+        flag: 'DE',
         currecyCode: 'EUR'
     },
     {
         country: 'Canada',
-        flag: '',
+        flag: 'CA',
         currecyCode: 'CAD'
     },
     {
         country: 'United States of America',
-        flag: '',
+        flag: 'US',
         currecyCode: 'USD'
     },
     {
         country: 'United Kingdom',
-        flag: '',
+        flag: 'GB',
         currecyCode: 'GBP'
     }
 ];
@@ -257,20 +238,21 @@ const otherCountries = [
 const africa = [
     {
         country: 'Nigeria',
-        flag: '',
+        flag: 'NG',
         currecyCode: 'NGN'
     },
     {
         country: 'Cameroon',
-        flag: '',
+        flag: 'CM',
         currecyCode: 'XAF'
     },
     {
         country: 'Ghana',
-        flag: '',
+        flag: 'GH',
         currecyCode: 'GHS'
     }
 ];
+
 function getStyles(name: string, sendMoneyFrom: readonly string[], theme: Theme) {
     return {
         fontWeight: sendMoneyFrom.indexOf(name) === -1 ? theme.typography.fontWeightRegular : theme.typography.fontWeightMedium
@@ -287,10 +269,9 @@ const MenuProps = {
     }
 };
 
-export const InfoBanner = () => {
+export const InfoBanner: React.FC = () => {
     const classes = useStyles();
 
-    const frontMatter = useFetchHomeData();
     const theme = useTheme();
     const [sendMoneyFrom, setSendMoneyFrom] = useState<string[]>([]);
     const [sendMoneyTo, setSendMoneyto] = useState<string[]>([]);
@@ -299,6 +280,8 @@ export const InfoBanner = () => {
 
     // getting users location via IP address
     const { location } = useGeolocation();
+    const moneyFromCountryList = location.isAfrica ? africa : otherCountries;
+    const moneyToCountryList = location.isAfrica ? otherCountries : africa;
 
     const handleCloseSnack = (event?: React.SyntheticEvent, reason?: string) => {
         if (reason === 'clickaway') {
@@ -331,10 +314,18 @@ export const InfoBanner = () => {
         if (sendMoneyFrom.length === 0 || sendMoneyTo.length === 0) {
             setError('Please select region');
             setSnackBarOpen(true);
+        } else {
+            window.location.replace(`https://app-staging.lucqax.com/payment?send_from=${sendMoneyFrom}&sendTo=${sendMoneyTo}`);
         }
     };
-    console.log(location);
 
+    const BANNER_TEXT = {
+        heading: location.isAfrica
+            ? `Pay your most important bills and invoices abroad.`
+            : `The Cross-Border Digital Bank for Africans. Move your money fluently.`,
+        subHeading: location.isAfrica ? ` Receive international payments from ` : `Send money to Friends and Family in `,
+        subHeading2: location.isAfrica ? ` Pay and get paid in multiple currencies` : ` Manage your remittance in multiple currencies!`
+    };
     return (
         <motion.div>
             <Snackbar
@@ -353,104 +344,127 @@ export const InfoBanner = () => {
             <Box className={classes.container}>
                 {/* {location.loaded ? ( */}
                 <Typography variant='h4' className={classes.titleHeading} gutterBottom>
-                    Pay your most important international bills and invoices
+                    {BANNER_TEXT.heading}
                 </Typography>
+
                 <Typography paragraph className={classes.paragraph}>
-                    We empower individuals and small businesses in{' '}
-                    <span className={classes.clipPath}>{location.loaded ? location.locations : 'Africa'}</span> to pay their most important bills and
-                    invoices to any institution or business in the world.
+                    {BANNER_TEXT.subHeading}
+                    <strong className={classes.clipPath}>{location.isAfrica ? 'abroad' : 'Nigeria'}</strong>. {BANNER_TEXT.subHeading2}
                 </Typography>
 
                 <Box>
-                    <Box className={classes.searchContainer}>
-                        <Grid container spacing={1} className={classes.searchItem}>
-                            <Grid item xs={12} md={4} className={classes.searchItemControl}>
-                                <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
-                                    <Select
-                                        displayEmpty
-                                        className={classes.select}
-                                        value={sendMoneyFrom}
-                                        onChange={handleChangeMoneyFrom}
-                                        startAdornment={
-                                            <InputAdornment position='start'>
-                                                <RoomIcon style={{ fontSize: 23 }} />
-                                            </InputAdornment>
-                                        }
-                                        input={<Input disableUnderline={true} />}
-                                        IconComponent={KeyboardArrowDownIcon}
-                                        renderValue={selected => {
-                                            if (selected.length === 0) {
-                                                return (
-                                                    <Grid className={classes.searchItemControl} container>
-                                                        <div className={classes.overflow}>
-                                                            <Typography className={classes.searchText}>Pay from </Typography>
-                                                        </div>
-                                                    </Grid>
-                                                );
+                    {!location.isAfrica ? (
+                        <Box className={classes.searchContainer}>
+                            <Grid container spacing={1} className={classes.searchItem}>
+                                <Grid item xs={12} md={4} className={classes.searchItemControl}>
+                                    <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
+                                        <Select
+                                            displayEmpty
+                                            className={classes.select}
+                                            value={sendMoneyFrom}
+                                            onChange={handleChangeMoneyFrom}
+                                            startAdornment={
+                                                <InputAdornment position='start'>
+                                                    <RoomIcon style={{ fontSize: 23 }} />
+                                                </InputAdornment>
                                             }
+                                            input={<Input disableUnderline={true} className={classes.underline} />}
+                                            IconComponent={KeyboardArrowDownIcon}
+                                            renderValue={selected => {
+                                                if (selected.length === 0) {
+                                                    return (
+                                                        <Grid className={classes.searchItemControl} container>
+                                                            <div className={classes.overflow}>
+                                                                <Typography className={classes.searchText}>Send from </Typography>
+                                                            </div>
+                                                        </Grid>
+                                                    );
+                                                }
 
-                                            return selected.join(', ');
-                                        }}
-                                        MenuProps={MenuProps}
-                                    >
-                                        {africa.map((name, index) => (
-                                            <MenuItem key={index} value={name.currecyCode} style={getStyles(name.country, sendMoneyFrom, theme)}>
-                                                {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)
-                                            </MenuItem>
-                                        ))}
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid item xs={12} md={4} className={classes.searchItemControl}>
-                                <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
-                                    <Select
-                                        displayEmpty
-                                        className={classes.select}
-                                        value={sendMoneyTo}
-                                        onChange={handleChangeMoneyTo}
-                                        startAdornment={
-                                            <InputAdornment position='start'>
-                                                <RoomIcon style={{ fontSize: 23 }} />
-                                            </InputAdornment>
-                                        }
-                                        input={<Input disableUnderline={true} />}
-                                        IconComponent={KeyboardArrowDownIcon}
-                                        renderValue={selected => {
-                                            if (selected.length === 0) {
-                                                return (
-                                                    <Grid className={classes.searchItemControl} container>
-                                                        <div className={classes.overflow}>
-                                                            <Typography className={classes.searchText}>Pay to </Typography>
-                                                        </div>
-                                                    </Grid>
-                                                );
+                                                return selected.join(', ');
+                                            }}
+                                            MenuProps={MenuProps}
+                                        >
+                                            {moneyFromCountryList.map((name, index) => (
+                                                <MenuItem key={index} value={name.currecyCode} style={getStyles(name.country, sendMoneyFrom, theme)}>
+                                                    <TinyFlag
+                                                        country={name.flag}
+                                                        alt={name.country}
+                                                        fallbackImageURL={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
+                                                    />
+                                                    &nbsp;
+                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)
+                                                </MenuItem>
+                                            ))}
+                                        </Select>
+                                    </FormControl>
+                                </Grid>
+                                <Grid item xs={12} md={4} className={classes.searchItemControl}>
+                                    <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
+                                        <Select
+                                            displayEmpty
+                                            className={classes.select}
+                                            value={sendMoneyTo}
+                                            onChange={handleChangeMoneyTo}
+                                            startAdornment={
+                                                <InputAdornment position='start'>
+                                                    <RoomIcon style={{ fontSize: 23 }} />
+                                                </InputAdornment>
                                             }
+                                            input={<Input disableUnderline={true} />}
+                                            IconComponent={KeyboardArrowDownIcon}
+                                            renderValue={selected => {
+                                                if (selected.length === 0) {
+                                                    return (
+                                                        <Grid className={classes.searchItemControl} container>
+                                                            <div className={classes.overflow}>
+                                                                <Typography className={classes.searchText}>Send to </Typography>
+                                                            </div>
+                                                        </Grid>
+                                                    );
+                                                }
 
-                                            return selected.join(', ');
-                                        }}
-                                        MenuProps={MenuProps}
-                                    >
-                                        {otherCountries.map((name, index) => (
-                                            <MenuItem key={index} value={name.currecyCode} style={getStyles(name.country, sendMoneyTo, theme)}>
-                                                {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)
-                                            </MenuItem>
-                                        ))}
-                                    </Select>
-                                </FormControl>
+                                                return selected.join(', ');
+                                            }}
+                                            MenuProps={MenuProps}
+                                        >
+                                            {moneyToCountryList.map((name, index) => (
+                                                <MenuItem key={index} value={name.currecyCode} style={getStyles(name.country, sendMoneyTo, theme)}>
+                                                    <TinyFlag
+                                                        country={name.flag}
+                                                        alt={name.country}
+                                                        fallbackImageURL={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
+                                                    />
+                                                    &nbsp;
+                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)
+                                                </MenuItem>
+                                            ))}
+                                        </Select>
+                                    </FormControl>
+                                </Grid>
+                                <Grid container item xs={12} md={4} justifyContent={'center'} alignItems={'center'}>
+                                    <Button onClick={handleSearch} variant='contained' className={classes.getStarted} disableElevation>
+                                        Get Started
+                                    </Button>
+                                </Grid>
                             </Grid>
-                            <Grid container item xs={12} md={4} justifyContent={'center'} alignItems={'center'}>
-                                <Button onClick={handleSearch} variant='contained' className={classes.getStarted} disableElevation>
-                                    Get Started
-                                </Button>
-                            </Grid>
+                        </Box>
+                    ) : (
+                        <Grid container item xs={12} md={4} justifyContent={'center'} alignItems={'center'}>
+                            <Button onClick={handleSearch} variant='contained' className={classes.getStarted} disableElevation>
+                                Create Accounts
+                            </Button>
                         </Grid>
-                    </Box>
+                    )}
                 </Box>
-                <Box className={classes.setMiddle}>
-                    <Box sx={{ pl: 1, color: 'grey' }}>
-                        <Typography>Built By Africans for Africans 🙌🏿</Typography>
-                    </Box>
-                    <Grid className={classes.searchItem} container direction='row' alignItems='center'>
+                <Grid container className={classes.setMiddle}>
+                    <Grid item container direction='row' alignItems='center' xs={12} sm={6}>
+                        <Box sx={{ pl: 1, color: 'grey' }}>
+                            <Typography>By Africans for Africans 🙌🏽</Typography>
+                        </Box>
+                    </Grid>
+
+                    <Grid item container direction='row' alignItems='center' xs={12} sm={6}>
                         <RipplePlayButton />
                         <Typography className={classes.links}>
                             <Link href='#' color='inherit' underline='always'>
@@ -458,7 +472,7 @@ export const InfoBanner = () => {
                             </Link>
                         </Typography>
                     </Grid>
-                </Box>
+                </Grid>
             </Box>
         </motion.div>
     );

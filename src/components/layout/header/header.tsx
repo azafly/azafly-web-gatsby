@@ -7,6 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 import { deskTopNavItems } from '../../../lib/constants';
 import { MobileSideDrawer } from '../../mobile-side-drawer';
+import { LogoSvgComponent } from '../../common/logo';
 
 interface NavbarProps {
     handleDrawerOpen?: () => void;
@@ -162,7 +163,7 @@ export const Header: React.FC<NavbarProps> = ({ location }) => {
                 >
                     <Toolbar>
                         <Link to='/' className={`${classes.logo}`}>
-                            Lucqax{' '}
+                            <LogoSvgComponent />
                         </Link>
                         <IconButton
                             color='secondary'
@@ -179,7 +180,7 @@ export const Header: React.FC<NavbarProps> = ({ location }) => {
                 <AppBar className={classes.appBar} elevation={0}>
                     <Toolbar className={classes.toolBar}>
                         <Link to='/' className={`${classes.logo}`}>
-                            Lucqax{' '}
+                            <LogoSvgComponent />
                         </Link>
                         <section className={classes.links}>
                             {deskTopNavItems.map(({ name, route }) => {

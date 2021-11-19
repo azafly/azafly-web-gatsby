@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { createRef } from 'react';
 
 // Material
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Box } from '@material-ui/core';
 
-import { Services } from './sections/Services/services';
+import { Services } from './sections/why-choose-us';
 import { HomePageHeroSection } from './sections/Hero/hero';
 import { HomePageReviewsSection } from './sections/Reviews';
 import { Secure } from './sections/Secure/secure';
@@ -40,16 +39,15 @@ const useStyles = makeStyles((theme: Theme) =>
         content: {
             maxWidth: '100vw',
             overflowX: 'hidden',
-
             transition: theme.transitions.create('margin', {
                 easing: theme.transitions.easing.sharp,
                 duration: theme.transitions.duration.leavingScreen
             })
         },
         setupAndDesignSection: {
-            // position: 'relative',
-            // background: theme.palette.background.default,
-            // paddingTop: 100
+            position: 'relative',
+            background: theme.palette.background.default,
+            paddingTop: 50
         }
     })
 );
@@ -60,6 +58,7 @@ interface HomeViewProps {
 
 const Home: React.FC<HomeViewProps> = ({ images }) => {
     const classes = useStyles();
+    const faqRef = createRef();
 
     return (
         <div className={classes.container}>
@@ -71,9 +70,7 @@ const Home: React.FC<HomeViewProps> = ({ images }) => {
                     <Secure />
                     <HomePageReviewsSection />
                 </div>
-                <Box style={{ maxWidth: 1400, margin: 'auto' }}>
-                    <QuestionsTabsContainer />
-                </Box>
+                <QuestionsTabsContainer ref={faqRef} />
                 <JoinUs />
             </main>
         </div>

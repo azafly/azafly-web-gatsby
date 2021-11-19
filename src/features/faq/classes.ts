@@ -117,6 +117,8 @@ export const useTabStyles = makeStyles((theme: Theme) => ({
     tabContainer: {
         marginLeft: '2vw',
         background: 'white',
+        maxWidth: 1600,
+        margin: 'auto',
         marginTop: 100,
         paddingBottom: 50,
         [theme.breakpoints.up('lg')]: {

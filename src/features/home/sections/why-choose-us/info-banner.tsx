@@ -10,20 +10,16 @@ const useStyles = makeStyles((theme: Theme) =>
         container: {
             order: 1,
             display: 'flex',
-            width: '85%',
             flexDirection: 'column',
             justifyContent: 'center',
-            [theme.breakpoints.only('md')]: {
-                marginLeft: '3vw',
-                width: '100%'
+            [theme.breakpoints.up('md')]: {
+                paddingRight: '6vw'
             },
-            [theme.breakpoints.down('sm')]: {
-                padding: '10px 30px 10px 20px',
-                marginLeft: '2vw',
-                width: '100%'
+            [theme.breakpoints.only('sm')]: {
+                width: '86vw',
+                margin: 'auto'
             }
         },
-
         card: {
             border: 'none',
             boxShadow: 'none',
@@ -40,7 +36,6 @@ const useStyles = makeStyles((theme: Theme) =>
                     borderBottom: '4px solid #0D324D',
                     opacity: '100%'
                 },
-
                 '& $heading': {
                     fontWeight: 600
                 }

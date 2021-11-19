@@ -5,8 +5,8 @@ import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 import React, { forwardRef, useState, useRef } from 'react';
 import Slider from 'react-slick';
 
-import { InfoBanner } from './info-banner';
-import { SliderCard } from './slider-card';
+import { InfoBanner } from '../../../home/sections/Reviews/info-banner';
+import { SliderCard } from '../../../home/sections/Reviews/slider-card';
 
 const cards = [
     {
@@ -49,6 +49,9 @@ const useStyles = makeStyles((theme: Theme) =>
                 padding: '40px 0px'
             }
         },
+        color: {
+            background: theme.colors.mainGreen
+        },
         sliders: {
             width: '110vw',
             [theme.breakpoints.only('xs')]: {
@@ -79,7 +82,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 type ActiveScroller = 'prev' | 'next';
 
-export const ReviewSliders = forwardRef(() => {
+export const SliderGallery = forwardRef(() => {
     const classes = useStyles();
     const [activeScroller, setActiveScroller] = useState<ActiveScroller>('next');
 
@@ -104,13 +107,13 @@ export const ReviewSliders = forwardRef(() => {
         speed: 1000,
         slidesToShow: computeNumberOfCards(),
         slidesToScroll: computeNumberOfCards(),
-        autoplaySpeed: 5000,
+        autoplaySpeed: 10000,
         pauseOnHover: true,
         autoplay: true,
         arrows: false
     };
 
-    const handleToggleClass = (clickedScroller: ActiveScroller) => {
+    const handleToggeleClass = (clickedScroller: ActiveScroller) => {
         setActiveScroller(clickedScroller);
         if (clickedScroller === 'prev') sliderRef?.current?.slickPrev();
         sliderRef?.current?.slickNext();
@@ -122,21 +125,21 @@ export const ReviewSliders = forwardRef(() => {
                 <ArrowBackOutlinedIcon
                     opacity={activeScroller === 'prev' ? 1 : 0.3}
                     className={classes.prev}
-                    onClick={() => handleToggleClass('prev')}
+                    onClick={() => handleToggeleClass('prev')}
                 />
                 <ArrowForwardOutlinedIcon
                     opacity={activeScroller === 'next' ? 1 : 0.3}
-                    onClick={() => handleToggleClass('next')}
+                    onClick={e => handleToggeleClass('next')}
                     className={classes.next}
                 />
             </div>
         );
     };
-    const information = `Don't just take our words. Listen to thousands of our happy customers`;
+    const information = ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies neque at nisl auctor.';
 
     return (
-        <Grid container justifyContent={'center'} alignItems={'center'} spacing={4}>
-            <InfoBanner scrollers={scrollers} title='Testimonials' subtitle=' What our clients are saying' information={information} />
+        <Grid className={classes.color} container justifyContent={'center'} alignItems={'center'} spacing={4}>
+            <InfoBanner scrollers={scrollers} title='Events Gallary' information={information} />
             <Grid item xs={12} sm={7} md={8} className={classes.sliders}>
                 <Slider ref={sliderRef} {...settings} className={classes.overflow}>
                     {cards}

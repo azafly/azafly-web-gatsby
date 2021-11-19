@@ -1,7 +1,6 @@
-import React, { FunctionComponent } from 'react';
 import { Box, Container, createStyles, Grid, IconButton, Link, makeStyles, Theme } from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import React, { FunctionComponent } from 'react';
 
 import { useFetchHomeData } from '../../../features/home/hooks/use-data';
 
@@ -14,7 +13,7 @@ interface Media {
     link: string;
 }
 
-export interface Footer {
+export interface FooterProps {
     copyrightOwner: string;
     socialMedia: Media[];
     aboutContent?: string;
@@ -38,14 +37,14 @@ const useStyles = makeStyles((theme: Theme) =>
             fontSize: 15
         },
         link: {
-            color: theme.colors.mainGreen,
+            color: 'white',
             textDecoration: 'none',
             marginTop: 20,
             marginBottom: 20
         },
 
         text: {
-            color: 'grey',
+            color: 'white',
             fontSize: 14,
             marginTop: 20,
             marginBottom: 10
@@ -53,15 +52,14 @@ const useStyles = makeStyles((theme: Theme) =>
         contentMargin: {
             marginRight: 60
         },
-        copywrite: { color: theme.colors.mainGreen }
+        copywrite: { color: 'white' }
     })
 );
 
-export const Footer: FunctionComponent<Footer> = ({ copyrightOwner, socialMedia }) => {
+export const Footer: FunctionComponent<FooterProps> = ({ copyrightOwner, socialMedia }) => {
     const classes = useStyles();
     const url = ['/about', '/services', '/faq', '/blog', '/contact'];
     const frontmatter = useFetchHomeData();
-    console.log(frontmatter);
     const helfulLink = [
         { link: frontmatter.footerLinkList.link1 },
         { link: frontmatter.footerLinkList.link2 },
