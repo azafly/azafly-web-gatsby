@@ -10,6 +10,7 @@ import React, { useState } from 'react';
 import RoomIcon from '@mui/icons-material/Room';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
+import { width } from '@mui/system';
 import { RipplePlayButton } from '../../../../components/common/ripple-button';
 import useGeolocation from '../../hooks/useGeolocation';
 
@@ -216,22 +217,26 @@ const otherCountries = [
     {
         country: 'Germany',
         flag: 'DE',
-        currecyCode: 'EUR'
+        currecyCode: 'EUR',
+        active: false
     },
     {
         country: 'Canada',
         flag: 'CA',
-        currecyCode: 'CAD'
+        currecyCode: 'CAD',
+        active: false
     },
     {
         country: 'United States of America',
         flag: 'US',
-        currecyCode: 'USD'
+        currecyCode: 'USD',
+        active: false
     },
     {
         country: 'United Kingdom',
         flag: 'GB',
-        currecyCode: 'GBP'
+        currecyCode: 'GBP',
+        active: false
     }
 ];
 
@@ -239,17 +244,20 @@ const africa = [
     {
         country: 'Nigeria',
         flag: 'NG',
-        currecyCode: 'NGN'
+        currecyCode: 'NGN',
+        active: false
     },
     {
         country: 'Cameroon',
         flag: 'CM',
-        currecyCode: 'XAF'
+        currecyCode: 'XAF',
+        active: true
     },
     {
         country: 'Ghana',
         flag: 'GH',
-        currecyCode: 'GHS'
+        currecyCode: 'GHS',
+        active: true
     }
 ];
 
@@ -389,13 +397,23 @@ export const InfoBanner: React.FC = () => {
                                             MenuProps={MenuProps}
                                         >
                                             {moneyFromCountryList.map((name, index) => (
-                                                <MenuItem key={index} value={name.currecyCode} style={getStyles(name.country, sendMoneyFrom, theme)}>
+                                                <MenuItem
+                                                    key={index}
+                                                    value={name.currecyCode}
+                                                    disabled={name.active}
+                                                    style={getStyles(name.country, sendMoneyFrom, theme)}
+                                                >
                                                     <img
                                                         alt={name.country}
                                                         src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
                                                     />
                                                     &nbsp; &nbsp;
-                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)
+                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)&nbsp; &nbsp;
+                                                    {name.active && (
+                                                        <span style={{ fontSize: 11, background: 'grey', padding: 5, borderRadius: 8 }}>
+                                                            Coming Soon
+                                                        </span>
+                                                    )}
                                                 </MenuItem>
                                             ))}
                                         </Select>
@@ -431,13 +449,23 @@ export const InfoBanner: React.FC = () => {
                                             MenuProps={MenuProps}
                                         >
                                             {moneyToCountryList.map((name, index) => (
-                                                <MenuItem key={index} value={name.currecyCode} style={getStyles(name.country, sendMoneyTo, theme)}>
+                                                <MenuItem
+                                                    key={index}
+                                                    value={name.currecyCode}
+                                                    disabled={name.active}
+                                                    style={getStyles(name.country, sendMoneyTo, theme)}
+                                                >
                                                     <img
                                                         alt={name.country}
                                                         src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
                                                     />
                                                     &nbsp; &nbsp;
-                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)
+                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>) &nbsp; &nbsp;
+                                                    {name.active && (
+                                                        <span style={{ fontSize: 11, background: 'grey', padding: 5, borderRadius: 8 }}>
+                                                            Coming Soon
+                                                        </span>
+                                                    )}
                                                 </MenuItem>
                                             ))}
                                         </Select>
