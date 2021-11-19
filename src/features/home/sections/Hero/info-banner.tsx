@@ -231,8 +231,46 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-const otherCountries = ['Germany', 'Canada', 'United States of America', 'United Kingdom'];
-const africa = ['Nigeria', 'Cameroon', 'Ghana'];
+const otherCountries = [
+    {
+        country: 'Germany',
+        flag: '',
+        currecyCode: 'EUR'
+    },
+    {
+        country: 'Canada',
+        flag: '',
+        currecyCode: 'CAD'
+    },
+    {
+        country: 'United States of America',
+        flag: '',
+        currecyCode: 'USD'
+    },
+    {
+        country: 'United Kingdom',
+        flag: '',
+        currecyCode: 'GBP'
+    }
+];
+
+const africa = [
+    {
+        country: 'Nigeria',
+        flag: '',
+        currecyCode: 'NGN'
+    },
+    {
+        country: 'Cameroon',
+        flag: '',
+        currecyCode: 'XAF'
+    },
+    {
+        country: 'Ghana',
+        flag: '',
+        currecyCode: 'GHS'
+    }
+];
 function getStyles(name: string, sendMoneyFrom: readonly string[], theme: Theme) {
     return {
         fontWeight: sendMoneyFrom.indexOf(name) === -1 ? theme.typography.fontWeightRegular : theme.typography.fontWeightMedium
@@ -295,6 +333,8 @@ export const InfoBanner = () => {
             setSnackBarOpen(true);
         }
     };
+    console.log(location);
+
     return (
         <motion.div>
             <Snackbar
@@ -353,9 +393,9 @@ export const InfoBanner = () => {
                                         }}
                                         MenuProps={MenuProps}
                                     >
-                                        {africa.map(name => (
-                                            <MenuItem key={name} value={name} style={getStyles(name, sendMoneyFrom, theme)}>
-                                                {name}
+                                        {africa.map((name, index) => (
+                                            <MenuItem key={index} value={name.currecyCode} style={getStyles(name.country, sendMoneyFrom, theme)}>
+                                                {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)
                                             </MenuItem>
                                         ))}
                                     </Select>
@@ -390,9 +430,9 @@ export const InfoBanner = () => {
                                         }}
                                         MenuProps={MenuProps}
                                     >
-                                        {otherCountries.map(name => (
-                                            <MenuItem key={name} value={name} style={getStyles(name, sendMoneyTo, theme)}>
-                                                {name}
+                                        {otherCountries.map((name, index) => (
+                                            <MenuItem key={index} value={name.currecyCode} style={getStyles(name.country, sendMoneyTo, theme)}>
+                                                {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)
                                             </MenuItem>
                                         ))}
                                     </Select>
