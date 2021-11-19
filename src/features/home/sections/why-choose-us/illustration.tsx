@@ -23,7 +23,7 @@ interface Props {
     images: HomeImages;
 }
 
-export const ServiceIllustration = () => {
+export const ServiceIllustration: React.FC = () => {
     const classes = useStyles();
 
     // const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;

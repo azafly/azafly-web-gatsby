@@ -132,7 +132,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const ServiceInfoBanner = () => {
+export const ServiceInfoBanner: React.FC = () => {
     const classes = useStyles();
     const formatter = useFetchHomeData();
 

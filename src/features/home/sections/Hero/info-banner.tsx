@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
             color: theme.colors.white,
             fontSize: '3rem',
             [theme.breakpoints.down('md')]: {
-                fontSize: '2.25rem'
+                fontSize: '2.5rem'
             }
         },
         subContainer: {
@@ -212,11 +212,59 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-const otherCountries = ['Germany', 'Canada', 'United States of America', 'United Kingdom'];
-const africa = ['Nigeria', 'Cameroon', 'Ghana'];
+const otherCountries = [
+    {
+        country: 'Germany',
+        flag: 'DE',
+        currecyCode: 'EUR',
+        active: false
+    },
+    {
+        country: 'Canada',
+        flag: 'CA',
+        currecyCode: 'CAD',
+        active: false
+    },
+    {
+        country: 'United States of America',
+        flag: 'US',
+        currecyCode: 'USD',
+        active: false
+    },
+    {
+        country: 'United Kingdom',
+        flag: 'GB',
+        currecyCode: 'GBP',
+        active: false
+    }
+];
+
+const africa = [
+    {
+        country: 'Nigeria',
+        flag: 'NG',
+        currecyCode: 'NGN',
+        active: false
+    },
+    {
+        country: 'Cameroon',
+        flag: 'CM',
+        currecyCode: 'XAF',
+        active: true
+    },
+    {
+        country: 'Ghana',
+        flag: 'GH',
+        currecyCode: 'GHS',
+        active: true
+    }
+];
+
 function getStyles(name: string, sendMoneyFrom: readonly string[], theme: Theme) {
     return {
-        fontWeight: sendMoneyFrom.indexOf(name) === -1 ? theme.typography.fontWeightRegular : theme.typography.fontWeightMedium
+        fontWeight: sendMoneyFrom.indexOf(name) === -1 ? theme.typography.fontWeightRegular : theme.typography.fontWeightMedium,
+        fontFamily: 'Nunito',
+        fontSize: '1em'
     };
 }
 const ITEM_HEIGHT = 48;
@@ -225,7 +273,8 @@ const MenuProps = {
     PaperProps: {
         style: {
             maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-            width: 250
+            width: 'max-content',
+            minWidth: 250
         }
     }
 };
@@ -241,6 +290,8 @@ export const InfoBanner: React.FC = () => {
 
     // getting users location via IP address
     const { location } = useGeolocation();
+    const moneyFromCountryList = location.isAfrica ? africa : otherCountries;
+    const moneyToCountryList = location.isAfrica ? otherCountries : africa;
 
     const handleCloseSnack = (event?: React.SyntheticEvent, reason?: string) => {
         if (reason === 'clickaway') {
@@ -274,7 +325,7 @@ export const InfoBanner: React.FC = () => {
             setError('Please select region');
             setSnackBarOpen(true);
         } else {
-            window.location.replace(`https://app-staging.lucqax.com/payment?send_from=${sendMoneyFrom[0]}&sendTo=${sendMoneyTo}`);
+            window.location.replace(`https://app-staging.lucqax.com/payment?send_from=${sendMoneyFrom}&send_to=${sendMoneyTo}`);
         }
     };
 
@@ -330,7 +381,7 @@ export const InfoBanner: React.FC = () => {
                                             input={<Input disableUnderline={true} className={classes.underline} />}
                                             IconComponent={KeyboardArrowDownIcon}
                                             renderValue={selected => {
-                                                if (selected.length === 0) {
+                                                if (!selected.length) {
                                                     return (
                                                         <Grid className={classes.searchItemControl} container>
                                                             <div className={classes.overflow}>
@@ -344,9 +395,24 @@ export const InfoBanner: React.FC = () => {
                                             }}
                                             MenuProps={MenuProps}
                                         >
-                                            {africa.map(name => (
-                                                <MenuItem key={name} value={name} style={getStyles(name, sendMoneyFrom, theme)}>
-                                                    {name}
+                                            {moneyFromCountryList.map((name, index) => (
+                                                <MenuItem
+                                                    key={index}
+                                                    value={name.currecyCode}
+                                                    disabled={name.active}
+                                                    style={getStyles(name.country, sendMoneyFrom, theme)}
+                                                >
+                                                    <img
+                                                        alt={name.country}
+                                                        src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
+                                                    />
+                                                    &nbsp; &nbsp;
+                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)&nbsp; &nbsp;
+                                                    {name.active && (
+                                                        <span style={{ fontSize: 11, background: 'grey', padding: 5, borderRadius: 8 }}>
+                                                            Coming Soon
+                                                        </span>
+                                                    )}
                                                 </MenuItem>
                                             ))}
                                         </Select>
@@ -381,9 +447,24 @@ export const InfoBanner: React.FC = () => {
                                             }}
                                             MenuProps={MenuProps}
                                         >
-                                            {otherCountries.map(name => (
-                                                <MenuItem key={name} value={name} style={getStyles(name, sendMoneyTo, theme)}>
-                                                    {name}
+                                            {moneyToCountryList.map((name, index) => (
+                                                <MenuItem
+                                                    key={index}
+                                                    value={name.currecyCode}
+                                                    disabled={name.active}
+                                                    style={getStyles(name.country, sendMoneyTo, theme)}
+                                                >
+                                                    <img
+                                                        alt={name.country}
+                                                        src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
+                                                    />
+                                                    &nbsp; &nbsp;
+                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>) &nbsp; &nbsp;
+                                                    {name.active && (
+                                                        <span style={{ fontSize: 11, background: 'grey', padding: 5, borderRadius: 8 }}>
+                                                            Coming Soon
+                                                        </span>
+                                                    )}
                                                 </MenuItem>
                                             ))}
                                         </Select>
