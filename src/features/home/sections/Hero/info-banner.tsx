@@ -330,11 +330,9 @@ export const InfoBanner: React.FC = () => {
     };
 
     const BANNER_TEXT = {
-        heading: location.isAfrica
-            ? `Pay your most important bills and invoices abroad.`
-            : `The Cross-Border Digital Bank for Africans. Move your money fluently.`,
+        heading: location.isAfrica ? `Pay your most important bills and invoices abroad.` : `Move your money fluently.`,
         subHeading: location.isAfrica ? ` Receive international payments from ` : `Send money to Friends and Family in `,
-        subHeading2: location.isAfrica ? ` Pay and get paid in multiple currencies` : ` Manage your remittance in multiple currencies!`
+        subHeading2: location.isAfrica ? ` Pay and get paid in multiple currencies.` : ` Manage your remittance in multiple currencies!`
     };
     return (
         <motion.div>

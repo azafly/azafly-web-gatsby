@@ -7,17 +7,16 @@
     "gatsby-starter",
     "storybook"
   ],
-  "homepage": "https://github.com/yehjxraymond/gatsby-blog",
+  "homepage": "",
   "license": "MIT",
   "author": {
-    "name": "Raymond Yeh",
+    "name": "Ola John",
     "url": "https://geek.sg"
   },
   "files": [],
   "main": "n/a",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/yehjxraymond/gatsby-blog"
+    "type": "git"
   },
   "scripts": {
     "dev": "npm-run-all -p dev:*",
