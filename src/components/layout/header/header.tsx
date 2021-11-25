@@ -1,9 +1,11 @@
 import { AppBar, Toolbar, Button, IconButton, useMediaQuery, MenuItem } from '@material-ui/core';
 import { Link } from 'gatsby-theme-material-ui';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import React, { ReactNode, useState } from 'react';
 import clsx from 'clsx';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
 import MenuIcon from '@material-ui/icons/Menu';
+import React, { useState } from 'react';
 
 import { deskTopNavItems } from '../../../lib/constants';
 import { MobileSideDrawer } from '../../mobile-side-drawer';
@@ -23,7 +25,6 @@ const useStyles = makeStyles((theme: Theme) =>
         navbarContainer: {
             width: '100vw',
             overflowX: 'hidden',
-            background: theme.colors.white,
             marginBottom: 100,
             [theme.breakpoints.only('xs')]: {
                 marginBottom: 70
@@ -34,9 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 easing: theme.transitions.easing.sharp,
                 duration: theme.transitions.duration.leavingScreen
             }),
-            background: 'inherit',
-            color: theme.colors.black,
-            boxShadow: '0 2px 16px 0 rgb(0 0 0 / 8%)'
+            background: 'linear-gradient(102.84deg, #0D324D 1.08%, #224C6C 59.23%, #062741 97.46%)'
         },
         appBarShift: {
             width: `calc(100% - ${drawerWidth}px)`,
@@ -61,10 +60,10 @@ const useStyles = makeStyles((theme: Theme) =>
             width: 100
         },
         links: {
-            color: theme.palette.secondary.main,
+            color: 'white',
             display: 'flex',
-            fontWeight: 400,
-            fontSize: '0.85rem',
+            fontWeight: 450,
+            fontSize: '0.95rem',
             marginRight: 15,
             justifyContent: 'space-around'
         },
@@ -84,7 +83,7 @@ const useStyles = makeStyles((theme: Theme) =>
             display: 'none'
         },
         menuIcon: {
-            color: theme.colors.pink,
+            color: 'white',
             position: 'absolute',
             right: 0,
             justifySelf: 'flex-end'
@@ -97,12 +96,10 @@ const useStyles = makeStyles((theme: Theme) =>
             display: 'flex'
         },
         register: {
-            background: theme.palette.primary.main,
             textTransform: 'capitalize',
             color: 'white',
-            fontWeight: 500,
-            paddingRight: 25,
-            paddingLeft: 25,
+            fontWeight: 450,
+            padding: '5px 5ch',
             textDecoration: 'none',
             transition: 'background .25s ease-in -out, transform .15s ease,- webkit - transform .15s ease',
             '&:hover': {
@@ -116,8 +113,9 @@ const useStyles = makeStyles((theme: Theme) =>
         signin: {
             textTransform: 'capitalize',
             marginRight: '2vw',
-            fontWeight: 500,
-            color: theme.palette.secondary.main,
+            fontWeight: 450,
+            color: 'white',
+            padding: '5px 5ch',
             textDecoration: 'none',
             '&:hover': {
                 textDecoration: 'none'
@@ -172,7 +170,7 @@ export const Header: React.FC<NavbarProps> = ({ location }) => {
                             onClick={handleDrawerOpen}
                             className={clsx(open && classes.hide)}
                         >
-                            <MenuIcon className={classes.menuIcon} />
+                            <MenuIcon color={'inherit'} className={classes.menuIcon} />
                         </IconButton>
                     </Toolbar>
                 </AppBar>
@@ -202,10 +200,20 @@ export const Header: React.FC<NavbarProps> = ({ location }) => {
                             })}
                         </section>
                         <section className={classes.authLink}>
-                            <Button component={Link} to={`${process.env.GATSBY_APP_URL}/signin`} className={classes.signin}>
+                            <Button
+                                endIcon={<LockOpenIcon />}
+                                component={Link}
+                                to={`${process.env.GATSBY_APP_URL}/signin`}
+                                className={classes.signin}
+                            >
                                 Sign in
                             </Button>
-                            <Button component={Link} to={`${process.env.GATSBY_APP_URL}/signup`} className={classes.register}>
+                            <Button
+                                endIcon={<HowToRegIcon />}
+                                component={Link}
+                                to={`${process.env.GATSBY_APP_URL}/signup`}
+                                className={classes.register}
+                            >
                                 Register
                             </Button>
                         </section>
