@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         active: {
             display: 'inline-block',
-            borderBottom: '2px solid #4990A4',
+            borderBottom: '1px solid #4990A4',
             color: theme.colors.mainGreen,
             paddingRight: 0
         },

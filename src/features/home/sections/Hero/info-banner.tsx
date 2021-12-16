@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         titleHeading: {
-            fontWeight: 600,
+            fontWeight: 700,
             fontFamily: 'Nunito',
             letterSpacing: -1,
             color: theme.colors.white,
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         clipPath: {
             position: 'relative',
-
+            color: 'white',
             '&:after': {
                 content: "''",
                 position: 'absolute',
@@ -216,25 +216,25 @@ const otherCountries = [
     {
         country: 'Germany',
         flag: 'DE',
-        currecyCode: 'EUR',
+        currencyCode: 'EUR',
         active: false
     },
     {
         country: 'Canada',
         flag: 'CA',
-        currecyCode: 'CAD',
+        currencyCode: 'CAD',
         active: false
     },
     {
         country: 'United States of America',
         flag: 'US',
-        currecyCode: 'USD',
+        currencyCode: 'USD',
         active: false
     },
     {
         country: 'United Kingdom',
         flag: 'GB',
-        currecyCode: 'GBP',
+        currencyCode: 'GBP',
         active: false
     }
 ];
@@ -243,19 +243,19 @@ const africa = [
     {
         country: 'Nigeria',
         flag: 'NG',
-        currecyCode: 'NGN',
+        currencyCode: 'NGN',
         active: false
     },
     {
         country: 'Cameroon',
         flag: 'CM',
-        currecyCode: 'XAF',
+        currencyCode: 'XAF',
         active: true
     },
     {
         country: 'Ghana',
         flag: 'GH',
-        currecyCode: 'GHS',
+        currencyCode: 'GHS',
         active: true
     }
 ];
@@ -319,13 +319,13 @@ export const InfoBanner: React.FC = () => {
         );
     };
     // eslint-disable-next-line no-console
-
+    const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3006' : `https://app-staging.lucqax.com`;
     const handleSearch = () => {
         if (sendMoneyFrom.length === 0 || sendMoneyTo.length === 0) {
             setError('Please select region');
             setSnackBarOpen(true);
         } else {
-            window.location.replace(`https://app-staging.lucqax.com/payment?send_from=${sendMoneyFrom}&send_to=${sendMoneyTo}`);
+            window.location.replace(`${url}/payment?send_from=${sendMoneyFrom}&send_to=${sendMoneyTo}`);
         }
     };
 
@@ -396,7 +396,7 @@ export const InfoBanner: React.FC = () => {
                                             {moneyFromCountryList.map((name, index) => (
                                                 <MenuItem
                                                     key={index}
-                                                    value={name.currecyCode}
+                                                    value={name.currencyCode}
                                                     disabled={name.active}
                                                     style={getStyles(name.country, sendMoneyFrom, theme)}
                                                 >
@@ -405,7 +405,7 @@ export const InfoBanner: React.FC = () => {
                                                         src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
                                                     />
                                                     &nbsp; &nbsp;
-                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>)&nbsp; &nbsp;
+                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currencyCode}</span>)&nbsp; &nbsp;
                                                     {name.active && (
                                                         <span style={{ fontSize: 11, background: 'grey', padding: 5, borderRadius: 8 }}>
                                                             Coming Soon
@@ -448,7 +448,7 @@ export const InfoBanner: React.FC = () => {
                                             {moneyToCountryList.map((name, index) => (
                                                 <MenuItem
                                                     key={index}
-                                                    value={name.currecyCode}
+                                                    value={name.currencyCode}
                                                     disabled={name.active}
                                                     style={getStyles(name.country, sendMoneyTo, theme)}
                                                 >
@@ -457,7 +457,7 @@ export const InfoBanner: React.FC = () => {
                                                         src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
                                                     />
                                                     &nbsp; &nbsp;
-                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currecyCode}</span>) &nbsp; &nbsp;
+                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currencyCode}</span>) &nbsp; &nbsp;
                                                     {name.active && (
                                                         <span style={{ fontSize: 11, background: 'grey', padding: 5, borderRadius: 8 }}>
                                                             Coming Soon

@@ -3,13 +3,12 @@ import React, { createRef } from 'react';
 // Material
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
-import { Services } from './sections/why-choose-us';
 import { HomePageHeroSection } from './sections/Hero/hero';
 import { HomePageReviewsSection } from './sections/Reviews';
-import { Secure } from './sections/Secure/secure';
-
-import { QuestionsTabsContainer } from '../faq/questions-tab';
 import { JoinUs } from './sections/Joinus';
+import { QuestionsTabsContainer } from '../faq/questions-tab';
+import { Secure } from './sections/Secure/secure';
+import { Services } from './sections/why-choose-us';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -70,7 +69,9 @@ const Home: React.FC<HomeViewProps> = ({ images }) => {
                     <Secure />
                     <HomePageReviewsSection />
                 </div>
+
                 <QuestionsTabsContainer ref={faqRef} />
+
                 <JoinUs />
             </main>
         </div>
