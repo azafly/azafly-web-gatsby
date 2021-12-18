@@ -52,6 +52,7 @@ collections:
             name: "whyChooseUs"
             widget: "object"
             fields: 
+              - {label: "Featured Image", name: "whyChooseUsImage", widget: image}
               - label: Short Heading
                 name: whyChooseUsShortHeading
                 widget: object
@@ -98,6 +99,7 @@ collections:
             name: "section1"
             widget: "object"
             fields: 
+              - {label: "Featured Image", name: "section1Image", widget: image}
               - label: Short Heading
                 name: section1ShortHeading
                 widget: object
@@ -120,6 +122,7 @@ collections:
             name: "section2"
             widget: "object"
             fields: 
+              - {label: "Featured Image", name: "section2Image", widget: image}
               - label: Short Heading
                 name: section2ShortHeading
                 widget: object
@@ -142,6 +145,7 @@ collections:
             name: "section3"
             widget: "object"
             fields: 
+              - {label: "Featured Image", name: "section3Image", widget: image}
               - label: Short Heading
                 name: section3ShortHeading
                 widget: object
@@ -159,7 +163,30 @@ collections:
                 widget: object
                 fields: 
                   - {label: Local, name: section3InfoTextLocal, widget: string} 
-                  - {label: Abroad, name: section3InfoTextAbroad, widget: string}            
+                  - {label: Abroad, name: section3InfoTextAbroad, widget: string}
+          - label: "Main Call to Action" 
+            name: "mainCTA"
+            widget: "object"
+            fields: 
+              - {label: "Featured Image", name: "mainCTAImage", widget: image}
+              - label: Short Heading
+                name: mainCTAShortHeading
+                widget: object
+                fields: 
+                  - {label: Local, name: mainCTAHeadingLocal, widget: string}
+                  - {label: Abroad, name: mainCTAShortHeadingAbroad, widget: string}
+              - label: Main Heading
+                name: mainCTAMainHeading
+                widget: object
+                fields: 
+                  - {label: Local, name: mainCTA3MainHeadingLocal, widget: string}
+                  - {label: Abroad, name: mainCTA3MainHeadingAbroad, widget: string}
+              - label: Informational Text
+                name: mainCTAInfoText
+                widget: object
+                fields: 
+                  - {label: Local, name: mainCTAInfoTextLocal, widget: string} 
+                  - {label: Abroad, name: mainCTAInfoTextAbroad, widget: string}           
           - {label: Footer Intro Content, name: footerIntroContent, widget: text}
           - {label: International Office Address, name: internationalOfficeAddress, widget: text}
           - {label: International Office Phone, name: internationalOfficePhone, widget: string}
