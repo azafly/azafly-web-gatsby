@@ -1,7 +1,8 @@
-import { makeStyles, Theme, createStyles, Box, Grid } from '@material-ui/core';
 import React from 'react';
-import joinBackImg from '../../../../../static/images/home/joinus.png';
-// import { HomeImages } from '../../../../createPages/templates/home';
+import { makeStyles, Theme, createStyles, Box } from '@material-ui/core';
+
+import { useFetchHomeData } from '../../hooks/use-data';
+import { useFormatContentBasedOnLocation } from '../../../../hooks/use-format-content-based-on-location';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -34,14 +35,17 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const JoinUsIllustration = () => {
+export const JoinUsIllustration = (): JSX.Element => {
     const classes = useStyles();
+    const handleFormatContent = useFormatContentBasedOnLocation();
+    const {
+        mainCTA: { mainCTAImage }
+    } = useFetchHomeData();
 
-    // const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;
     return (
         <Box className={classes.root}>
             <Box>
-                <img className={classes.illustration} src={joinBackImg} alt='join us' />
+                <img className={classes.illustration} src={handleFormatContent(mainCTAImage)} alt='join us' />
             </Box>
         </Box>
     );

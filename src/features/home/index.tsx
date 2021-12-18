@@ -7,7 +7,7 @@ import { HomePageHeroSection } from './sections/Hero/hero';
 import { HomePageReviewsSection } from './sections/Reviews';
 import { JoinUs } from './sections/Joinus';
 import { QuestionsTabsContainer } from '../faq/questions-tab';
-import { Secure } from './sections/Secure/secure';
+import { MainInfo } from './sections/MainInfo';
 import { Services } from './sections/why-choose-us';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -66,7 +66,7 @@ const Home: React.FC<HomeViewProps> = ({ images }) => {
                 <HomePageHeroSection images={images} />
                 <Services />
                 <div className={classes.setupAndDesignSection}>
-                    <Secure />
+                    <MainInfo />
                     <HomePageReviewsSection />
                 </div>
 

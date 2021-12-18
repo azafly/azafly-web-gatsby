@@ -1,7 +1,9 @@
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Typography, Grid, Hidden, Box } from '@material-ui/core';
 import React from 'react';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { Typography, Grid, Box } from '@material-ui/core';
+
 import { useFetchHomeData } from '../../hooks/use-data';
+import { useFormatContentBasedOnLocation } from '../../../../hooks/use-format-content-based-on-location';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -32,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 width: '100%'
             }
         },
-        titlleHeading: {
+        titleHeading: {
             marginTop: '20px !important',
             width: '482.67px',
             height: '102px',
@@ -74,18 +76,21 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const JoinUsInforBanner = () => {
+export const JoinUsInforBanner = (): JSX.Element => {
     const classes = useStyles();
-    const formatter = useFetchHomeData();
+    const handleFormatContent = useFormatContentBasedOnLocation();
+    const {
+        mainCTA: { mainCTAMainHeading, mainCTAShortHeading, mainCTAInfoText }
+    } = useFetchHomeData();
     return (
         <Box className={classes.root}>
             <Box>
-                <Typography className={classes.banner}>Join Us</Typography>
-                <Typography variant='h3' className={classes.titlleHeading}>
-                    {formatter.joinUsHeadingText}
+                <Typography className={classes.banner}>{handleFormatContent(mainCTAShortHeading)}</Typography>
+                <Typography variant='h3' className={classes.titleHeading}>
+                    {handleFormatContent(mainCTAMainHeading)}
                 </Typography>
                 <Grid container className={classes.content}>
-                    <Typography>{formatter.joinUsHeadingContent}</Typography>
+                    <Typography>{handleFormatContent(mainCTAInfoText)}</Typography>
                 </Grid>
             </Box>
         </Box>

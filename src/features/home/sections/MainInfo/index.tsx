@@ -4,19 +4,15 @@ import React from 'react';
 import { Illustration } from './illustration';
 import { InfoBanner } from './info-banner';
 import { SecureButton } from './button';
-import saveMoney from '../../../../../static/images/home/save_money.png';
-import withdrawMoney from '../../../../../static/images/home/withdraw_money.png';
 import { useFetchHomeData } from '../../hooks/use-data';
+import { useFormatContentBasedOnLocation } from '../../../../hooks/use-format-content-based-on-location';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        secureByDesigncontainer: {
+        secureByDesignContainer: {
             paddingBottom: 50,
             margin: '6vw',
             flexGrow: 1,
-            // [theme.breakpoints.only('md')]: {
-            //     marginLeft: '8vw'
-            // },
             [theme.breakpoints.up('sm')]: {},
             [theme.breakpoints.only('xs')]: {
                 marginTop: '-30px'
@@ -25,15 +21,21 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const Secure: React.FC = () => {
+export const MainInfo: React.FC = () => {
     const classes = useStyles();
-    const formatter = useFetchHomeData();
-    const secureData = [
+    const handleFormatContent = useFormatContentBasedOnLocation();
+    const {
+        section1: { section1Image, section1InfoText, section1MainHeading, section1ShortHeading },
+        section2: { section2Image, section2InfoText, section2MainHeading, section2ShortHeading },
+        section3: { section3Image, section3InfoText, section3MainHeading, section3ShortHeading }
+    } = useFetchHomeData();
+
+    const contentData = [
         {
-            image: saveMoney,
-            shortTitle: 'Lorem ipsum',
-            title: formatter.secureHeadingText1,
-            content: formatter.secureHeadingText_content1,
+            image: handleFormatContent(section1Image),
+            shortTitle: handleFormatContent(section1ShortHeading),
+            title: handleFormatContent(section1MainHeading),
+            content: handleFormatContent(section1InfoText),
             route: '',
             bannerOrder: {
                 xs: 1,
@@ -45,10 +47,10 @@ export const Secure: React.FC = () => {
             }
         },
         {
-            image: saveMoney,
-            shortTitle: 'Lorem ipsum',
-            title: formatter.secureHeadingText2,
-            content: formatter.secureHeadingText_content2,
+            image: handleFormatContent(section2Image),
+            shortTitle: handleFormatContent(section2ShortHeading),
+            title: handleFormatContent(section2MainHeading),
+            content: handleFormatContent(section2InfoText),
             route: '',
             bannerOrder: {
                 xs: 1,
@@ -60,10 +62,10 @@ export const Secure: React.FC = () => {
             }
         },
         {
-            image: withdrawMoney,
-            shortTitle: 'Lorem ipsum',
-            title: formatter.secureHeadingText3,
-            content: formatter.secureHeadingText_content3,
+            image: handleFormatContent(section3Image),
+            shortTitle: handleFormatContent(section3ShortHeading),
+            title: handleFormatContent(section3MainHeading),
+            content: handleFormatContent(section3InfoText),
             route: '',
             bannerOrder: {
                 xs: 1,
@@ -76,8 +78,8 @@ export const Secure: React.FC = () => {
         }
     ];
     return (
-        <div className={classes.secureByDesigncontainer}>
-            {secureData.map((data, index) => {
+        <main className={classes.secureByDesignContainer}>
+            {contentData.map((data, index) => {
                 return (
                     <Grid
                         container
@@ -107,6 +109,6 @@ export const Secure: React.FC = () => {
                     </Grid>
                 );
             })}
-        </div>
+        </main>
     );
 };

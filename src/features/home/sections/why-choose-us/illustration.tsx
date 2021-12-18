@@ -1,7 +1,8 @@
 import { makeStyles, Theme, createStyles, Box } from '@material-ui/core';
 import React from 'react';
-import serviceImage from '../../../../../static/images/home/joinus.png';
-import { HomeImages } from '../../../../createPages/templates/home';
+
+import { useFetchHomeData } from '../../hooks/use-data';
+import { useFormatContentBasedOnLocation } from '../../../../hooks/use-format-content-based-on-location';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -19,18 +20,16 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-interface Props {
-    images: HomeImages;
-}
-
 export const ServiceIllustration: React.FC = () => {
+    const handleFormatContent = useFormatContentBasedOnLocation();
     const classes = useStyles();
+    const {
+        whyChooseUs: { whyChooseUsImage }
+    } = useFetchHomeData();
 
-    // const imageUrl = images?.heroMainImage1?.childImageSharp?.fluid;
     return (
         <Box className={classes.illustration}>
-            <img src={serviceImage} alt='service' />
+            <img src={handleFormatContent(whyChooseUsImage)} alt='service' />
         </Box>
     );
-    // return <Image fluid={imageUrl} alt={'Main image'} className={classes.illustration} />;
 };

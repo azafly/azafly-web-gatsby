@@ -1,9 +1,11 @@
-import { motion } from 'framer-motion';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { motion } from 'framer-motion';
 import { Typography, Grid, Box, Card, CardContent, CardHeader, Avatar } from '@material-ui/core';
-import React from 'react';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import React from 'react';
+
 import { useFetchHomeData } from '../../hooks/use-data';
+import { useFormatContentBasedOnLocation } from '../../../../hooks/use-format-content-based-on-location';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -134,19 +136,27 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const ServiceInfoBanner: React.FC = () => {
     const classes = useStyles();
-    const formatter = useFetchHomeData();
-
+    const handleFormatContent = useFormatContentBasedOnLocation();
+    const {
+        whyChooseUs: {
+            whyChooseUsShortHeading,
+            whyChooseUsSubHeading,
+            whyChooseUsReason1: { whyChooseUsReason1Heading, whyChooseUsReason1InfoText },
+            whyChooseUsReason2: { whyChooseUsReason2Heading, whyChooseUsReason2InfoText },
+            whyChooseUsReason3: { whyChooseUsReason3Heading, whyChooseUsReason3InfoText }
+        }
+    } = useFetchHomeData();
     const serviceData = [
-        { title: formatter.servicesHeaderText_subtext1, content: formatter.servicesHeaderText_content1, hoverWidth: '167px' },
-        { title: formatter.servicesHeaderText_subtext2, content: formatter.servicesHeaderText_content2, hoverWidth: '267px' },
-        { title: formatter.servicesHeaderText_subtext3, content: formatter.servicesHeaderText_content3, hoverWidth: '367px' }
+        { title: handleFormatContent(whyChooseUsReason1Heading), content: handleFormatContent(whyChooseUsReason1InfoText), hoverWidth: '167px' },
+        { title: handleFormatContent(whyChooseUsReason2Heading), content: handleFormatContent(whyChooseUsReason2InfoText), hoverWidth: '267px' },
+        { title: handleFormatContent(whyChooseUsReason3Heading), content: handleFormatContent(whyChooseUsReason3InfoText), hoverWidth: '367px' }
     ];
 
     return (
         <motion.div>
             <Box className={classes.container}>
-                <Typography className={classes.title}>Why choose us</Typography>
-                <Typography className={classes.titleText}>{formatter.servicesHeaderText}</Typography>
+                <Typography className={classes.title}>{handleFormatContent(whyChooseUsShortHeading)}</Typography>
+                <Typography className={classes.titleText}>{handleFormatContent(whyChooseUsSubHeading)}</Typography>
                 {serviceData.map((item, index) => {
                     return (
                         <Grid key={index} container spacing={2}>

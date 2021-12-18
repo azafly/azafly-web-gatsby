@@ -1,10 +1,11 @@
+import React from 'react';
+
 import { motion } from 'framer-motion';
 import { makeStyles, Theme, createStyles, Grid } from '@material-ui/core';
-import React from 'react';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        secureIllustratioCcontainer: {
+        secureIllustrationContainer: {
             display: 'flex',
             marginBottom: '60px !important',
             [theme.breakpoints.up('sm')]: {
@@ -21,7 +22,6 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         illustration: {
-            // marginTop: -150,
             pointerEvents: 'none',
             margin: 20,
             [theme.breakpoints.only('xs')]: {
@@ -33,14 +33,14 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 interface Props {
-    image: any;
+    image: string;
 }
-export const Illustration = ({ image }: Props) => {
+export const Illustration: React.FC<Props> = ({ image }: Props) => {
     const classes = useStyles();
 
     return (
         <motion.div
-            className={classes.secureIllustratioCcontainer}
+            className={classes.secureIllustrationContainer}
             animate={{ scale: 1, opacity: 1 }}
             initial={{ scale: 0.5 }}
             transition={{

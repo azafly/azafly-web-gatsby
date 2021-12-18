@@ -3,6 +3,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import React, { FunctionComponent } from 'react';
 
 import { useFetchHomeData } from '../../../features/home/hooks/use-data';
+import { useFormatContentBasedOnLocation } from '../../../hooks/use-format-content-based-on-location';
 
 interface FooterLink {
     link: string;
@@ -55,10 +56,11 @@ const useStyles = makeStyles((theme: Theme) =>
         copywrite: { color: 'white' }
     })
 );
+const url = ['/about', '/services', '/faq', '/blog', '/contact'];
 
 export const Footer: FunctionComponent<FooterProps> = ({ copyrightOwner, socialMedia }) => {
     const classes = useStyles();
-    const url = ['/about', '/services', '/faq', '/blog', '/contact'];
+    const handleFormatContent = useFormatContentBasedOnLocation();
     const frontmatter = useFetchHomeData();
     const helfulLink = [
         { link: frontmatter.footerLinkList.link1 },

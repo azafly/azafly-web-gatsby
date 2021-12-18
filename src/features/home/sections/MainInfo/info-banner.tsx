@@ -1,14 +1,11 @@
-import { motion } from 'framer-motion';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Box, Grid, Typography } from '@material-ui/core';
 import React from 'react';
-import { HeadsetRounded } from '@mui/icons-material';
+import { Box, Grid, Typography } from '@material-ui/core';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { motion } from 'framer-motion';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
-            // display: 'flex',
-            // flexDirection: 'column',
             [theme.breakpoints.only('xs')]: {
                 alignItems: 'center',
                 margin: 10,
@@ -17,7 +14,6 @@ const useStyles = makeStyles((theme: Theme) =>
                 padding: 10
             }
         },
-
         banner: {
             fontWeight: 700,
             fontSize: '16px',
@@ -31,7 +27,6 @@ const useStyles = makeStyles((theme: Theme) =>
                 width: '100%'
             }
         },
-
         content: {
             marginTop: 20,
             fontWeight: 500,
@@ -39,7 +34,6 @@ const useStyles = makeStyles((theme: Theme) =>
             lineHeight: '185.52%',
             color: '#4990A4',
             [theme.breakpoints.only('xs')]: {
-                // justifyContent: 'center',
                 fontSize: '14px',
                 textAlign: 'center',
                 width: '100%'
@@ -91,7 +85,7 @@ interface InfoBannerProps {
     content: string;
 }
 
-export const InfoBanner = ({ title, content }: InfoBannerProps) => {
+export const InfoBanner: React.FC<InfoBannerProps> = ({ title, content }: InfoBannerProps) => {
     const classes = useStyles();
 
     return (

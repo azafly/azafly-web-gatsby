@@ -25,7 +25,7 @@ const geolocationReducer = (state: LocationProps = initialState, action: Action)
     }
 };
 
-const useGeolocation = () => {
+export const useGeolocation = () => {
     const [location, dispatch] = useReducer(geolocationReducer, initialState);
 
     const getCountriesByRegion = async () =>

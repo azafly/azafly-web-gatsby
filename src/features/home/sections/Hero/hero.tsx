@@ -41,7 +41,7 @@ export const HomePageHeroSection: React.FC<Props> = ({ images }) => {
 
                 <Hidden xsDown>
                     <Grid item xs={12} md={6}>
-                        <Illustration images={images} />
+                        <Illustration />
                     </Grid>
                 </Hidden>
             </Grid>

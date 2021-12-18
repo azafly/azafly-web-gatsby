@@ -52,7 +52,12 @@ collections:
             name: "whyChooseUs"
             widget: "object"
             fields: 
-              - {label: "Featured Image", name: "whyChooseUsImage", widget: image}
+              - label: "Featured Image"
+                name: "whyChooseUsImage"
+                widget: object
+                fields: 
+                 - {label: "Featured Image Abroad", name: "whyChooseUsAbroadImage", widget: image}
+                 - {label: "Featured Image Local", name: "whyChooseUsLocalImage", widget: image}
               - label: Short Heading
                 name: whyChooseUsShortHeading
                 widget: object
@@ -117,7 +122,12 @@ collections:
             name: "section1"
             widget: "object"
             fields: 
-              - {label: "Featured Image", name: "section1Image", widget: image}
+              - label: "Featured Image"
+                name: "section1Image"
+                widget: object
+                fields: 
+                 - {label: "Featured Image Local", name: "section1ImageLocal", widget: image}
+                 - {label: "Featured Image Abroad", name: "section1ImageAbroad", widget: image}
               - label: Short Heading
                 name: section1ShortHeading
                 widget: object
@@ -140,7 +150,12 @@ collections:
             name: "section2"
             widget: "object"
             fields: 
-              - {label: "Featured Image", name: "section2Image", widget: image}
+              - label: "Featured Image"
+                name: "section2Image"
+                widget: object
+                fields: 
+                 - {label: "Featured Image Local", name: "section2ImageLocal", widget: image}
+                 - {label: "Featured Image Abroad", name: "section2ImageAbroad", widget: image}
               - label: Short Heading
                 name: section2ShortHeading
                 widget: object
@@ -163,7 +178,12 @@ collections:
             name: "section3"
             widget: "object"
             fields: 
-              - {label: "Featured Image", name: "section3Image", widget: image}
+              - label: "Featured Image"
+                name: "section3Image"
+                widget: object
+                fields: 
+                 - {label: "Featured Image Local", name: "section3ImageLocal", widget: image}
+                 - {label: "Featured Image Abroad", name: "section3ImageAbroad", widget: image}
               - label: Short Heading
                 name: section3ShortHeading
                 widget: object
@@ -186,7 +206,12 @@ collections:
             name: "mainCTA"
             widget: "object"
             fields: 
-              - {label: "Featured Image", name: "mainCTAImage", widget: image}
+              - label: "Featured Image"
+                name: "mainCTAImage"
+                widget: object
+                fields: 
+                 - {label: "Featured Image Local", name: "mainCTAImageLocal", widget: image}
+                 - {label: "Featured Image Abroad", name: "mainCTAImageAbroad", widget: image}
               - label: Short Heading
                 name: mainCTAShortHeading
                 widget: object
@@ -204,23 +229,27 @@ collections:
                 widget: object
                 fields: 
                   - {label: Local, name: mainCTAInfoTextLocal, widget: string} 
-                  - {label: Abroad, name: mainCTAInfoTextAbroad, widget: string}           
-          - {label: Footer Intro Content, name: footerIntroContent, widget: text}
-          - {label: International Office Address, name: internationalOfficeAddress, widget: text}
-          - {label: International Office Phone, name: internationalOfficePhone, widget: string}
-          - {label: International Office Email, name: internationalOfficeEmail, widget: string}
-          - {label: Nigeria Office Address, name: nigeriaOfficeAddress, widget: text}
-          - {label: Nigeria Office Phone, name: nigeriaOfficePhone, widget: string}
-          - {label: Nigeria Office Email, name: nigeriaOfficeEmail, widget: string}
-          - label: "Footer Link List" 
-            name: "footerLinkList"
+                  - {label: Abroad, name: mainCTAInfoTextAbroad, widget: string}    
+          - label: "Footer" 
+            name: "footer"
             widget: "object"
-            fields: 
-              - {label: "Link1", name: "link1", widget: "string"}
-              - {label: "Link2", name: "link2", widget: "string"}
-              - {label: "Link3", name: "link3", widget: "string"}
-              - {label: "Link4", name: "link4", widget: "string"}
-              - {label: "Link5", name: "link5", widget: "string"}
+            fields:        
+              - {label: Footer Intro Content, name: footerIntroContent, widget: text}
+              - {label: International Office Address, name: internationalOfficeAddress, widget: text}
+              - {label: International Office Phone, name: internationalOfficePhone, widget: string}
+              - {label: International Office Email, name: internationalOfficeEmail, widget: string}
+              - {label: Nigeria Office Address, name: nigeriaOfficeAddress, widget: text}
+              - {label: Nigeria Office Phone, name: nigeriaOfficePhone, widget: string}
+              - {label: Nigeria Office Email, name: nigeriaOfficeEmail, widget: string}
+              - label: "Footer Link List" 
+                name: "footerLinkList"
+                widget: "object"
+                fields: 
+                  - {label: "Link1", name: "link1", widget: "string"}
+                  - {label: "Link2", name: "link2", widget: "string"}
+                  - {label: "Link3", name: "link3", widget: "string"}
+                  - {label: "Link4", name: "link4", widget: "string"}
+                  - {label: "Link5", name: "link5", widget: "string"}
       - label: "About Page"        
         name: "About"        
         file: "content/about.md"        

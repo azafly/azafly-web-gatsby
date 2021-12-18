@@ -11,6 +11,7 @@ import RoomIcon from '@mui/icons-material/Room';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import { RipplePlayButton } from '../../../../components/common/ripple-button';
+import { useFetchHomeData } from '../../hooks/use-data';
 import useGeolocation from '../../hooks/useGeolocation';
 
 function Alert(props: AlertProps) {
@@ -281,12 +282,14 @@ const MenuProps = {
 
 export const InfoBanner: React.FC = () => {
     const classes = useStyles();
-
     const theme = useTheme();
     const [sendMoneyFrom, setSendMoneyFrom] = useState<string[]>([]);
     const [sendMoneyTo, setSendMoneyto] = useState<string[]>([]);
     const [snackBarOpen, setSnackBarOpen] = useState<boolean>(false);
     const [error, setError] = useState<string>('');
+
+    // data
+    const { heroMainHeading, heroSubHeading } = useFetchHomeData();
 
     // getting users location via IP address
     const { location } = useGeolocation();
@@ -330,8 +333,8 @@ export const InfoBanner: React.FC = () => {
     };
 
     const BANNER_TEXT = {
-        heading: location.isAfrica ? `Pay your most important bills and invoices abroad.` : `Move your money fluently.`,
-        subHeading: location.isAfrica ? ` Receive international payments from ` : `Send money to Friends and Family in `,
+        heading: location.isAfrica ? heroMainHeading.heroHeadingLocal : heroMainHeading.heroMainHeadingAbroad,
+        subHeading: location.isAfrica ? heroSubHeading.heroSubHeadingLocal : heroSubHeading.heroSubHeadingAbroad,
         subHeading2: location.isAfrica ? ` Pay and get paid in multiple currencies.` : ` Manage your remittance in multiple currencies!`
     };
     return (
