@@ -36,59 +36,6 @@ collections:
         fields:  
           - {label: "Home Template", name: "homeTemplate", widget: "hidden", default: "home"}     
           - {label: Title, name: title, widget: string}          
-          - {label: Intro heading, name: intro, widget: text}   
-      - label: "Home Hero"
-        name: "homeHero"
-        file: "content/home.md"  
-        widget: "object"
-        fields:
-          - label: 'Hero Main heading'
-            name: 'heroMainHeading'
-            widget: 'object'
-            fields:
-              - {label: Local, name: heroMainHeadingLocal, widget: string}
-              - {label: Abroad, name: heroMainHeadingAbroad, widget: string}
-          - label: 'Hero Sub heading'
-            name: 'heroSubHeading'
-            file: "content/home.md"  
-            widget: 'object'
-            fields:
-              - {label: Local, name: heroSubHeadingLocal, widget: string}
-              - {label: Abroad, name: heroSubHeadingAbroad, widget: string}                        
-          - {label: Main Image1, name: heroMainImage1, widget: image}
-          - {label: Payment Image, name: paymentImage, widget: image}
-          - {label: Offer Text, name: offerText, widget: string}
-          - {label: Consult button, name: consultButtonText, widget: string}
-          - {label: Payment Button, name: paymentButtonText, widget: string}
-          - {label: Chat Prompt, name: chatPromptText, widget: string}
-          - {label: Services, name: servicesHeaderText, widget: string}
-          - {label: Hero quote1, name: hero_quote1, widget: text}
-          - {label: Hero quote2, name: hero_quote2, widget: text}
-          - {label: Hero quote3, name: hero_quote3, widget: text}
-          - {label: Services image, name: servicesHeaderText_image, widget: image ,required: false}
-          - {label: Services subtext1, name: servicesHeaderText_subtext1, widget: string}
-          - {label: Services subtext2, name: servicesHeaderText_subtext2, widget: string}
-          - {label: Services subtext3, name: servicesHeaderText_subtext3, widget: string}
-          - {label: Services content1, name: servicesHeaderText_content1, widget: text}
-          - {label: Services content2, name: servicesHeaderText_content2, widget: text}
-          - {label: Services content3, name: servicesHeaderText_content3, widget: text}
-          - {label: Secure image1, name: secureHeaderText_image1, widget: image ,required: false}
-          - {label: Secure image2, name: secureHeaderText_image2, widget: image ,required: false}
-          - {label: Secure image3, name: secureHeaderText_image3, widget: image ,required: false}
-          - {label: Secure heading1, name: secureHeadingText1, widget: string}
-          - {label: Secure heading2, name: secureHeadingText2, widget: string}
-          - {label: Secure heading3, name: secureHeadingText3, widget: string}
-          - {label: Secure content1, name: secureHeadingText_content1, widget: text}
-          - {label: Secure content2, name: secureHeadingText_content2, widget: text}
-          - {label: Secure content3, name: secureHeadingText_content3, widget: text}
-          - {label: Review heading, name: reviewHeading, widget: string}
-          - {label: Review paragraph, name: reviewParagraph, widget: string}
-          - {label: Coming Soon heading, name: comingSoonHeading, widget: string}
-          - {label: Coming Soon paragraph, name: comingSoonParagraph, widget: string}
-          - {label: Coming Soon button, name: comingSoonButton, widget: string}
-          - {label: JoinUs heading, name: joinUsHeadingText, widget: string}
-          - {label: JoinUs content, name: joinUsHeadingContent, widget: text}
-          - {label: JoinUs image, name: joinUs_image, widget: image ,required: false}
           - {label: Footer Intro Content, name: footerIntroContent, widget: text}
           - {label: International Office Address, name: internationalOfficeAddress, widget: text}
           - {label: International Office Phone, name: internationalOfficePhone, widget: string}
@@ -105,6 +52,19 @@ collections:
               - {label: "Link3", name: "link3", widget: "string"}
               - {label: "Link4", name: "link4", widget: "string"}
               - {label: "Link5", name: "link5", widget: "string"}
+          - label: "Hero Main heading" 
+            name: "heroMainHeading"
+            widget: "object"
+            fields: 
+              - {label: Local, name: heroHeadingLocal, widget: string}
+              - {label: Abroad, name: heroMainHeadingAbroad, widget: string}
+          - label: "Hero Sub heading" 
+            name: "heroSubHeading"
+            widget: "object"
+            fields: 
+              - {label: Local, name: heroSubHeadingLocal, widget: string}
+              - {label: Abroad, name: heroSubHeadingAbroad, widget: string}
+
       - label: "About Page"        
         name: "About"        
         file: "content/about.md"        
