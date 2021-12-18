@@ -54,6 +54,7 @@ section1:
     section1InfoTextAbroad: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
       adipiscing. Vel ut semper tristique.
+  section1Image: ../../static/images/transfer_money.png
 servicesHeaderText_subtext2: Fast Transactions
 intro: Making your dreams COME alive
 servicesHeaderText-content1: Our fee is the lowest in the market compared to any other
@@ -71,6 +72,7 @@ section2:
   section2ShortHeading:
     section2ShortHeadingLocal: Lorem ipsum
     section2ShortHeadingAbroad: Lorem ipsum
+  section2Image: ../../static/images/save_money.png
 servicesHeaderText_subtext3: Safe & Secure
 secureHeadingText-content1: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
@@ -95,6 +97,7 @@ section3:
   section3ShortHeading:
     section3ShortHeadingLocal: Lorem ipsum
     section3ShortHeadingAbroad: Lorem ipsum
+  section3Image: ../../static/images/withdraw_money.png
 secureHeadingText-content2: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
   ornare metus, elit. Vestibulum maecenas convallis enim velit, nulla amet
@@ -121,6 +124,21 @@ footerLinkList:
 paymentImage: https://img.freepik.com/free-photo/happy-winner-young-rich-african-american-man-casual-t-shirt-holding-money_255757-5489.jpg?size=626&ext=jpg
 reviewParagraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
   ultricies neque at nisl auctor.
+mainCTA:
+  mainCTAShortHeading:
+    mainCTAHeadingLocal: JOIN US
+    mainCTAShortHeadingAbroad: JOIN US
+  mainCTAMainHeading:
+    mainCTA3MainHeadingLocal: Malesuada molestie nulla amet habitant.
+    mainCTA3MainHeadingAbroad: Malesuada molestie nulla amet habitant.
+  mainCTAInfoText:
+    mainCTAInfoTextLocal: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
+      adipiscing. Vel ut semper tristique.
+    mainCTAInfoTextAbroad: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
+      adipiscing. Vel ut semper tristique.
+  mainCTAImage: ../../static/images/joinus.png
 secureParagraph: Already trusted by thousands of happy clients. We are protected
   by EU Financial charter. You have nothing to be worried about  Pay for all
   your service with secure payment channels. We accept dozens of methods across
@@ -153,14 +171,28 @@ whyChooseUs:
     whyChooseUsReason1Heading:
       whyChooseUsReason1HeadingLocal: Lowest Fee
       whyChooseUsReason1HeadingAbroad: Lowest Fee
+    whyChooseUsReason1InfoText:
+      whyChooseUsReason1InfoTextLocal: Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Lectus enim auctor massa ut et sagittis. Justo facilisi
+        massa eu mauris adipiscing. Vel ut semper tristique.
+      whyChooseUsReason1InfoTextAbroad: Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Lectus enim auctor massa ut et sagittis. Justo facilisi
+        massa eu mauris adipiscing. Vel ut semper tristique.
   whyChooseUsReason2:
     whyChooseUsReason2Heading:
       whyChooseUsReason2HeadingLocal: Fast Transactions
       whyChooseUsReason2HeadingAbroad: Fast Transactions
+    whyChooseUsReason2InfoText:
+      whyChooseUsReason2InfoTextLocal: The sky was cloudless and of a deep dark blue spectacle before.
+      whyChooseUsReason2InfoTextAbroad: The sky was cloudless and of a deep dark blue spectacle before.
   whyChooseUsReason3:
     whyChooseUsReason3Heading:
       whyChooseUsReason3HeadingLocal: Safe & Secure
       whyChooseUsReason3HeadingAbroad: Safe & Secure
+    whyChooseUsReason3InfoText:
+      whyChooseUsReason3InfoTextLocal: The sky was cloudless and of a deep dark blue spectacle before.
+      whyChooseUsReason3InfoTextAbroad: The sky was cloudless and of a deep dark blue spectacle before.
+  whyChooseUsImage: ../../static/images/joinus.png
 footerLinkList1:
   title: Hello
   link: /about
