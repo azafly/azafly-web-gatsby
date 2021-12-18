@@ -75,6 +75,12 @@ collections:
                     fields:
                      - {label: Local, name: whyChooseUsReason1HeadingLocal, widget: string} 
                      - {label: Abroad, name: whyChooseUsReason1HeadingAbroad, widget: string}
+                  - label: Reason 1 Info Text
+                    name: whyChooseUsReason1InfoText
+                    widget: object
+                    fields:
+                     - {label: Local, name: whyChooseUsReason1InfoTextLocal, widget: string} 
+                     - {label: Abroad, name: whyChooseUsReason1InfoTextAbroad, widget: string}
               - label: 2 -  Why Choose us reason
                 name: whyChooseUsReason2
                 widget: object
@@ -85,6 +91,12 @@ collections:
                     fields:
                      - {label: Local, name: whyChooseUsReason2HeadingLocal, widget: string} 
                      - {label: Abroad, name: whyChooseUsReason2HeadingAbroad, widget: string}
+                  - label: Reason 2 Info Text
+                    name: whyChooseUsReason2InfoText
+                    widget: object
+                    fields:
+                     - {label: Local, name: whyChooseUsReason2InfoTextLocal, widget: string} 
+                     - {label: Abroad, name: whyChooseUsReason2InfoTextAbroad, widget: string}
               - label: 3 -  Why Choose us reason
                 name: whyChooseUsReason3
                 widget: object
@@ -95,6 +107,12 @@ collections:
                     fields:
                      - {label: Local, name: whyChooseUsReason3HeadingLocal, widget: string} 
                      - {label: Abroad, name: whyChooseUsReason3HeadingAbroad, widget: string}
+                  - label: Reason 3 Info Text
+                    name: whyChooseUsReason3InfoText
+                    widget: object
+                    fields:
+                     - {label: Local, name: whyChooseUsReason3InfoTextLocal, widget: string} 
+                     - {label: Abroad, name: whyChooseUsReason3InfoTextAbroad, widget: string}
           - label: "Section 1" 
             name: "section1"
             widget: "object"
