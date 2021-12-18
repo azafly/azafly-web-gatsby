@@ -56,14 +56,45 @@ collections:
                 name: whyChooseUsShortHeading
                 widget: object
                 fields: 
+                  - {label: Local, name: whyChooseUsShortHeadingLocal, widget: string}
                   - {label: Abroad, name: whyChooseUsShortHeadingAbroad, widget: string}
-                  - {label: Abroad, name: whyChooseUsShortHeadingAbroad, widget: string}
-              - label: Short Heading
-                name: whyChooseUsShortHeading
+              - label: Sub Heading
+                name: whyChooseUsSubHeading
                 widget: object
                 fields: 
-                  - {label: Abroad, name: whyChooseUsShortHeadingAbroad, widget: string}
-                  - {label: Abroad, name: whyChooseUsShortHeadingAbroad, widget: string}                           
+                  - {label: Local, name: whyChooseUsSubHeadingLocal, widget: string}
+                  - {label: Abroad, name: whyChooseUsSubHeadingAbroad, widget: string}
+              - label: 1 -  Why Choose us reason
+                name: whyChooseUsReason1
+                widget: object
+                fields: 
+                  - label: Reason 1 Heading
+                    name: whyChooseUsReason1Heading
+                    widget: object
+                    fields:
+                     - {label: Local, name: whyChooseUsReason1HeadingLocal, widget: string} 
+                     - {label: Abroad, name: whyChooseUsReason1HeadingAbroad, widget: string}
+              - label: 2 -  Why Choose us reason
+                name: whyChooseUsReason2
+                widget: object
+                fields: 
+                  - label: Reason 1 Heading
+                    name: whyChooseUsReason2Heading
+                    widget: object
+                    fields:
+                     - {label: Local, name: whyChooseUsReason2HeadingLocal, widget: string} 
+                     - {label: Abroad, name: whyChooseUsReason2HeadingAbroad, widget: string}
+              - label: 3 -  Why Choose us reason
+                name: whyChooseUsReason2
+                widget: object
+                fields: 
+                  - label: Reason 3 Heading
+                    name: whyChooseUsReason3Heading
+                    widget: object
+                    fields:
+                     - {label: Local, name: whyChooseUsReason3HeadingLocal, widget: string} 
+                     - {label: Abroad, name: whyChooseUsReason3HeadingAbroad, widget: string}
+                            
           - {label: Footer Intro Content, name: footerIntroContent, widget: text}
           - {label: International Office Address, name: internationalOfficeAddress, widget: text}
           - {label: International Office Phone, name: internationalOfficePhone, widget: string}
