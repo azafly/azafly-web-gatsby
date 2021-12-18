@@ -1,15 +1,14 @@
 ---
-intro: Making your dreams COME alive
-servicesHeaderText_content2: The sky was cloudless and of a deep dark blue spectacle before.
-servicesHeaderText_content3: The sky was cloudless and of a deep dark blue spectacle before.
 secureHeadingText_content2: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
   adipiscing. Vel ut semper tristique.
+servicesHeaderText_content2: The sky was cloudless and of a deep dark blue spectacle before.
+nigeriaOfficePhone: (234) 91-0083-7370
 secureHeadingText_content3: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
   adipiscing. Vel ut semper tristique.
+servicesHeaderText_content3: The sky was cloudless and of a deep dark blue spectacle before.
 internationalOfficePhone: (272) 211-7370
-nigeriaOfficePhone: (234) 91-0083-7370
 servicesHeaderText-subtext3-button: Start Now
 servicesHeaderText-subtext2-button: Consult for free
 paymentButtonText: Make a payment
@@ -35,15 +34,43 @@ hero-quote2: Send cash for pickup at a thousands of partner locations around the
 footerHeading1: test
 internationalOfficeAddress: 455 West Orchard Street Kings Mountain, NC, 28097
 hero-quote3: Send money directly to your recipient door
-consultButtonText: Consult for free
 reviewHeading: What clients are saying about us
+consultButtonText: Consult for free
 footerHeading2: Hey
 servicesHeaderText_subtext1: Lowest Fee
 secureHeading: Secure by design
 footerHeading3: Ho
+section1:
+  section1ShortHeading:
+    section1ShortHeadingLocal: Lorem ipsum
+    section1ShortHeadingAbroad: Lorem ipsum
+  section1MainHeading:
+    section1MainHeadingLocal: Vitae nulla ac purus pharetra
+    section1MainHeadingAbroad: Vitae nulla ac purus pharetra
+  section1InfoText:
+    section1InfoTextLocal: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
+      adipiscing. Vel ut semper tristique.
+    section1InfoTextAbroad: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
+      adipiscing. Vel ut semper tristique.
 servicesHeaderText_subtext2: Fast Transactions
+intro: Making your dreams COME alive
 servicesHeaderText-content1: Our fee is the lowest in the market compared to any other
-hero_quote1: Send money to almost any bank account.
+section2:
+  section2MainHeading:
+    section2MainHeadingLocal: Vitae nulla ac purus pharetra
+    section2MainHeadingAbroad: Vitae nulla ac purus pharetra
+  section2InfoText:
+    section2InfoTextLocal: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
+      adipiscing. Vel ut semper tristique.
+    section2InfoTextAbroad: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
+      adipiscing. Vel ut semper tristique.
+  section2ShortHeading:
+    section2ShortHeadingLocal: Lorem ipsum
+    section2ShortHeadingAbroad: Lorem ipsum
 servicesHeaderText_subtext3: Safe & Secure
 secureHeadingText-content1: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
@@ -53,21 +80,35 @@ intro-paragraph: "Confused on what country to travel or relocate to ? Are you
   stuck in making that payment? We offer world-class guidance to making sure
   your travels is well catered for. "
 servicesHeaderText-content2: The sky was cloudless and of a deep dark blue spectacle before.
-reviewParagraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-  ultricies neque at nisl auctor.
 comingSoonButton: Forum and Chats
+section3:
+  section3InfoText:
+    section3InfoTextLocal: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
+      adipiscing. Vel ut semper tristique.
+    section3InfoTextAbroad: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
+      adipiscing. Vel ut semper tristique.
+  section3MainHeading:
+    section3MainHeadingLocal: Vitae nulla ac purus pharetra
+    section3MainHeadingAbroad: Vitae nulla ac purus pharetra
+  section3ShortHeading:
+    section3ShortHeadingLocal: Lorem ipsum
+    section3ShortHeadingAbroad: Lorem ipsum
 secureHeadingText-content2: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
   ornare metus, elit. Vestibulum maecenas convallis enim velit, nulla amet
   scelerisque. Faucibus arcu dignissim sem ornare
 servicesHeaderText-content3: The sky was cloudless and of a deep dark blue spectacle before.
+heroMainHeading:
+  heroHeadingLocal: Move your money fluently
+  heroMainHeadingAbroad: Pay your most important bills abroad
 secureHeadingText-content3: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
   ornare metus, elit. Vestibulum maecenas convallis enim velit, nulla amet
   scelerisque. Faucibus arcu dignissim sem ornare
 nigeriaOfficeEmail: support-ng@lucqax.com
 footerIntro: HELLO
-paymentImage: https://img.freepik.com/free-photo/happy-winner-young-rich-african-american-man-casual-t-shirt-holding-money_255757-5489.jpg?size=626&ext=jpg
 comingSoonParagraph: For monthly newsletter and products update, sign up below
   to keep updated. We will send you an email every month. Promise No Spam.
 internationalOfficeEmail: support@lucqax.com
@@ -77,29 +118,57 @@ footerLinkList:
   link3: FAQ's
   link4: Blog
   link5: Contact
+paymentImage: https://img.freepik.com/free-photo/happy-winner-young-rich-african-american-man-casual-t-shirt-holding-money_255757-5489.jpg?size=626&ext=jpg
+reviewParagraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+  ultricies neque at nisl auctor.
 secureParagraph: Already trusted by thousands of happy clients. We are protected
   by EU Financial charter. You have nothing to be worried about  Pay for all
   your service with secure payment channels. We accept dozens of methods across
   multiple currencies.
-title: Lucqas | Digital cross border bank for Africans
 servicesHeaderText: Some of our advantages
+title: Lucqas | Digital cross border bank for Africans
 servicesHeaderText-subtext1: Lowest Fee
 secureHeadingText1: Vitae nulla ac purus pharetra
 servicesHeaderText-subtext2: Fast Transactions
 secureHeadingText2: Vitae nulla ac purus pharetra
+hero_quote1: Send money to almost any bank account.
 servicesHeaderText-subtext3: Safe & Secure
-hero_quote2: Send cash for pickup at a thousands of partner locations around the world.
 secureHeadingText3: Vitae nulla ac purus pharetra
+hero_quote2: Send cash for pickup at a thousands of partner locations around the world.
 image: ../../static/images/smiling-man.jpg
 hero_quote3: Send money directly to your recipient door.
+heroSubHeading:
+  heroSubHeadingLocal: Send money to Friends and Family in Nigeria. Manage your
+    remittance in multiple currencies!
+  heroSubHeadingAbroad: Send money to Friends and Family in Nigeria. Manage your
+    remittance in multiple currencies!
+whyChooseUs:
+  whyChooseUsShortHeading:
+    whyChooseUsShortHeadingLocal: Why choose us
+    whyChooseUsShortHeadingAbroad: Why choose us
+  whyChooseUsSubHeading:
+    whyChooseUsSubHeadingLocal: Some of our advantages
+    whyChooseUsSubHeadingAbroad: Some of our advantages
+  whyChooseUsReason1:
+    whyChooseUsReason1Heading:
+      whyChooseUsReason1HeadingLocal: Lowest Fee
+      whyChooseUsReason1HeadingAbroad: Lowest Fee
+  whyChooseUsReason2:
+    whyChooseUsReason2Heading:
+      whyChooseUsReason2HeadingLocal: Fast Transactions
+      whyChooseUsReason2HeadingAbroad: Fast Transactions
+  whyChooseUsReason3:
+    whyChooseUsReason3Heading:
+      whyChooseUsReason3HeadingLocal: Safe & Secure
+      whyChooseUsReason3HeadingAbroad: Safe & Secure
 footerLinkList1:
   title: Hello
   link: /about
 setupImage: ../../static/images/home-setup.jpeg
-servicesHeaderText_content1: Our fee is the lowest in the market compared to any other
 secureHeadingText_content1: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
   adipiscing. Vel ut semper tristique.
+servicesHeaderText_content1: Our fee is the lowest in the market compared to any other
 joinUsHeadingContent: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
   adipiscing. Vel ut semper tristique.
