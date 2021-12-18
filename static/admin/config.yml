@@ -35,7 +35,35 @@ collections:
         name: "home"           
         fields:  
           - {label: "Home Template", name: "homeTemplate", widget: "hidden", default: "home"}     
-          - {label: Title, name: title, widget: string}          
+          - {label: Title, name: title, widget: string}
+          - label: "Hero Main heading" 
+            name: "heroMainHeading"
+            widget: "object"
+            fields: 
+              - {label: Local, name: heroHeadingLocal, widget: string}
+              - {label: Abroad, name: heroMainHeadingAbroad, widget: string}
+          - label: "Hero Sub heading" 
+            name: "heroSubHeading"
+            widget: "object"
+            fields: 
+              - {label: Local, name: heroSubHeadingLocal, widget: string}
+              - {label: Abroad, name: heroSubHeadingAbroad, widget: string}
+          - label: "Why choose us" 
+            name: "whyChooseUs"
+            widget: "object"
+            fields: 
+              - label: Short Heading
+                name: whyChooseUsShortHeading
+                widget: object
+                fields: 
+                  - {label: Abroad, name: whyChooseUsShortHeadingAbroad, widget: string}
+                  - {label: Abroad, name: whyChooseUsShortHeadingAbroad, widget: string}
+              - label: Short Heading
+                name: whyChooseUsShortHeading
+                widget: object
+                fields: 
+                  - {label: Abroad, name: whyChooseUsShortHeadingAbroad, widget: string}
+                  - {label: Abroad, name: whyChooseUsShortHeadingAbroad, widget: string}                           
           - {label: Footer Intro Content, name: footerIntroContent, widget: text}
           - {label: International Office Address, name: internationalOfficeAddress, widget: text}
           - {label: International Office Phone, name: internationalOfficePhone, widget: string}
@@ -52,19 +80,6 @@ collections:
               - {label: "Link3", name: "link3", widget: "string"}
               - {label: "Link4", name: "link4", widget: "string"}
               - {label: "Link5", name: "link5", widget: "string"}
-          - label: "Hero Main heading" 
-            name: "heroMainHeading"
-            widget: "object"
-            fields: 
-              - {label: Local, name: heroHeadingLocal, widget: string}
-              - {label: Abroad, name: heroMainHeadingAbroad, widget: string}
-          - label: "Hero Sub heading" 
-            name: "heroSubHeading"
-            widget: "object"
-            fields: 
-              - {label: Local, name: heroSubHeadingLocal, widget: string}
-              - {label: Abroad, name: heroSubHeadingAbroad, widget: string}
-
       - label: "About Page"        
         name: "About"        
         file: "content/about.md"        
