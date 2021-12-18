@@ -78,14 +78,14 @@ collections:
                 name: whyChooseUsReason2
                 widget: object
                 fields: 
-                  - label: Reason 1 Heading
+                  - label: Reason 2 Heading
                     name: whyChooseUsReason2Heading
                     widget: object
                     fields:
                      - {label: Local, name: whyChooseUsReason2HeadingLocal, widget: string} 
                      - {label: Abroad, name: whyChooseUsReason2HeadingAbroad, widget: string}
               - label: 3 -  Why Choose us reason
-                name: whyChooseUsReason2
+                name: whyChooseUsReason3
                 widget: object
                 fields: 
                   - label: Reason 3 Heading
@@ -94,7 +94,72 @@ collections:
                     fields:
                      - {label: Local, name: whyChooseUsReason3HeadingLocal, widget: string} 
                      - {label: Abroad, name: whyChooseUsReason3HeadingAbroad, widget: string}
-                            
+          - label: "Section 1" 
+            name: "section1"
+            widget: "object"
+            fields: 
+              - label: Short Heading
+                name: section1ShortHeading
+                widget: object
+                fields: 
+                  - {label: Local, name: section1ShortHeadingLocal, widget: string}
+                  - {label: Abroad, name: section1ShortHeadingAbroad, widget: string}
+              - label: Main Heading
+                name: section1MainHeading
+                widget: object
+                fields: 
+                  - {label: Local, name: section1MainHeadingLocal, widget: string}
+                  - {label: Abroad, name: section1MainHeadingAbroad, widget: string}
+              - label: Informational Text
+                name: section1InfoText
+                widget: object
+                fields: 
+                  - {label: Local, name: section1InfoTextLocal, widget: string} 
+                  - {label: Abroad, name: section1InfoTextAbroad, widget: string}
+          - label: "Section 2" 
+            name: "section2"
+            widget: "object"
+            fields: 
+              - label: Short Heading
+                name: section2ShortHeading
+                widget: object
+                fields: 
+                  - {label: Local, name: section2ShortHeadingLocal, widget: string}
+                  - {label: Abroad, name: section2ShortHeadingAbroad, widget: string}
+              - label: Main Heading
+                name: section2MainHeading
+                widget: object
+                fields: 
+                  - {label: Local, name: section2MainHeadingLocal, widget: string}
+                  - {label: Abroad, name: section2MainHeadingAbroad, widget: string}
+              - label: Informational Text
+                name: section2InfoText
+                widget: object
+                fields: 
+                  - {label: Local, name: section2InfoTextLocal, widget: string} 
+                  - {label: Abroad, name: section2InfoTextAbroad, widget: string}   
+          - label: "Section 3" 
+            name: "section3"
+            widget: "object"
+            fields: 
+              - label: Short Heading
+                name: section3ShortHeading
+                widget: object
+                fields: 
+                  - {label: Local, name: section3ShortHeadingLocal, widget: string}
+                  - {label: Abroad, name: section3ShortHeadingAbroad, widget: string}
+              - label: Main Heading
+                name: section3MainHeading
+                widget: object
+                fields: 
+                  - {label: Local, name: section3MainHeadingLocal, widget: string}
+                  - {label: Abroad, name: section3MainHeadingAbroad, widget: string}
+              - label: Informational Text
+                name: section3InfoText
+                widget: object
+                fields: 
+                  - {label: Local, name: section3InfoTextLocal, widget: string} 
+                  - {label: Abroad, name: section3InfoTextAbroad, widget: string}            
           - {label: Footer Intro Content, name: footerIntroContent, widget: text}
           - {label: International Office Address, name: internationalOfficeAddress, widget: text}
           - {label: International Office Phone, name: internationalOfficePhone, widget: string}
