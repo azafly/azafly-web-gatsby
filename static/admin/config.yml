@@ -37,7 +37,24 @@ collections:
           - {label: "Home Template", name: "homeTemplate", widget: "hidden", default: "home"}     
           - {label: Title, name: title, widget: string}          
           - {label: Intro heading, name: intro, widget: text}   
-          - {label: Intro paragraph, name: intro-paragraph, widget: text}                 
+      - label: "Home Hero"
+        name: "homeHero"
+        file: "content/home.md"  
+        widget: "object"
+        fields:
+          - label: 'Hero Main heading'
+            name: 'heroMainHeading'
+            widget: 'object'
+            fields:
+              - {label: Local, name: heroMainHeadingLocal, widget: string}
+              - {label: Abroad, name: heroMainHeadingAbroad, widget: string}
+          - label: 'Hero Sub heading'
+            name: 'heroSubHeading'
+            file: "content/home.md"  
+            widget: 'object'
+            fields:
+              - {label: Local, name: heroSubHeadingLocal, widget: string}
+              - {label: Abroad, name: heroSubHeadingAbroad, widget: string}                        
           - {label: Main Image1, name: heroMainImage1, widget: image}
           - {label: Payment Image, name: paymentImage, widget: image}
           - {label: Offer Text, name: offerText, widget: string}

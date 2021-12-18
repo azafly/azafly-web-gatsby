@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
             fontFamily: 'Nunito',
             letterSpacing: -1,
             color: theme.colors.white,
-            fontSize: '3rem',
+            fontSize: '3.2rem',
             [theme.breakpoints.down('md')]: {
                 fontSize: '2.5rem'
             }
