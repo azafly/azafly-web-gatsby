@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useGeolocation } from '../features/home/hooks/useGeolocation';
+import { getFormattedImageUrl } from '../lib/constants';
 
 interface Content {
     local: string;
@@ -11,13 +12,17 @@ export const useFormatContentBasedOnLocation = () => {
         location: { isAfrica }
     } = useGeolocation();
 
-    const getFormattedContent = (contentObject: Record<string, any>) => {
+    const getFormattedContent = (value: Record<string, string> | string) => {
+        if (typeof value === 'string') {
+            return value.toLowerCase().includes('image') ? getFormattedImageUrl(value) : value;
+        }
         const content: Content = { local: '', abroad: '' };
-        Object.keys(contentObject).forEach(key => {
-            if (key.includes('local')) {
-                content.local = contentObject[key];
+        Object.keys(value).forEach(key => {
+            const formattedValue = key.includes('Image') ? getFormattedImageUrl(value[key]) : value[key];
+            if (key.toLocaleLowerCase().includes('local')) {
+                content.local = formattedValue;
             } else {
-                content.abroad = contentObject[key];
+                content.abroad = formattedValue;
             }
         });
 

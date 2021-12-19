@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { graphql } from 'gatsby';
 
 import { Layout } from '../../components/layout';
 import { SEO } from '../../components/seo';
@@ -15,7 +16,7 @@ interface Home {
     data: HomeImages;
 }
 
-const Home: FunctionComponent = () => {
+const Home: FunctionComponent<Home> = ({ data }) => {
     return (
         <>
             <SEO title='Azafly | The cross-border digital bank for Africans' image='/logo.png' />
