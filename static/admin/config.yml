@@ -216,7 +216,7 @@ collections:
                 name: mainCTAShortHeading
                 widget: object
                 fields: 
-                  - {label: Local, name: mainCTAHeadingLocal, widget: string}
+                  - {label: Local, name: mainCTAShortHeadingLocal, widget: string}
                   - {label: Abroad, name: mainCTAShortHeadingAbroad, widget: string}
               - label: Main Heading
                 name: mainCTAMainHeading
@@ -242,7 +242,6 @@ collections:
                   - {label: footer Intro Content Abroad , name: footerIntroContentAbroad, widget: text}
               - {label: International Office Phone, name: internationalOfficePhone, widget: string}
               - {label: International Office Address, name: internationalOfficeAddress, widget: text}
-              - {label: International Office Phone, name: internationalOfficePhone, widget: string}
               - {label: International Office Email, name: internationalOfficeEmail, widget: string}
               - {label: Nigeria Office Address, name: nigeriaOfficeAddress, widget: text}
               - {label: Nigeria Office Phone, name: nigeriaOfficePhone, widget: string}
