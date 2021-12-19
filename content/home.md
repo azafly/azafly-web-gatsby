@@ -128,6 +128,7 @@ mainCTA:
   mainCTAShortHeading:
     mainCTAHeadingLocal: JOIN US
     mainCTAShortHeadingAbroad: JOIN US
+    mainCTAShortHeadingLocal: JOIN US
   mainCTAMainHeading:
     mainCTA3MainHeadingLocal: Malesuada molestie nulla amet habitant.
     mainCTA3MainHeadingAbroad: Malesuada molestie nulla amet habitant.
@@ -155,7 +156,14 @@ secureHeadingText3: Vitae nulla ac purus pharetra
 hero_quote2: Send cash for pickup at a thousands of partner locations around the world.
 image: ../../static/images/smiling-man.jpg
 footer:
-  internationalOfficeAddress: 42c Wartenberger 13053, Berlin
+  nigeriaOfficePhone: "+234703320070"
+  socialMediaLinks:
+    facebook: https://www.facebook.com/
+    instagram: https://www.facebook.com/
+    linkedIn: https://www.facebook.com/
+    twitter: https://twitter.com/
+  internationalOfficePhone: "+491774904588"
+  nigeriaOfficeAddress: 23, Kofo street, VI Lagos, Nigeria
   footerIntroContent: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
     do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue lacus
     viverra vitae congue eu consequat. Egestas maecenas pharetra convallis
@@ -163,17 +171,15 @@ footer:
     Ullamcorper a lacus vestibulum sed arcu non odio euismod. Est velit egestas
     dui id ornare arcu odio ut. Integer feugiat scelerisque varius morbi enim
     nunc faucibus.
-  internationalOfficePhone: "+491774904588"
+  internationalOfficeAddress: 42c Wartenberger 13053, Berlin
+  nigeriaOfficeEmail: support-nigeria@azafly.com
   internationalOfficeEmail: support@azafly.com
-  nigeriaOfficeAddress: 23, Kofo street, VI Lagos, Nigeria
-  nigeriaOfficePhone: "+234703320070"
   footerLinkList:
     link1: About
     link2: Services
     link3: FAQs
     link4: Blog
     link5: Contact
-  nigeriaOfficeEmail: support-nigeria@azafly.com
 hero_quote3: Send money directly to your recipient door.
 heroSubHeading:
   heroSubHeadingLocal: Send money to Friends and Family in Nigeria. Manage your
