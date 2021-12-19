@@ -86,24 +86,24 @@ const socialMediaIcons = {
 export const Footer: FunctionComponent = () => {
     const classes = useStyles();
     const handleFormatContent = useFormatContentBasedOnLocation();
-    // const {
-    //     footer: {
-    //         footerIntroContent,
-    //         internationalOfficeAddress,
-    //         internationalOfficeEmail,
-    //         internationalOfficePhone,
-    //         nigeriaOfficeAddress,
-    //         nigeriaOfficeEmail,
-    //         nigeriaOfficePhone,
-    //         socialMediaLinks: { facebook, instagram, twitter, linkedIn }
-    //     }
-    // } = useFetchHomeData();
+    const {
+        footer: {
+            footerIntroContent,
+            internationalOfficeAddress,
+            internationalOfficeEmail,
+            internationalOfficePhone,
+            nigeriaOfficeAddress,
+            nigeriaOfficeEmail,
+            nigeriaOfficePhone,
+            socialMediaLinks: { facebook, instagram, twitter, linkedIn }
+        }
+    } = useFetchHomeData();
 
-    //  const socialMediaUrls = [facebook, instagram, twitter, linkedIn];
+    const socialMediaUrls = [facebook, instagram, twitter, linkedIn];
 
     return (
         <footer style={{ background: '#0D324D' }}>
-            {/* <Box px={{ xs: 3, sm: 10 }} py={{ xs: 5, sm: 10 }}>
+            <Box px={{ xs: 3, sm: 10 }} py={{ xs: 5, sm: 10 }}>
                 <Container maxWidth='lg'>
                     <Grid container spacing={5}>
                         <Grid item xs={12} sm={7} md={9} lg={4}>
@@ -170,7 +170,7 @@ export const Footer: FunctionComponent = () => {
                         </Box>
                     </Box>
                 </Container>
-            </Box> */}
+            </Box>
         </footer>
     );
 };
