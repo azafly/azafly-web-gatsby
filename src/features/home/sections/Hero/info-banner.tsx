@@ -334,8 +334,7 @@ export const InfoBanner: React.FC = () => {
 
     const BANNER_TEXT = {
         heading: location.isAfrica ? heroMainHeading.heroHeadingLocal : heroMainHeading.heroMainHeadingAbroad,
-        subHeading: location.isAfrica ? heroSubHeading.heroSubHeadingLocal : heroSubHeading.heroSubHeadingAbroad,
-        subHeading2: location.isAfrica ? ` Pay and get paid in multiple currencies.` : ` Manage your remittance in multiple currencies!`
+        subHeading: location.isAfrica ? heroSubHeading.heroSubHeadingLocal : heroSubHeading.heroSubHeadingAbroad
     };
     return (
         <motion.div>
@@ -360,7 +359,6 @@ export const InfoBanner: React.FC = () => {
 
                 <Typography paragraph className={classes.paragraph}>
                     {BANNER_TEXT.subHeading}
-                    <strong className={classes.clipPath}>{location.isAfrica ? 'abroad' : 'Nigeria'}</strong>. {BANNER_TEXT.subHeading2}
                 </Typography>
 
                 <Box>
