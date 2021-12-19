@@ -268,21 +268,20 @@ export const useFetchHomeData = () => {
                                 mainCTAShortHeadingAbroad
                             }
                         }
-                        footerHeading1
-                        footerHeading2
-                        footerHeading3
-                        footerIntro
-                        footerIntroContent
-                        footerLinkList {
-                            link1
-                            link2
-                            link4
-                            link3
-                            link5
-                        }
-                        footerLinkList1 {
-                            link
-                            title
+                        footer {
+                            footerIntroContent
+                            internationalOfficeAddress
+                            internationalOfficeEmail
+                            internationalOfficePhone
+                            nigeriaOfficeAddress
+                            nigeriaOfficeEmail
+                            nigeriaOfficePhone
+                            socialMediaLinks {
+                                facebook
+                                instagram
+                                linkedIn
+                                twitter
+                            }
                         }
                     }
                 }
