@@ -52,12 +52,12 @@ collections:
             name: "whyChooseUs"
             widget: "object"
             fields: 
-              - label: "Featured Image"
-                name: "whyChooseUsImage"
-                widget: object
-                fields: 
-                 - {label: "Featured Image Abroad", name: "whyChooseUsAbroadImage", widget: image}
-                 - {label: "Featured Image Local", name: "whyChooseUsLocalImage", widget: image}
+              # - label: "Featured Image"
+              #   name: "whyChooseUsImage"
+              #   widget: object
+              #   fields: 
+              #    - {label: "Featured Image Abroad", name: "whyChooseUsAbroadImage", widget: image}
+              #    - {label: "Featured Image Local", name: "whyChooseUsLocalImage", widget: image}
               - label: Short Heading
                 name: whyChooseUsShortHeading
                 widget: object
@@ -122,12 +122,12 @@ collections:
             name: "section1"
             widget: "object"
             fields: 
-              - label: "Featured Image"
-                name: "section1Image"
-                widget: object
-                fields: 
-                 - {label: "Featured Image Local", name: "section1ImageLocal", widget: image}
-                 - {label: "Featured Image Abroad", name: "section1ImageAbroad", widget: image}
+              # - label: "Featured Image"
+              #   name: "section1Image"
+              #   widget: object
+              #   fields: 
+              #    - {label: "Featured Image Local", name: "section1ImageLocal", widget: image}
+              #    - {label: "Featured Image Abroad", name: "section1ImageAbroad", widget: image}
               - label: Short Heading
                 name: section1ShortHeading
                 widget: object
@@ -150,12 +150,12 @@ collections:
             name: "section2"
             widget: "object"
             fields: 
-              - label: "Featured Image"
-                name: "section2Image"
-                widget: object
-                fields: 
-                 - {label: "Featured Image Local", name: "section2ImageLocal", widget: image}
-                 - {label: "Featured Image Abroad", name: "section2ImageAbroad", widget: image}
+              # - label: "Featured Image"
+              #   name: "section2Image"
+              #   widget: object
+              #   fields: 
+              #    - {label: "Featured Image Local", name: "section2ImageLocal", widget: image}
+              #    - {label: "Featured Image Abroad", name: "section2ImageAbroad", widget: image}
               - label: Short Heading
                 name: section2ShortHeading
                 widget: object
@@ -178,12 +178,12 @@ collections:
             name: "section3"
             widget: "object"
             fields: 
-              - label: "Featured Image"
-                name: "section3Image"
-                widget: object
-                fields: 
-                 - {label: "Featured Image Local", name: "section3ImageLocal", widget: image}
-                 - {label: "Featured Image Abroad", name: "section3ImageAbroad", widget: image}
+              # - label: "Featured Image"
+              #   name: "section3Image"
+              #   widget: object
+              #   fields: 
+              #    - {label: "Featured Image Local", name: "section3ImageLocal", widget: image}
+              #    - {label: "Featured Image Abroad", name: "section3ImageAbroad", widget: image}
               - label: Short Heading
                 name: section3ShortHeading
                 widget: object
@@ -206,12 +206,12 @@ collections:
             name: "mainCTA"
             widget: "object"
             fields: 
-              - label: "Featured Image"
-                name: "mainCTAImage"
-                widget: object
-                fields: 
-                 - {label: "Featured Image Local", name: "mainCTAImageLocal", widget: image}
-                 - {label: "Featured Image Abroad", name: "mainCTAImageAbroad", widget: image}
+              # - label: "Featured Image"
+              #   name: "mainCTAImage"
+              #   widget: object
+              #   fields: 
+              #    - {label: "Featured Image Local", name: "mainCTAImageLocal", widget: image}
+              #    - {label: "Featured Image Abroad", name: "mainCTAImageAbroad", widget: image}
               - label: Short Heading
                 name: mainCTAShortHeading
                 widget: object
