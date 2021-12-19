@@ -234,22 +234,27 @@ collections:
             name: "footer"
             widget: "object"
             fields:        
-              - {label: Footer Intro Content, name: footerIntroContent, widget: text}
+              - label: Footer Intro Content
+                name: footerIntroContent
+                widget: object
+                fields:
+                  - {label: footer Intro Content Local , name: footerIntroContentLocal, widget: text}
+                  - {label: footer Intro Content Abroad , name: footerIntroContentAbroad, widget: text}
+              - {label: International Office Phone, name: internationalOfficePhone, widget: string}
               - {label: International Office Address, name: internationalOfficeAddress, widget: text}
               - {label: International Office Phone, name: internationalOfficePhone, widget: string}
               - {label: International Office Email, name: internationalOfficeEmail, widget: string}
               - {label: Nigeria Office Address, name: nigeriaOfficeAddress, widget: text}
               - {label: Nigeria Office Phone, name: nigeriaOfficePhone, widget: string}
               - {label: Nigeria Office Email, name: nigeriaOfficeEmail, widget: string}
-              - label: "Footer Link List" 
-                name: "footerLinkList"
-                widget: "object"
+              - label: Social Media Links
+                name: socialMediaLinks
+                widget: object
                 fields: 
-                  - {label: "Link1", name: "link1", widget: "string"}
-                  - {label: "Link2", name: "link2", widget: "string"}
-                  - {label: "Link3", name: "link3", widget: "string"}
-                  - {label: "Link4", name: "link4", widget: "string"}
-                  - {label: "Link5", name: "link5", widget: "string"}
+                  - {label: Facebook, name: facebook, widget: string}
+                  - {label: Instagram, name: instagram, widget: string}
+                  - {label: LinkedIn, name: linkedIn, widget: string}
+                  - {label: Twitter, name: twitter, widget: string}                  
       - label: "About Page"        
         name: "About"        
         file: "content/about.md"        

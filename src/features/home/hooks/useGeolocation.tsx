@@ -29,10 +29,10 @@ export const useGeolocation = () => {
     const [location, dispatch] = useReducer(geolocationReducer, initialState);
 
     const getCountriesByRegion = async () =>
-        axios.get(`https://us-central1-pick-safe.cloudfunctions.net/countryList`).then(({ data }) => data.countriesByRegion);
+        axios.get(`https://us-central1-pick-safe.cloudfunctions.net/countryList`).then(({ data }: any) => data.countriesByRegion);
 
     const getUserGeoLocationData = async () =>
-        axios.get(`https://geolocation-db.com/json/${process.env.GEOLOCATION_KEY}`).then(({ data }) => data.country_name);
+        axios.get(`https://geolocation-db.com/json/${process.env.GEOLOCATION_KEY}`).then(({ data }: any) => data.country_name);
 
     const getUserGeolocationDetails = async () => {
         dispatch({ type: 'request' });

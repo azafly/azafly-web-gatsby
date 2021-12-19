@@ -1,8 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-interface FooterLinkList {
-    [key: string]: string;
-}
 export interface HomeFrontMatter {
     node: {
         id: string;
@@ -134,14 +131,24 @@ export interface HomeFrontMatter {
                     mainCTAShortHeadingAbroad: string;
                 };
             };
-            footerIntroContent: string;
-            internationalOfficeAddress: string;
-            internationalOfficePhone: string;
-            internationalOfficeEmail: string;
-            nigeriaOfficeAddress: string;
-            nigeriaOfficePhone: string;
-            nigeriaOfficeEmail: string;
-            footerLinkList: FooterLinkList;
+            footer: {
+                footerIntroContent: {
+                    footerIntroContentLocal: string;
+                    footerIntroContentAbroad: string;
+                };
+                internationalOfficeAddress: string;
+                internationalOfficeEmail: string;
+                internationalOfficePhone: string;
+                nigeriaOfficeAddress: string;
+                nigeriaOfficeEmail: string;
+                nigeriaOfficePhone: string;
+                socialMediaLinks: {
+                    facebook: string;
+                    instagram: string;
+                    linkedIn: string;
+                    twitter: string;
+                };
+            };
         };
     };
 }

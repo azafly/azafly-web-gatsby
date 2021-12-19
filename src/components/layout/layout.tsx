@@ -1,39 +1,15 @@
 import React, { FunctionComponent, PropsWithChildren } from 'react';
-import Helmet from 'react-helmet';
 import { withPrefix } from 'gatsby';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { useSiteMetadata } from '../hooks/useSiteMetadata';
-import { Header } from './header';
+import Helmet from 'react-helmet';
+
 import { Footer } from './footer';
+import { Header } from './header';
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
 
 import './layout.css';
 
-const footer = {
-    copyrightOwner: 'Lucqax',
-    socialMedia: [
-        {
-            name: 'Facebook',
-            icon: <FacebookIcon />,
-            link: 'https://www.instagram.com/lucqax'
-        },
-        {
-            name: 'Instagram',
-            icon: <InstagramIcon />,
-            link: 'https://www.instagram.com/lucqax'
-        },
-        {
-            name: 'LinkedIn',
-            icon: <LinkedInIcon />,
-            link: 'https://www.linkedin.com/lucqax'
-        }
-    ]
-};
-
 interface FooterProps {
     children?: any;
-    footerContent?: any;
 }
 
 export const Layout: FunctionComponent = ({ children }: PropsWithChildren<FooterProps>) => {
@@ -62,7 +38,7 @@ export const Layout: FunctionComponent = ({ children }: PropsWithChildren<Footer
             <div className='min-h-screen'>
                 <div className='bg-white'> {children}</div>
             </div>
-            <Footer {...footer} />
+            <Footer />
         </>
     );
 };
