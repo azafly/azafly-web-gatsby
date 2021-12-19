@@ -51,11 +51,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-interface HomeViewProps {
-    images: any;
-}
-
-const Home: React.FC<HomeViewProps> = ({ images }) => {
+const Home: React.FC = () => {
     const classes = useStyles();
     const faqRef = createRef();
 
@@ -63,7 +59,7 @@ const Home: React.FC<HomeViewProps> = ({ images }) => {
         <div className={classes.container}>
             <main className={classes.content}>
                 <div className={classes.drawerHeader}></div>
-                <HomePageHeroSection images={images} />
+                <HomePageHeroSection />
                 <Services />
                 <div className={classes.setupAndDesignSection}>
                     <MainInfo />

@@ -1,10 +1,8 @@
 import React from 'react';
-
 import Grid from '@mui/material/Grid';
 import { Hidden, Theme } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/styles';
 
-import { HomeImages } from '../../../../createPages/templates/home';
 import { Illustration } from './illustration';
 import { InfoBanner } from './info-banner';
 
@@ -25,11 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-interface Props {
-    images: HomeImages;
-}
-
-export const HomePageHeroSection: React.FC<Props> = ({ images }) => {
+export const HomePageHeroSection: React.FC = () => {
     const classes = useStyles();
 
     return (
