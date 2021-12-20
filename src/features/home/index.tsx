@@ -60,15 +60,13 @@ const Home: React.FC = () => {
             <main className={classes.content}>
                 <div className={classes.drawerHeader}></div>
                 <HomePageHeroSection />
-                <Services />
                 <div className={classes.setupAndDesignSection}>
                     <MainInfo />
                     <HomePageReviewsSection />
                 </div>
-
-                <QuestionsTabsContainer ref={faqRef} />
-
+                <Services />
                 <JoinUs />
+                <QuestionsTabsContainer ref={faqRef} />
             </main>
         </div>
     );

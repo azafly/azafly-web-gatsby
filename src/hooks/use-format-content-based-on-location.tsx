@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { useGeolocation } from '../features/home/hooks/useGeolocation';
+import { useSelector } from 'react-redux';
+
 import { getFormattedImageUrl } from '../lib/constants';
+import { RootState } from '../app/store';
 
 interface Content {
     local: string;
     abroad: string;
 }
 
-export const useFormatContentBasedOnLocation = () => {
-    const {
-        location: { isAfrica }
-    } = useGeolocation();
+export const useFormatContentBasedOnLocation = (): any => {
+    const { isAfrica } = useSelector((state: RootState) => state.global);
 
     const getFormattedContent = (value: Record<string, string> | string) => {
         if (typeof value === 'string') {

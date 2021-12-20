@@ -2,7 +2,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Grid, Box, Container } from '@material-ui/core';
 import React from 'react';
 import { JoinUsIllustration } from './illustration';
-import { JoinUsInforBanner } from './info-banner';
+import { JoinUsInfoBanner } from './info-banner';
 import { JoinUsButton } from './button';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -10,7 +10,8 @@ const useStyles = makeStyles((theme: Theme) =>
         container: {
             justifyContent: 'center',
             alignItems: 'center',
-            background: 'white'
+            background: 'white',
+            maxWidth: 1600
         },
         paper: {
             width: '100%',
@@ -35,7 +36,7 @@ export const JoinUs: React.FC = () => {
                         <Grid container spacing={2}>
                             <Box clone order={{ xs: 1, sm: 1 }}>
                                 <Grid item xs={11} sm={11} md={6}>
-                                    <JoinUsInforBanner />
+                                    <JoinUsInfoBanner />
                                     <Box display={{ xs: 'none', lg: 'block', sm: 'block' }}>
                                         <JoinUsButton />
                                     </Box>

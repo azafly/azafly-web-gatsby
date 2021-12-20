@@ -1,12 +1,15 @@
-import React, { FunctionComponent, PropsWithChildren } from 'react';
+import React, { FunctionComponent, PropsWithChildren, useEffect } from 'react';
 import { withPrefix } from 'gatsby';
+import { useDispatch, useSelector } from 'react-redux';
 import Helmet from 'react-helmet';
 
 import { Footer } from './footer';
 import { Header } from './header';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
+import useGeolocation from '../hooks/useGeolocation';
 
 import './layout.css';
+import { Dispatch } from '../../app/store';
 
 interface FooterProps {
     children?: any;
@@ -14,6 +17,14 @@ interface FooterProps {
 
 export const Layout: FunctionComponent = ({ children }: PropsWithChildren<FooterProps>) => {
     const { title } = useSiteMetadata();
+    const dispatch = useDispatch<Dispatch>();
+    const {
+        location: { isAfrica }
+    } = useGeolocation();
+
+    useEffect(() => {
+        dispatch.global.setIsLocationAfrica(isAfrica ?? false);
+    }, [dispatch.global]);
 
     return (
         <>

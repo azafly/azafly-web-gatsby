@@ -1,6 +1,7 @@
 import { Button, Typography, Grid, Box, Link, Snackbar, InputAdornment } from '@material-ui/core';
 import { makeStyles, createStyles, Theme, useTheme } from '@material-ui/core/styles';
 import { motion } from 'framer-motion';
+import { useSelector } from 'react-redux';
 import FormControl from '@mui/material/FormControl';
 import Input from '@mui/material/Input';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -11,8 +12,8 @@ import RoomIcon from '@mui/icons-material/Room';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import { RipplePlayButton } from '../../../../components/common/ripple-button';
+import { RootState } from '../../../../app/store';
 import { useFetchHomeData } from '../../hooks/use-data';
-import useGeolocation from '../../hooks/useGeolocation';
 
 function Alert(props: AlertProps) {
     return <MuiAlert elevation={6} variant='filled' {...props} />;
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.up('md')]: {
                 marginLeft: '4vw',
                 width: '90%',
-                marginTop: '150px'
+                marginTop: '100px'
             },
             [theme.breakpoints.down('sm')]: {
                 padding: '10px 30px 10px 20px',
@@ -289,12 +290,12 @@ export const InfoBanner: React.FC = () => {
     const [error, setError] = useState<string>('');
 
     // data
-    const { heroMainHeading, heroSubHeading } = useFetchHomeData();
+    const { heroMainHeading } = useFetchHomeData();
 
-    // getting users location via IP address
-    const { location } = useGeolocation();
-    const moneyFromCountryList = location.isAfrica ? africa : otherCountries;
-    const moneyToCountryList = location.isAfrica ? otherCountries : africa;
+    const { isAfrica } = useSelector((state: RootState) => state.global);
+
+    const moneyFromCountryList = isAfrica ? africa : otherCountries;
+    const moneyToCountryList = isAfrica ? otherCountries : africa;
 
     const handleCloseSnack = (event?: React.SyntheticEvent, reason?: string) => {
         if (reason === 'clickaway') {
@@ -333,8 +334,7 @@ export const InfoBanner: React.FC = () => {
     };
 
     const BANNER_TEXT = {
-        heading: location.isAfrica ? heroMainHeading.heroHeadingLocal : heroMainHeading.heroMainHeadingAbroad,
-        subHeading: location.isAfrica ? heroSubHeading.heroSubHeadingLocal : heroSubHeading.heroSubHeadingAbroad
+        heading: isAfrica ? heroMainHeading.heroHeadingLocal : heroMainHeading.heroMainHeadingAbroad
     };
     return (
         <motion.div>
@@ -356,13 +356,8 @@ export const InfoBanner: React.FC = () => {
                 <Typography variant='h4' className={classes.titleHeading} gutterBottom>
                     {BANNER_TEXT.heading}
                 </Typography>
-
-                <Typography paragraph className={classes.paragraph}>
-                    {BANNER_TEXT.subHeading}
-                </Typography>
-
                 <Box>
-                    {!location.isAfrica ? (
+                    {!isAfrica ? (
                         <Box className={classes.searchContainer}>
                             <Grid container spacing={1} className={classes.searchItem}>
                                 <Grid item xs={12} md={4} className={classes.searchItemControl}>

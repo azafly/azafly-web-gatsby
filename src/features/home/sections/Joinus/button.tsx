@@ -1,9 +1,7 @@
+import { Box, Button, Grid } from '@material-ui/core';
 import { Link as RouteLink } from 'gatsby-theme-material-ui';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Typography, Grid, Box, Button, Link } from '@material-ui/core';
 import React from 'react';
-
-import { RipplePlayButton } from '../../../../components/common/ripple-button';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -66,19 +64,6 @@ export const JoinUsButton: React.FC = () => {
                     <Button component={RouteLink} to='/signup' className={classes.actionButtonExplore}>
                         Get Started
                     </Button>
-                </Grid>
-
-                <Grid item xs={12} sm={6} md={5} direction='row'>
-                    <Box className={classes.btn}>
-                        <Grid container direction='row' alignItems='center' justifyContent='center'>
-                            <RipplePlayButton />
-                            <Typography className={classes.links}>
-                                <Link href='/services' color='inherit' underline='always'>
-                                    See how it works?
-                                </Link>
-                            </Typography>
-                        </Grid>
-                    </Box>
                 </Grid>
             </Grid>
         </Box>

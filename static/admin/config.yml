@@ -52,6 +52,8 @@ collections:
             name: "whyChooseUs"
             widget: "object"
             fields: 
+              - {label: Local, name: whyChooseUsTitleLocal, widget: string}
+              - {label: Abroad, name: whyChooseUsTitleAbroad, widget: string}
               - label: Short Heading
                 name: whyChooseUsShortHeading
                 widget: object
@@ -112,6 +114,22 @@ collections:
                     fields:
                      - {label: Local, name: whyChooseUsReason3InfoTextLocal, widget: string} 
                      - {label: Abroad, name: whyChooseUsReason3InfoTextAbroad, widget: string}
+              - label: 3 -  Why Choose us reason
+                name: whyChooseUsReason4
+                widget: object
+                fields: 
+                  - label: Reason 4 Heading
+                    name: whyChooseUsReason4Heading
+                    widget: object
+                    fields:
+                     - {label: Local, name: whyChooseUsReason4HeadingLocal, widget: string} 
+                     - {label: Abroad, name: whyChooseUsReason4HeadingAbroad, widget: string}
+                  - label: Reason 4 Info Text
+                    name: whyChooseUsReason4InfoText
+                    widget: object
+                    fields:
+                     - {label: Local, name: whyChooseUsReason4InfoTextLocal, widget: string} 
+                     - {label: Abroad, name: whyChooseUsReason4InfoTextAbroad, widget: string}
           - label: "Section 1" 
             name: "section1"
             widget: "object"
@@ -204,12 +222,6 @@ collections:
             name: "footer"
             widget: "object"
             fields:        
-              - label: Footer Intro Content
-                name: footerIntroContent
-                widget: object
-                fields:
-                  - {label: footer Intro Content Local , name: footerIntroContentLocal, widget: text}
-                  - {label: footer Intro Content Abroad , name: footerIntroContentAbroad, widget: text}
               - {label: International Office Phone, name: internationalOfficePhone, widget: string}
               - {label: International Office Address, name: internationalOfficeAddress, widget: text}
               - {label: International Office Email, name: internationalOfficeEmail, widget: string}
@@ -224,20 +236,28 @@ collections:
                   - {label: Instagram, name: instagram, widget: string}
                   - {label: LinkedIn, name: linkedIn, widget: string}
                   - {label: Twitter, name: twitter, widget: string}
+              - label: Footer Intro Content
+                name: introContent
+                widget: object
+                fields:
+                  - {label: footer Intro Content Local , name: introContentLocal, widget: text}
+                  - {label: footer Intro Content Abroad , name: introContentAbroad, widget: text}
           - label: "Images" 
             name: images
             widget: "object"
-            fields:        
-                 - {label: "Featured Image Abroad", name: "whyChooseUsAbroadImage", widget: image}
-                 - {label: "Featured Image Local", name: "whyChooseUsLocalImage", widget: image}
-                 - {label: "Featured Image Local", name: "section1ImageLocal", widget: image}
-                 - {label: "Featured Image Abroad", name: "section1ImageAbroad", widget: image} 
-                 - {label: "Featured Image Local", name: "section2ImageLocal", widget: image}
-                 - {label: "Featured Image Abroad", name: "section2ImageAbroad", widget: image}
-                 - {label: "Featured Image Local", name: "section3ImageLocal", widget: image}
-                 - {label: "Featured Image Abroad", name: "section3ImageAbroad", widget: image} 
-                 - {label: "Featured Image Local", name: "mainCTAImageLocal", widget: image}
-                 - {label: "Featured Image Abroad", name: "mainCTAImageAbroad", widget: image}              
+            fields:      
+                 - {label: "Hero  Abroad", name: "heroAbroad", widget: image}
+                 - {label: "Hero  Local", name: "heroLocal", widget: image}
+                 - {label: "whyChooseUs Abroad", name: "whyChooseUsAbroadImage", widget: image}
+                 - {label: "whyChooseUs Local", name: "whyChooseUsLocalImage", widget: image}
+                 - {label: "section1 Local", name: "section1ImageLocal", widget: image}
+                 - {label: "section1 Abroad", name: "section1ImageAbroad", widget: image} 
+                 - {label: "section2 Local", name: "section2ImageLocal", widget: image}
+                 - {label: "section2 Abroad", name: "section2ImageAbroad", widget: image}
+                 - {label: "section3 Local", name: "section3ImageLocal", widget: image}
+                 - {label: "section3 Abroad", name: "section3ImageAbroad", widget: image} 
+                 - {label: "mainCTA Local", name: "mainCTAImageLocal", widget: image}
+                 - {label: "mainCTA Abroad", name: "mainCTAImageAbroad", widget: image}              
       - label: "About Page"        
         name: "About"        
         file: "content/about.md"        

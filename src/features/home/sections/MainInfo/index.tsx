@@ -90,7 +90,7 @@ export const MainInfo: React.FC = () => {
                     >
                         <Box clone order={{ xs: data.bannerOrder.xs, sm: data.bannerOrder.sm }}>
                             <Grid item xs={12} sm={6} md={5}>
-                                <InfoBanner title={data.title} content={data.content} />
+                                <InfoBanner title={data.title} content={data.content} shortTitle={data.shortTitle} />
                                 <Box display={{ xs: 'none', lg: 'block', sm: 'block' }}>
                                     <SecureButton />
                                 </Box>

@@ -83,16 +83,17 @@ const useStyles = makeStyles((theme: Theme) =>
 interface InfoBannerProps {
     title: string;
     content: string;
+    shortTitle: string;
 }
 
-export const InfoBanner: React.FC<InfoBannerProps> = ({ title, content }: InfoBannerProps) => {
+export const InfoBanner: React.FC<InfoBannerProps> = ({ title, content, shortTitle }: InfoBannerProps) => {
     const classes = useStyles();
 
     return (
         <motion.div className={classes.container}>
             <Box>
                 <Grid item xs={12}>
-                    <Typography className={classes.banner}>Lorem ipsum</Typography>
+                    <Typography className={classes.banner}>{shortTitle}</Typography>
                     <Typography variant='h3' className={classes.titleHeading}>
                         {title}
                     </Typography>

@@ -10,6 +10,7 @@ import React, { useState } from 'react';
 import { deskTopNavItems } from '../../../lib/constants';
 import { MobileSideDrawer } from '../../mobile-side-drawer';
 import { LogoSvgComponent } from '../../common/logo';
+import { ViewToggleSwitch } from '../../view-toggle-switch';
 
 interface NavbarProps {
     handleDrawerOpen?: () => void;
@@ -163,6 +164,7 @@ export const Header: React.FC<NavbarProps> = ({ location }) => {
                         <Link to='/' className={`${classes.logo}`}>
                             <LogoSvgComponent />
                         </Link>
+                        <ViewToggleSwitch />
                         <IconButton
                             color='secondary'
                             aria-label='open drawer'
@@ -200,6 +202,7 @@ export const Header: React.FC<NavbarProps> = ({ location }) => {
                             })}
                         </section>
                         <section className={classes.authLink}>
+                            <ViewToggleSwitch />
                             <Button
                                 endIcon={<LockOpenIcon />}
                                 component={Link}
