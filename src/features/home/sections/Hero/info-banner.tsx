@@ -19,196 +19,198 @@ import { useFormatContentBasedOnLocation } from '../../../../hooks/use-format-co
 function Alert(props: AlertProps) {
     return <MuiAlert elevation={6} variant='filled' {...props} />;
 }
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        container: {
-            order: 1,
-            display: 'flex',
-            margin: 'auto',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            [theme.breakpoints.up('md')]: {
-                marginLeft: '4vw',
-                width: '90%',
-                marginTop: '100px'
-            },
-            [theme.breakpoints.down('sm')]: {
-                padding: '10px 30px 10px 20px',
-                marginLeft: '2vw',
-                marginTop: '50px'
-            }
-        },
-        titleHeading: {
-            fontWeight: 700,
-            fontFamily: 'Nunito',
-            letterSpacing: -1,
-            color: theme.colors.white,
-            fontSize: '3.2rem',
-            [theme.breakpoints.down('md')]: {
-                fontSize: '2.5rem'
-            }
-        },
-        subTitle: {
-            fontWeight: 700,
-            fontFamily: 'Nunito',
-            letterSpacing: -1,
-            fontSize: '1.3rem',
-            lineHeight: -1,
-            color: 'grey',
-            marginTop: 20,
-            [theme.breakpoints.only('xs')]: {
-                fontSize: '1rem'
-            }
-        },
-        subContainer: {
-            marginTop: 20,
-            marginBottom: 20,
-            color: '#89CDFF',
-            [theme.breakpoints.only('xs')]: {
-                justifyContent: 'center'
-            }
-        },
-        clipPath: {
-            position: 'relative',
-            color: 'white',
-            '&:after': {
-                content: "''",
-                position: 'absolute',
-                left: '0',
-                bottom: '-10px',
-                height: '15px',
-                width: '100%',
-                border: 'solid 1px white',
-                borderColor: 'white transparent transparent transparent',
-                borderRadius: '60%'
-            }
-        },
-        searchContainer: {
-            width: '100%',
-            maxWidth: 600,
-            background: 'white',
-            borderRadius: 4,
-            marginTop: 30,
-            padding: 5,
-            [theme.breakpoints.down('sm')]: {
+const useStyles = (isAfrica: boolean) => {
+    return makeStyles((theme: Theme) =>
+        createStyles({
+            container: {
+                order: 1,
+                display: 'flex',
                 margin: 'auto',
-                marginTop: 30
-            }
-        },
-        offer: {
-            color: theme.colors.mainGreen,
-            fontWeight: 700,
-            fontSize: '18px',
-            marginTop: 20,
-            [theme.breakpoints.only('xs')]: {
-                fontSize: '16px'
-            }
-        },
-        offerContainer: {
-            [theme.breakpoints.only('lg')]: {
-                marginRigt: 200
-            }
-        },
-        actionDiv: {
-            display: 'flex'
-        },
+                flexDirection: 'column',
+                justifyContent: 'center',
+                [theme.breakpoints.up('md')]: {
+                    marginLeft: '4vw',
+                    width: '90%',
+                    marginTop: '100px'
+                },
+                [theme.breakpoints.down('sm')]: {
+                    padding: '10px 30px 10px 20px',
+                    marginLeft: '2vw',
+                    marginTop: '50px'
+                }
+            },
+            titleHeading: {
+                fontWeight: 700,
+                fontFamily: 'Nunito',
+                letterSpacing: -1,
+                color: theme.colors.white,
+                fontSize: '3.2rem',
+                [theme.breakpoints.down('md')]: {
+                    fontSize: '2.5rem'
+                }
+            },
+            subTitle: {
+                fontWeight: 700,
+                fontFamily: 'Nunito',
+                letterSpacing: -1,
+                fontSize: '1.3rem',
+                lineHeight: -1,
+                color: 'grey',
+                marginTop: 20,
+                [theme.breakpoints.only('xs')]: {
+                    fontSize: '1rem'
+                }
+            },
+            subContainer: {
+                marginTop: 20,
+                marginBottom: 20,
+                color: '#89CDFF',
+                [theme.breakpoints.only('xs')]: {
+                    justifyContent: 'center'
+                }
+            },
+            clipPath: {
+                position: 'relative',
+                color: 'white',
+                '&:after': {
+                    content: "''",
+                    position: 'absolute',
+                    left: '0',
+                    bottom: '-10px',
+                    height: '15px',
+                    width: '100%',
+                    border: 'solid 1px white',
+                    borderColor: 'white transparent transparent transparent',
+                    borderRadius: '60%'
+                }
+            },
+            searchContainer: {
+                width: '100%',
+                maxWidth: 600,
+                background: 'white',
+                borderRadius: 4,
+                marginTop: 30,
+                padding: 5,
+                [theme.breakpoints.down('sm')]: {
+                    margin: 'auto',
+                    marginTop: 30
+                }
+            },
+            offer: {
+                color: theme.colors.mainGreen,
+                fontWeight: 700,
+                fontSize: '18px',
+                marginTop: 20,
+                [theme.breakpoints.only('xs')]: {
+                    fontSize: '16px'
+                }
+            },
+            offerContainer: {
+                [theme.breakpoints.only('lg')]: {
+                    marginRigt: 200
+                }
+            },
+            actionDiv: {
+                display: 'flex'
+            },
 
-        getStarted: {
-            textTransform: 'none',
-            height: 40,
-            minWidth: '10ch',
-            width: '100%',
-            color: 'white',
-            fontWeight: 500,
-            backgroundColor: '#214662',
-            padding: '7px 15px',
-            border: '1px solid white',
-            borderRadius: 6,
-            '&:hover': {
-                background: '#214662',
-                opacity: 0.9
-            }
-        },
-        searchItem: {
-            color: '#040d21',
-            display: 'flex',
-            justifyContent: 'flex-start',
-            alignItems: 'center'
-        },
-        searchItemControl: {
-            color: '#040d21',
-            display: 'flex',
-            height: 60,
-            justifyContent: 'flex-start !important',
-            alignItems: 'center',
-            [theme.breakpoints.only('xs')]: {
-                justifyContent: 'center'
-            }
-        },
-        underline: {
-            [theme.breakpoints.down('sm')]: {
-                borderBottom: '1px solid grey'
-            }
-        },
-        actionButtonExplore: {
-            textTransform: 'none',
-            height: 0,
-            marginTop: 10,
-            border: '1px solid #040d21',
-            color: theme.colors.mainGreen,
-            fontWeight: 600,
-            padding: '7px 15px',
-            width: '20ch',
-            borderRadius: 6,
-            '&:hover': {
-                opacity: 0.9
-            }
-        },
-        formControl: {
-            width: '100% !important',
-            [theme.breakpoints.up('md')]: {
-                width: '95% !important '
-            }
-        },
-        overflow: {
-            [theme.breakpoints.only('lg')]: {
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                width: '9rem'
-            }
-        },
-        link: {
-            textDecoration: 'none'
-        },
+            getStarted: {
+                textTransform: 'none',
+                height: 40,
+                minWidth: '10ch',
+                width: '100%',
+                color: 'white',
+                fontWeight: 500,
+                border: '2px solid white',
+                padding: '7px 15px',
+                backgroundColor: isAfrica ? 'transparent' : '#214662',
+                borderRadius: 6,
+                '&:hover': {
+                    background: '#214662',
+                    opacity: 0.9
+                }
+            },
+            searchItem: {
+                color: '#040d21',
+                display: 'flex',
+                justifyContent: 'flex-start',
+                alignItems: 'center'
+            },
+            searchItemControl: {
+                color: '#040d21',
+                display: 'flex',
+                height: 60,
+                justifyContent: 'flex-start !important',
+                alignItems: 'center',
+                [theme.breakpoints.only('xs')]: {
+                    justifyContent: 'center'
+                }
+            },
+            underline: {
+                [theme.breakpoints.down('sm')]: {
+                    borderBottom: '1px solid grey'
+                }
+            },
+            actionButtonExplore: {
+                textTransform: 'none',
+                height: 0,
+                marginTop: 10,
+                border: '1px solid #040d21',
+                color: theme.colors.mainGreen,
+                fontWeight: 600,
+                padding: '7px 15px',
+                width: '20ch',
+                borderRadius: 6,
+                '&:hover': {
+                    opacity: 0.9
+                }
+            },
+            formControl: {
+                width: '100% !important',
+                [theme.breakpoints.up('md')]: {
+                    width: '95% !important '
+                }
+            },
+            overflow: {
+                [theme.breakpoints.only('lg')]: {
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    width: '9rem'
+                }
+            },
+            link: {
+                textDecoration: 'none'
+            },
 
-        setMiddle: {
-            marginTop: 80,
-            [theme.breakpoints.only('sm')]: {
-                justifyContent: 'left'
+            setMiddle: {
+                marginTop: 80,
+                [theme.breakpoints.only('sm')]: {
+                    justifyContent: 'left'
+                }
+            },
+            select: {
+                '& .MuiSvgIcon-root': {
+                    color: '#040d21'
+                }
+            },
+            links: {
+                color: 'white',
+                fontSize: '16px',
+                [theme.breakpoints.only('xs')]: {
+                    fontSize: '14px'
+                }
+            },
+            searchText: {
+                marginLeft: 2,
+                fontWeight: 500,
+                fontSize: '16px',
+                [theme.breakpoints.only('xs')]: {
+                    fontSize: '14px'
+                }
             }
-        },
-        select: {
-            '& .MuiSvgIcon-root': {
-                color: '#040d21'
-            }
-        },
-        links: {
-            color: 'white',
-            fontSize: '16px',
-            [theme.breakpoints.only('xs')]: {
-                fontSize: '14px'
-            }
-        },
-        searchText: {
-            marginLeft: 2,
-            fontWeight: 500,
-            fontSize: '16px',
-            [theme.breakpoints.only('xs')]: {
-                fontSize: '14px'
-            }
-        }
-    })
-);
+        })
+    );
+};
 
 const otherCountries = [
     {
@@ -278,7 +280,6 @@ const MenuProps = {
 };
 
 export const InfoBanner: React.FC = () => {
-    const classes = useStyles();
     const theme = useTheme();
     const [sendMoneyFrom, setSendMoneyFrom] = useState<string[]>([]);
     const [sendMoneyTo, setSendMoneyto] = useState<string[]>([]);
@@ -289,7 +290,7 @@ export const InfoBanner: React.FC = () => {
     const { heroMainHeading, heroSubHeading } = useFetchHomeData();
     const handleFormatContent = useFormatContentBasedOnLocation();
 
-    const { isAfrica } = useSelector((state: RootState) => state.global);
+    const { isAfrica = false } = useSelector((state: RootState) => state.global);
 
     const moneyFromCountryList = isAfrica ? africa : otherCountries;
     const moneyToCountryList = isAfrica ? otherCountries : africa;
@@ -334,6 +335,7 @@ export const InfoBanner: React.FC = () => {
         heading: handleFormatContent(heroMainHeading),
         subHeading: handleFormatContent(heroSubHeading)
     };
+    const classes = useStyles(isAfrica)();
     return (
         <motion.div>
             <Snackbar
@@ -476,11 +478,12 @@ export const InfoBanner: React.FC = () => {
                         <Grid container item xs={12} md={4} justifyContent={'center'} alignItems={'center'}>
                             <Button
                                 onClick={() => window.location.replace('https://app-staging.lucqax.com/')}
-                                variant='contained'
+                                variant='outlined'
                                 className={classes.getStarted}
                                 disableElevation
+                                color={'secondary'}
                             >
-                                Create Accounts
+                                Get Started
                             </Button>
                         </Grid>
                     )}

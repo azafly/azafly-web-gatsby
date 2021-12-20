@@ -1,7 +1,9 @@
 import { makeStyles, Theme, createStyles, Box } from '@material-ui/core';
+import { useSelector } from 'react-redux';
 import React from 'react';
 
 import { RipplePlayButton } from '../../../../components/common/ripple-button';
+import { RootState } from '../../../../app/store';
 import backImage from '../../../../../static/images/home/globemap.png';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -122,6 +124,7 @@ const getFlag = (countryCode: string) => {
 
 export const Illustration: React.FC<unknown> = () => {
     const classes = useStyles();
+    const { isAfrica = false } = useSelector((state: RootState) => state.global);
     return (
         <Box className={classes.illustration}>
             <Box className={classes.uk}>
@@ -149,11 +152,13 @@ export const Illustration: React.FC<unknown> = () => {
                     <RipplePlayButton icon={getFlag('CA')} />
                 </Box>
             </Box>
-            <Box className={classes.india}>
-                <Box display='flex' justifyContent='center' justifyItems='center'>
-                    <RipplePlayButton icon={getFlag('IN')} />
+            {isAfrica && (
+                <Box className={classes.india}>
+                    <Box display='flex' justifyContent='center' justifyItems='center'>
+                        <RipplePlayButton icon={getFlag('IN')} />
+                    </Box>
                 </Box>
-            </Box>
+            )}
         </Box>
     );
 };
