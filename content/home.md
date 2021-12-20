@@ -42,36 +42,40 @@ secureHeading: Secure by design
 footerHeading3: Ho
 section1:
   section1ShortHeading:
-    section1ShortHeadingLocal: Lorem ipsum
-    section1ShortHeadingAbroad: Lorem ipsum
+    section1ShortHeadingLocal: Pay foreign invoice
+    section1ShortHeadingAbroad: All-in-one Naira account for diasporans
   section1MainHeading:
-    section1MainHeadingLocal: Vitae nulla ac purus pharetra
-    section1MainHeadingAbroad: Vitae nulla ac purus pharetra
+    section1MainHeadingLocal: Pay your tuition and other fees abroad
+    section1MainHeadingAbroad: Living abroad but need to pay bills back home?
   section1InfoText:
-    section1InfoTextLocal: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
-      adipiscing. Vel ut semper tristique.
-    section1InfoTextAbroad: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
-      adipiscing. Vel ut semper tristique.
+    section1InfoTextLocal: "Send money directly to institutions for your school
+      fees, accomodation, medical bills and more in UK, Canada, America, Europe
+      and more, or pay them with your Azafly virtual card. We offer the best
+      rate possible in a fast and convenient process. "
+    section1InfoTextAbroad: "Make DSTV payments, buy Airtime, pay for services and
+      more with Azafly from your country of residence. Say goodbye to the hassle
+      of managing your Nigerian bank from abroad. "
   section1Image: ../../static/images/transfer_money.png
 servicesHeaderText_subtext2: Fast Transactions
 intro: Making your dreams COME alive
 servicesHeaderText-content1: Our fee is the lowest in the market compared to any other
 section2:
   section2MainHeading:
-    section2MainHeadingLocal: Vitae nulla ac purus pharetra
-    section2MainHeadingAbroad: Vitae nulla ac purus pharetra
+    section2MainHeadingLocal: Get a virtual card that works anywhere online!
+    section2MainHeadingAbroad: Get a virtual card that works anywhere online!
   section2InfoText:
-    section2InfoTextLocal: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
-      adipiscing. Vel ut semper tristique.
-    section2InfoTextAbroad: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
-      adipiscing. Vel ut semper tristique.
+    section2InfoTextLocal: With your Azafly virtual card, you can shop on online
+      stores abroad, in foreign currencies from the comfort of your home. The
+      card will automatically convert your money to the local currency of the
+      online shop. You will safe money on dynamic exchange rate charges!
+    section2InfoTextAbroad: With your Azafly virtual card, you can pay bills in
+      Nigeria, shop on Jumia or visit home and spend in naira, travel around the
+      world and spend in local currencies, all while avoiding dynamic exchange
+      rate charges. The card will automatically convert your money to the local
+      currency of the merchant you are paying.
   section2ShortHeading:
-    section2ShortHeadingLocal: Lorem ipsum
-    section2ShortHeadingAbroad: Lorem ipsum
+    section2ShortHeadingLocal: Shop abroad with ease
+    section2ShortHeadingAbroad: Pay in Naira with ease
   section2Image: ../../static/images/save_money.png
 servicesHeaderText_subtext3: Safe & Secure
 secureHeadingText-content1: Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -85,18 +89,18 @@ servicesHeaderText-content2: The sky was cloudless and of a deep dark blue spect
 comingSoonButton: Forum and Chats
 section3:
   section3InfoText:
-    section3InfoTextLocal: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
-      adipiscing. Vel ut semper tristique.
-    section3InfoTextAbroad: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
-      adipiscing. Vel ut semper tristique.
+    section3InfoTextLocal: Receive money from families and friends abroad directly
+      into your local bank or into your Azafly virtual card. Send money to them
+      directly into their local bank account.
+    section3InfoTextAbroad: Send money to your loved ones in Africa quickly and
+      cheaply, or receive money from them directly into your local bank or into
+      your Azafly virtual card.
   section3MainHeading:
-    section3MainHeadingLocal: Vitae nulla ac purus pharetra
-    section3MainHeadingAbroad: Vitae nulla ac purus pharetra
+    section3MainHeadingLocal: Send or receive money from friends and family abroad
+    section3MainHeadingAbroad: Send or receive money from friends and family abroad
   section3ShortHeading:
-    section3ShortHeadingLocal: Lorem ipsum
-    section3ShortHeadingAbroad: Lorem ipsum
+    section3ShortHeadingLocal: Send and receive
+    section3ShortHeadingAbroad: Send and receive
   section3Image: ../../static/images/withdraw_money.png
 secureHeadingText-content2: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
@@ -104,8 +108,8 @@ secureHeadingText-content2: Lorem ipsum dolor sit amet, consectetur adipiscing
   scelerisque. Faucibus arcu dignissim sem ornare
 servicesHeaderText-content3: The sky was cloudless and of a deep dark blue spectacle before.
 heroMainHeading:
-  heroHeadingLocal: Pay your most important bills abroad.
-  heroMainHeadingAbroad: Move your money fluently.
+  heroHeadingLocal: The simplest way to pay your fees abroad
+  heroMainHeadingAbroad: Receive & Send money home cheaper and faster!
 secureHeadingText-content3: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
   ornare metus, elit. Vestibulum maecenas convallis enim velit, nulla amet
@@ -130,15 +134,11 @@ mainCTA:
     mainCTAShortHeadingAbroad: JOIN US
     mainCTAShortHeadingLocal: JOIN US
   mainCTAMainHeading:
-    mainCTA3MainHeadingLocal: Malesuada molestie nulla amet habitant.
-    mainCTA3MainHeadingAbroad: Malesuada molestie nulla amet habitant.
+    mainCTA3MainHeadingLocal: Set up in minutes and start sending and receiving money globally.
+    mainCTA3MainHeadingAbroad: Set up in minutes and start sending and receiving money globally.
   mainCTAInfoText:
-    mainCTAInfoTextLocal: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
-      adipiscing. Vel ut semper tristique.
-    mainCTAInfoTextAbroad: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Lectus enim auctor massa ut et sagittis. Justo facilisi massa eu mauris
-      adipiscing. Vel ut semper tristique.
+    mainCTAInfoTextLocal: To be removed
+    mainCTAInfoTextAbroad: To be removed
   mainCTAImage: ../../static/images/joinus.png
 secureParagraph: Already trusted by thousands of happy clients. We are protected
   by EU Financial charter. You have nothing to be worried about  Pay for all
@@ -182,42 +182,48 @@ footer:
     link5: Contact
 hero_quote3: Send money directly to your recipient door.
 heroSubHeading:
-  heroSubHeadingLocal: Send money to Friends and Family in Nigeria. Pay and get
-    paid in multiple currencies.
-  heroSubHeadingAbroad: Send money to Friends and Family in Nigeria. Manage your
-    remittance in multiple currencies.
+  heroSubHeadingLocal: "Azafly allows you to pay your bills in other countries
+    abroad. We send your money directly to your school, hospital, landlord or
+    whatever institution you need to pay abroad in the simplest and cheapest way
+    possible. "
+  heroSubHeadingAbroad: Send money to Friends and Family in Nigeria or receive.
+    Manage your remittance in multiple currencies!
 whyChooseUs:
   whyChooseUsShortHeading:
     whyChooseUsShortHeadingLocal: Why choose us
     whyChooseUsShortHeadingAbroad: Why choose us
   whyChooseUsSubHeading:
-    whyChooseUsSubHeadingLocal: Some of our advantages
-    whyChooseUsSubHeadingAbroad: Some of our advantages
+    whyChooseUsSubHeadingLocal: Better than the rest
+    whyChooseUsSubHeadingAbroad: Better than the rest
   whyChooseUsReason1:
     whyChooseUsReason1Heading:
-      whyChooseUsReason1HeadingLocal: Lowest Fee
-      whyChooseUsReason1HeadingAbroad: Lowest Fee
+      whyChooseUsReason1HeadingLocal: Cheaper
+      whyChooseUsReason1HeadingAbroad: Cheaper
     whyChooseUsReason1InfoText:
-      whyChooseUsReason1InfoTextLocal: Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Lectus enim auctor massa ut et sagittis. Justo facilisi
-        massa eu mauris adipiscing. Vel ut semper tristique.
-      whyChooseUsReason1InfoTextAbroad: Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Lectus enim auctor massa ut et sagittis. Justo facilisi
-        massa eu mauris adipiscing. Vel ut semper tristique.
+      whyChooseUsReason1InfoTextLocal: We offer you the best real time exchange rates
+        and lower fees than most old-school banks and other money transfer
+        services. Your first transfer is free of charge!
+      whyChooseUsReason1InfoTextAbroad: We offer you the best real time exchange rates
+        and lower fees than most old-school banks and other money transfer
+        services. Your first transfer is free of charge!
   whyChooseUsReason2:
     whyChooseUsReason2Heading:
-      whyChooseUsReason2HeadingLocal: Fast Transactions
-      whyChooseUsReason2HeadingAbroad: Fast Transactions
+      whyChooseUsReason2HeadingLocal: Fast transactions
+      whyChooseUsReason2HeadingAbroad: Fast transactions
     whyChooseUsReason2InfoText:
-      whyChooseUsReason2InfoTextLocal: The sky was cloudless and of a deep dark blue spectacle before.
-      whyChooseUsReason2InfoTextAbroad: The sky was cloudless and of a deep dark blue spectacle before.
+      whyChooseUsReason2InfoTextLocal: Quick to initiate your transfers, payment
+        arrive immediately or in minutes.
+      whyChooseUsReason2InfoTextAbroad: Quick to initiate your transfers, payment
+        arrive immediately or in minutes.
   whyChooseUsReason3:
     whyChooseUsReason3Heading:
       whyChooseUsReason3HeadingLocal: Safe & Secure
       whyChooseUsReason3HeadingAbroad: Safe & Secure
     whyChooseUsReason3InfoText:
-      whyChooseUsReason3InfoTextLocal: The sky was cloudless and of a deep dark blue spectacle before.
-      whyChooseUsReason3InfoTextAbroad: The sky was cloudless and of a deep dark blue spectacle before.
+      whyChooseUsReason3InfoTextLocal: Your money is safe with us! We protect your
+        money with industry-leading technology
+      whyChooseUsReason3InfoTextAbroad: Your money is safe with us! We protect your
+        money with industry-leading technology
   whyChooseUsImage: ../../static/images/joinus.png
 footerLinkList1:
   title: Hello
