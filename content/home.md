@@ -146,6 +146,19 @@ secureParagraph: Already trusted by thousands of happy clients. We are protected
   multiple currencies.
 servicesHeaderText: Some of our advantages
 title: Lucqas | Digital cross border bank for Africans
+images:
+  mainCTAImageAbroad: ../../static/images/joinus.png
+  mainCTAImageLocal: ../../static/images/joinus.png
+  whyChooseUsLocalImage: ../../static/images/joinus.png
+  section3ImageAbroad: ../../static/images/save_money.png
+  section2ImageAbroad: ../../static/images/transfer_money.png
+  section1ImageAbroad: ../../static/images/withdraw_money.png
+  heroLocal: ../../static/images/globemap.png
+  heroAbroad: ../../static/images/globemap.png
+  section1ImageLocal: ../../static/images/withdraw_money.png
+  section2ImageLocal: ../../static/images/transfer_money.png
+  whyChooseUsAbroadImage: ../../static/images/joinus.png
+  section3ImageLocal: ../../static/images/save_money.png
 servicesHeaderText-subtext1: Lowest Fee
 secureHeadingText1: Vitae nulla ac purus pharetra
 servicesHeaderText-subtext2: Fast Transactions
@@ -172,6 +185,21 @@ footer:
     dui id ornare arcu odio ut. Integer feugiat scelerisque varius morbi enim
     nunc faucibus.
   internationalOfficeAddress: 42c Wartenberger 13053, Berlin
+  introContent:
+    introContentLocal: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue lacus
+      viverra vitae congue eu consequat. Egestas maecenas pharetra convallis
+      posuere morbi. Sed faucibus turpis in eu mi bibendum neque egestas.
+      Ullamcorper a lacus vestibulum sed arcu non odio euismod. Est velit
+      egestas dui id ornare arcu odio ut. Integer feugiat scelerisque varius
+      morbi enim nunc faucibus
+    introContentAbroad: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue lacus
+      viverra vitae congue eu consequat. Egestas maecenas pharetra convallis
+      posuere morbi. Sed faucibus turpis in eu mi bibendum neque egestas.
+      Ullamcorper a lacus vestibulum sed arcu non odio euismod. Est velit
+      egestas dui id ornare arcu odio ut. Integer feugiat scelerisque varius
+      morbi enim nunc faucibus
   nigeriaOfficeEmail: support-nigeria@azafly.com
   internationalOfficeEmail: support@azafly.com
   footerLinkList:
@@ -192,9 +220,6 @@ whyChooseUs:
   whyChooseUsShortHeading:
     whyChooseUsShortHeadingLocal: Why choose us
     whyChooseUsShortHeadingAbroad: Why choose us
-  whyChooseUsSubHeading:
-    whyChooseUsSubHeadingLocal: Better than the rest
-    whyChooseUsSubHeadingAbroad: Better than the rest
   whyChooseUsReason1:
     whyChooseUsReason1Heading:
       whyChooseUsReason1HeadingLocal: Cheaper
@@ -206,6 +231,7 @@ whyChooseUs:
       whyChooseUsReason1InfoTextAbroad: We offer you the best real time exchange rates
         and lower fees than most old-school banks and other money transfer
         services. Your first transfer is free of charge!
+  whyChooseUsTitleLocal: Local
   whyChooseUsReason2:
     whyChooseUsReason2Heading:
       whyChooseUsReason2HeadingLocal: Fast transactions
@@ -224,7 +250,18 @@ whyChooseUs:
         money with industry-leading technology
       whyChooseUsReason3InfoTextAbroad: Your money is safe with us! We protect your
         money with industry-leading technology
+  whyChooseUsReason4:
+    whyChooseUsReason4Heading:
+      whyChooseUsReason4HeadingLocal: Local
+      whyChooseUsReason4HeadingAbroad: Headig
+    whyChooseUsReason4InfoText:
+      whyChooseUsReason4InfoTextLocal: Local
+      whyChooseUsReason4InfoTextAbroad: Abroad
+  whyChooseUsTitleAbroad: Abroad
   whyChooseUsImage: ../../static/images/joinus.png
+  whyChooseUsSubHeading:
+    whyChooseUsSubHeadingLocal: Better than the rest
+    whyChooseUsSubHeadingAbroad: Better than the rest
 footerLinkList1:
   title: Hello
   link: /about
