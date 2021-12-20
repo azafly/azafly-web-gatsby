@@ -149,6 +149,20 @@ export interface HomeFrontMatter {
                     twitter: string;
                 };
             };
+            images: {
+                heroAbroad: any;
+                heroLocal: string;
+                mainCTAImageAbroad: string;
+                mainCTAImageLocal: string;
+                section1ImageAbroad: string;
+                section1ImageLocal: string;
+                section2ImageAbroad: string;
+                section3ImageAbroad: string;
+                section2ImageLocal: string;
+                section3ImageLocal: string;
+                whyChooseUsAbroadImage: string;
+                whyChooseUsLocalImage: string;
+            };
         };
     };
 }
@@ -282,6 +296,20 @@ export const useFetchHomeData = () => {
                                 linkedIn
                                 twitter
                             }
+                        }
+                        images {
+                            heroAbroad
+                            heroLocal
+                            mainCTAImageAbroad
+                            mainCTAImageLocal
+                            section1ImageAbroad
+                            section1ImageLocal
+                            section2ImageAbroad
+                            section3ImageAbroad
+                            section2ImageLocal
+                            section3ImageLocal
+                            whyChooseUsAbroadImage
+                            whyChooseUsLocalImage
                         }
                     }
                 }

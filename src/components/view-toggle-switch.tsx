@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Box } from '@material-ui/core';
 import { styled } from '@mui/material/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from '@reach/router';
@@ -6,7 +7,6 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 
 import { Dispatch, RootState } from '../app/store';
-import { useSiteMetadata } from './hooks/useSiteMetadata';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -67,13 +67,11 @@ export function ViewToggleSwitch(): JSX.Element {
     const { isAfrica } = useSelector((state: RootState) => state.global);
     const label = isAfrica ? 'Nigeria' : 'Abroad';
     return (
-        <>
-            {canShowToggle && (
-                <FormControlLabel
-                    control={<MaterialUISwitch defaultChecked onChange={() => dispatch.global.setIsLocationAfrica(!isAfrica)} />}
-                    label={label}
-                />
-            )}
-        </>
+        <Box hidden={!canShowToggle}>
+            <FormControlLabel
+                control={<MaterialUISwitch defaultChecked onChange={() => dispatch.global.setIsLocationAfrica(!isAfrica)} />}
+                label={label}
+            />
+        </Box>
     );
 }

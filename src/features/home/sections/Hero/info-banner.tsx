@@ -1,4 +1,4 @@
-import { Button, Typography, Grid, Box, Link, Snackbar, InputAdornment } from '@material-ui/core';
+import { Button, Typography, Grid, Box, Link, Snackbar } from '@material-ui/core';
 import { makeStyles, createStyles, Theme, useTheme } from '@material-ui/core/styles';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
@@ -8,7 +8,6 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MenuItem from '@mui/material/MenuItem';
 import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import React, { useState } from 'react';
-import RoomIcon from '@mui/icons-material/Room';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import { RipplePlayButton } from '../../../../components/common/ripple-button';
@@ -146,11 +145,6 @@ const useStyles = (isAfrica: boolean) => {
                     justifyContent: 'center'
                 }
             },
-            underline: {
-                [theme.breakpoints.down('sm')]: {
-                    borderBottom: '1px solid grey'
-                }
-            },
             actionButtonExplore: {
                 textTransform: 'none',
                 height: 0,
@@ -212,6 +206,12 @@ const useStyles = (isAfrica: boolean) => {
     );
 };
 
+interface Country {
+    country: string;
+    flag: string;
+    currencyCode: string;
+    active: boolean;
+}
 const otherCountries = [
     {
         country: 'Germany',
@@ -260,9 +260,9 @@ const africa = [
     }
 ];
 
-function getStyles(name: string, sendMoneyFrom: readonly string[], theme: Theme) {
+function getStyles(name: string, sendMoneyFrom: Country, theme: Theme) {
     return {
-        fontWeight: sendMoneyFrom.indexOf(name) === -1 ? theme.typography.fontWeightRegular : theme.typography.fontWeightMedium,
+        fontWeight: theme.typography.fontWeightMedium,
         fontFamily: 'Nunito',
         fontSize: '1em'
     };
@@ -281,10 +281,9 @@ const MenuProps = {
 
 export const InfoBanner: React.FC = () => {
     const theme = useTheme();
-    const [sendMoneyFrom, setSendMoneyFrom] = useState<string[]>([]);
-    const [sendMoneyTo, setSendMoneyto] = useState<string[]>([]);
+    const [sendMoneyFrom, setSendMoneyFrom] = useState<Country>(otherCountries[0]);
+    const [sendMoneyTo, setSendMoneyTo] = useState<Country>(africa[0]);
     const [snackBarOpen, setSnackBarOpen] = useState<boolean>(false);
-    const [error, setError] = useState<string>('');
 
     // data
     const { heroMainHeading, heroSubHeading } = useFetchHomeData();
@@ -306,29 +305,21 @@ export const InfoBanner: React.FC = () => {
         const {
             target: { value }
         } = event;
-        setSendMoneyFrom(
-            // On autofill we get a the stringified value.
-            typeof value === 'string' ? value.split(',') : value
-        );
+        setSendMoneyFrom(value);
     };
     const handleChangeMoneyTo = (event: SelectChangeEvent<typeof sendMoneyTo>) => {
         const {
             target: { value }
         } = event;
-        setSendMoneyto(
-            // On autofill we get a the stringified value.
-            typeof value === 'string' ? value.split(',') : value
-        );
+        setSendMoneyTo(value);
     };
-    // eslint-disable-next-line no-console
+
     const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3006' : `https://app-staging.lucqax.com`;
     const handleSearch = () => {
-        if (sendMoneyFrom.length === 0 || sendMoneyTo.length === 0) {
-            setError('Please select region');
-            setSnackBarOpen(true);
-        } else {
-            window.location.replace(`${url}/payment?send_from=${sendMoneyFrom}&send_to=${sendMoneyTo}`);
-        }
+        window.location.replace(`${url}/payment?send_from=${sendMoneyFrom.currencyCode}&send_to=${sendMoneyTo.currencyCode}`);
+    };
+    const getCurrentCurrency = (options: any, currency: any) => {
+        return options.filter(option => option.currencyCode === currency.currencyCode)[0];
     };
 
     const BANNER_TEXT = {
@@ -348,7 +339,7 @@ export const InfoBanner: React.FC = () => {
                 onClose={handleCloseSnack}
             >
                 <Alert onClose={handleCloseSnack} severity='warning'>
-                    {error}
+                    {'error'}
                 </Alert>
             </Snackbar>
             <Box className={classes.container}>
@@ -368,48 +359,40 @@ export const InfoBanner: React.FC = () => {
                                         <Select
                                             displayEmpty
                                             className={classes.select}
-                                            value={sendMoneyFrom}
+                                            value={getCurrentCurrency(otherCountries, sendMoneyFrom.currencyCode)}
                                             onChange={handleChangeMoneyFrom}
-                                            startAdornment={
-                                                <InputAdornment position='start'>
-                                                    <RoomIcon style={{ fontSize: 23 }} />
-                                                </InputAdornment>
-                                            }
-                                            input={<Input disableUnderline={true} className={classes.underline} />}
+                                            input={<Input disableUnderline={true} />}
                                             IconComponent={KeyboardArrowDownIcon}
-                                            renderValue={selected => {
-                                                if (!selected.length) {
-                                                    return (
-                                                        <Grid className={classes.searchItemControl} container>
-                                                            <div className={classes.overflow}>
-                                                                <Typography className={classes.searchText}>Send from </Typography>
-                                                            </div>
-                                                        </Grid>
-                                                    );
-                                                }
-
-                                                return selected.join(', ');
-                                            }}
                                             MenuProps={MenuProps}
+                                            defaultValue={otherCountries[0]}
                                         >
                                             {moneyFromCountryList.map((name, index) => (
                                                 <MenuItem
                                                     key={index}
-                                                    value={name.currencyCode}
+                                                    value={name}
                                                     disabled={name.active}
                                                     style={getStyles(name.country, sendMoneyFrom, theme)}
                                                 >
-                                                    <img
-                                                        alt={name.country}
-                                                        src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
-                                                    />
-                                                    &nbsp; &nbsp;
-                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currencyCode}</span>)&nbsp; &nbsp;
-                                                    {name.active && (
-                                                        <span style={{ fontSize: 11, background: 'grey', padding: 5, borderRadius: 8 }}>
-                                                            Coming Soon
+                                                    <div style={{ display: 'flex' }}>
+                                                        <img
+                                                            alt={name.country}
+                                                            src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
+                                                            style={{ paddingLeft: '1ch' }}
+                                                        />
+                                                        &nbsp; &nbsp;
+                                                        <span style={{ fontSize: 14, fontWeight: 400, fontFamily: 'Nunito' }}>
+                                                            {name.country} &nbsp; &nbsp;
                                                         </span>
-                                                    )}
+                                                        <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'Nunito' }}>
+                                                            {name.currencyCode}
+                                                        </span>
+                                                        &nbsp;
+                                                        {name.active && (
+                                                            <span style={{ fontSize: 11, background: 'grey', padding: 5, borderRadius: 8 }}>
+                                                                Coming Soon
+                                                            </span>
+                                                        )}
+                                                    </div>
                                                 </MenuItem>
                                             ))}
                                         </Select>
@@ -420,48 +403,40 @@ export const InfoBanner: React.FC = () => {
                                         <Select
                                             displayEmpty
                                             className={classes.select}
-                                            value={sendMoneyTo}
+                                            value={getCurrentCurrency(africa, sendMoneyTo.currencyCode)}
                                             onChange={handleChangeMoneyTo}
-                                            startAdornment={
-                                                <InputAdornment position='start'>
-                                                    <RoomIcon style={{ fontSize: 23 }} />
-                                                </InputAdornment>
-                                            }
                                             input={<Input disableUnderline={true} />}
                                             IconComponent={KeyboardArrowDownIcon}
-                                            renderValue={selected => {
-                                                if (selected.length === 0) {
-                                                    return (
-                                                        <Grid className={classes.searchItemControl} container>
-                                                            <div className={classes.overflow}>
-                                                                <Typography className={classes.searchText}>Send to </Typography>
-                                                            </div>
-                                                        </Grid>
-                                                    );
-                                                }
-
-                                                return selected.join(', ');
-                                            }}
                                             MenuProps={MenuProps}
+                                            defaultValue={africa[0]}
                                         >
                                             {moneyToCountryList.map((name, index) => (
                                                 <MenuItem
                                                     key={index}
-                                                    value={name.currencyCode}
+                                                    value={name}
                                                     disabled={name.active}
                                                     style={getStyles(name.country, sendMoneyTo, theme)}
                                                 >
-                                                    <img
-                                                        alt={name.country}
-                                                        src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
-                                                    />
-                                                    &nbsp; &nbsp;
-                                                    {name.country} (<span style={{ fontSize: 14 }}>{name.currencyCode}</span>) &nbsp; &nbsp;
-                                                    {name.active && (
-                                                        <span style={{ fontSize: 11, background: 'grey', padding: 5, borderRadius: 8 }}>
-                                                            Coming Soon
+                                                    <div style={{ display: 'flex' }}>
+                                                        <img
+                                                            alt={name.country}
+                                                            src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
+                                                            style={{ paddingLeft: '1ch' }}
+                                                        />
+                                                        &nbsp; &nbsp;
+                                                        <span style={{ fontSize: 14, fontWeight: 400, fontFamily: 'Nunito' }}>
+                                                            {name.country} &nbsp;
                                                         </span>
-                                                    )}
+                                                        <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'Nunito' }}>
+                                                            {name.currencyCode}
+                                                        </span>
+                                                        &nbsp; &nbsp;
+                                                        {name.active && (
+                                                            <span style={{ fontSize: 11, background: 'grey', padding: 5, borderRadius: 8 }}>
+                                                                Coming Soon
+                                                            </span>
+                                                        )}
+                                                    </div>
                                                 </MenuItem>
                                             ))}
                                         </Select>

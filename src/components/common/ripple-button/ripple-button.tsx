@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
-import Avatar from '@mui/material/Avatar';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Box, Link } from '@material-ui/core';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import Avatar from '@mui/material/Avatar';
+import React, { FC } from 'react';
 
 import PlayButton1 from '../../../../static/images/home/playBtn.png';
 
@@ -20,8 +20,8 @@ const useStyles = makeStyles((theme: Theme) =>
             justifyContent: 'center',
             alignContent: 'center',
             margin: '12.4px',
-            width: '56px',
-            height: '56px',
+            width: '1rem',
+            height: '1rem',
             transform: 'scale(0.95)',
             boxShadow: '0 0 0 0 rgba(0, 0, 0, 1)',
             animation: '$pulse 2s infinite'

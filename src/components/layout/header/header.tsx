@@ -59,15 +59,20 @@ const useStyles = makeStyles((theme: Theme) =>
             textDecoration: 'none',
             display: 'flex',
             width: 100,
-            transform: 'scale(1.2)'
+            transform: 'scale(1.2)',
+            [theme.breakpoints.only('sm')]: {
+                marginLeft: '7ch'
+            },
+            [theme.breakpoints.only('xs')]: {
+                marginLeft: '5ch'
+            }
         },
         links: {
             color: 'white',
             display: 'flex',
             fontWeight: 450,
-            fontSize: '1.1rem',
-            marginRight: 15,
-            justifyContent: 'space-around'
+            fontSize: '1.0rem',
+            marginRight: 15
         },
         active: {
             display: 'inline-block',
@@ -94,35 +99,22 @@ const useStyles = makeStyles((theme: Theme) =>
             flexGrow: 1,
             marginLeft: 70,
             fontWeight: 500,
-            justifyContent: 'flex-end',
+            justifyContent: 'space-between',
             display: 'flex'
         },
         register: {
             textTransform: 'capitalize',
             color: 'white',
+            flexGrow: 1,
             fontWeight: 450,
-            padding: '5px 5ch',
             textDecoration: 'none',
-            fontSize: '1.1rem',
+            fontSize: '1.0rem',
             transition: 'background .25s ease-in -out, transform .15s ease,- webkit - transform .15s ease',
             '&:hover': {
                 opacity: 0.9,
                 textDecoration: 'none',
                 background: theme.palette.primary.main,
-                transform: 'scale(1.01)',
                 borderRadius: 6
-            }
-        },
-        signin: {
-            textTransform: 'capitalize',
-            marginRight: '2vw',
-            fontWeight: 450,
-            color: 'white',
-            fontSize: '1.1rem',
-            padding: '5px 5ch',
-            textDecoration: 'none',
-            '&:hover': {
-                textDecoration: 'none'
             }
         },
         underline: {
@@ -210,9 +202,9 @@ export const Header: React.FC<NavbarProps> = ({ location }) => {
                                 endIcon={<LockOpenIcon />}
                                 component={Link}
                                 to={`${process.env.GATSBY_APP_URL}/signin`}
-                                className={classes.signin}
+                                className={classes.register}
                             >
-                                Sign in
+                                Login
                             </Button>
                             <Button
                                 endIcon={<HowToRegIcon />}
