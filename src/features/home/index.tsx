@@ -45,8 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         setupAndDesignSection: {
             position: 'relative',
-            background: theme.palette.background.default,
-            paddingTop: 50
+            background: theme.palette.background.default
         }
     })
 );

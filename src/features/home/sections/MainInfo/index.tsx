@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
         secureByDesignContainer: {
             paddingBottom: 50,
             margin: '6vw',
+            marginTop: 0,
             flexGrow: 1,
             [theme.breakpoints.up('sm')]: {},
             [theme.breakpoints.only('xs')]: {

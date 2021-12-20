@@ -14,6 +14,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { RipplePlayButton } from '../../../../components/common/ripple-button';
 import { RootState } from '../../../../app/store';
 import { useFetchHomeData } from '../../hooks/use-data';
+import { useFormatContentBasedOnLocation } from '../../../../hooks/use-format-content-based-on-location';
 
 function Alert(props: AlertProps) {
     return <MuiAlert elevation={6} variant='filled' {...props} />;
@@ -47,6 +48,18 @@ const useStyles = makeStyles((theme: Theme) =>
                 fontSize: '2.5rem'
             }
         },
+        subTitle: {
+            fontWeight: 700,
+            fontFamily: 'Nunito',
+            letterSpacing: -1,
+            fontSize: '1.3rem',
+            lineHeight: -1,
+            color: 'grey',
+            marginTop: 20,
+            [theme.breakpoints.only('xs')]: {
+                fontSize: '1rem'
+            }
+        },
         subContainer: {
             marginTop: 20,
             marginBottom: 20,
@@ -70,17 +83,6 @@ const useStyles = makeStyles((theme: Theme) =>
                 borderRadius: '60%'
             }
         },
-        subTitle: {
-            fontWeight: 700,
-            fontFamily: 'Nunito',
-            letterSpacing: -1,
-            fontSize: '36px',
-            lineHeight: '29.05px',
-            [theme.breakpoints.only('xs')]: {
-                fontSize: '24px'
-            }
-        },
-
         searchContainer: {
             width: '100%',
             maxWidth: 600,
@@ -92,12 +94,6 @@ const useStyles = makeStyles((theme: Theme) =>
                 margin: 'auto',
                 marginTop: 30
             }
-        },
-        paragraph: {
-            fontWeight: 550,
-            color: 'grey',
-            marginTop: 20,
-            [theme.breakpoints.only('xs')]: {}
         },
         offer: {
             color: theme.colors.mainGreen,
@@ -290,7 +286,8 @@ export const InfoBanner: React.FC = () => {
     const [error, setError] = useState<string>('');
 
     // data
-    const { heroMainHeading } = useFetchHomeData();
+    const { heroMainHeading, heroSubHeading } = useFetchHomeData();
+    const handleFormatContent = useFormatContentBasedOnLocation();
 
     const { isAfrica } = useSelector((state: RootState) => state.global);
 
@@ -334,7 +331,8 @@ export const InfoBanner: React.FC = () => {
     };
 
     const BANNER_TEXT = {
-        heading: isAfrica ? heroMainHeading.heroHeadingLocal : heroMainHeading.heroMainHeadingAbroad
+        heading: handleFormatContent(heroMainHeading),
+        subHeading: handleFormatContent(heroSubHeading)
     };
     return (
         <motion.div>
@@ -355,6 +353,9 @@ export const InfoBanner: React.FC = () => {
                 {/* {location.loaded ? ( */}
                 <Typography variant='h4' className={classes.titleHeading} gutterBottom>
                     {BANNER_TEXT.heading}
+                </Typography>
+                <Typography paragraph className={classes.subTitle}>
+                    {BANNER_TEXT.subHeading}
                 </Typography>
                 <Box>
                     {!isAfrica ? (
@@ -473,7 +474,12 @@ export const InfoBanner: React.FC = () => {
                         </Box>
                     ) : (
                         <Grid container item xs={12} md={4} justifyContent={'center'} alignItems={'center'}>
-                            <Button onClick={handleSearch} variant='contained' className={classes.getStarted} disableElevation>
+                            <Button
+                                onClick={() => window.location.replace('https://app-staging.lucqax.com/')}
+                                variant='contained'
+                                className={classes.getStarted}
+                                disableElevation
+                            >
                                 Create Accounts
                             </Button>
                         </Grid>
