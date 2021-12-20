@@ -11,7 +11,7 @@ interface InfoBannerProps {
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        infobanner_reviews: {
+        infoBanner_reviews: {
             zIndex: 999,
             alignSelf: 'start',
             [theme.breakpoints.only('xs')]: {
@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         paragraph: {
             color: 'rgba(0, 0, 0, 0.5)',
+            fontSize: '1.3em',
             [theme.breakpoints.only('xs')]: {
                 padding: 10
             }
@@ -44,11 +45,11 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const InfoBanner = ({ scrollers, title, subtitle, information }: InfoBannerProps) => {
+export const InfoBanner: React.FC<InfoBannerProps> = ({ scrollers, title, subtitle, information }: InfoBannerProps) => {
     const classes = useStyles();
 
     return (
-        <Grid item xs={12} sm={4} md={3} className={classes.infobanner_reviews} alignContent={'flex-start'}>
+        <Grid item xs={12} sm={4} md={3} className={classes.infoBanner_reviews} alignContent={'flex-start'}>
             <div>
                 <Typography className={classes.lightHeading}> {title}</Typography>
                 <Typography className={classes.largeHeading}> {subtitle}</Typography>

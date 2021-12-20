@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from '@reach/router';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 
 import { Dispatch, RootState } from '../app/store';
+import { useSiteMetadata } from './hooks/useSiteMetadata';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -53,19 +55,23 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     }
 }));
 
+const getLocation = (location: string | undefined) => {
+    if (!location) return false;
+    return location.includes('localhost') || location.includes('lucqax.netlify.app');
+};
 export function ViewToggleSwitch(): JSX.Element {
-    const location = window.location.host;
-    const canShowToggle = location.includes('localhost') || location.includes('lucqax.netlify.app');
+    const { href } = useLocation();
+    const canShowToggle = getLocation(href);
 
     const dispatch = useDispatch<Dispatch>();
     const { isAfrica } = useSelector((state: RootState) => state.global);
-
+    const label = isAfrica ? 'Nigeria' : 'Abroad';
     return (
         <>
             {canShowToggle && (
                 <FormControlLabel
                     control={<MaterialUISwitch defaultChecked onChange={() => dispatch.global.setIsLocationAfrica(!isAfrica)} />}
-                    label='Switch country'
+                    label={label}
                 />
             )}
         </>

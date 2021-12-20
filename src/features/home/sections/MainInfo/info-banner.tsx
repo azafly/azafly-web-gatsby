@@ -27,21 +27,9 @@ const useStyles = makeStyles((theme: Theme) =>
                 width: '100%'
             }
         },
-        content: {
-            marginTop: 20,
-            fontWeight: 500,
-            fontSize: '18px',
-            lineHeight: '185.52%',
-            color: '#4990A4',
-            [theme.breakpoints.only('xs')]: {
-                fontSize: '14px',
-                textAlign: 'center',
-                width: '100%'
-            }
-        },
         titleHeading: {
             color: theme.colors.black,
-            fontSize: '42px',
+            fontSize: '3rem',
             fontFamily: 'Nunito',
             textAlign: 'left',
             fontWeight: 900,
@@ -53,28 +41,16 @@ const useStyles = makeStyles((theme: Theme) =>
                 marginBottom: 20
             }
         },
-        link: {
+        content: {
+            marginTop: 20,
+            fontWeight: 500,
+            fontSize: '1.2rem',
+            lineHeight: '185.52%',
             color: '#4990A4',
-            fontSize: '16px',
             [theme.breakpoints.only('xs')]: {
-                fontSize: '14px'
-            }
-        },
-        paragraph: {
-            fontWeight: 450,
-            lineHeight: 1.5,
-            fontSize: '1rem',
-            [theme.breakpoints.only('xs')]: {
+                fontSize: '1rem',
                 textAlign: 'center',
-                margin: 'auto',
-                fontSize: '0.9rem'
-            }
-        },
-
-        root: {},
-        btn: {
-            [theme.breakpoints.only('xs')]: {
-                justifyContent: 'center !important'
+                width: '100%'
             }
         }
     })
@@ -97,8 +73,8 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({ title, content, shortTit
                     <Typography variant='h3' className={classes.titleHeading}>
                         {title}
                     </Typography>
-                    <Grid container className={classes.content}>
-                        <Typography>{content}</Typography>
+                    <Grid container>
+                        <Typography className={classes.content}>{content}</Typography>
                     </Grid>
                 </Grid>
             </Box>

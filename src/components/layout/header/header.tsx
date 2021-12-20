@@ -58,13 +58,14 @@ const useStyles = makeStyles((theme: Theme) =>
             flexGrow: 1,
             textDecoration: 'none',
             display: 'flex',
-            width: 100
+            width: 100,
+            transform: 'scale(1.2)'
         },
         links: {
             color: 'white',
             display: 'flex',
             fontWeight: 450,
-            fontSize: '0.95rem',
+            fontSize: '1.1rem',
             marginRight: 15,
             justifyContent: 'space-around'
         },
@@ -102,6 +103,7 @@ const useStyles = makeStyles((theme: Theme) =>
             fontWeight: 450,
             padding: '5px 5ch',
             textDecoration: 'none',
+            fontSize: '1.1rem',
             transition: 'background .25s ease-in -out, transform .15s ease,- webkit - transform .15s ease',
             '&:hover': {
                 opacity: 0.9,
@@ -116,6 +118,7 @@ const useStyles = makeStyles((theme: Theme) =>
             marginRight: '2vw',
             fontWeight: 450,
             color: 'white',
+            fontSize: '1.1rem',
             padding: '5px 5ch',
             textDecoration: 'none',
             '&:hover': {

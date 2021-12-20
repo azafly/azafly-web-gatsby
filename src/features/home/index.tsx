@@ -59,13 +59,13 @@ const Home: React.FC = () => {
             <main className={classes.content}>
                 <div className={classes.drawerHeader}></div>
                 <HomePageHeroSection />
+                <Services />
                 <div className={classes.setupAndDesignSection}>
                     <MainInfo />
-                    <HomePageReviewsSection />
                 </div>
-                <Services />
-                <JoinUs />
+                <HomePageReviewsSection />
                 <QuestionsTabsContainer ref={faqRef} />
+                <JoinUs />
             </main>
         </div>
     );

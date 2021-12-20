@@ -1,6 +1,6 @@
 import React, { FunctionComponent, PropsWithChildren, useEffect } from 'react';
 import { withPrefix } from 'gatsby';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Helmet from 'react-helmet';
 
 import { Footer } from './footer';
