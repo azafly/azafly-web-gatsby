@@ -20,8 +20,8 @@ const useStyles = makeStyles((theme: Theme) =>
             justifyContent: 'center',
             alignContent: 'center',
             margin: '12.4px',
-            width: '1rem',
-            height: '1rem',
+            width: '2.1rem',
+            height: '2.1rem',
             transform: 'scale(0.95)',
             boxShadow: '0 0 0 0 rgba(0, 0, 0, 1)',
             animation: '$pulse 2s infinite'

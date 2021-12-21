@@ -5,6 +5,7 @@ import { RootModel } from './index';
 export type ViewState = 'local' | 'abroad';
 
 interface GlobalState {
+    userCurrentCountry: any;
     isAfrica?: boolean;
     images: {
         home: {
@@ -14,6 +15,7 @@ interface GlobalState {
 }
 
 const authState: GlobalState = {
+    userCurrentCountry: {},
     isAfrica: false,
     images: {
         home: {
@@ -27,6 +29,9 @@ export const global = createModel<RootModel>()({
     reducers: {
         setIsLocationAfrica(state, payload: boolean | undefined) {
             return { ...state, isAfrica: payload ?? false };
+        },
+        setUserCountry(state, payload: any) {
+            return { ...state, userCurrentCountry: payload };
         },
         setHomeImage(state, payload: GlobalState['images']) {
             return { ...state, images: payload };

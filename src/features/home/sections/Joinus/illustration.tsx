@@ -41,7 +41,7 @@ export const JoinUsIllustration = (): JSX.Element => {
     const {
         mainCTA: { mainCTAImage }
     } = useFetchHomeData();
-    console.log(handleFormatContent(mainCTAImage));
+
     return (
         <Box className={classes.root}>
             <Box>

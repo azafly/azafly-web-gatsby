@@ -63,9 +63,9 @@ const Home: React.FC = () => {
                 <div className={classes.setupAndDesignSection}>
                     <MainInfo />
                 </div>
-                <HomePageReviewsSection />
                 <QuestionsTabsContainer ref={faqRef} />
                 <JoinUs />
+                <HomePageReviewsSection />
             </main>
         </div>
     );

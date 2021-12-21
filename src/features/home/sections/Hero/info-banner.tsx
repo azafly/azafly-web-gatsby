@@ -135,7 +135,12 @@ const useStyles = (isAfrica: boolean) => {
                 color: '#040d21',
                 display: 'flex',
                 justifyContent: 'flex-start',
-                alignItems: 'center'
+                alignItems: 'center',
+                '& .first': {
+                    [theme.breakpoints.down('sm')]: {
+                        borderBottom: '2px solid #214662'
+                    }
+                }
             },
             searchItemControl: {
                 color: '#040d21',
@@ -193,7 +198,12 @@ const useStyles = (isAfrica: boolean) => {
                 color: 'white',
                 fontSize: '16px',
                 [theme.breakpoints.only('xs')]: {
-                    fontSize: '14px'
+                    fontSize: '1rem'
+                }
+            },
+            byAfricans: {
+                [theme.breakpoints.only('xs')]: {
+                    fontSize: '1rem'
                 }
             },
             searchText: {
@@ -372,7 +382,7 @@ export const InfoBanner: React.FC = () => {
                     {!isAfrica ? (
                         <Box className={classes.searchContainer}>
                             <Grid container spacing={1} className={classes.searchItem}>
-                                <Grid item xs={12} md={4} className={classes.searchItemControl}>
+                                <Grid item xs={12} md={4} className={`${classes.searchItemControl} first`}>
                                     <FormControl fullWidth variant='standard' sx={{ width: '100%' }}>
                                         <Select
                                             displayEmpty
@@ -522,13 +532,13 @@ export const InfoBanner: React.FC = () => {
                     )}
                 </Box>
                 <Grid container className={classes.setMiddle}>
-                    <Grid item container direction='row' alignItems='center' xs={12} sm={6}>
+                    <Grid item container direction='row' alignItems='center' xs={6}>
                         <Box sx={{ pl: 1, color: 'grey' }}>
-                            <Typography>By Africans for Africans 🙌🏽</Typography>
+                            <Typography className={classes.byAfricans}>By Africans for Africans 🙌🏽</Typography>
                         </Box>
                     </Grid>
 
-                    <Grid item container direction='row' alignItems='center' xs={12} sm={6}>
+                    <Grid item container direction='row' alignItems='center' xs={6}>
                         <RipplePlayButton />
                         <Typography className={classes.links}>
                             <Link href='#' color='inherit' underline='always'>

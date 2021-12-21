@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme: Theme) =>
             alignItems: 'center',
             background: 'white',
             maxWidth: 1600,
-            width: '90vw'
+            width: '90vw',
+            paddingBottom: 50
         },
         paper: {
             width: '100%',

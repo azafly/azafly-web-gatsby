@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
+
 import axios from 'axios';
 
 interface LocationProps {
@@ -39,18 +40,19 @@ export const useGeolocation = () => {
     const getCountriesByRegion = async () => axios.get(`https://us-central1-pick-safe.cloudfunctions.net/countryList`).then(({ data }: any) => data);
 
     const getUserGeoLocationData = async () =>
-        axios.get(`https://geolocation-db.com/json/${process.env.GEOLOCATION_KEY}`).then(({ data }: any) => data.country_name);
+        axios.get(`https://geolocation-db.com/json/${process.env.GEOLOCATION_KEY}`).then(({ data }: any) => data);
 
     useEffect(() => {
         const getUserGeolocationDetails = async () => {
             dispatch({ type: 'request' });
             try {
-                const [{ countriesByRegion, countriesByRegionArray }, userCurrentCountry] = await Promise.all([
+                const [{ countriesByRegion, countriesByRegionArray, formattedCountries }, userCurrentCountry] = await Promise.all([
                     getCountriesByRegion(),
                     getUserGeoLocationData()
                 ]);
+                const userCountry = formattedCountries.filter(({ code }) => userCurrentCountry?.country_code === code);
                 const isAfrica = userCurrentCountry in countriesByRegion.Africa;
-                dispatch({ type: 'success', payload: { isAfrica, userCurrentCountry, countriesByRegion, countriesByRegionArray } });
+                dispatch({ type: 'success', payload: { isAfrica, userCurrentCountry: userCountry[0], countriesByRegion, countriesByRegionArray } });
             } catch (error) {
                 dispatch({ type: 'failure' });
             }
@@ -58,7 +60,6 @@ export const useGeolocation = () => {
 
         getUserGeolocationDetails();
     }, []);
-
     return {
         location
     };

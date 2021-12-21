@@ -61,10 +61,10 @@ const useStyles = makeStyles((theme: Theme) =>
             width: 100,
             transform: 'scale(1.2)',
             [theme.breakpoints.only('sm')]: {
-                marginLeft: '7ch'
+                paddingLeft: '5ch'
             },
             [theme.breakpoints.only('xs')]: {
-                marginLeft: '5ch'
+                paddingLeft: '3ch'
             }
         },
         links: {
