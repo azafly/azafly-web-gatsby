@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { Button, Typography, Grid, Box, Link, Snackbar } from '@material-ui/core';
 import { makeStyles, createStyles, Theme, useTheme } from '@material-ui/core/styles';
 import { motion } from 'framer-motion';
@@ -14,6 +16,7 @@ import { RipplePlayButton } from '../../../../components/common/ripple-button';
 import { RootState } from '../../../../app/store';
 import { useFetchHomeData } from '../../hooks/use-data';
 import { useFormatContentBasedOnLocation } from '../../../../hooks/use-format-content-based-on-location';
+import { useGeolocation } from '../../../../components/hooks/useGeolocation';
 
 function Alert(props: AlertProps) {
     return <MuiAlert elevation={6} variant='filled' {...props} />;
@@ -213,27 +216,30 @@ interface Country {
 }
 const otherCountries = [
     {
-        country: 'Germany',
-        flag: 'DE',
-        currencyCode: 'EUR',
-        active: false
-    },
-    {
         country: 'Canada',
-        flag: 'CA',
-        currencyCode: 'CAD',
+        flag: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/CA.svg',
+        currency: {
+            code: 'CAD',
+            name: 'Canadian Dollar'
+        },
         active: false
     },
     {
         country: 'United States of America',
-        flag: 'US',
-        currencyCode: 'USD',
+        flag: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/US.svg',
+        currency: {
+            code: 'US',
+            name: 'US Dollar'
+        },
         active: false
     },
     {
         country: 'United Kingdom',
-        flag: 'GB',
-        currencyCode: 'GBP',
+        flag: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/GB.svg',
+        currency: {
+            code: 'GBP',
+            name: 'British Pounds'
+        },
         active: false
     }
 ];
@@ -241,20 +247,29 @@ const otherCountries = [
 const africa = [
     {
         country: 'Nigeria',
-        flag: 'NG',
-        currencyCode: 'NGN',
+        flag: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/NG.svg',
+        currency: {
+            code: 'NGN',
+            name: 'Nigerian Naira'
+        },
         active: false
     },
     {
-        country: 'Cameroon',
-        flag: 'CM',
-        currencyCode: 'XAF',
+        country: 'Ghana',
+        flag: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/GH.svg',
+        currency: {
+            code: 'GHS',
+            name: 'Ghanian Cedis'
+        },
         active: true
     },
     {
-        country: 'Ghana',
-        flag: 'GH',
-        currencyCode: 'GHS',
+        country: 'Kenya',
+        flag: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/KE.svg',
+        currency: {
+            code: 'KHS',
+            name: 'Kenyan Shillings'
+        },
         active: true
     }
 ];
@@ -280,18 +295,22 @@ const MenuProps = {
 
 export const InfoBanner: React.FC = () => {
     const theme = useTheme();
-    const [sendMoneyFrom, setSendMoneyFrom] = useState<Country>(otherCountries[0]);
-    const [sendMoneyTo, setSendMoneyTo] = useState<Country>(africa[0]);
     const [snackBarOpen, setSnackBarOpen] = useState<boolean>(false);
 
     // data
     const { heroMainHeading, heroSubHeading } = useFetchHomeData();
+    const {
+        location: { countriesByRegionArray = { Europe: [] } }
+    } = useGeolocation();
+
     const handleFormatContent = useFormatContentBasedOnLocation();
 
     const { isAfrica = false } = useSelector((state: RootState) => state.global);
 
-    const moneyFromCountryList = isAfrica ? africa : otherCountries;
-    const moneyToCountryList = isAfrica ? otherCountries : africa;
+    const moneyFromCountryList = isAfrica ? africa : [...countriesByRegionArray.Europe, ...otherCountries];
+    const moneyToCountryList = isAfrica ? [...countriesByRegionArray.Europe, ...otherCountries] : africa;
+    const [sendMoneyFrom, setSendMoneyFrom] = useState<Country>(moneyFromCountryList[0]);
+    const [sendMoneyTo, setSendMoneyTo] = useState<Country>(moneyToCountryList[0]);
 
     const handleCloseSnack = (event?: React.SyntheticEvent, reason?: string) => {
         if (reason === 'clickaway') {
@@ -315,10 +334,10 @@ export const InfoBanner: React.FC = () => {
 
     const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3006' : `https://app-staging.lucqax.com`;
     const handleSearch = () => {
-        window.location.replace(`${url}/payment?send_from=${sendMoneyFrom.currencyCode}&send_to=${sendMoneyTo.currencyCode}`);
+        window.open(`${url}/payment?send_from=${sendMoneyFrom.currency.code}&send_to=${sendMoneyTo.currency.code}`, '_blank');
     };
     const getCurrentCurrency = (options: any, currency: any) => {
-        return options.filter(option => option.currencyCode === currency.currencyCode)[0];
+        return options.filter(option => option.currency.code === currency.code)[0];
     };
 
     const BANNER_TEXT = {
@@ -358,12 +377,30 @@ export const InfoBanner: React.FC = () => {
                                         <Select
                                             displayEmpty
                                             className={classes.select}
-                                            value={getCurrentCurrency(otherCountries, sendMoneyFrom.currencyCode)}
+                                            value={getCurrentCurrency(otherCountries, sendMoneyFrom.currency.code)}
                                             onChange={handleChangeMoneyFrom}
                                             input={<Input disableUnderline={true} />}
                                             IconComponent={KeyboardArrowDownIcon}
                                             MenuProps={MenuProps}
-                                            defaultValue={otherCountries[0]}
+                                            defaultValue={moneyFromCountryList[0]}
+                                            renderValue={selected => {
+                                                return (
+                                                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                        <img
+                                                            alt={selected.country}
+                                                            src={selected.flag}
+                                                            style={{ paddingLeft: '1ch' }}
+                                                            width={40}
+                                                            height={40}
+                                                        />
+                                                        &nbsp; &nbsp;
+                                                        <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'Nunito' }}>
+                                                            {selected.currency.code}
+                                                        </span>
+                                                        &nbsp; &nbsp;
+                                                    </div>
+                                                );
+                                            }}
                                         >
                                             {moneyFromCountryList.map((name, index) => (
                                                 <MenuItem
@@ -372,20 +409,22 @@ export const InfoBanner: React.FC = () => {
                                                     disabled={name.active}
                                                     style={getStyles(name.country, sendMoneyFrom, theme)}
                                                 >
-                                                    <div style={{ display: 'flex' }}>
+                                                    <div style={{ display: 'flex', alignItems: 'center' }}>
                                                         <img
                                                             alt={name.country}
-                                                            src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
+                                                            src={name.flag}
                                                             style={{ paddingLeft: '1ch' }}
+                                                            width={40}
+                                                            height={40}
                                                         />
                                                         &nbsp; &nbsp;
                                                         <span style={{ fontSize: 14, fontWeight: 400, fontFamily: 'Nunito' }}>
-                                                            {name.country} &nbsp; &nbsp;
+                                                            {name.currency.name} &nbsp;
                                                         </span>
                                                         <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'Nunito' }}>
-                                                            {name.currencyCode}
+                                                            {name.currency.code}
                                                         </span>
-                                                        &nbsp;
+                                                        &nbsp; &nbsp;
                                                         {name.active && (
                                                             <span style={{ fontSize: 11, background: 'grey', padding: 5, borderRadius: 8 }}>
                                                                 Coming Soon
@@ -402,12 +441,30 @@ export const InfoBanner: React.FC = () => {
                                         <Select
                                             displayEmpty
                                             className={classes.select}
-                                            value={getCurrentCurrency(africa, sendMoneyTo.currencyCode)}
+                                            value={getCurrentCurrency(africa, sendMoneyTo.currency.code)}
                                             onChange={handleChangeMoneyTo}
                                             input={<Input disableUnderline={true} />}
                                             IconComponent={KeyboardArrowDownIcon}
                                             MenuProps={MenuProps}
-                                            defaultValue={africa[0]}
+                                            defaultValue={moneyToCountryList[0]}
+                                            renderValue={selected => {
+                                                return (
+                                                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                        <img
+                                                            alt={selected.country}
+                                                            src={selected.flag}
+                                                            style={{ paddingLeft: '1ch' }}
+                                                            width={40}
+                                                            height={40}
+                                                        />
+                                                        &nbsp; &nbsp;
+                                                        <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'Nunito' }}>
+                                                            {selected.currency.code}
+                                                        </span>
+                                                        &nbsp; &nbsp;
+                                                    </div>
+                                                );
+                                            }}
                                         >
                                             {moneyToCountryList.map((name, index) => (
                                                 <MenuItem
@@ -416,18 +473,20 @@ export const InfoBanner: React.FC = () => {
                                                     disabled={name.active}
                                                     style={getStyles(name.country, sendMoneyTo, theme)}
                                                 >
-                                                    <div style={{ display: 'flex' }}>
+                                                    <div style={{ display: 'flex', alignItems: 'center' }}>
                                                         <img
                                                             alt={name.country}
-                                                            src={`https://cdn.jsdelivr.net/npm/react-flagkit@1.0.2/img/SVG/${name.flag}.svg`}
+                                                            src={name.flag}
                                                             style={{ paddingLeft: '1ch' }}
+                                                            width={40}
+                                                            height={40}
                                                         />
                                                         &nbsp; &nbsp;
                                                         <span style={{ fontSize: 14, fontWeight: 400, fontFamily: 'Nunito' }}>
-                                                            {name.country} &nbsp;
+                                                            {name.currency.name} &nbsp;
                                                         </span>
                                                         <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'Nunito' }}>
-                                                            {name.currencyCode}
+                                                            {name.currency.code}
                                                         </span>
                                                         &nbsp; &nbsp;
                                                         {name.active && (

@@ -125,12 +125,12 @@ export const ReviewSliders = forwardRef(() => {
         return (
             <div className={classes.scrollers}>
                 <ArrowBackOutlinedIcon
-                    opacity={activeScroller === 'prev' ? 1 : 0.3}
+                    opacity={activeScroller === 'prev' ? 1 : 0.7}
                     className={classes.prev}
                     onClick={() => handleToggleClass('prev')}
                 />
                 <ArrowForwardOutlinedIcon
-                    opacity={activeScroller === 'next' ? 1 : 0.3}
+                    opacity={activeScroller === 'next' ? 1 : 0.7}
                     onClick={() => handleToggleClass('next')}
                     className={classes.next}
                 />
