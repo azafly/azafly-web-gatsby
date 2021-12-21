@@ -19,10 +19,9 @@ const useStyles = makeStyles((theme: Theme) =>
         banner: {
             width: '81px',
             height: '30px',
-            fontWeight: 700,
+            fontWeight: 800,
             fontSize: '16px',
             lineHeight: '30px',
-            letterSpacing: '0.17em',
             textTransform: 'uppercase',
             color: '#FFFFFF',
             opacity: 0.7,

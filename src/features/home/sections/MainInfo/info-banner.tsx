@@ -29,12 +29,12 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         titleHeading: {
             color: theme.colors.black,
-            fontSize: '2.7rem',
-            fontFamily: 'Nunito',
+            fontSize: '2.5rem',
             textAlign: 'left',
-            fontWeight: 900,
+            fontWeight: 750,
+            fontFamily: 'Nunito',
+            letterSpacing: -1,
             marginBottom: 20,
-            letterSpacing: '-3%',
             [theme.breakpoints.only('xs')]: {
                 textAlign: 'center',
                 margin: 'auto',
