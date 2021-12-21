@@ -10,11 +10,13 @@ const useStyles = makeStyles((theme: Theme) =>
         container: {
             maxWidth: 1600,
             margin: 'auto',
-            overflowX: 'hidden',
             position: 'relative',
             background: 'white',
             [theme.breakpoints.up('md')]: {
                 padding: '10vh 6vw'
+            },
+            [theme.breakpoints.only('xs')]: {
+                width: '96vw'
             }
         },
         titleWrapper: {

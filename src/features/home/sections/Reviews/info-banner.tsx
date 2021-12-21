@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Hidden, Typography } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import React from 'react';
 
@@ -15,15 +15,15 @@ const useStyles = makeStyles((theme: Theme) =>
             zIndex: 999,
             alignSelf: 'start',
             [theme.breakpoints.only('xs')]: {
-                textAlign: 'center'
+                textAlign: 'center',
+                marginTop: -50
             }
         },
         lightHeading: {
             letterSpacing: '0.09em',
             textTransform: 'uppercase',
             color: '#000000',
-            opacity: 0.38,
-            marginBottom: 20
+            opacity: 0.38
         },
         largeHeading: {
             fontWeight: 900,
@@ -57,7 +57,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({ scrollers, title, subtit
                     {information}
                 </Typography>
             </div>
-            {scrollers && scrollers()}
+            <Hidden xsDown>{scrollers && scrollers()}</Hidden>
         </Grid>
     );
 };

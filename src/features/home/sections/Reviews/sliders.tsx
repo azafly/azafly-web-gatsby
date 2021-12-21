@@ -1,5 +1,5 @@
 import { createStyles, makeStyles, Theme, useTheme } from '@material-ui/core/styles';
-import { Grid, useMediaQuery } from '@material-ui/core';
+import { Grid, Hidden, useMediaQuery } from '@material-ui/core';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 import React, { forwardRef, useState, useRef } from 'react';
@@ -66,12 +66,17 @@ const useStyles = makeStyles((theme: Theme) =>
             cursor: 'pointer'
         },
         overflow: {
-            width: '120%'
+            width: '120%',
+            [theme.breakpoints.only('xs')]: {
+                textAlign: 'center',
+                marginTop: -50
+            }
         },
         scrollers: {
             display: 'flex',
             [theme.breakpoints.only('xs')]: {
-                justifyContent: 'center'
+                justifyContent: 'center',
+                marginTop: 30
             }
         }
     })
@@ -141,6 +146,7 @@ export const ReviewSliders = forwardRef(() => {
                 <Slider ref={sliderRef} {...settings} className={classes.overflow}>
                     {cards}
                 </Slider>
+                <Hidden smUp>{scrollers()}</Hidden>
             </Grid>
         </Grid>
     );

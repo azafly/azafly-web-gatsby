@@ -11,7 +11,8 @@ const useStyles = makeStyles((theme: Theme) =>
             justifyContent: 'center',
             alignItems: 'center',
             background: 'white',
-            maxWidth: 1600
+            maxWidth: 1600,
+            width: '90vw'
         },
         paper: {
             width: '100%',

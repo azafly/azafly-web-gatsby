@@ -14,9 +14,9 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: '6vw',
             marginTop: 0,
             flexGrow: 1,
-            [theme.breakpoints.up('sm')]: {},
+            marginBottom: 0,
             [theme.breakpoints.only('xs')]: {
-                marginTop: '-30px'
+                paddingBottom: 10
             }
         }
     })

@@ -17,32 +17,33 @@ const useStyles = makeStyles((theme: Theme) =>
         banner: {
             fontWeight: 700,
             fontSize: '16px',
-            lineHeight: '30px',
+            lineHeight: '1.5rem',
             letterSpacing: '17%',
             textTransform: 'uppercase',
             color: '#4990A4',
             [theme.breakpoints.only('xs')]: {
-                fontSize: '11px',
+                fontSize: '1rem',
                 textAlign: 'center',
                 width: '100%'
             }
         },
         titleHeading: {
             color: theme.colors.black,
-            fontSize: '3rem',
+            fontSize: '2.7rem',
             fontFamily: 'Nunito',
             textAlign: 'left',
             fontWeight: 900,
-            marginBottom: 30,
+            marginBottom: 20,
             letterSpacing: '-3%',
             [theme.breakpoints.only('xs')]: {
                 textAlign: 'center',
                 margin: 'auto',
-                marginBottom: 20
+                marginBottom: 20,
+                fontSize: '1.7rem'
             }
         },
         content: {
-            marginTop: 20,
+            marginTop: 10,
             fontWeight: 500,
             fontSize: '1.2rem',
             lineHeight: '185.52%',

@@ -13,12 +13,13 @@ const useStyles = makeStyles((theme: Theme) =>
             justifyContent: 'center',
             alignItems: 'center',
             paddingBottom: 150,
-            paddingTop: 150,
+            paddingTop: 250,
             zIndex: 999,
+            marginTop: -100,
             background: `linear-gradient(360deg, rgba(73,144,164,1) -100%, rgba(115,171,185,1) 0%, rgba(247,248,249,0.43461134453781514) 100%, rgba(145,190,200,0.7343312324929971) 20%)`,
             [theme.breakpoints.only('xs')]: {
                 paddingLeft: 0,
-                paddingTop: 60,
+                paddingTop: 120,
                 paddingBottom: 180
             }
         },

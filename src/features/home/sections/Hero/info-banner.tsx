@@ -119,10 +119,9 @@ const useStyles = (isAfrica: boolean) => {
                 minWidth: '10ch',
                 width: '100%',
                 color: 'white',
-                fontWeight: 500,
-                border: '2px solid white',
+                fontWeight: isAfrica ? 600 : 500,
                 padding: '7px 15px',
-                backgroundColor: isAfrica ? 'transparent' : '#214662',
+                backgroundColor: isAfrica ? `${theme.colors.mainGreen}` : '#214662',
                 borderRadius: 6,
                 '&:hover': {
                     background: '#214662',
