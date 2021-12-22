@@ -227,6 +227,7 @@ interface Country {
 const otherCountries = [
     {
         country: 'Canada',
+        code: 'CA',
         flag: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/CA.svg',
         currency: {
             code: 'CAD',
@@ -236,6 +237,7 @@ const otherCountries = [
     },
     {
         country: 'United States of America',
+        code: 'US',
         flag: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/US.svg',
         currency: {
             code: 'US',
@@ -244,6 +246,7 @@ const otherCountries = [
         active: false
     },
     {
+        code: 'GB',
         country: 'United Kingdom',
         flag: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/GB.svg',
         currency: {
@@ -257,6 +260,7 @@ const otherCountries = [
 const africa = [
     {
         country: 'Nigeria',
+        code: 'NG',
         flag: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/NG.svg',
         currency: {
             code: 'NGN',
@@ -265,6 +269,7 @@ const africa = [
         active: false
     },
     {
+        code: 'GH',
         country: 'Ghana',
         flag: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/GH.svg',
         currency: {
@@ -274,6 +279,7 @@ const africa = [
         active: true
     },
     {
+        code: 'KE',
         country: 'Kenya',
         flag: 'https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/KE.svg',
         currency: {
@@ -344,7 +350,7 @@ export const InfoBanner: React.FC = () => {
 
     const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3006' : `https://app-staging.lucqax.com`;
     const handleSearch = () => {
-        window.open(`${url}/payment?send_from=${sendMoneyFrom.currency.code}&send_to=${sendMoneyTo.currency.code}`, '_blank');
+        window.open(`${url}/payment?send_from=${sendMoneyFrom.code}&send_to=${sendMoneyTo.code}`, '_blank');
     };
     const getCurrentCurrency = (options: any, currency: any) => {
         return options.filter(option => option.currency.code === currency.code)[0];
