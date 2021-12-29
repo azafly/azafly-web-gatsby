@@ -45,9 +45,6 @@ const useStyles = (isAfrica: boolean) => {
                 letterSpacing: -1,
                 color: theme.colors.white,
                 fontSize: '3.2rem',
-                [theme.breakpoints.up('sm')]: {
-                    fontSize: '3.5rem'
-                },
                 [theme.breakpoints.only('xs')]: {
                     fontSize: '3rem'
                 }
@@ -75,7 +72,7 @@ const useStyles = (isAfrica: boolean) => {
             sendText: {
                 fontWeight: 400,
                 fontSize: '0.75em',
-                color: '#89CDFF',
+                color: '#040d21',
                 paddingLeft: '1ch'
             },
             clipPath: {
@@ -136,6 +133,9 @@ const useStyles = (isAfrica: boolean) => {
                 '&:hover': {
                     background: '#214662',
                     opacity: 0.9
+                },
+                [theme.breakpoints.up('md')]: {
+                    marginTop: '10px'
                 }
             },
             searchItem: {
@@ -147,6 +147,11 @@ const useStyles = (isAfrica: boolean) => {
                     [theme.breakpoints.down('sm')]: {
                         borderBottom: '1px solid #214662'
                     }
+                }
+            },
+            searchIcon: {
+                [theme.breakpoints.up('md')]: {
+                    marginTop: '10px'
                 }
             },
             searchItemControl: {
@@ -407,6 +412,7 @@ export const InfoBanner: React.FC = () => {
                                             MenuProps={MenuProps}
                                             defaultValue={moneyFromCountryList[0]}
                                             label={'Send from'}
+                                            classes={{ icon: classes.searchIcon }}
                                             inputProps={{
                                                 id: 'send-from'
                                             }}
@@ -477,6 +483,7 @@ export const InfoBanner: React.FC = () => {
                                             IconComponent={KeyboardArrowDownIcon}
                                             MenuProps={MenuProps}
                                             label={'Send to'}
+                                            classes={{ icon: classes.searchIcon }}
                                             defaultValue={moneyToCountryList[0]}
                                             renderValue={selected => {
                                                 return (
