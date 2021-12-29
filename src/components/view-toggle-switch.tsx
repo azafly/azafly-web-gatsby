@@ -61,7 +61,8 @@ const getLocation = (location: string | undefined) => {
 };
 
 export function ViewToggleSwitch(): JSX.Element {
-    const { origin } = useLocation();
+    const { origin, hostname, href, host } = useLocation();
+    console.group(origin, hostname, href, host);
     const canShowToggle = getLocation(origin);
 
     const dispatch = useDispatch<Dispatch>();

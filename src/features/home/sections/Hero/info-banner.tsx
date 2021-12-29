@@ -1,6 +1,4 @@
-import { useMemo } from 'react';
-
-import { Button, Typography, Grid, Box, Link, Snackbar } from '@material-ui/core';
+import { Button, Typography, Grid, InputLabel, Box, Link, Snackbar, Stack } from '@material-ui/core';
 import { makeStyles, createStyles, Theme, useTheme } from '@material-ui/core/styles';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
@@ -73,6 +71,12 @@ const useStyles = (isAfrica: boolean) => {
                 [theme.breakpoints.only('xs')]: {
                     justifyContent: 'center'
                 }
+            },
+            sendText: {
+                fontWeight: 400,
+                fontSize: '0.75em',
+                color: '#89CDFF',
+                paddingLeft: '1ch'
             },
             clipPath: {
                 position: 'relative',
@@ -402,21 +406,28 @@ export const InfoBanner: React.FC = () => {
                                             IconComponent={KeyboardArrowDownIcon}
                                             MenuProps={MenuProps}
                                             defaultValue={moneyFromCountryList[0]}
+                                            label={'Send from'}
+                                            inputProps={{
+                                                id: 'send-from'
+                                            }}
                                             renderValue={selected => {
                                                 return (
-                                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                        <img
-                                                            alt={selected.country}
-                                                            src={selected.flag}
-                                                            style={{ paddingLeft: '1ch' }}
-                                                            width={40}
-                                                            height={40}
-                                                        />
-                                                        &nbsp; &nbsp;
-                                                        <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'Nunito' }}>
-                                                            {selected.currency.code}
-                                                        </span>
-                                                        &nbsp; &nbsp;
+                                                    <div>
+                                                        <span className={classes.sendText}>Send From</span>
+                                                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                            <img
+                                                                alt={selected.country}
+                                                                src={selected.flag}
+                                                                style={{ paddingLeft: '1ch' }}
+                                                                width={40}
+                                                                height={40}
+                                                            />
+                                                            &nbsp; &nbsp;
+                                                            <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'Nunito' }}>
+                                                                {selected.currency.code}
+                                                            </span>
+                                                            &nbsp; &nbsp;
+                                                        </div>
                                                     </div>
                                                 );
                                             }}
@@ -465,22 +476,26 @@ export const InfoBanner: React.FC = () => {
                                             input={<Input disableUnderline={true} />}
                                             IconComponent={KeyboardArrowDownIcon}
                                             MenuProps={MenuProps}
+                                            label={'Send to'}
                                             defaultValue={moneyToCountryList[0]}
                                             renderValue={selected => {
                                                 return (
-                                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                        <img
-                                                            alt={selected.country}
-                                                            src={selected.flag}
-                                                            style={{ paddingLeft: '1ch' }}
-                                                            width={40}
-                                                            height={40}
-                                                        />
-                                                        &nbsp; &nbsp;
-                                                        <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'Nunito' }}>
-                                                            {selected.currency.code}
-                                                        </span>
-                                                        &nbsp; &nbsp;
+                                                    <div>
+                                                        <span className={classes.sendText}>Send to</span>
+                                                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                            <img
+                                                                alt={selected.country}
+                                                                src={selected.flag}
+                                                                style={{ paddingLeft: '1ch' }}
+                                                                width={40}
+                                                                height={40}
+                                                            />
+                                                            &nbsp; &nbsp;
+                                                            <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'Nunito' }}>
+                                                                {selected.currency.code}
+                                                            </span>
+                                                            &nbsp; &nbsp;
+                                                        </div>
                                                     </div>
                                                 );
                                             }}
