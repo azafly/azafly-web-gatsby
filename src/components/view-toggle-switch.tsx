@@ -57,11 +57,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const getLocation = (location: string | undefined) => {
     if (!location) return false;
-    return location.includes('localhost') || location.includes('lucqax.netlify.app');
+    return location.includes('localhost') || location.includes('netlify');
 };
+
 export function ViewToggleSwitch(): JSX.Element {
-    const { href } = useLocation();
-    const canShowToggle = getLocation(href);
+    const { origin } = useLocation();
+    const canShowToggle = getLocation(origin);
 
     const dispatch = useDispatch<Dispatch>();
     const { isAfrica } = useSelector((state: RootState) => state.global);

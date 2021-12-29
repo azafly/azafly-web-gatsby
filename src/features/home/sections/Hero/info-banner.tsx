@@ -47,8 +47,11 @@ const useStyles = (isAfrica: boolean) => {
                 letterSpacing: -1,
                 color: theme.colors.white,
                 fontSize: '3.2rem',
-                [theme.breakpoints.down('md')]: {
-                    fontSize: '2.5rem'
+                [theme.breakpoints.up('sm')]: {
+                    fontSize: '3.5rem'
+                },
+                [theme.breakpoints.only('xs')]: {
+                    fontSize: '3rem'
                 }
             },
             subTitle: {
@@ -138,7 +141,7 @@ const useStyles = (isAfrica: boolean) => {
                 alignItems: 'center',
                 '& .first': {
                     [theme.breakpoints.down('sm')]: {
-                        borderBottom: '2px solid #214662'
+                        borderBottom: '1px solid #214662'
                     }
                 }
             },
