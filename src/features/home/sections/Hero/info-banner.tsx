@@ -55,7 +55,7 @@ const useStyles = (isAfrica: boolean) => {
                 letterSpacing: -1,
                 fontSize: '1.3rem',
                 lineHeight: -1,
-                color: 'grey',
+                color: theme.colors.white,
                 marginTop: 20,
                 [theme.breakpoints.only('xs')]: {
                     fontSize: '1rem'
@@ -70,8 +70,8 @@ const useStyles = (isAfrica: boolean) => {
                 }
             },
             sendText: {
-                fontWeight: 400,
-                fontSize: '0.75em',
+                fontWeight: 500,
+                fontSize: '0.7em',
                 color: '#040d21',
                 paddingLeft: '1ch'
             },
@@ -419,7 +419,7 @@ export const InfoBanner: React.FC = () => {
                                             renderValue={selected => {
                                                 return (
                                                     <div>
-                                                        <span className={classes.sendText}>Send From</span>
+                                                        <span className={classes.sendText}>Send from</span>
                                                         <div style={{ display: 'flex', alignItems: 'center' }}>
                                                             <img
                                                                 alt={selected.country}
