@@ -42,19 +42,18 @@ secureHeading: Secure by design
 footerHeading3: Ho
 section1:
   section1ShortHeading:
-    section1ShortHeadingLocal: Pay foreign invoice
-    section1ShortHeadingAbroad: All-in-one Naira account for diasporans
+    section1ShortHeadingLocal: Pay foreign invoices
+    section1ShortHeadingAbroad: Send money home
   section1MainHeading:
     section1MainHeadingLocal: Pay your tuition and other fees abroad
-    section1MainHeadingAbroad: Living abroad but need to pay bills back home?
+    section1MainHeadingAbroad: Send money to loved ones at home
   section1InfoText:
     section1InfoTextLocal: "Send money directly to institutions for your school
       fees, accomodation, medical bills and more in UK, Canada, America, Europe
       and more, or pay them with your Azafly virtual card. We offer the best
       rate possible in a fast and convenient process. "
-    section1InfoTextAbroad: "Make DSTV payments, buy Airtime, pay for services and
-      more with Azafly from your country of residence. Say goodbye to the hassle
-      of managing your Nigerian bank from abroad. "
+    section1InfoTextAbroad: Send money to your loved ones in Africa quickly and
+      cheaply, your receiver can receive both in Naira and in USD.
   section1Image: ../../static/images/transfer_money.png
 servicesHeaderText_subtext2: Fast Transactions
 intro: Making your dreams COME alive
@@ -62,17 +61,16 @@ servicesHeaderText-content1: Our fee is the lowest in the market compared to any
 section2:
   section2MainHeading:
     section2MainHeadingLocal: Get a virtual card that works anywhere online!
-    section2MainHeadingAbroad: Get a virtual card that works anywhere online!
+    section2MainHeadingAbroad: Get a Naira virtual card
   section2InfoText:
     section2InfoTextLocal: With your Azafly virtual card, you can shop on online
       stores abroad, in foreign currencies from the comfort of your home. The
       card will automatically convert your money to the local currency of the
       online shop. You will safe money on dynamic exchange rate charges!
-    section2InfoTextAbroad: With your Azafly virtual card, you can pay bills in
-      Nigeria, shop on Jumia or visit home and spend in naira, travel around the
-      world and spend in local currencies, all while avoiding dynamic exchange
-      rate charges. The card will automatically convert your money to the local
-      currency of the merchant you are paying.
+    section2InfoTextAbroad: With your Azafly naira virtual card, you can pay bills
+      in Nigeria, shop online (Jumia, konga etc) or visit home and spend in
+      naira, all while avoiding dynamic exchange rate charges. You get to spend
+      like a local!
   section2ShortHeading:
     section2ShortHeadingLocal: Shop abroad with ease
     section2ShortHeadingAbroad: Pay in Naira with ease
@@ -89,18 +87,21 @@ servicesHeaderText-content2: The sky was cloudless and of a deep dark blue spect
 comingSoonButton: Forum and Chats
 section3:
   section3InfoText:
-    section3InfoTextLocal: Receive money from families and friends abroad directly
+    section3InfoTextLocal: "Receive money from families and friends abroad directly
       into your local bank or into your Azafly virtual card. Send money to them
-      directly into their local bank account.
-    section3InfoTextAbroad: Send money to your loved ones in Africa quickly and
-      cheaply, or receive money from them directly into your local bank or into
-      your Azafly virtual card.
+      directly into their local bank account. //// Make DSTV payments, buy
+      Airtime, pay for services and more with Azafly from your country of
+      residence. Say goodbye to the hassle of managing your Nigerian bank from
+      abroad. "
+    section3InfoTextAbroad: "Make DSTV payments, buy Airtime, pay for services and
+      more with Azafly from your country of residence. Say goodbye to the hassle
+      of managing your Nigerian bank from abroad. "
   section3MainHeading:
     section3MainHeadingLocal: Send or receive money from friends and family abroad
-    section3MainHeadingAbroad: Send or receive money from friends and family abroad
+    section3MainHeadingAbroad: Living abroad but need to pay bills back home?
   section3ShortHeading:
     section3ShortHeadingLocal: Send and receive
-    section3ShortHeadingAbroad: Send and receive
+    section3ShortHeadingAbroad: All-in-one Naira account for you
   section3Image: ../../static/images/withdraw_money.png
 secureHeadingText-content2: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
@@ -109,7 +110,7 @@ secureHeadingText-content2: Lorem ipsum dolor sit amet, consectetur adipiscing
 servicesHeaderText-content3: The sky was cloudless and of a deep dark blue spectacle before.
 heroMainHeading:
   heroHeadingLocal: The simplest way to pay your fees abroad
-  heroMainHeadingAbroad: Receive & Send money home cheaper and faster!
+  heroMainHeadingAbroad: Send money home and have a modernized Naira account, all in one app!
 secureHeadingText-content3: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
   ornare metus, elit. Vestibulum maecenas convallis enim velit, nulla amet
@@ -214,8 +215,8 @@ heroSubHeading:
     abroad. We send your money directly to your school, hospital, landlord or
     whatever institution you need to pay abroad in the simplest and cheapest way
     possible. "
-  heroSubHeadingAbroad: Send money to Friends and Family in Nigeria or receive.
-    Manage your remittance in multiple currencies!
+  heroSubHeadingAbroad: Send money to Friends and Family in Nigeria. Manage your
+    Nigeria bills from abroad.
 whyChooseUs:
   whyChooseUsShortHeading:
     whyChooseUsShortHeadingLocal: Why choose us
