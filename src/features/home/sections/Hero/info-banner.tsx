@@ -1,4 +1,4 @@
-import { Button, Typography, Grid, InputLabel, Box, Link, Snackbar, Stack } from '@material-ui/core';
+import { Button, Typography, Grid, Box, Link, Snackbar } from '@material-ui/core';
 import { makeStyles, createStyles, Theme, useTheme } from '@material-ui/core/styles';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
@@ -40,8 +40,8 @@ const useStyles = (isAfrica: boolean) => {
                 }
             },
             titleHeading: {
-                fontWeight: 700,
-                fontFamily: 'Nunito',
+                fontWeight: 500,
+                fontFamily: 'Nunito Sans',
                 letterSpacing: -1,
                 color: theme.colors.white,
                 fontSize: '3.2rem',
@@ -50,7 +50,7 @@ const useStyles = (isAfrica: boolean) => {
                 }
             },
             subTitle: {
-                fontWeight: 700,
+                fontWeight: 500,
                 fontFamily: 'Nunito',
                 letterSpacing: -1,
                 fontSize: '1.3rem',
@@ -104,7 +104,7 @@ const useStyles = (isAfrica: boolean) => {
             },
             offer: {
                 color: theme.colors.mainGreen,
-                fontWeight: 700,
+                fontWeight: 500,
                 fontSize: '18px',
                 marginTop: 20,
                 [theme.breakpoints.only('xs')]: {

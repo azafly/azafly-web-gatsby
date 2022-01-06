@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
             fontSize: '2.5rem',
             textAlign: 'left',
             fontWeight: 750,
-            fontFamily: 'Nunito',
+            fontFamily: 'Nunito Sans',
             letterSpacing: -1,
             marginBottom: 20,
             [theme.breakpoints.only('xs')]: {

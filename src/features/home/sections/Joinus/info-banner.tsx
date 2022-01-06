@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
         titleHeading: {
             marginTop: '20px !important',
             fontWeight: 700,
+            fontFamily: 'Nunito Sans',
             fontSize: '42px',
             lineHeight: '51px',
             letterSpacing: '-0.03em',

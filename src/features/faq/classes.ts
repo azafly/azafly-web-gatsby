@@ -118,13 +118,12 @@ export const useTabStyles = makeStyles((theme: Theme) => ({
         background: 'white',
         maxWidth: 1600,
         margin: 'auto',
-        marginTop: 100,
         marginLeft: '2vw',
         paddingBottom: 50,
+        paddingTop: '5vh',
         [theme.breakpoints.up('lg')]: {
             marginLeft: '12vw',
-            padding: 150,
-            paddingTop: 100
+            padding: 150
         },
         [theme.breakpoints.only('md')]: {
             marginLeft: '5vw',

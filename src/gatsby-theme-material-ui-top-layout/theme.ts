@@ -54,7 +54,7 @@ export const theme = {
     typography: {
         fontFamily: [
             'Nunito',
-            'LL Bold',
+            'Nunito Sans',
             'sans-serif',
             '"Segoe UI"',
             'Roboto',

@@ -81,6 +81,7 @@ const useStyles = makeStyles((theme: Theme) =>
             textAlign: 'left',
             verticalAlign: 'top',
             color: '#0D324D',
+            fontFamily: 'Nunito Sans',
             marginBottom: '40px',
             [theme.breakpoints.only('xs')]: {
                 textAlign: 'center',

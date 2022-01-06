@@ -24,6 +24,10 @@ module.exports = {
                     fonts: {
                         google: [
                             {
+                                family: `Nunito Sans`,
+                                variants: [`300`, `400`, `500`, '700', `900`]
+                            },
+                            {
                                 family: `Nunito`,
                                 variants: [`300`, `400`, `500`, '700', `900`]
                             }
