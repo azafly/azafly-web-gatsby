@@ -109,8 +109,8 @@ secureHeadingText-content2: Lorem ipsum dolor sit amet, consectetur adipiscing
   scelerisque. Faucibus arcu dignissim sem ornare
 servicesHeaderText-content3: The sky was cloudless and of a deep dark blue spectacle before.
 heroMainHeading:
-  heroHeadingLocal: The simplest way to pay your fees abroad
-  heroMainHeadingAbroad: Send money home and have a modernized Naira account, all in one app!
+  heroHeadingLocal: The simplest way to pay your fees abroad!
+  heroMainHeadingAbroad: Send money home. Get a virtual Naira account!
 secureHeadingText-content3: Lorem ipsum dolor sit amet, consectetur adipiscing
   elit. Purus praesent viverra egestas cras arcu. Eget sed malesuada dolor
   ornare metus, elit. Vestibulum maecenas convallis enim velit, nulla amet
