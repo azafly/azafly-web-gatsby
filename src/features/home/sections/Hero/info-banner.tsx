@@ -40,17 +40,17 @@ const useStyles = (isAfrica: boolean) => {
                 }
             },
             titleHeading: {
-                fontWeight: 500,
+                fontWeight: 550,
                 fontFamily: 'Nunito Sans',
                 letterSpacing: -1,
                 color: theme.colors.white,
-                fontSize: '3.2rem',
+                fontSize: '3.3rem',
                 [theme.breakpoints.only('xs')]: {
-                    fontSize: '3rem'
+                    fontSize: '2rem'
                 }
             },
             subTitle: {
-                fontWeight: 500,
+                fontWeight: 550,
                 fontFamily: 'Nunito',
                 letterSpacing: -1,
                 fontSize: '1.3rem',
@@ -70,25 +70,10 @@ const useStyles = (isAfrica: boolean) => {
                 }
             },
             sendText: {
-                fontWeight: 500,
+                fontWeight: 550,
                 fontSize: '0.7em',
                 color: '#040d21',
                 paddingLeft: '1ch'
-            },
-            clipPath: {
-                position: 'relative',
-                color: 'white',
-                '&:after': {
-                    content: "''",
-                    position: 'absolute',
-                    left: '0',
-                    bottom: '-10px',
-                    height: '15px',
-                    width: '100%',
-                    border: 'solid 1px white',
-                    borderColor: 'white transparent transparent transparent',
-                    borderRadius: '60%'
-                }
             },
             searchContainer: {
                 width: '100%',
@@ -104,7 +89,7 @@ const useStyles = (isAfrica: boolean) => {
             },
             offer: {
                 color: theme.colors.mainGreen,
-                fontWeight: 500,
+                fontWeight: 550,
                 fontSize: '18px',
                 marginTop: 20,
                 [theme.breakpoints.only('xs')]: {
@@ -126,12 +111,14 @@ const useStyles = (isAfrica: boolean) => {
                 minWidth: '10ch',
                 width: '100%',
                 color: 'white',
-                fontWeight: isAfrica ? 600 : 500,
+                fontWeight: isAfrica ? 600 : 550,
                 padding: '7px 15px',
-                backgroundColor: isAfrica ? `${theme.colors.mainGreen}` : '#214662',
+                border: isAfrica ? '1px solid white' : '',
+                backgroundColor: isAfrica ? `#214662` : '#214662',
+                boxShadow: theme.shadows[12],
                 borderRadius: 6,
                 '&:hover': {
-                    background: '#214662',
+                    background: theme.colors.mainGreen,
                     opacity: 0.9
                 },
                 [theme.breakpoints.up('md')]: {
@@ -220,7 +207,7 @@ const useStyles = (isAfrica: boolean) => {
             },
             searchText: {
                 marginLeft: 2,
-                fontWeight: 500,
+                fontWeight: 550,
                 fontSize: '16px',
                 [theme.breakpoints.only('xs')]: {
                     fontSize: '14px'
